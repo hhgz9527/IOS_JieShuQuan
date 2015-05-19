@@ -14,6 +14,7 @@
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
 		949997141B09D3E500986337 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949997121B09D3E500986337 /* LaunchScreen.xib */; };
 		949997201B09D3E500986337 /* TWJieShuQuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499971F1B09D3E500986337 /* TWJieShuQuanTests.m */; };
+		D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWJieShuQuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		949997191B09D3E500986337 /* TWJieShuQuanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWJieShuQuanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9499971E1B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9499971F1B09D3E500986337 /* TWJieShuQuanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWJieShuQuanTests.m; sourceTree = "<group>"; };
+		BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.debug.xcconfig"; sourceTree = "<group>"; };
+		FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		793420AFE2155E5D258B1636 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */,
+				FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		949996F71B09D3E500986337 = {
 			isa = PBXGroup;
 			children = (
 				949997021B09D3E500986337 /* TWJieShuQuan */,
 				9499971C1B09D3E500986337 /* TWJieShuQuanTests */,
 				949997011B09D3E500986337 /* Products */,
+				793420AFE2155E5D258B1636 /* Pods */,
+				B34E66A74EAB42EE8F588C97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +135,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B34E66A74EAB42EE8F588C97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 949997231B09D3E500986337 /* Build configuration list for PBXNativeTarget "TWJieShuQuan" */;
 			buildPhases = (
+				1427EA39B108D131E2D9DFC5 /* Check Pods Manifest.lock */,
 				949996FC1B09D3E500986337 /* Sources */,
 				949996FD1B09D3E500986337 /* Frameworks */,
 				949996FE1B09D3E500986337 /* Resources */,
+				499DA24CA07BC6A827394CFF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1427EA39B108D131E2D9DFC5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		499DA24CA07BC6A827394CFF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		949996FC1B09D3E500986337 /* Sources */ = {
@@ -347,6 +406,7 @@
 		};
 		949997241B09D3E500986337 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
@@ -357,6 +417,7 @@
 		};
 		949997251B09D3E500986337 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
@@ -418,6 +479,7 @@
 				949997251B09D3E500986337 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		949997261B09D3E500986337 /* Build configuration list for PBXNativeTarget "TWJieShuQuanTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +488,7 @@
 				949997281B09D3E500986337 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

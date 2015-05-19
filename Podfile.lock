@@ -1,0 +1,18 @@
+PODS:
+  - AVOSCloud (3.1.1.1)
+  - AVOSCloudCrashReporting (3.1.1.1):
+    - AVOSCloud
+  - AVOSCloudSNS (3.1.1.1):
+    - AVOSCloud
+
+DEPENDENCIES:
+  - AVOSCloud
+  - AVOSCloudCrashReporting
+  - AVOSCloudSNS
+
+SPEC CHECKSUMS:
+  AVOSCloud: 0c0b91ffd91f83b448312027e5f8b243f261c42a
+  AVOSCloudCrashReporting: 5add5ca29ec9f585010ecda3a643108c7e376e86
+  AVOSCloudSNS: fa177d50fe83b630d684dd27d790358531b365cc
+
+COCOAPODS: 0.36.4
