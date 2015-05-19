@@ -14,6 +14,7 @@
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
 		949997141B09D3E500986337 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949997121B09D3E500986337 /* LaunchScreen.xib */; };
 		949997201B09D3E500986337 /* TWJieShuQuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499971F1B09D3E500986337 /* TWJieShuQuanTests.m */; };
+		9499972E1B0AD08F00986337 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499972D1B0AD08F00986337 /* Constants.m */; };
 		D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		949997191B09D3E500986337 /* TWJieShuQuanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWJieShuQuanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9499971E1B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9499971F1B09D3E500986337 /* TWJieShuQuanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWJieShuQuanTests.m; sourceTree = "<group>"; };
+		9499972C1B0AD08F00986337 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9499972D1B0AD08F00986337 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.debug.xcconfig"; sourceTree = "<group>"; };
 		FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +108,8 @@
 				949997101B09D3E500986337 /* Images.xcassets */,
 				949997121B09D3E500986337 /* LaunchScreen.xib */,
 				949997031B09D3E500986337 /* Supporting Files */,
+				9499972C1B0AD08F00986337 /* Constants.h */,
+				9499972D1B0AD08F00986337 /* Constants.m */,
 			);
 			path = TWJieShuQuan;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				9499970C1B09D3E500986337 /* ViewController.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
+				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
