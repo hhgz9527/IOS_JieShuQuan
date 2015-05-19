@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
-		9499970C1B09D3E500986337 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499970B1B09D3E500986337 /* ViewController.m */; };
+		9499970C1B09D3E500986337 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499970B1B09D3E500986337 /* RootViewController.m */; };
 		9499970F1B09D3E500986337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9499970D1B09D3E500986337 /* Main.storyboard */; };
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
 		949997141B09D3E500986337 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949997121B09D3E500986337 /* LaunchScreen.xib */; };
 		949997201B09D3E500986337 /* TWJieShuQuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499971F1B09D3E500986337 /* TWJieShuQuanTests.m */; };
 		9499972E1B0AD08F00986337 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499972D1B0AD08F00986337 /* Constants.m */; };
+		949997391B0AD83700986337 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997371B0AD83700986337 /* LoginViewController.m */; };
+		9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949997381B0AD83700986337 /* LoginViewController.xib */; };
+		9499975C1B0B237F00986337 /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499975B1B0B237F00986337 /* AuthService.m */; };
 		D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +38,8 @@
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		949997071B09D3E500986337 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		949997081B09D3E500986337 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9499970A1B09D3E500986337 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9499970B1B09D3E500986337 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9499970A1B09D3E500986337 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		9499970B1B09D3E500986337 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		9499970E1B09D3E500986337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		949997101B09D3E500986337 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		949997131B09D3E500986337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -45,6 +48,11 @@
 		9499971F1B09D3E500986337 /* TWJieShuQuanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWJieShuQuanTests.m; sourceTree = "<group>"; };
 		9499972C1B0AD08F00986337 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		9499972D1B0AD08F00986337 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		949997361B0AD83700986337 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Authentication/Controllers/LoginViewController.h; sourceTree = "<group>"; };
+		949997371B0AD83700986337 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Authentication/Controllers/LoginViewController.m; sourceTree = "<group>"; };
+		949997381B0AD83700986337 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Authentication/Controllers/LoginViewController.xib; sourceTree = "<group>"; };
+		9499975A1B0B237F00986337 /* AuthService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthService.h; path = Authentication/Services/AuthService.h; sourceTree = "<group>"; };
+		9499975B1B0B237F00986337 /* AuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthService.m; path = Authentication/Services/AuthService.m; sourceTree = "<group>"; };
 		BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.debug.xcconfig"; sourceTree = "<group>"; };
 		FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,16 +108,17 @@
 		949997021B09D3E500986337 /* TWJieShuQuan */ = {
 			isa = PBXGroup;
 			children = (
+				9499972F1B0AD1FA00986337 /* Authentication */,
+				9499972C1B0AD08F00986337 /* Constants.h */,
+				9499972D1B0AD08F00986337 /* Constants.m */,
 				949997071B09D3E500986337 /* AppDelegate.h */,
 				949997081B09D3E500986337 /* AppDelegate.m */,
-				9499970A1B09D3E500986337 /* ViewController.h */,
-				9499970B1B09D3E500986337 /* ViewController.m */,
+				9499970A1B09D3E500986337 /* RootViewController.h */,
+				9499970B1B09D3E500986337 /* RootViewController.m */,
 				9499970D1B09D3E500986337 /* Main.storyboard */,
 				949997101B09D3E500986337 /* Images.xcassets */,
 				949997121B09D3E500986337 /* LaunchScreen.xib */,
 				949997031B09D3E500986337 /* Supporting Files */,
-				9499972C1B0AD08F00986337 /* Constants.h */,
-				9499972D1B0AD08F00986337 /* Constants.m */,
 			);
 			path = TWJieShuQuan;
 			sourceTree = "<group>";
@@ -138,6 +147,34 @@
 				9499971E1B09D3E500986337 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9499972F1B0AD1FA00986337 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				949997311B0AD23E00986337 /* Controllers */,
+				949997301B0AD23100986337 /* Services */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		949997301B0AD23100986337 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9499975A1B0B237F00986337 /* AuthService.h */,
+				9499975B1B0B237F00986337 /* AuthService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		949997311B0AD23E00986337 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				949997361B0AD83700986337 /* LoginViewController.h */,
+				949997371B0AD83700986337 /* LoginViewController.m */,
+				949997381B0AD83700986337 /* LoginViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		B34E66A74EAB42EE8F588C97 /* Frameworks */ = {
@@ -230,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */,
 				9499970F1B09D3E500986337 /* Main.storyboard in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
@@ -283,10 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9499970C1B09D3E500986337 /* ViewController.m in Sources */,
+				9499970C1B09D3E500986337 /* RootViewController.m in Sources */,
+				9499975C1B0B237F00986337 /* AuthService.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
+				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
