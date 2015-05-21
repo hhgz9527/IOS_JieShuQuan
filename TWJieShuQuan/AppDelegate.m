@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "Constants.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // setup LeanCloud
     [AVOSCloud setApplicationId:LeanCloud_AppId clientKey:LeanCloud_AppKey];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    self.window.rootViewController = loginViewController;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
