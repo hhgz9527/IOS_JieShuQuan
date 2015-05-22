@@ -10,6 +10,7 @@
 #import "AuthService.h"
 #import "NSString+Extensions.h"
 #import "CustomAlert.h"
+#import "RegisterViewController.h"
 
 @interface LoginViewController ()
 @property (nonatomic, strong) UITextField *activeTextField;
@@ -88,6 +89,11 @@
 
 - (IBAction)forgetPasswordPressed:(id)sender {
     [[CustomAlert sharedAlert] showAlertWithMessage:@"忘记密码"];
+}
+
+- (IBAction)registerButtonPressed:(id)sender {
+    RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
+    [self presentViewController:registerVC animated:YES completion:nil];
 }
 
 @end
