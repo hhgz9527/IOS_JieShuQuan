@@ -1,9 +1,8 @@
-TWJieShuQuan.xcodeproj/project.xcworkspace/xcuserdata/
-TWJieShuQuan.xcodeproj/xcuserdata/
-
+xcuserdata
 Pods/
-TWJieShuQuan.xcodeproj/project.xcworkspace/xcshareddata/
+*.xcshareddata
 TWJieShuQuan.xcworkspace/
+.idea
 
 
 
