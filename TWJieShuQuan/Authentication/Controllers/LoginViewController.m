@@ -10,6 +10,7 @@
 #import "AuthService.h"
 
 @interface LoginViewController ()
+@property (nonatomic, strong) UITextField *activeTextField;
 @end
 
 @implementation LoginViewController
@@ -18,6 +19,9 @@
     [super viewDidLoad];
     
     [self setUpUICommponents];
+    
+    _emailTextField.delegate = self;
+    _passwordTextField.delegate = self;
 }
 
 - (void)setUpUICommponents {
@@ -36,10 +40,24 @@
 }
 
 
-// UITextFieldDelegate
+#pragma UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.activeTextField = textField;
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    return true;
+    if (self.activeTextField == self.emailTextField) {
+        [self.passwordTextField becomeFirstResponder];
+        return YES;
+    }
+    
+    if (self.activeTextField == self.passwordTextField) {
+        [self.activeTextField resignFirstResponder];
+        return YES;
+    }
+    
+    return NO;
 }
 
 
@@ -50,8 +68,13 @@
 //        NSLog(@"======== sign up failed ====== ");
 //    }];
 //}
+- (IBAction)loginBackgroundViewTouchDown:(id)sender {
+    [self.activeTextField resignFirstResponder];
+}
 
 - (IBAction)loginButtonPressed:(id)sender {
+    [self.activeTextField resignFirstResponder];
+    
     [[AuthService sharedAuthManager] loginWithUsername:@"testuser" password:@"testpassword" succeeded:^{
         NSLog(@"------- login succeeded -------");
     } failed:^{
