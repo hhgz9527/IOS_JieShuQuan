@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "AuthService.h"
+#import "NSString+Extensions.h"
+#import "CustomAlert.h"
 
 @interface LoginViewController ()
 @property (nonatomic, strong) UITextField *activeTextField;
@@ -29,10 +31,10 @@
     _passwordTextField.borderStyle = UITextBorderStyleNone;
     _loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
     
-    [_emailTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_emailTextField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [_emailTextField setValue:[UIFont systemFontOfSize:20] forKeyPath:@"_placeholderLabel.font"];
     
-    [_passwordTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_passwordTextField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [_passwordTextField setValue:[UIFont systemFontOfSize:20] forKeyPath:@"_placeholderLabel.font"];
     
     _loginButton.layer.borderWidth = 1.f;
@@ -60,14 +62,6 @@
     return NO;
 }
 
-
-//- (IBAction)registerButtonPressed:(id)sender {
-//    [[AuthService sharedAuthManager] signUpWithUsername:@"Jia Ning" password:@"testpassword" email:@"jnzheng@thoughtworks.com" phoneNumber:@"15211112222" succeeded:^{
-//        NSLog(@"------- sign up succeeded -------");
-//    } failed:^{
-//        NSLog(@"======== sign up failed ====== ");
-//    }];
-//}
 - (IBAction)loginBackgroundViewTouchDown:(id)sender {
     [self.activeTextField resignFirstResponder];
 }
@@ -75,20 +69,25 @@
 - (IBAction)loginButtonPressed:(id)sender {
     [self.activeTextField resignFirstResponder];
     
-    [[AuthService sharedAuthManager] loginWithUsername:@"testuser" password:@"testpassword" succeeded:^{
-        NSLog(@"------- login succeeded -------");
-    } failed:^{
-        NSLog(@"======== login failed ====== ");
+    if ([self.emailTextField.text isEmpty]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"邮箱不能为空！"];
+        return;
+    }
+    
+    if ([self.passwordTextField.text isEmpty]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"密码不能为空！"];
+        return;
+    }
+    
+    [[AuthService sharedAuthManager] loginWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"登录成功"];
+    } failed:^(NSString *errorMessage) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:errorMessage];
     }];
 }
 
 - (IBAction)forgetPasswordPressed:(id)sender {
-     NSLog(@"------- forget password -------");
+    [[CustomAlert sharedAlert] showAlertWithMessage:@"忘记密码"];
 }
-
-//- (IBAction)logoutButtonPressed:(id)sender {
-//    [[AuthService sharedAuthManager] logout];
-//}
-
 
 @end

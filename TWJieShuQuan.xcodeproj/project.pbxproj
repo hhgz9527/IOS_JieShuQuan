@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5B1B0F7864002021DE /* NSString+Extensions.m */; };
+		941C9D601B0F7906002021DE /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5F1B0F7906002021DE /* CustomAlert.m */; };
 		941F221B1B0E0AE4001ED77D /* Login_BackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 941F221A1B0E0AE4001ED77D /* Login_BackgroundImage.png */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
@@ -32,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWJieShuQuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		941C9D5A1B0F7864002021DE /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extensions.h"; path = "Extensions/NSString+Extensions.h"; sourceTree = "<group>"; };
+		941C9D5B1B0F7864002021DE /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extensions.m"; path = "Extensions/NSString+Extensions.m"; sourceTree = "<group>"; };
+		941C9D5E1B0F7906002021DE /* CustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlert.h; sourceTree = "<group>"; };
+		941C9D5F1B0F7906002021DE /* CustomAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlert.m; sourceTree = "<group>"; };
 		941F221A1B0E0AE4001ED77D /* Login_BackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_BackgroundImage.png; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +86,24 @@
 				FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		941C9D591B0F7837002021DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				941C9D5A1B0F7864002021DE /* NSString+Extensions.h */,
+				941C9D5B1B0F7864002021DE /* NSString+Extensions.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		941C9D5D1B0F78F7002021DE /* View Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				941C9D5E1B0F7906002021DE /* CustomAlert.h */,
+				941C9D5F1B0F7906002021DE /* CustomAlert.m */,
+			);
+			name = "View Helpers";
 			sourceTree = "<group>";
 		};
 		949996F71B09D3E500986337 = {
@@ -147,6 +171,8 @@
 		9499972F1B0AD1FA00986337 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				941C9D5D1B0F78F7002021DE /* View Helpers */,
+				941C9D591B0F7837002021DE /* Extensions */,
 				949997311B0AD23E00986337 /* Controllers */,
 				949997301B0AD23100986337 /* Services */,
 			);
@@ -319,7 +345,9 @@
 				9499975C1B0B237F00986337 /* AuthService.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
+				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
+				941C9D601B0F7906002021DE /* CustomAlert.m in Sources */,
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

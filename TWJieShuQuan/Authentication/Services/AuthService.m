@@ -19,13 +19,12 @@
     return sharedInstance;
 }
 
-- (void)signUpWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email phoneNumber:(NSString *)phoneNumber succeeded:(void (^)())signUpSucceededBlock failed:(void (^)())signUpFailedBlock {
+- (void)signUpWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())signUpSucceededBlock failed:(void (^)())signUpFailedBlock {
     AVUser *user = [AVUser user];
-    user.username = username;
-    user.password = password;
     user.email = email;
-    [user setObject:phoneNumber forKey:@"phoneNumber"];
-    
+    user.password = password;
+    user.username = [self usernameFromEmail:email];
+
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             signUpSucceededBlock();
@@ -35,13 +34,14 @@
     }];
 }
 
-- (void)loginWithUsername:(NSString *)username password:(NSString *)password succeeded:(void (^)())loginSucceededBlock failed:(void (^)())loginFailedBlock {
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())loginSucceededBlock failed:(void (^)(NSString *errorMessage))loginFailedBlock {
     if ([AVUser currentUser] == nil) {
-        [AVUser logInWithUsernameInBackground:username password:password block:^(AVUser *user, NSError *error) {
+        [AVUser logInWithUsernameInBackground:[self usernameFromEmail:email] password:password block:^(AVUser *user, NSError *error) {
             if (user != nil) {
                 loginSucceededBlock();
             } else {
-                loginFailedBlock();
+                NSString *errorMessage = [error.userInfo objectForKey:@"error"];
+                loginFailedBlock(errorMessage);
             }
         }];
     } else {
@@ -51,6 +51,12 @@
 
 - (void)logout {
     [AVUser logOut];
+}
+
+// private methods
+
+- (NSString *)usernameFromEmail:(NSString *)email {
+    return [email componentsSeparatedByString:@"@"][0];
 }
 
 @end

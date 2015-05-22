@@ -13,8 +13,10 @@
 
 + (instancetype)sharedAuthManager;
 
-- (void)signUpWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email phoneNumber:(NSString *)phoneNumber succeeded:(void (^)())signUpSucceededBlock failed:(void (^)())signUpFailedBlock;
-- (void)loginWithUsername:(NSString *)username password:(NSString *)password succeeded:(void (^)())loginSucceededBlock failed:(void (^)())loginFailedBlock;
+- (void)signUpWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())signUpSucceededBlock failed:(void (^)())signUpFailedBlock;
+
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())loginSucceededBlock failed:(void (^)(NSString *errorMessage))loginFailedBlock;
+
 - (void)logout;
 
 @end
