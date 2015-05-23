@@ -52,7 +52,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPY-Z9-cMe" userLabel="Content View" customClass="UIControl">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="**@thoughtworks.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ngz-KQ-rT0" userLabel="email">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="**@thoughtworks.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ngz-KQ-rT0" userLabel="email" customClass="CustomTextField">
                             <rect key="frame" x="50" y="150" width="314" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="362" id="yrT-mY-iQZ"/>
@@ -76,7 +76,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLl-im-SwK" userLabel="password">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLl-im-SwK" userLabel="password" customClass="CustomTextField">
                             <rect key="frame" x="50" y="204" width="314" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="362" id="uVe-4v-85q"/>
@@ -100,7 +100,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niD-yk-jEV" userLabel="confrim password">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niD-yk-jEV" userLabel="confrim password" customClass="CustomTextField">
                             <rect key="frame" x="50" y="258" width="314" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="362" id="SFB-s2-1h9"/>

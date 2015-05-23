@@ -12,6 +12,7 @@
 		941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D631B0F81ED002021DE /* RegisterViewController.m */; };
 		941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D641B0F81ED002021DE /* RegisterViewController.xib */; };
 		941C9D681B102BE6002021DE /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D671B102BE6002021DE /* login_bg.png */; };
+		941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D6A1B1035CC002021DE /* CustomTextField.m */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
@@ -44,6 +45,8 @@
 		941C9D631B0F81ED002021DE /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Authentication/Controllers/RegisterViewController.m; sourceTree = "<group>"; };
 		941C9D641B0F81ED002021DE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = Authentication/Controllers/RegisterViewController.xib; sourceTree = "<group>"; };
 		941C9D671B102BE6002021DE /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
+		941C9D691B1035CC002021DE /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTextField.h; path = ViewHelpers/CustomTextField.h; sourceTree = "<group>"; };
+		941C9D6A1B1035CC002021DE /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTextField.m; path = ViewHelpers/CustomTextField.m; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 			children = (
 				941C9D5E1B0F7906002021DE /* CustomAlert.h */,
 				941C9D5F1B0F7906002021DE /* CustomAlert.m */,
+				941C9D691B1035CC002021DE /* CustomTextField.h */,
+				941C9D6A1B1035CC002021DE /* CustomTextField.m */,
 			);
 			name = "View Helpers";
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
 				941C9D601B0F7906002021DE /* CustomAlert.m in Sources */,
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
+				941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */,
 				941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

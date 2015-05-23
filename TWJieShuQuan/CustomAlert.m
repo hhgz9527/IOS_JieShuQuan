@@ -55,7 +55,7 @@ static const float horizontalMargin = 15;
     _textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _textLabel.layer.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6].CGColor;
     _textLabel.layer.cornerRadius = 10.0;
-    _textLabel.textColor = [UIColor colorWithWhite:0.8 alpha:1];
+    _textLabel.textColor = [UIColor colorWithWhite:1 alpha:1];
     _textLabel.font = [UIFont boldSystemFontOfSize:fontSize];
     return _textLabel;
 }

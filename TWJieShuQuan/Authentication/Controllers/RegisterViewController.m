@@ -27,19 +27,6 @@
 }
 
 - (void)setUpUICommponents {
-    _emailTextField.borderStyle = UITextBorderStyleNone;
-    _passwordTextField.borderStyle = UITextBorderStyleNone;
-    _confirmPasswordTextField.borderStyle = UITextBorderStyleNone;
-
-    [_emailTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    [_emailTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
-    
-    [_passwordTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    [_passwordTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
-    
-    [_confirmPasswordTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    [_confirmPasswordTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
-    
     _registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
     _registerButton.layer.borderWidth = 0.5f;
     _registerButton.layer.cornerRadius = 8;
