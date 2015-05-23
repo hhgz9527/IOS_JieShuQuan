@@ -32,7 +32,7 @@
     _registerButton.layer.cornerRadius = 8;
 }
 
-#pragma UITextFieldDelegate
+#pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.activeTextField = textField;
@@ -69,6 +69,11 @@
         return;
     }
     
+    if (![self isValidEmailAddress:self.emailTextField.text]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"请使用thoughtworks邮箱注册！"];
+        return;
+    }
+    
     if ([self.passwordTextField.text isEmpty]) {
         [[CustomAlert sharedAlert] showAlertWithMessage:@"密码不能为空！"];
         return;
@@ -85,16 +90,29 @@
     }
 
     [[AuthService sharedAuthManager] signUpWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
-        [[CustomAlert sharedAlert] showAlertWithMessage:@"注册成功"];
+        UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:nil message:@"注册成功，请登录邮箱进行验证，并重新登录" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        [successAlert show];
     } failed:^(NSString *errorMessage) {
         [[CustomAlert sharedAlert] showAlertWithMessage:errorMessage];
     }];
 }
 
-
 - (IBAction)backToLoginPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [[AuthService sharedAuthManager] logout];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - private
+
+- (BOOL)isValidEmailAddress:(NSString *)email {
+    NSString *regex = @"[A-Z0-9a-z._%+-]+@thoughtworks.com";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [predicate evaluateWithObject:email];
+}
 
 @end
