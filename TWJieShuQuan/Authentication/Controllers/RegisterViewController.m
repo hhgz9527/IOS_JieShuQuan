@@ -7,31 +7,107 @@
 //
 
 #import "RegisterViewController.h"
+#import "AuthService.h"
+#import "NSString+Extensions.h"
+#import "CustomAlert.h"
 
 @interface RegisterViewController ()
-
+@property (nonatomic, strong) UITextField *activeTextField;
 @end
 
 @implementation RegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self setUpUICommponents];
+    
+    _emailTextField.delegate = self;
+    _passwordTextField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpUICommponents {
+    _emailTextField.borderStyle = UITextBorderStyleNone;
+    _passwordTextField.borderStyle = UITextBorderStyleNone;
+    _confirmPasswordTextField.borderStyle = UITextBorderStyleNone;
+
+    [_emailTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [_emailTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
+    
+    [_passwordTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [_passwordTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
+    
+    [_confirmPasswordTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [_confirmPasswordTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
+    
+    _registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    _registerButton.layer.borderWidth = 0.5f;
+    _registerButton.layer.cornerRadius = 8;
 }
 
-/*
-#pragma mark - Navigation
+#pragma UITextFieldDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.activeTextField = textField;
 }
-*/
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (self.activeTextField == self.emailTextField) {
+        [self.passwordTextField becomeFirstResponder];
+        return YES;
+    }
+    
+    if (self.activeTextField == self.passwordTextField) {
+        [self.confirmPasswordTextField becomeFirstResponder];
+        return YES;
+    }
+    
+    if (self.activeTextField == self.confirmPasswordTextField) {
+        [self.activeTextField resignFirstResponder];
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (IBAction)backgroundViewTouchDown:(id)sender {
+    [self.activeTextField resignFirstResponder];
+}
+
+- (IBAction)registerButtonPressed:(id)sender {
+    [self.activeTextField resignFirstResponder];
+    
+    if ([self.emailTextField.text isEmpty]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"邮箱不能为空！"];
+        return;
+    }
+    
+    if ([self.passwordTextField.text isEmpty]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"密码不能为空！"];
+        return;
+    }
+    
+    if ([self.confirmPasswordTextField.text isEmpty]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"确认密码不能为空！"];
+        return;
+    }
+
+    if (![self.passwordTextField.text isEqualToString:self.confirmPasswordTextField.text]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"两次输入密码不一致！"];
+        return;
+    }
+
+    [[AuthService sharedAuthManager] signUpWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"注册成功"];
+    } failed:^(NSString *errorMessage) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:errorMessage];
+    }];
+}
+
+
+- (IBAction)backToLoginPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

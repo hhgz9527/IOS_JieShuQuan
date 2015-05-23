@@ -11,7 +11,7 @@
 		941C9D601B0F7906002021DE /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5F1B0F7906002021DE /* CustomAlert.m */; };
 		941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D631B0F81ED002021DE /* RegisterViewController.m */; };
 		941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D641B0F81ED002021DE /* RegisterViewController.xib */; };
-		941F221B1B0E0AE4001ED77D /* Login_BackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 941F221A1B0E0AE4001ED77D /* Login_BackgroundImage.png */; };
+		941C9D681B102BE6002021DE /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D671B102BE6002021DE /* login_bg.png */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
@@ -43,7 +43,7 @@
 		941C9D621B0F81ED002021DE /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Authentication/Controllers/RegisterViewController.h; sourceTree = "<group>"; };
 		941C9D631B0F81ED002021DE /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Authentication/Controllers/RegisterViewController.m; sourceTree = "<group>"; };
 		941C9D641B0F81ED002021DE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = Authentication/Controllers/RegisterViewController.xib; sourceTree = "<group>"; };
-		941F221A1B0E0AE4001ED77D /* Login_BackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_BackgroundImage.png; sourceTree = "<group>"; };
+		941C9D671B102BE6002021DE /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		949997031B09D3E500986337 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				941F221A1B0E0AE4001ED77D /* Login_BackgroundImage.png */,
+				941C9D671B102BE6002021DE /* login_bg.png */,
 				949997041B09D3E500986337 /* Info.plist */,
 				949997051B09D3E500986337 /* main.m */,
 			);
@@ -298,8 +298,8 @@
 			files = (
 				9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */,
 				941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */,
+				941C9D681B102BE6002021DE /* login_bg.png in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
-				941F221B1B0E0AE4001ED77D /* Login_BackgroundImage.png in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

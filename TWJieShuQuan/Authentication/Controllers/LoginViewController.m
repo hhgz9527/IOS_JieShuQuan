@@ -30,15 +30,15 @@
 - (void)setUpUICommponents {
     _emailTextField.borderStyle = UITextBorderStyleNone;
     _passwordTextField.borderStyle = UITextBorderStyleNone;
+    
+    [_emailTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [_emailTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
+    
+    [_passwordTextField setValue:[UIColor colorWithWhite:0.8 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [_passwordTextField setValue:[UIFont systemFontOfSize:15] forKeyPath:@"_placeholderLabel.font"];
+    
     _loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    
-    [_emailTextField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [_emailTextField setValue:[UIFont systemFontOfSize:20] forKeyPath:@"_placeholderLabel.font"];
-    
-    [_passwordTextField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [_passwordTextField setValue:[UIFont systemFontOfSize:20] forKeyPath:@"_placeholderLabel.font"];
-    
-    _loginButton.layer.borderWidth = 1.f;
+    _loginButton.layer.borderWidth = 0.5f;
     _loginButton.layer.cornerRadius = 8;
 }
 
@@ -93,6 +93,7 @@
 
 - (IBAction)registerButtonPressed:(id)sender {
     RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
+    registerVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:registerVC animated:YES completion:nil];
 }
 

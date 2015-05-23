@@ -19,7 +19,7 @@
     return sharedInstance;
 }
 
-- (void)signUpWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())signUpSucceededBlock failed:(void (^)())signUpFailedBlock {
+- (void)signUpWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())signUpSucceededBlock failed:(void (^)(NSString *errorMessage))signUpFailedBlock {
     AVUser *user = [AVUser user];
     user.email = email;
     user.password = password;
@@ -29,7 +29,8 @@
         if (succeeded) {
             signUpSucceededBlock();
         } else {
-            signUpFailedBlock();
+            NSString *errorMessage = [error.userInfo objectForKey:@"error"];
+            signUpFailedBlock(errorMessage);
         }
     }];
 }
