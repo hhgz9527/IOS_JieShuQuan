@@ -12,6 +12,7 @@
 #import "CustomAlert.h"
 #import "RegisterViewController.h"
 #import "RootViewController.h"
+#import "ResetPasswordViewController.h"
 
 @interface LoginViewController ()
 @property (nonatomic, strong) UITextField *activeTextField;
@@ -84,12 +85,9 @@
 }
 
 - (IBAction)forgetPasswordPressed:(id)sender {
-    [[AuthService sharedAuthManager] resetPasswordForEmail:[AVUser currentUser].email succeeded:^{
-        UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"重置密码的邮件已发送至%@，请登录邮箱进行重置", [AVUser currentUser].email] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-        [successAlert show];
-    } failed:^(NSString *errorMessage) {
-        [[CustomAlert sharedAlert] showAlertWithMessage:@"重置密码邮件发送失败"];
-    }];
+    ResetPasswordViewController *resetPasswordViewController = [[ResetPasswordViewController alloc] initWithNibName:@"ResetPasswordViewController" bundle:nil];
+    resetPasswordViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:resetPasswordViewController animated:YES completion:nil];
 }
 
 - (IBAction)registerButtonPressed:(id)sender {
