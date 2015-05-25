@@ -19,4 +19,6 @@
 
 - (void)logout;
 
+- (void)resetPasswordForEmail:(NSString *)email succeeded:(void (^)())resetSucceededBlock failed:(void (^)(NSString *errorMessage))resetFailedBlock;
+
 @end

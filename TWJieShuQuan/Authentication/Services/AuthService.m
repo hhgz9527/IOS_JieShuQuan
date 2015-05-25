@@ -54,6 +54,18 @@
     [AVUser logOut];
 }
 
+- (void)resetPasswordForEmail:(NSString *)email succeeded:(void (^)())resetSucceededBlock failed:(void (^)(NSString *errorMessage))resetFailedBlock {
+    AVUser *currentUser = [AVUser currentUser];
+    [AVUser requestPasswordResetForEmailInBackground:currentUser.email block:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            resetSucceededBlock();
+        } else {
+            NSString *errorMessage = [error.userInfo objectForKey:@"error"];
+            resetFailedBlock(errorMessage);
+        }
+    }];
+}
+
 // private methods
 
 - (NSString *)usernameFromEmail:(NSString *)email {
