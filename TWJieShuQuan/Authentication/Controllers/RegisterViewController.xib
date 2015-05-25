@@ -22,7 +22,7 @@
                 <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unp-E5-do4" userLabel="Background Scroll View">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="lWG-q4-fr0">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="lWG-q4-fr0">
                             <rect key="frame" x="0.0" y="0.0" width="1656" height="736"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="lWG-q4-fr0" secondAttribute="height" multiplier="5:2" id="sSO-Py-zRs"/>

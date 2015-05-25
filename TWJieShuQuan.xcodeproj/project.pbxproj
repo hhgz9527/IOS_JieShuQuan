@@ -13,6 +13,8 @@
 		941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D641B0F81ED002021DE /* RegisterViewController.xib */; };
 		941C9D681B102BE6002021DE /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D671B102BE6002021DE /* login_bg.png */; };
 		941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D6A1B1035CC002021DE /* CustomTextField.m */; };
+		941C9D911B13073D002021DE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D8F1B13073D002021DE /* RootViewController.m */; };
+		941C9D921B13073D002021DE /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D901B13073D002021DE /* RootViewController.xib */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
@@ -47,6 +49,9 @@
 		941C9D671B102BE6002021DE /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
 		941C9D691B1035CC002021DE /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTextField.h; path = ViewHelpers/CustomTextField.h; sourceTree = "<group>"; };
 		941C9D6A1B1035CC002021DE /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTextField.m; path = ViewHelpers/CustomTextField.m; sourceTree = "<group>"; };
+		941C9D8E1B13073D002021DE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		941C9D8F1B13073D002021DE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		941C9D901B13073D002021DE /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,6 +144,9 @@
 		949997021B09D3E500986337 /* TWJieShuQuan */ = {
 			isa = PBXGroup;
 			children = (
+				941C9D8E1B13073D002021DE /* RootViewController.h */,
+				941C9D8F1B13073D002021DE /* RootViewController.m */,
+				941C9D901B13073D002021DE /* RootViewController.xib */,
 				9499972C1B0AD08F00986337 /* Constants.h */,
 				9499972D1B0AD08F00986337 /* Constants.m */,
 				949997071B09D3E500986337 /* AppDelegate.h */,
@@ -303,6 +311,7 @@
 			files = (
 				9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */,
 				941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */,
+				941C9D921B13073D002021DE /* RootViewController.xib in Resources */,
 				941C9D681B102BE6002021DE /* login_bg.png in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
@@ -360,6 +369,7 @@
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
+				941C9D911B13073D002021DE /* RootViewController.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
 				941C9D601B0F7906002021DE /* CustomAlert.m in Sources */,
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "Constants.h"
 #import "LoginViewController.h"
+#import "RootViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,9 +25,14 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    self.window.rootViewController = loginViewController;
+    UIViewController *rootViewController;
+    if ([AVUser currentUser]) {
+        rootViewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    } else {
+        rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    }
     
+    self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
     
     return YES;
