@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
@@ -19,39 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unp-E5-do4" userLabel="Background Scroll View">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="lWG-q4-fr0">
-                            <rect key="frame" x="0.0" y="0.0" width="1656" height="736"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="lWG-q4-fr0" secondAttribute="height" multiplier="5:2" id="sSO-Py-zRs"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="sSO-Py-zRs"/>
-                                </mask>
-                            </variation>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="lWG-q4-fr0" firstAttribute="top" secondItem="unp-E5-do4" secondAttribute="top" id="ObE-D4-nnY"/>
-                        <constraint firstItem="lWG-q4-fr0" firstAttribute="leading" secondItem="unp-E5-do4" secondAttribute="leading" id="Vt6-wA-gmm"/>
-                        <constraint firstAttribute="height" secondItem="lWG-q4-fr0" secondAttribute="height" id="k0V-2E-QhI"/>
-                        <constraint firstAttribute="bottom" secondItem="lWG-q4-fr0" secondAttribute="bottom" id="xns-0B-EWv"/>
-                        <constraint firstAttribute="trailing" secondItem="lWG-q4-fr0" secondAttribute="trailing" id="yRK-7I-MPL"/>
-                        <constraint firstAttribute="width" secondItem="lWG-q4-fr0" secondAttribute="width" id="ykp-0s-iJi"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="ykp-0s-iJi"/>
-                        </mask>
-                    </variation>
-                </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPY-Z9-cMe" userLabel="Content View" customClass="UIControl">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="7o4-vG-dUk">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="**@thoughtworks.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ngz-KQ-rT0" userLabel="email" customClass="CustomTextField">
                             <rect key="frame" x="50" y="150" width="314" height="30"/>
                             <constraints>
@@ -163,10 +135,12 @@
                         <constraint firstItem="zT9-Sf-ufW" firstAttribute="width" secondItem="Ngz-KQ-rT0" secondAttribute="width" id="LYP-7c-Qaj"/>
                         <constraint firstItem="Ngz-KQ-rT0" firstAttribute="top" secondItem="KPY-Z9-cMe" secondAttribute="top" constant="150" id="Mte-aJ-AJl"/>
                         <constraint firstItem="kLl-im-SwK" firstAttribute="leading" secondItem="Ngz-KQ-rT0" secondAttribute="leading" id="OH0-kw-tbk"/>
+                        <constraint firstItem="7o4-vG-dUk" firstAttribute="top" secondItem="KPY-Z9-cMe" secondAttribute="top" id="OKF-AZ-wfe"/>
                         <constraint firstItem="zT9-Sf-ufW" firstAttribute="leading" secondItem="Ngz-KQ-rT0" secondAttribute="leading" id="OWH-jX-dGP"/>
                         <constraint firstItem="kLl-im-SwK" firstAttribute="width" secondItem="Ngz-KQ-rT0" secondAttribute="width" id="Ofx-ft-gen"/>
                         <constraint firstItem="Ngz-KQ-rT0" firstAttribute="leading" secondItem="niD-yk-jEV" secondAttribute="leading" id="RO5-f9-15e"/>
                         <constraint firstItem="kLl-im-SwK" firstAttribute="top" secondItem="gKd-hp-fEo" secondAttribute="bottom" constant="20" id="STF-gc-yfd"/>
+                        <constraint firstAttribute="bottom" secondItem="7o4-vG-dUk" secondAttribute="bottom" id="VOT-Vk-0dp"/>
                         <constraint firstItem="niD-yk-jEV" firstAttribute="top" secondItem="FX8-7e-TnW" secondAttribute="bottom" constant="20" id="XiO-sf-Xa0"/>
                         <constraint firstAttribute="trailing" secondItem="Ngz-KQ-rT0" secondAttribute="trailing" constant="50" id="YJi-8H-Pcr"/>
                         <constraint firstItem="lXf-3x-r7I" firstAttribute="leading" secondItem="Ngz-KQ-rT0" secondAttribute="leading" id="ZUF-zx-d81"/>
@@ -178,7 +152,9 @@
                         <constraint firstItem="zT9-Sf-ufW" firstAttribute="width" secondItem="niD-yk-jEV" secondAttribute="width" id="f3B-JY-mOD"/>
                         <constraint firstItem="FX8-7e-TnW" firstAttribute="top" secondItem="kLl-im-SwK" secondAttribute="bottom" constant="3" id="gVF-U9-OMG"/>
                         <constraint firstItem="FX8-7e-TnW" firstAttribute="leading" secondItem="kLl-im-SwK" secondAttribute="leading" id="oSO-MR-6r4"/>
+                        <constraint firstAttribute="trailing" secondItem="7o4-vG-dUk" secondAttribute="trailing" id="s6m-Tk-LiZ"/>
                         <constraint firstItem="zT9-Sf-ufW" firstAttribute="leading" secondItem="niD-yk-jEV" secondAttribute="leading" id="sdp-b8-ZIe"/>
+                        <constraint firstItem="7o4-vG-dUk" firstAttribute="leading" secondItem="KPY-Z9-cMe" secondAttribute="leading" id="v2P-tP-x4k"/>
                         <constraint firstAttribute="centerX" secondItem="Ngz-KQ-rT0" secondAttribute="centerX" id="zD5-qZ-Bgv"/>
                     </constraints>
                     <variation key="default">
@@ -195,12 +171,8 @@
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="unp-E5-do4" firstAttribute="leading" secondItem="yzz-6E-Bmo" secondAttribute="leading" id="2cW-sW-AlU"/>
                 <constraint firstAttribute="trailing" secondItem="KPY-Z9-cMe" secondAttribute="trailing" id="Hbs-tD-5rG"/>
                 <constraint firstAttribute="bottom" secondItem="KPY-Z9-cMe" secondAttribute="bottom" id="IpH-66-70v"/>
-                <constraint firstAttribute="bottom" secondItem="unp-E5-do4" secondAttribute="bottom" id="OX5-k8-yjA"/>
-                <constraint firstAttribute="trailing" secondItem="unp-E5-do4" secondAttribute="trailing" id="enD-i6-yj9"/>
-                <constraint firstItem="unp-E5-do4" firstAttribute="top" secondItem="yzz-6E-Bmo" secondAttribute="top" id="lod-a0-pfa"/>
                 <constraint firstItem="KPY-Z9-cMe" firstAttribute="leading" secondItem="yzz-6E-Bmo" secondAttribute="leading" id="twg-CT-Zqc"/>
                 <constraint firstItem="KPY-Z9-cMe" firstAttribute="top" secondItem="yzz-6E-Bmo" secondAttribute="top" id="v6i-4F-PrD"/>
             </constraints>
@@ -209,6 +181,6 @@
         </view>
     </objects>
     <resources>
-        <image name="login_bg.png" width="1656" height="696"/>
+        <image name="Login_background.png" width="750" height="1334"/>
     </resources>
 </document>
