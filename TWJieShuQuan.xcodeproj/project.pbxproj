@@ -38,6 +38,9 @@
 		94C0698A1B1418F40047BCCB /* libzbar-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069891B1418F40047BCCB /* libzbar-universal.a */; };
 		94C0698D1B1450290047BCCB /* DouBanService.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0698C1B1450290047BCCB /* DouBanService.m */; };
 		94C069901B145A960047BCCB /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0698F1B145A960047BCCB /* CustomActivityIndicator.m */; };
+		94C069981B146A570047BCCB /* AddToLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C069961B146A570047BCCB /* AddToLibraryViewController.m */; };
+		94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C069971B146A570047BCCB /* AddToLibraryViewController.xib */; };
+		94C0699D1B146AE30047BCCB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0699C1B146AE30047BCCB /* Book.m */; };
 		D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,11 @@
 		94C0698C1B1450290047BCCB /* DouBanService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DouBanService.m; path = Services/DouBanService.m; sourceTree = "<group>"; };
 		94C0698E1B145A960047BCCB /* CustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
 		94C0698F1B145A960047BCCB /* CustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
+		94C069951B146A570047BCCB /* AddToLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddToLibraryViewController.h; path = books/AddToLibraryViewController.h; sourceTree = "<group>"; };
+		94C069961B146A570047BCCB /* AddToLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddToLibraryViewController.m; path = books/AddToLibraryViewController.m; sourceTree = "<group>"; };
+		94C069971B146A570047BCCB /* AddToLibraryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToLibraryViewController.xib; path = books/AddToLibraryViewController.xib; sourceTree = "<group>"; };
+		94C0699B1B146AE30047BCCB /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		94C0699C1B146AE30047BCCB /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.debug.xcconfig"; sourceTree = "<group>"; };
 		FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +193,7 @@
 		949997021B09D3E500986337 /* TWJieShuQuan */ = {
 			isa = PBXGroup;
 			children = (
+				94C0699A1B146ACA0047BCCB /* Models */,
 				949997301B0AD23100986337 /* Services */,
 				94C069841B14174B0047BCCB /* Libaries */,
 				941C9D8E1B13073D002021DE /* RootViewController.h */,
@@ -274,6 +283,9 @@
 				94C0697D1B1411620047BCCB /* BorrowBookViewController.h */,
 				94C0697E1B1411620047BCCB /* BorrowBookViewController.m */,
 				94C0697F1B1411620047BCCB /* BorrowBookViewController.xib */,
+				94C069951B146A570047BCCB /* AddToLibraryViewController.h */,
+				94C069961B146A570047BCCB /* AddToLibraryViewController.m */,
+				94C069971B146A570047BCCB /* AddToLibraryViewController.xib */,
 			);
 			name = Books;
 			sourceTree = "<group>";
@@ -284,6 +296,15 @@
 				94C069851B14175A0047BCCB /* LibzBar */,
 			);
 			name = Libaries;
+			sourceTree = "<group>";
+		};
+		94C0699A1B146ACA0047BCCB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94C0699B1B146AE30047BCCB /* Book.h */,
+				94C0699C1B146AE30047BCCB /* Book.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		B34E66A74EAB42EE8F588C97 /* Frameworks */ = {
@@ -389,6 +410,7 @@
 				941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */,
 				941C9D921B13073D002021DE /* RootViewController.xib in Resources */,
 				94C069861B14175A0047BCCB /* LibzBar in Resources */,
+				94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
 				94C069831B1415200047BCCB /* test.png in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
@@ -453,7 +475,9 @@
 				941C9D911B13073D002021DE /* RootViewController.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
 				94C069901B145A960047BCCB /* CustomActivityIndicator.m in Sources */,
+				94C069981B146A570047BCCB /* AddToLibraryViewController.m in Sources */,
 				941C9D601B0F7906002021DE /* CustomAlert.m in Sources */,
+				94C0699D1B146AE30047BCCB /* Book.m in Sources */,
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
 				941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */,
 				941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */,

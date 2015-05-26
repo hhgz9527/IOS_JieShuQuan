@@ -10,6 +10,8 @@
 #import "CustomAlert.h"
 #import "DouBanService.h"
 #import "CustomActivityIndicator.h"
+#import "AddToLibraryViewController.h"
+#import "Book.h"
 
 @interface BorrowBookViewController ()
 
@@ -55,9 +57,15 @@
             [[CustomActivityIndicator sharedActivityIndicator] stopAsynchAnimating];
 
             NSLog(@"isbn succeed......%@", bookObject);
-            NSString *bookName = [bookObject valueForKey:@"title"];
-            UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:nil message:bookName delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-            [successAlert show];
+
+            Book *book = [[Book alloc] init];
+            book.bookName = [bookObject valueForKey:@"title"];
+            book.bookAuthor = [[bookObject valueForKey:@"author"] componentsJoinedByString:@","];
+            book.bookImageHref = [bookObject valueForKey:@"image"];
+            
+            AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
+            addToLibraryVC.book = book;
+            [self.navigationController pushViewController:addToLibraryVC animated:YES];
 
         } failed:^{
             [[CustomActivityIndicator sharedActivityIndicator] stopAsynchAnimating];
