@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "AuthService.h"
 #import "LoginViewController.h"
+#import "BorrowBookViewController.h"
 
 @interface RootViewController ()
 
@@ -18,12 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.title = @"首页";
 }
 
-- (IBAction)scanISBNButtonPressed:(id)sender {
-    
+- (IBAction)gotoBorrowBooksButtonPressed:(id)sender {
+    BorrowBookViewController *borrowBookVC = [[BorrowBookViewController alloc] initWithNibName:@"BorrowBookViewController" bundle:nil];
+    [self.navigationController pushViewController:borrowBookVC animated:YES];
 }
+
 - (IBAction)logoutPressed:(id)sender {
     [[AuthService sharedAuthManager] logout];
     

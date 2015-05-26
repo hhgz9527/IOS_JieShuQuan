@@ -25,14 +25,15 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-    UIViewController *rootViewController;
     if ([AVUser currentUser]) {
-        rootViewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+        RootViewController *rootVC = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+        UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+        self.window.rootViewController = rootViewController;
     } else {
-        rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        LoginViewController *rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        self.window.rootViewController = rootViewController;
     }
     
-    self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
     
     return YES;

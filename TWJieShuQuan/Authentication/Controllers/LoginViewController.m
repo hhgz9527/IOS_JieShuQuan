@@ -76,7 +76,9 @@
     [[AuthService sharedAuthManager] loginWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
         [[CustomAlert sharedAlert] showAlertWithMessage:@"登录成功"];
         
-        RootViewController *rootViewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+        RootViewController *rootVC = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+        UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+        
         rootViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:rootViewController animated:YES completion:nil];
     } failed:^(NSString *errorMessage) {

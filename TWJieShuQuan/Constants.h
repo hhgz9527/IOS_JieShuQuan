@@ -11,6 +11,9 @@
 #define LeanCloud_AppId @"gdakm21nfqik6swplef3anis5fu078gex0zb36uzoz0vippb"
 #define LeanCloud_AppKey @"5ptvr2vqoyzqxka9yjsahnq0mo28traj6w7d1v5t8pj5can6"
 
+#define kDouBanSearchIsbnCode @"https://api.douban.com/v2/book/isbn/"
+#define kDouBanAPIKey @"0071e999e5b2c9100155bccdb1185b30"
+
 @interface Constants : NSObject
 
 @end

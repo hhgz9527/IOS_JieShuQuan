@@ -17,11 +17,11 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w21-69-CpK">
                     <rect key="frame" x="294" y="188" width="34" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="扫码">
+                    <state key="normal" title="借书">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="scanISBNButtonPressed:" destination="-1" eventType="touchUpInside" id="TgK-gd-sn6"/>
+                        <action selector="gotoBorrowBooksButtonPressed:" destination="-1" eventType="touchUpInside" id="171-wf-Zb6"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJR-P4-czY">

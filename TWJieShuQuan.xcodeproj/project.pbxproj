@@ -26,6 +26,18 @@
 		949997391B0AD83700986337 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997371B0AD83700986337 /* LoginViewController.m */; };
 		9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949997381B0AD83700986337 /* LoginViewController.xib */; };
 		9499975C1B0B237F00986337 /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499975B1B0B237F00986337 /* AuthService.m */; };
+		94C069711B140FF70047BCCB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069701B140FF60047BCCB /* AVFoundation.framework */; };
+		94C069731B1410030047BCCB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069721B1410030047BCCB /* CoreMedia.framework */; };
+		94C069751B14100B0047BCCB /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069741B14100B0047BCCB /* CoreVideo.framework */; };
+		94C069771B1410140047BCCB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069761B1410140047BCCB /* QuartzCore.framework */; };
+		94C069791B14101C0047BCCB /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069781B14101C0047BCCB /* libiconv.dylib */; };
+		94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0697E1B1411620047BCCB /* BorrowBookViewController.m */; };
+		94C069811B1411620047BCCB /* BorrowBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C0697F1B1411620047BCCB /* BorrowBookViewController.xib */; };
+		94C069831B1415200047BCCB /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C069821B1415200047BCCB /* test.png */; };
+		94C069861B14175A0047BCCB /* LibzBar in Resources */ = {isa = PBXBuildFile; fileRef = 94C069851B14175A0047BCCB /* LibzBar */; };
+		94C0698A1B1418F40047BCCB /* libzbar-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069891B1418F40047BCCB /* libzbar-universal.a */; };
+		94C0698D1B1450290047BCCB /* DouBanService.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0698C1B1450290047BCCB /* DouBanService.m */; };
+		94C069901B145A960047BCCB /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0698F1B145A960047BCCB /* CustomActivityIndicator.m */; };
 		D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +86,22 @@
 		949997381B0AD83700986337 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Authentication/Controllers/LoginViewController.xib; sourceTree = "<group>"; };
 		9499975A1B0B237F00986337 /* AuthService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthService.h; path = Authentication/Services/AuthService.h; sourceTree = "<group>"; };
 		9499975B1B0B237F00986337 /* AuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthService.m; path = Authentication/Services/AuthService.m; sourceTree = "<group>"; };
+		94C069701B140FF60047BCCB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		94C069721B1410030047BCCB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		94C069741B14100B0047BCCB /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		94C069761B1410140047BCCB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		94C069781B14101C0047BCCB /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		94C0697A1B14105C0047BCCB /* libzbar-universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libzbar-universal.a"; path = "Libaries/libzbar-universal.a"; sourceTree = "<group>"; };
+		94C0697D1B1411620047BCCB /* BorrowBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowBookViewController.h; sourceTree = "<group>"; };
+		94C0697E1B1411620047BCCB /* BorrowBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowBookViewController.m; sourceTree = "<group>"; };
+		94C0697F1B1411620047BCCB /* BorrowBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BorrowBookViewController.xib; sourceTree = "<group>"; };
+		94C069821B1415200047BCCB /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+		94C069851B14175A0047BCCB /* LibzBar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LibzBar; sourceTree = "<group>"; };
+		94C069891B1418F40047BCCB /* libzbar-universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libzbar-universal.a"; path = "Libaries/LibzBar/libzbar-universal.a"; sourceTree = "<group>"; };
+		94C0698B1B1450290047BCCB /* DouBanService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DouBanService.h; path = Services/DouBanService.h; sourceTree = "<group>"; };
+		94C0698C1B1450290047BCCB /* DouBanService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DouBanService.m; path = Services/DouBanService.m; sourceTree = "<group>"; };
+		94C0698E1B145A960047BCCB /* CustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
+		94C0698F1B145A960047BCCB /* CustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
 		BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.debug.xcconfig"; sourceTree = "<group>"; };
 		FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +111,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94C0698A1B1418F40047BCCB /* libzbar-universal.a in Frameworks */,
+				94C069791B14101C0047BCCB /* libiconv.dylib in Frameworks */,
+				94C069771B1410140047BCCB /* QuartzCore.framework in Frameworks */,
+				94C069751B14100B0047BCCB /* CoreVideo.framework in Frameworks */,
+				94C069731B1410030047BCCB /* CoreMedia.framework in Frameworks */,
+				94C069711B140FF70047BCCB /* AVFoundation.framework in Frameworks */,
 				D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +156,8 @@
 				941C9D5F1B0F7906002021DE /* CustomAlert.m */,
 				941C9D691B1035CC002021DE /* CustomTextField.h */,
 				941C9D6A1B1035CC002021DE /* CustomTextField.m */,
+				94C0698E1B145A960047BCCB /* CustomActivityIndicator.h */,
+				94C0698F1B145A960047BCCB /* CustomActivityIndicator.m */,
 			);
 			name = "View Helpers";
 			sourceTree = "<group>";
@@ -149,6 +185,8 @@
 		949997021B09D3E500986337 /* TWJieShuQuan */ = {
 			isa = PBXGroup;
 			children = (
+				949997301B0AD23100986337 /* Services */,
+				94C069841B14174B0047BCCB /* Libaries */,
 				941C9D8E1B13073D002021DE /* RootViewController.h */,
 				941C9D8F1B13073D002021DE /* RootViewController.m */,
 				941C9D901B13073D002021DE /* RootViewController.xib */,
@@ -156,6 +194,7 @@
 				9499972D1B0AD08F00986337 /* Constants.m */,
 				949997071B09D3E500986337 /* AppDelegate.h */,
 				949997081B09D3E500986337 /* AppDelegate.m */,
+				94C0697C1B14106A0047BCCB /* Books */,
 				941C9D591B0F7837002021DE /* Extensions */,
 				941C9D5D1B0F78F7002021DE /* View Helpers */,
 				9499972F1B0AD1FA00986337 /* Authentication */,
@@ -169,6 +208,7 @@
 		949997031B09D3E500986337 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94C069821B1415200047BCCB /* test.png */,
 				7341C1951B1371A500E199DF /* Login_background.png */,
 				949997041B09D3E500986337 /* Info.plist */,
 				949997051B09D3E500986337 /* main.m */,
@@ -197,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				949997311B0AD23E00986337 /* Controllers */,
-				949997301B0AD23100986337 /* Services */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -207,6 +246,8 @@
 			children = (
 				9499975A1B0B237F00986337 /* AuthService.h */,
 				9499975B1B0B237F00986337 /* AuthService.m */,
+				94C0698B1B1450290047BCCB /* DouBanService.h */,
+				94C0698C1B1450290047BCCB /* DouBanService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -227,9 +268,34 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		94C0697C1B14106A0047BCCB /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				94C0697D1B1411620047BCCB /* BorrowBookViewController.h */,
+				94C0697E1B1411620047BCCB /* BorrowBookViewController.m */,
+				94C0697F1B1411620047BCCB /* BorrowBookViewController.xib */,
+			);
+			name = Books;
+			sourceTree = "<group>";
+		};
+		94C069841B14174B0047BCCB /* Libaries */ = {
+			isa = PBXGroup;
+			children = (
+				94C069851B14175A0047BCCB /* LibzBar */,
+			);
+			name = Libaries;
+			sourceTree = "<group>";
+		};
 		B34E66A74EAB42EE8F588C97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94C069891B1418F40047BCCB /* libzbar-universal.a */,
+				94C0697A1B14105C0047BCCB /* libzbar-universal.a */,
+				94C069781B14101C0047BCCB /* libiconv.dylib */,
+				94C069761B1410140047BCCB /* QuartzCore.framework */,
+				94C069741B14100B0047BCCB /* CoreVideo.framework */,
+				94C069721B1410030047BCCB /* CoreMedia.framework */,
+				94C069701B140FF60047BCCB /* AVFoundation.framework */,
 				40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */,
 			);
 			name = Frameworks;
@@ -319,9 +385,12 @@
 			files = (
 				9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */,
 				941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */,
+				94C069811B1411620047BCCB /* BorrowBookViewController.xib in Resources */,
 				941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */,
 				941C9D921B13073D002021DE /* RootViewController.xib in Resources */,
+				94C069861B14175A0047BCCB /* LibzBar in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
+				94C069831B1415200047BCCB /* test.png in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
 				7341C1961B1371A500E199DF /* Login_background.png in Resources */,
 			);
@@ -375,12 +444,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				941C9D961B130C4C002021DE /* ResetPasswordViewController.m in Sources */,
+				94C0698D1B1450290047BCCB /* DouBanService.m in Sources */,
 				9499975C1B0B237F00986337 /* AuthService.m in Sources */,
+				94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
 				941C9D911B13073D002021DE /* RootViewController.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
+				94C069901B145A960047BCCB /* CustomActivityIndicator.m in Sources */,
 				941C9D601B0F7906002021DE /* CustomAlert.m in Sources */,
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
 				941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */,
@@ -507,6 +579,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libaries",
+					"$(PROJECT_DIR)/TWJieShuQuan",
+					"$(PROJECT_DIR)/Libaries/LibzBar",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -518,6 +596,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libaries",
+					"$(PROJECT_DIR)/TWJieShuQuan",
+					"$(PROJECT_DIR)/Libaries/LibzBar",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
