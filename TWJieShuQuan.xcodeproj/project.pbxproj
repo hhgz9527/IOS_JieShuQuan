@@ -41,6 +41,8 @@
 		94C069981B146A570047BCCB /* AddToLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C069961B146A570047BCCB /* AddToLibraryViewController.m */; };
 		94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C069971B146A570047BCCB /* AddToLibraryViewController.xib */; };
 		94C0699D1B146AE30047BCCB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0699C1B146AE30047BCCB /* Book.m */; };
+		94C069A51B1567500047BCCB /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C069A41B1567500047BCCB /* UserManager.m */; };
+		94C069A81B1568100047BCCB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C069A71B1568100047BCCB /* User.m */; };
 		D7428E75F23E9FBCF5D85B55 /* libPods-TWJieShuQuan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,10 @@
 		94C069971B146A570047BCCB /* AddToLibraryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddToLibraryViewController.xib; path = books/AddToLibraryViewController.xib; sourceTree = "<group>"; };
 		94C0699B1B146AE30047BCCB /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		94C0699C1B146AE30047BCCB /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		94C069A31B1567500047BCCB /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		94C069A41B1567500047BCCB /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		94C069A61B1568100047BCCB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		94C069A71B1568100047BCCB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.debug.xcconfig"; sourceTree = "<group>"; };
 		FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWJieShuQuan.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWJieShuQuan/Pods-TWJieShuQuan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				949997021B09D3E500986337 /* TWJieShuQuan */,
+				94C069841B14174B0047BCCB /* Libaries */,
 				9499971C1B09D3E500986337 /* TWJieShuQuanTests */,
 				949997011B09D3E500986337 /* Products */,
 				793420AFE2155E5D258B1636 /* Pods */,
@@ -193,9 +200,6 @@
 		949997021B09D3E500986337 /* TWJieShuQuan */ = {
 			isa = PBXGroup;
 			children = (
-				94C0699A1B146ACA0047BCCB /* Models */,
-				949997301B0AD23100986337 /* Services */,
-				94C069841B14174B0047BCCB /* Libaries */,
 				941C9D8E1B13073D002021DE /* RootViewController.h */,
 				941C9D8F1B13073D002021DE /* RootViewController.m */,
 				941C9D901B13073D002021DE /* RootViewController.xib */,
@@ -203,6 +207,9 @@
 				9499972D1B0AD08F00986337 /* Constants.m */,
 				949997071B09D3E500986337 /* AppDelegate.h */,
 				949997081B09D3E500986337 /* AppDelegate.m */,
+				94C069A21B15673C0047BCCB /* Managers */,
+				94C0699A1B146ACA0047BCCB /* Models */,
+				949997301B0AD23100986337 /* Services */,
 				94C0697C1B14106A0047BCCB /* Books */,
 				941C9D591B0F7837002021DE /* Extensions */,
 				941C9D5D1B0F78F7002021DE /* View Helpers */,
@@ -296,6 +303,7 @@
 				94C069851B14175A0047BCCB /* LibzBar */,
 			);
 			name = Libaries;
+			path = TWJieShuQuan;
 			sourceTree = "<group>";
 		};
 		94C0699A1B146ACA0047BCCB /* Models */ = {
@@ -303,8 +311,19 @@
 			children = (
 				94C0699B1B146AE30047BCCB /* Book.h */,
 				94C0699C1B146AE30047BCCB /* Book.m */,
+				94C069A61B1568100047BCCB /* User.h */,
+				94C069A71B1568100047BCCB /* User.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		94C069A21B15673C0047BCCB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				94C069A31B1567500047BCCB /* UserManager.h */,
+				94C069A41B1567500047BCCB /* UserManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		B34E66A74EAB42EE8F588C97 /* Frameworks */ = {
@@ -465,7 +484,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94C069A51B1567500047BCCB /* UserManager.m in Sources */,
 				941C9D961B130C4C002021DE /* ResetPasswordViewController.m in Sources */,
+				94C069A81B1568100047BCCB /* User.m in Sources */,
 				94C0698D1B1450290047BCCB /* DouBanService.m in Sources */,
 				9499975C1B0B237F00986337 /* AuthService.m in Sources */,
 				94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */,

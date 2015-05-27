@@ -10,7 +10,6 @@
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *backgroundScrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;

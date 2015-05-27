@@ -10,6 +10,7 @@
 #import "AuthService.h"
 #import "LoginViewController.h"
 #import "BorrowBookViewController.h"
+#import "UserManager.h"
 
 @interface RootViewController ()
 
@@ -30,6 +31,9 @@
 
 - (IBAction)logoutPressed:(id)sender {
     [[AuthService sharedAuthManager] logout];
+    
+    // remove login user from userdefaults
+    [UserManager removeCurrentUser];
     
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

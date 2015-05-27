@@ -13,6 +13,7 @@
 #import "RegisterViewController.h"
 #import "RootViewController.h"
 #import "ResetPasswordViewController.h"
+#import "UserManager.h"
 
 @interface LoginViewController ()
 @property (nonatomic, strong) UITextField *activeTextField;
@@ -75,6 +76,9 @@
     
     [[AuthService sharedAuthManager] loginWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
         [[CustomAlert sharedAlert] showAlertWithMessage:@"登录成功"];
+        
+        // save login user to UserDefaults
+        [UserManager saveCurrentUser];
         
         RootViewController *rootVC = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
         UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];

@@ -26,7 +26,7 @@
     self.navigationItem.title = @"添加入库";
     self.navigationController.navigationBar.translucent = NO;
     
-    [self.bookImageView sd_setImageWithURL:self.book.bookImageHref];
+    [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.book.bookImageHref]];
     self.bookNameLabel.text = self.book.bookName;
     self.bookAuthorLabel.text = self.book.bookAuthor;
 }

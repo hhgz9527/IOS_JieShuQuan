@@ -10,6 +10,7 @@
 
 @interface Book : NSObject
 
+@property (nonatomic, copy) NSString *bookDoubanId;
 @property (nonatomic, copy) NSString *bookName;
 @property (nonatomic, copy) NSString *bookAuthor;
 @property (nonatomic, copy) NSString *bookImageHref;

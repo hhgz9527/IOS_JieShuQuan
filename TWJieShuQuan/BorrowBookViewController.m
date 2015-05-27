@@ -39,6 +39,7 @@
 //    [self presentViewController:reader animated:YES completion:nil];
     
     Book *book = [[Book alloc] init];
+    book.bookDoubanId = @"111";
     book.bookName = @"一起来吃早午餐";
     book.bookAuthor = @"Pan小月";
     book.bookImageHref = @"http://img3.douban.com/lpic/s28055301.jpg";
@@ -68,6 +69,7 @@
             NSLog(@"isbn succeed......%@", bookObject);
 
             Book *book = [[Book alloc] init];
+            book.bookDoubanId = [bookObject valueForKey:@"id"];
             book.bookName = [bookObject valueForKey:@"title"];
             book.bookAuthor = [[bookObject valueForKey:@"author"] componentsJoinedByString:@","];
             book.bookImageHref = [bookObject valueForKey:@"image"];
