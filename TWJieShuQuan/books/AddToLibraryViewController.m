@@ -8,6 +8,7 @@
 
 #import "AddToLibraryViewController.h"
 #import "Book.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface AddToLibraryViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
@@ -23,7 +24,9 @@
     [super viewDidLoad];
 
     self.navigationItem.title = @"添加入库";
+    self.navigationController.navigationBar.translucent = NO;
     
+    [self.bookImageView sd_setImageWithURL:self.book.bookImageHref];
     self.bookNameLabel.text = self.book.bookName;
     self.bookAuthorLabel.text = self.book.bookAuthor;
 }
