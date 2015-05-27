@@ -5,6 +5,7 @@ target 'TWJieShuQuan' do
    pod 'AVOSCloud'
    pod 'AVOSCloudCrashReporting'
    pod 'AVOSCloudSNS'
+   pod 'SDWebImage'
 end
 
 target 'TWJieShuQuanTests' do
