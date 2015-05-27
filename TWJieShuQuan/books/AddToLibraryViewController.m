@@ -10,7 +10,10 @@
 #import "Book.h"
 
 @interface AddToLibraryViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
 @property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bookAuthorLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addToLibraryButton;
 
 @end
 
@@ -22,7 +25,11 @@
     self.navigationItem.title = @"添加入库";
     
     self.bookNameLabel.text = self.book.bookName;
+    self.bookAuthorLabel.text = self.book.bookAuthor;
 }
 
+- (IBAction)addToLibraryButtonPressed:(id)sender {
+    NSLog(@"adding to library.....");
+}
 
 @end

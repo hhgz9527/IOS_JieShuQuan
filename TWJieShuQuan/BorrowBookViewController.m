@@ -29,14 +29,23 @@
 }
 
 - (void)scanISBN {
-    ZBarReaderViewController *reader = [ZBarReaderViewController new];
-    reader.readerDelegate = self;
-    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+//    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+//    reader.readerDelegate = self;
+//    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+//    
+//    ZBarImageScanner *scanner = reader.scanner;
+//    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+//    
+//    [self presentViewController:reader animated:YES completion:nil];
     
-    ZBarImageScanner *scanner = reader.scanner;
-    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+    Book *book = [[Book alloc] init];
+    book.bookName = @"一起来吃早午餐";
+    book.bookAuthor = @"Pan小月";
+    book.bookImageHref = @"http://img3.douban.com/lpic/s28055301.jpg";
     
-    [self presentViewController:reader animated:YES completion:nil];
+    AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
+    addToLibraryVC.book = book;
+    [self.navigationController pushViewController:addToLibraryVC animated:YES];
 }
 
 - (void) imagePickerController: (UIImagePickerController*) reader didFinishPickingMediaWithInfo: (NSDictionary*) info

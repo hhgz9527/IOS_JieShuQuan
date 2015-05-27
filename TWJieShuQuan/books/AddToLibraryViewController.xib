@@ -2,10 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddToLibraryViewController">
             <connections>
+                <outlet property="addToLibraryButton" destination="dzC-na-9IB" id="D8A-Id-2Ns"/>
+                <outlet property="bookAuthorLabel" destination="XNP-PP-Owc" id="PVu-5p-Z4X"/>
+                <outlet property="bookImageView" destination="zaY-VI-cXG" id="efJ-Sk-zgh"/>
                 <outlet property="bookNameLabel" destination="MbO-Vu-8vS" id="u1k-NI-DFT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,18 +19,79 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zaY-VI-cXG">
+                    <rect key="frame" x="168" y="39" width="256" height="293"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="293" id="Gmm-Nf-3jS"/>
+                        <constraint firstAttribute="width" secondItem="zaY-VI-cXG" secondAttribute="height" multiplier="256:293" constant="312" id="s0V-3X-Amh"/>
+                        <constraint firstAttribute="width" constant="256" id="xAs-ke-CXC"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="s0V-3X-Amh"/>
+                        </mask>
+                    </variation>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbO-Vu-8vS">
-                    <rect key="frame" x="257" y="247" width="86" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="247" y="375" width="99" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="MbO-Vu-8vS" secondAttribute="height" multiplier="86:21" constant="312" id="72o-eX-7VZ"/>
+                        <constraint firstAttribute="width" constant="86" id="Gvt-Xe-X5c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="72o-eX-7VZ"/>
+                            <exclude reference="Gvt-Xe-X5c"/>
+                        </mask>
+                    </variation>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="book author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNP-PP-Owc">
+                    <rect key="frame" x="250" y="404" width="93" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-na-9IB">
+                    <rect key="frame" x="0.0" y="545" width="600" height="55"/>
+                    <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="ydA-2E-Qgp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="添加到书库">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addToLibraryButtonPressed:" destination="-1" eventType="touchUpInside" id="xqp-oO-BFW"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerX" secondItem="zaY-VI-cXG" secondAttribute="centerX" constant="4" id="4Xt-p1-JYB"/>
+                <constraint firstAttribute="trailing" secondItem="dzC-na-9IB" secondAttribute="trailing" id="7U2-B9-STz"/>
+                <constraint firstItem="zaY-VI-cXG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="39" id="7yQ-Mk-jzT"/>
+                <constraint firstItem="MbO-Vu-8vS" firstAttribute="leading" secondItem="zaY-VI-cXG" secondAttribute="trailing" constant="-171" id="JOG-YO-Rkc"/>
+                <constraint firstAttribute="bottom" secondItem="dzC-na-9IB" secondAttribute="bottom" id="LYo-NZ-Cw1"/>
+                <constraint firstItem="dzC-na-9IB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MXR-tg-ZcI"/>
+                <constraint firstItem="MbO-Vu-8vS" firstAttribute="top" secondItem="zaY-VI-cXG" secondAttribute="top" constant="336" id="S5K-ha-jwY"/>
+                <constraint firstItem="MbO-Vu-8vS" firstAttribute="top" secondItem="XNP-PP-Owc" secondAttribute="top" constant="-29" id="cNZ-BE-TXZ"/>
                 <constraint firstAttribute="centerX" secondItem="MbO-Vu-8vS" secondAttribute="centerX" id="csq-OL-qWC"/>
+                <constraint firstAttribute="centerX" secondItem="MbO-Vu-8vS" secondAttribute="centerX" constant="4" id="eEz-zl-awC"/>
+                <constraint firstAttribute="centerX" secondItem="XNP-PP-Owc" secondAttribute="centerX" constant="3.5" id="tHW-O9-H5U"/>
                 <constraint firstAttribute="centerY" secondItem="MbO-Vu-8vS" secondAttribute="centerY" constant="42.5" id="uM6-Us-2ev"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="JOG-YO-Rkc"/>
+                    <exclude reference="csq-OL-qWC"/>
+                    <exclude reference="uM6-Us-2ev"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
