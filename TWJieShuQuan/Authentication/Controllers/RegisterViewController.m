@@ -89,7 +89,7 @@
         return;
     }
 
-    [[AuthService sharedAuthManager] signUpWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
+    [AuthService signUpWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
         UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:nil message:@"注册成功，请登录邮箱进行验证，并重新登录" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         [successAlert show];
     } failed:^(NSString *errorMessage) {
@@ -103,7 +103,7 @@
 
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [[AuthService sharedAuthManager] logout];
+    [AuthService logout];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

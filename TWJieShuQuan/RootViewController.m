@@ -30,7 +30,7 @@
 }
 
 - (IBAction)logoutPressed:(id)sender {
-    [[AuthService sharedAuthManager] logout];
+    [AuthService logout];
     
     // remove login user from userdefaults
     [UserManager removeCurrentUser];

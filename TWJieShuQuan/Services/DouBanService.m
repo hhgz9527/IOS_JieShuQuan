@@ -11,16 +11,7 @@
 
 @implementation DouBanService
 
-+ (instancetype)sharedDouBanService {
-    static dispatch_once_t once;
-    static id sharedInstance;
-    dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
-    });
-    return sharedInstance;
-}
-
-- (void)fetchingBookDetailWithISBN:(NSString *)isbnCode succeeded:(void (^)(NSDictionary *bookObject))fetchSucceededBlock failed:(void (^)())fetchFailedBlock {
++ (void)fetchingBookDetailWithISBN:(NSString *)isbnCode succeeded:(void (^)(NSDictionary *bookObject))fetchSucceededBlock failed:(void (^)())fetchFailedBlock {
     NSString *isbnUrlString = [NSString stringWithFormat:@"%@?apikey=%@", [kDouBanSearchIsbnCode stringByAppendingString:isbnCode], kDouBanAPIKey];
     NSString* encodedUrl = [isbnUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 

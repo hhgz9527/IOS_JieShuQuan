@@ -74,7 +74,7 @@
         return;
     }
     
-    [[AuthService sharedAuthManager] loginWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
+    [AuthService loginWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
         [[CustomAlert sharedAlert] showAlertWithMessage:@"登录成功"];
         
         // save login user to UserDefaults

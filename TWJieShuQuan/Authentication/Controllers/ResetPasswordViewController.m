@@ -42,7 +42,7 @@
     
     [self.resetEmailTextField resignFirstResponder];
     
-    [[AuthService sharedAuthManager] resetPasswordForEmail:self.resetEmailTextField.text succeeded:^{
+    [AuthService resetPasswordForEmail:self.resetEmailTextField.text succeeded:^{
         UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"重置密码的邮件已发送至%@，请登录邮箱进行重置", self.resetEmailTextField.text] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         [successAlert show];
     } failed:^(NSString *errorMessage) {

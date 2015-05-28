@@ -10,16 +10,7 @@
 
 @implementation AuthService
 
-+ (instancetype)sharedAuthManager {
-    static dispatch_once_t once;
-    static id sharedInstance;
-    dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
-    });
-    return sharedInstance;
-}
-
-- (void)signUpWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())signUpSucceededBlock failed:(void (^)(NSString *errorMessage))signUpFailedBlock {
++ (void)signUpWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())signUpSucceededBlock failed:(void (^)(NSString *errorMessage))signUpFailedBlock {
     AVUser *user = [AVUser user];
     user.email = email;
     user.password = password;
@@ -35,7 +26,7 @@
     }];
 }
 
-- (void)loginWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())loginSucceededBlock failed:(void (^)(NSString *errorMessage))loginFailedBlock {
++ (void)loginWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())loginSucceededBlock failed:(void (^)(NSString *errorMessage))loginFailedBlock {
     if ([AVUser currentUser] == nil) {
         [AVUser logInWithUsernameInBackground:[self usernameFromEmail:email] password:password block:^(AVUser *user, NSError *error) {
             if (user != nil) {
@@ -50,11 +41,11 @@
     }
 }
 
-- (void)logout {
++ (void)logout {
     [AVUser logOut];
 }
 
-- (void)resetPasswordForEmail:(NSString *)email succeeded:(void (^)())resetSucceededBlock failed:(void (^)(NSString *errorMessage))resetFailedBlock {
++ (void)resetPasswordForEmail:(NSString *)email succeeded:(void (^)())resetSucceededBlock failed:(void (^)(NSString *errorMessage))resetFailedBlock {
     [AVUser requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             resetSucceededBlock();
@@ -67,7 +58,7 @@
 
 // private methods
 
-- (NSString *)usernameFromEmail:(NSString *)email {
++ (NSString *)usernameFromEmail:(NSString *)email {
     return [email componentsSeparatedByString:@"@"][0];
 }
 

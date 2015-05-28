@@ -10,8 +10,6 @@
 
 @interface DouBanService : NSObject
 
-+ (instancetype)sharedDouBanService;
-
-- (void)fetchingBookDetailWithISBN:(NSString *)isbnCode succeeded:(void (^)(NSDictionary *bookObject))fetchSucceededBlock failed:(void (^)())fetchFailedBlock;
++ (void)fetchingBookDetailWithISBN:(NSString *)isbnCode succeeded:(void (^)(NSDictionary *bookObject))fetchSucceededBlock failed:(void (^)())fetchFailedBlock;
 
 @end

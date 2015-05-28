@@ -63,7 +63,7 @@
     
     if (barCode) {
         [[CustomActivityIndicator sharedActivityIndicator] startAsynchAnimating];
-        [[DouBanService sharedDouBanService] fetchingBookDetailWithISBN:barCode succeeded:^(NSDictionary *bookObject){
+        [DouBanService fetchingBookDetailWithISBN:barCode succeeded:^(NSDictionary *bookObject){
             [[CustomActivityIndicator sharedActivityIndicator] stopAsynchAnimating];
 
             NSLog(@"isbn succeed......%@", bookObject);
