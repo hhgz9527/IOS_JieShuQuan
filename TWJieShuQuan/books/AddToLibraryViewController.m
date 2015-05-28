@@ -31,6 +31,12 @@
     [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.book.bookImageHref]];
     self.bookNameLabel.text = self.book.bookName;
     self.bookAuthorLabel.text = self.book.bookAuthor;
+    [self setBookImageShadow];
+}
+
+- (void)setBookImageShadow {
+    _bookImageView.layer.shadowOpacity = 2;
+    _bookImageView.layer.shadowOffset = CGSizeMake(2, 2);
 }
 
 - (IBAction)addToLibraryButtonPressed:(id)sender {
