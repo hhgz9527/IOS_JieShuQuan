@@ -9,6 +9,7 @@
 #import "AddToLibraryViewController.h"
 #import "Book.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "BookService.h"
 
 @interface AddToLibraryViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
@@ -33,6 +34,12 @@
 
 - (IBAction)addToLibraryButtonPressed:(id)sender {
     NSLog(@"adding to library.....");
+    
+    [BookService saveBookIfNeeded:self.book succeeded:^{
+        NSLog(@"======success");
+    } failed:^{
+        NSLog(@"------fail");
+    }];
 }
 
 - (IBAction)cancelButtonClicked:(id)sender {

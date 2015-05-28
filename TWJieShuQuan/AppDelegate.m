@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "LoginViewController.h"
 #import "RootViewController.h"
+#import "Book.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // setup LeanCloud
+    [Book registerSubclass];
+    
     [AVOSCloud setApplicationId:LeanCloud_AppId clientKey:LeanCloud_AppKey];
+
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 

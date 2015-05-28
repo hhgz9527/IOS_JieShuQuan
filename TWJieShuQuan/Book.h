@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVOSCloud/AVOSCloud.h>
+#import <AVObject+Subclass.h>
 
-@interface Book : NSObject
+@interface Book : AVObject <AVSubclassing>
 
-@property (nonatomic, copy) NSString *bookDoubanId;
+@property (nonatomic, copy) NSNumber *bookDoubanId;
 @property (nonatomic, copy) NSString *bookName;
 @property (nonatomic, copy) NSString *bookAuthor;
 @property (nonatomic, copy) NSString *bookImageHref;

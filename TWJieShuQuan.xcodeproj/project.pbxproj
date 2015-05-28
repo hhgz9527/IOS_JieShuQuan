@@ -17,6 +17,7 @@
 		941C9D921B13073D002021DE /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D901B13073D002021DE /* RootViewController.xib */; };
 		941C9D961B130C4C002021DE /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D941B130C4C002021DE /* ResetPasswordViewController.m */; };
 		941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */; };
+		942BBCBA1B17031000F490CF /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCB91B17031000F490CF /* BookService.m */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
@@ -77,6 +78,8 @@
 		941C9D931B130C4C002021DE /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetPasswordViewController.h; path = Authentication/Controllers/ResetPasswordViewController.h; sourceTree = "<group>"; };
 		941C9D941B130C4C002021DE /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetPasswordViewController.m; path = Authentication/Controllers/ResetPasswordViewController.m; sourceTree = "<group>"; };
 		941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResetPasswordViewController.xib; path = Authentication/Controllers/ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		942BBCB81B17031000F490CF /* BookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookService.h; sourceTree = "<group>"; };
+		942BBCB91B17031000F490CF /* BookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookService.m; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				9499975B1B0B237F00986337 /* AuthService.m */,
 				94C0698B1B1450290047BCCB /* DouBanService.h */,
 				94C0698C1B1450290047BCCB /* DouBanService.m */,
+				942BBCB81B17031000F490CF /* BookService.h */,
+				942BBCB91B17031000F490CF /* BookService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				941C9D601B0F7906002021DE /* CustomAlert.m in Sources */,
 				94C0699D1B146AE30047BCCB /* Book.m in Sources */,
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
+				942BBCBA1B17031000F490CF /* BookService.m in Sources */,
 				941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */,
 				941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */,
 			);

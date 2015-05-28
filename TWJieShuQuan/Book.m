@@ -10,4 +10,13 @@
 
 @implementation Book
 
+@dynamic bookDoubanId;
+@dynamic bookName;
+@dynamic bookAuthor;
+@dynamic bookImageHref;
+
++ (NSString *)parseClassName {
+    return @"Book";
+}
+
 @end
