@@ -26,9 +26,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
     if ([AVUser currentUser]) {
-        RootViewController *rootVC = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
-        UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];
-        self.window.rootViewController = rootViewController;
+//        RootViewController *rootVC = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+//        UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+//        self.window.rootViewController = rootViewController;
+        UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"main" bundle:nil];
+        self.window.rootViewController = mainSB.instantiateInitialViewController;
     } else {
         LoginViewController *rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         self.window.rootViewController = rootViewController;
