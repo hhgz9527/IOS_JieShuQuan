@@ -80,8 +80,8 @@
         // save login user to UserDefaults
         [UserManager saveCurrentUser];
         
-        RootViewController *rootVC = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
-        UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+        UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"main" bundle:nil];
+        UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:mainSB.instantiateInitialViewController];
         
         rootViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:rootViewController animated:YES completion:nil];
