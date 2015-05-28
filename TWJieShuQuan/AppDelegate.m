@@ -27,8 +27,10 @@
     
     [AVOSCloud setApplicationId:LeanCloud_AppId clientKey:LeanCloud_AppKey];
 
-    
-    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_background"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
     if ([AVUser currentUser]) {
@@ -41,7 +43,6 @@
         LoginViewController *rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         self.window.rootViewController = rootViewController;
     }
-    
     [self.window makeKeyAndVisible];
     
     return YES;

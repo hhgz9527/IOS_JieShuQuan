@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7341C1961B1371A500E199DF /* Login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7341C1951B1371A500E199DF /* Login_background.png */; };
+		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
+		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
 		941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5B1B0F7864002021DE /* NSString+Extensions.m */; };
 		941C9D601B0F7906002021DE /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5F1B0F7906002021DE /* CustomAlert.m */; };
 		941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D631B0F81ED002021DE /* RegisterViewController.m */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWJieShuQuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7341C1951B1371A500E199DF /* Login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_background.png; sourceTree = "<group>"; };
+		7361D0771B1774F8000AF2EC /* nav_scanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_scanIcon.png; sourceTree = "<group>"; };
+		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
 		941C9D5A1B0F7864002021DE /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extensions.h"; path = "Extensions/NSString+Extensions.h"; sourceTree = "<group>"; };
 		941C9D5B1B0F7864002021DE /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extensions.m"; path = "Extensions/NSString+Extensions.m"; sourceTree = "<group>"; };
 		941C9D5E1B0F7906002021DE /* CustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlert.h; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 		949997031B09D3E500986337 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7361D0791B17763E000AF2EC /* nav_background.png */,
+				7361D0771B1774F8000AF2EC /* nav_scanIcon.png */,
 				94C069821B1415200047BCCB /* test.png */,
 				7341C1951B1371A500E199DF /* Login_background.png */,
 				949997041B09D3E500986337 /* Info.plist */,
@@ -450,12 +456,14 @@
 				9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */,
 				941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */,
 				94C069811B1411620047BCCB /* BorrowBookViewController.xib in Resources */,
+				7361D07A1B17763E000AF2EC /* nav_background.png in Resources */,
 				941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */,
 				941C9D921B13073D002021DE /* RootViewController.xib in Resources */,
 				94C069861B14175A0047BCCB /* LibzBar in Resources */,
 				94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */,
 				A3C1E2EC1B16AF1100037DB5 /* main.storyboard in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
+				7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */,
 				94C069831B1415200047BCCB /* test.png in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
 				7341C1961B1371A500E199DF /* Login_background.png in Resources */,

@@ -23,8 +23,12 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"借书";
-    
-    UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"test"] style:UIBarButtonItemStylePlain target:self action:@selector(scanISBN)];
+
+    UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    scanButton.frame = CGRectMake(0, 0, 24, 24);
+    [scanButton setBackgroundImage:[UIImage imageNamed:@"nav_scanIcon"] forState:UIControlStateNormal];
+    [scanButton addTarget:self action:@selector(scanISBN) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.navigationItem.rightBarButtonItem = scanISBNButton;
 }
 
