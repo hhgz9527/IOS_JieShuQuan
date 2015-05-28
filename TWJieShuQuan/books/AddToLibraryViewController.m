@@ -10,6 +10,7 @@
 #import "Book.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BookService.h"
+#import "CustomAlert.h"
 
 @interface AddToLibraryViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
@@ -33,12 +34,9 @@
 }
 
 - (IBAction)addToLibraryButtonPressed:(id)sender {
-    NSLog(@"adding to library.....");
-    
     [BookService saveBookIfNeeded:self.book succeeded:^{
-        NSLog(@"======success");
-    } failed:^{
-        NSLog(@"------fail");
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"已成功添加进您的书库！"];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 

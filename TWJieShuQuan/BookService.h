@@ -12,6 +12,6 @@
 
 @interface BookService : NSObject
 
-+ (void)saveBookIfNeeded:(Book *)book succeeded:(void (^)())succeededBlock failed:(void (^)())failedBlock;
++ (void)saveBookIfNeeded:(Book *)book succeeded:(void (^)())succeededBlock;
 
 @end
