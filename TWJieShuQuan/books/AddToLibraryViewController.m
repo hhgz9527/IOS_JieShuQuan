@@ -35,4 +35,8 @@
     NSLog(@"adding to library.....");
 }
 
+- (IBAction)cancelButtonClicked:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
