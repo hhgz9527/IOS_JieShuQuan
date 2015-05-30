@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
 #import "Book.h"
+#import "AVQuery+Extensions.h"
 
 @interface BookService : NSObject
 
-+ (void)saveBookIfNeeded:(Book *)book succeeded:(void (^)())succeededBlock;
++ (void)addBookToLibrary:(Book *)book succeeded:(void (^)())succeededBlock;
++ (void )fetchBookEntitiesForCurrentUserWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 
 @end

@@ -40,7 +40,7 @@
 }
 
 - (IBAction)addToLibraryButtonPressed:(id)sender {
-    [BookService saveBookIfNeeded:self.book succeeded:^{
+    [BookService addBookToLibrary:self.book succeeded:^{
         [[CustomAlert sharedAlert] showAlertWithMessage:@"已成功添加进您的书库！"];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
