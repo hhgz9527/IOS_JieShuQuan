@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 #import "RootViewController.h"
 #import "Book.h"
+#import "BookEntity.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,7 @@
     
     // setup LeanCloud
     [Book registerSubclass];
+    [BookEntity registerSubclass];
     
     [AVOSCloud setApplicationId:LeanCloud_AppId clientKey:LeanCloud_AppKey];
 

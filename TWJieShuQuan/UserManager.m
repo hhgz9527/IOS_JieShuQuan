@@ -7,7 +7,6 @@
 //
 
 #import "UserManager.h"
-#import "User.h"
 #import <AVOSCloud/AVOSCloud.h>
 
 static const NSString *kCurrentUserName = @"current_user_name";
