@@ -20,6 +20,11 @@ static const NSString *kBookEntity_User = @"bookOwner";
 @implementation BookService
 
 + (void)addBookToLibrary:(Book *)book succeeded:(void (^)())succeededBlock {
+    if (![AVUser currentUser]) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"请登录"];
+        return;
+    }
+    
     AVQuery *query = [AVQuery queryForBook];
     [query whereKey:(NSString *)kBook_DouBanId equalTo:book.bookDoubanId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
