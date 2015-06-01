@@ -13,7 +13,7 @@
 
 @interface BookService : NSObject
 
-+ (void)addBookToLibrary:(Book *)book succeeded:(void (^)())succeededBlock;
++ (void)addBookToLibrary:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock;
 + (void )fetchBookEntitiesForCurrentUserWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 
 @end

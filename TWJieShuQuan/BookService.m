@@ -19,7 +19,7 @@ static const NSString *kBookEntity_User = @"bookOwner";
 
 @implementation BookService
 
-+ (void)addBookToLibrary:(Book *)book succeeded:(void (^)())succeededBlock {
++ (void)addBookToLibrary:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
     if (![AVUser currentUser]) {
         [[CustomAlert sharedAlert] showAlertWithMessage:@"请登录"];
         return;
@@ -45,7 +45,7 @@ static const NSString *kBookEntity_User = @"bookOwner";
                 [query whereKey:(NSString *)kBook_DouBanId equalTo:book.bookDoubanId];
                 [query getFirstObjectInBackgroundWithBlock:^(AVObject *object, NSError *error) {
                     // create BookEntity
-                    [self createBookEntityWithBook:(Book *)object succeeded:succeededBlock];
+                    [self createBookEntityWithBook:(Book *)object availability:availability succeeded:succeededBlock];
                 }];
             }];
             return;
@@ -55,7 +55,7 @@ static const NSString *kBookEntity_User = @"bookOwner";
         AVQuery *query = [AVQuery queryForBook];
         [query whereKey:(NSString *)kBook_DouBanId equalTo:book.bookDoubanId];
         [query getFirstObjectInBackgroundWithBlock:^(AVObject *object, NSError *error) {
-            [self createBookEntityIfNeededWithBook:(Book *)object succeeded:succeededBlock];
+            [self createBookEntityIfNeededWithBook:(Book *)object availability:availability succeeded:succeededBlock];
         }];
     }];
 }
@@ -75,7 +75,7 @@ static const NSString *kBookEntity_User = @"bookOwner";
 
 #pragma mark - private methods
 
-+ (void)createBookEntityIfNeededWithBook:(Book *)book succeeded:(void (^)())succeededBlock {
++ (void)createBookEntityIfNeededWithBook:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
     AVQuery *query = [AVQuery queryForBookEntity];
     [query whereKey:(NSString *)kBookEntity_User equalTo:[AVUser currentUser]];
     [query whereKey:(NSString *)kBookEntity_Book equalTo:book];
@@ -90,13 +90,13 @@ static const NSString *kBookEntity_User = @"bookOwner";
             return;
         }
         
-        [self createBookEntityWithBook:book succeeded:succeededBlock];
+        [self createBookEntityWithBook:book availability:availability succeeded:succeededBlock];
     }];
 }
 
-+ (void)createBookEntityWithBook:(Book *)book succeeded:(void (^)())succeededBlock {
++ (void)createBookEntityWithBook:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
     BookEntity *bookEntity = [[BookEntity alloc] init];
-    bookEntity.bookAvailability = YES;
+    bookEntity.bookAvailability = availability;
     [bookEntity setObject:[AVUser currentUser] forKey:(NSString *)kBookEntity_User];
     [bookEntity setObject:book forKey:(NSString *)kBookEntity_Book];
     [bookEntity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

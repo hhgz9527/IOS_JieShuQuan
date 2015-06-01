@@ -11,12 +11,14 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BookService.h"
 #import "CustomAlert.h"
+#import "CustomActivityIndicator.h"
 
 @interface AddToLibraryViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
 @property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookAuthorLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addToLibraryButton;
+@property (weak, nonatomic) IBOutlet UISwitch *availabilityStatusSwitch;
 
 @end
 
@@ -40,7 +42,7 @@
 }
 
 - (IBAction)addToLibraryButtonPressed:(id)sender {
-    [BookService addBookToLibrary:self.book succeeded:^{
+    [BookService addBookToLibrary:self.book availability:self.availabilityStatusSwitch.on succeeded:^{
         [[CustomAlert sharedAlert] showAlertWithMessage:@"已成功添加进您的书库！"];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
