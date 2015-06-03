@@ -14,5 +14,7 @@
 @interface BookEntity : AVObject <AVSubclassing>
 
 @property (nonatomic, assign) BOOL bookAvailability;
+@property (nonatomic, copy) NSString *bookName;
+@property (nonatomic, copy) NSString *bookImageHref;
 
 @end

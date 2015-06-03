@@ -7,14 +7,17 @@
 //
 
 #import "MyBooksCollectionViewController.h"
+#import "BookService.h"
+#import "MyBooksCollectionViewCell.h"   
+#import "BookEntity.h"
 
 @interface MyBooksCollectionViewController ()
-
+@property (nonatomic, strong) NSArray *myBooks;
 @end
 
 @implementation MyBooksCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,9 +26,14 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[MyBooksCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    [BookService fetchBookEntitiesForCurrentUserWithSucceedCallback:^(NSArray *myBooksObject) {
+        self.myBooks = myBooksObject;
+        
+        [self.collectionView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,18 +55,20 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete method implementation -- Return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    BookEntity *currentBook = self.myBooks[0];
     
+    MyBooksCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.bookNameLabel.text = currentBook.bookName;
     // Configure the cell
     
     return cell;

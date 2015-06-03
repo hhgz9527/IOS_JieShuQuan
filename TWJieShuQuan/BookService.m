@@ -97,6 +97,8 @@ static const NSString *kBookEntity_User = @"bookOwner";
 + (void)createBookEntityWithBook:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
     BookEntity *bookEntity = [[BookEntity alloc] init];
     bookEntity.bookAvailability = availability;
+    bookEntity.bookName = book.bookName;
+    bookEntity.bookImageHref = book.bookImageHref;
     [bookEntity setObject:[AVUser currentUser] forKey:(NSString *)kBookEntity_User];
     [bookEntity setObject:book forKey:(NSString *)kBookEntity_Book];
     [bookEntity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

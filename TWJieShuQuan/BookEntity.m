@@ -11,6 +11,8 @@
 @implementation BookEntity
 
 @dynamic bookAvailability;
+@dynamic bookName;
+@dynamic bookImageHref;
 
 + (NSString *)parseClassName {
     return @"BookEntity";

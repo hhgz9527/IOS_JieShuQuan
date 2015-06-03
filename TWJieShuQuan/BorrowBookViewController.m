@@ -43,10 +43,10 @@
 //    [self presentViewController:reader animated:YES completion:nil];
     
     Book *book = [[Book alloc] init];
-    book.bookDoubanId = @111111;
-    book.bookName = @"一起来吃早午餐";
-    book.bookAuthor = @"Pan小月";
-    book.bookImageHref = @"http://img3.douban.com/lpic/s28055301.jpg";
+    book.bookDoubanId = @111112;
+    book.bookName = @"Head First 设计模式";
+    book.bookAuthor = @"Freeman";
+    book.bookImageHref = @"http://img4.douban.com/lpic/s2686916.jpg";
     
     AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
     addToLibraryVC.book = book;
