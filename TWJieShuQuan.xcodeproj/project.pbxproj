@@ -20,6 +20,7 @@
 		942BBCBA1B17031000F490CF /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCB91B17031000F490CF /* BookService.m */; };
 		942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCBC1B17F90D00F490CF /* BookEntity.m */; };
 		942BBCC01B180FC600F490CF /* AVQuery+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCBF1B180FC600F490CF /* AVQuery+Extensions.m */; };
+		942BBDD01B1EF1E500F490CF /* MyBooksCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBDCF1B1EF1E500F490CF /* MyBooksCollectionViewController.m */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
@@ -87,6 +88,8 @@
 		942BBCBC1B17F90D00F490CF /* BookEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookEntity.m; sourceTree = "<group>"; };
 		942BBCBE1B180FC600F490CF /* AVQuery+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVQuery+Extensions.h"; sourceTree = "<group>"; };
 		942BBCBF1B180FC600F490CF /* AVQuery+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVQuery+Extensions.m"; sourceTree = "<group>"; };
+		942BBDCE1B1EF1E500F490CF /* MyBooksCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBooksCollectionViewController.h; sourceTree = "<group>"; };
+		942BBDCF1B1EF1E500F490CF /* MyBooksCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBooksCollectionViewController.m; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 				A3C1E2EF1B16B90300037DB5 /* FindViewController.m */,
 				A3C1E2F41B16C9C200037DB5 /* ProfileTableViewController.h */,
 				A3C1E2F51B16C9C200037DB5 /* ProfileTableViewController.m */,
+				942BBDCE1B1EF1E500F490CF /* MyBooksCollectionViewController.h */,
+				942BBDCF1B1EF1E500F490CF /* MyBooksCollectionViewController.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				94C0698D1B1450290047BCCB /* DouBanService.m in Sources */,
 				9499975C1B0B237F00986337 /* AuthService.m in Sources */,
 				94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */,
+				942BBDD01B1EF1E500F490CF /* MyBooksCollectionViewController.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
