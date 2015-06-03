@@ -7,7 +7,6 @@
 //
 
 #import "FindViewController.h"
-#import "RootViewController.h"
 
 @interface FindViewController ()
 
@@ -23,10 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)ShowFindVC:(UIButton *)sender {
-    RootViewController *rootVC = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
-    [self.navigationController pushViewController:rootVC animated:YES];
 }
 
 /*

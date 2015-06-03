@@ -15,8 +15,6 @@
 		941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D631B0F81ED002021DE /* RegisterViewController.m */; };
 		941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D641B0F81ED002021DE /* RegisterViewController.xib */; };
 		941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D6A1B1035CC002021DE /* CustomTextField.m */; };
-		941C9D911B13073D002021DE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D8F1B13073D002021DE /* RootViewController.m */; };
-		941C9D921B13073D002021DE /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D901B13073D002021DE /* RootViewController.xib */; };
 		941C9D961B130C4C002021DE /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D941B130C4C002021DE /* ResetPasswordViewController.m */; };
 		941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */; };
 		942BBCBA1B17031000F490CF /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCB91B17031000F490CF /* BookService.m */; };
@@ -80,9 +78,6 @@
 		941C9D641B0F81ED002021DE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = Authentication/Controllers/RegisterViewController.xib; sourceTree = "<group>"; };
 		941C9D691B1035CC002021DE /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTextField.h; path = ViewHelpers/CustomTextField.h; sourceTree = "<group>"; };
 		941C9D6A1B1035CC002021DE /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTextField.m; path = ViewHelpers/CustomTextField.m; sourceTree = "<group>"; };
-		941C9D8E1B13073D002021DE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		941C9D8F1B13073D002021DE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		941C9D901B13073D002021DE /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		941C9D931B130C4C002021DE /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetPasswordViewController.h; path = Authentication/Controllers/ResetPasswordViewController.h; sourceTree = "<group>"; };
 		941C9D941B130C4C002021DE /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetPasswordViewController.m; path = Authentication/Controllers/ResetPasswordViewController.m; sourceTree = "<group>"; };
 		941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResetPasswordViewController.xib; path = Authentication/Controllers/ResetPasswordViewController.xib; sourceTree = "<group>"; };
@@ -225,9 +220,6 @@
 		949997021B09D3E500986337 /* TWJieShuQuan */ = {
 			isa = PBXGroup;
 			children = (
-				941C9D8E1B13073D002021DE /* RootViewController.h */,
-				941C9D8F1B13073D002021DE /* RootViewController.m */,
-				941C9D901B13073D002021DE /* RootViewController.xib */,
 				9499972C1B0AD08F00986337 /* Constants.h */,
 				9499972D1B0AD08F00986337 /* Constants.m */,
 				949997071B09D3E500986337 /* AppDelegate.h */,
@@ -481,7 +473,6 @@
 				7361D07A1B17763E000AF2EC /* nav_background.png in Resources */,
 				A3D1C9801B1C242700923AD5 /* return_message_bg.png in Resources */,
 				941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */,
-				941C9D921B13073D002021DE /* RootViewController.xib in Resources */,
 				94C069861B14175A0047BCCB /* LibzBar in Resources */,
 				A3D1C9811B1C242700923AD5 /* scan.png in Resources */,
 				94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */,
@@ -552,7 +543,6 @@
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
-				941C9D911B13073D002021DE /* RootViewController.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
 				942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */,
 				94C069901B145A960047BCCB /* CustomActivityIndicator.m in Sources */,

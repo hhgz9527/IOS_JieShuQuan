@@ -7,6 +7,9 @@
 //
 
 #import "ProfileTableViewController.h"
+#import "AuthService.h"
+#import "UserManager.h"
+#import "LoginViewController.h"
 
 static NSInteger const kSetAvatarTag = 1001;
 
@@ -27,6 +30,12 @@ static NSInteger const kSetAvatarTag = 1001;
     [scanButton addTarget:self action:@selector(scanISBN) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.navigationItem.rightBarButtonItem = scanISBNButton;
+    
+    
+    // will move logout function into settings page later
+    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
+    self.navigationItem.leftBarButtonItem = logoutButton;
+    // above will be removed later
     
     UITapGestureRecognizer *TGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setAvatar)];
     
@@ -120,6 +129,16 @@ static NSInteger const kSetAvatarTag = 1001;
     }
 }
 
+- (void)logout {
+    [AuthService logout];
+    
+    // remove login user from userdefaults
+    [UserManager removeCurrentUser];
+    
+    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:loginViewController animated:YES completion:nil];
+}
 
 
 #pragma mark - UIActionSheet Delegate
