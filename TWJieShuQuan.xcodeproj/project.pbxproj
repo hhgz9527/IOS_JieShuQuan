@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62D7F2461B200B6800F5E50F /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62D7F2451B200B6800F5E50F /* avatar.png */; };
 		7341C1961B1371A500E199DF /* Login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7341C1951B1371A500E199DF /* Login_background.png */; };
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWJieShuQuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62D7F2451B200B6800F5E50F /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		7341C1951B1371A500E199DF /* Login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_background.png; sourceTree = "<group>"; };
 		7361D0771B1774F8000AF2EC /* nav_scanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_scanIcon.png; sourceTree = "<group>"; };
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		949997031B09D3E500986337 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				62D7F2451B200B6800F5E50F /* avatar.png */,
 				A3D1C97B1B1C23CC00923AD5 /* Resource */,
 				7361D0791B17763E000AF2EC /* nav_background.png */,
 				7361D0771B1774F8000AF2EC /* nav_scanIcon.png */,
@@ -498,6 +501,7 @@
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
 				7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */,
 				94C069831B1415200047BCCB /* test.png in Resources */,
+				62D7F2461B200B6800F5E50F /* avatar.png in Resources */,
 				A3D1C97F1B1C242700923AD5 /* borrow_message_bg.png in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
 				7341C1961B1371A500E199DF /* Login_background.png in Resources */,

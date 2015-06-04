@@ -10,6 +10,8 @@
 #import "AuthService.h"
 #import "UserManager.h"
 #import "LoginViewController.h"
+#import "Book.h"
+#import "AddToLibraryViewController.h"
 
 static NSInteger const kSetAvatarTag = 1001;
 
@@ -24,24 +26,36 @@ static NSInteger const kSetAvatarTag = 1001;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self createRightBarButtonItem];
+    [self createLeftBarButtonItem];
+    [self setupAvatar];
+    
+    // above will be removed later
+        UITapGestureRecognizer *TGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setAvatar)];
+    [self.avatar addGestureRecognizer:TGR];
+    
+
+}
+
+
+- (void)createRightBarButtonItem {
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    scanButton.frame = CGRectMake(0, 0, 22, 29);
+    scanButton.frame = CGRectMake(0, 0, 22, 20);
     [scanButton setBackgroundImage:[UIImage imageNamed:@"nav_scanIcon"] forState:UIControlStateNormal];
     [scanButton addTarget:self action:@selector(scanISBN) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.navigationItem.rightBarButtonItem = scanISBNButton;
-    
-    
+}
+
+- (void)createLeftBarButtonItem {
     // will move logout function into settings page later
     UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
     self.navigationItem.leftBarButtonItem = logoutButton;
-    // above will be removed later
-    
-    UITapGestureRecognizer *TGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setAvatar)];
-    
-    [self.avatar addGestureRecognizer:TGR];
-    
+}
 
+- (void)setupAvatar {
+    _avatar.layer.cornerRadius = _avatar.frame.size.width/2;
+    _avatar.layer.masksToBounds = YES;
 }
 
 - (void)setAvatar {
@@ -74,10 +88,17 @@ static NSInteger const kSetAvatarTag = 1001;
     }
 }
 
-
-
 - (void)scanISBN {
+    Book *book = [[Book alloc] init];
+    book.bookDoubanId = @111112;
+    book.bookName = @"Head First 设计模式";
+    book.bookAuthor = @"Freeman";
+    book.bookImageHref = @"http://img4.douban.com/lpic/s2686916.jpg";
     
+    AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
+    addToLibraryVC.book = book;
+    [self presentViewController:addToLibraryVC animated:YES completion:nil];
+
 }
 
 #pragma mark - UIImagePickerController Delegate
