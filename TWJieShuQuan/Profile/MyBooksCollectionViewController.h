@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyBooksCollectionViewController : UICollectionViewController
+@interface MyBooksCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
 @end

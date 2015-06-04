@@ -201,7 +201,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dSc-k6-6G0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5uA-Fj-GfY">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -209,36 +209,47 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyBooksCollectionViewCell" id="DbL-8s-P8Q" customClass="MyBooksCollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MyBooksCollectionViewCell" reuseIdentifier="MyBooksCollectionViewCell" id="DbL-8s-P8Q" customClass="MyBooksCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="176" height="114"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-uj-vTz">
-                                            <rect key="frame" x="57" y="8" width="50" height="50"/>
+                                            <rect key="frame" x="18" y="23" width="75" height="103"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="Fqb-gv-1Kk"/>
-                                                <constraint firstAttribute="height" constant="50" id="ita-f8-FCh"/>
+                                                <constraint firstAttribute="width" constant="75" id="Fqb-gv-1Kk"/>
+                                                <constraint firstAttribute="height" constant="103" id="ita-f8-FCh"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmv-gR-BdY">
-                                            <rect key="frame" x="45" y="73" width="86" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmv-gR-BdY">
+                                            <rect key="frame" x="18" y="126" width="75" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="L7K-4b-73W"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="10"/>
+                                            <color key="textColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="CIk-uj-vTz" firstAttribute="top" secondItem="DbL-8s-P8Q" secondAttribute="topMargin" id="CsH-bM-RIh"/>
+                                    <constraint firstItem="Lmv-gR-BdY" firstAttribute="width" secondItem="CIk-uj-vTz" secondAttribute="width" id="2xC-Rw-deW"/>
+                                    <constraint firstItem="CIk-uj-vTz" firstAttribute="top" secondItem="DbL-8s-P8Q" secondAttribute="topMargin" constant="15" id="CsH-bM-RIh"/>
                                     <constraint firstAttribute="centerX" secondItem="Lmv-gR-BdY" secondAttribute="centerX" id="MlT-P3-yax"/>
-                                    <constraint firstAttribute="centerX" secondItem="CIk-uj-vTz" secondAttribute="centerX" constant="6" id="R04-PQ-lcF"/>
-                                    <constraint firstItem="Lmv-gR-BdY" firstAttribute="top" secondItem="CIk-uj-vTz" secondAttribute="bottom" constant="15" id="Ulg-vD-beD"/>
+                                    <constraint firstAttribute="centerX" secondItem="CIk-uj-vTz" secondAttribute="centerX" id="R04-PQ-lcF"/>
+                                    <constraint firstItem="Lmv-gR-BdY" firstAttribute="top" secondItem="CIk-uj-vTz" secondAttribute="bottom" id="Ulg-vD-beD"/>
+                                    <constraint firstItem="Lmv-gR-BdY" firstAttribute="leading" secondItem="CIk-uj-vTz" secondAttribute="leading" id="Zdf-LT-tO1"/>
                                 </constraints>
-                                <size key="customSize" width="176" height="114"/>
+                                <size key="customSize" width="110" height="155"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MlT-P3-yax"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="bookImageView" destination="CIk-uj-vTz" id="RiV-gx-iAg"/>
                                     <outlet property="bookNameLabel" destination="Lmv-gR-BdY" id="UOx-sZ-nEx"/>
@@ -251,6 +262,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="我的书籍" id="m1M-b4-iEt"/>
+                    <connections>
+                        <outlet property="flowLayout" destination="5uA-Fj-GfY" id="Akh-1T-Mbv"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTW-Gb-mqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

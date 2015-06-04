@@ -7,7 +7,13 @@
 //
 
 #import "MyBooksCollectionViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation MyBooksCollectionViewCell
+
+- (void)refreshCellWithBookEntity:(BookEntity *)bookEntity {
+    self.bookNameLabel.text = bookEntity.bookName;
+    [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:bookEntity.bookImageHref]];
+}
 
 @end

@@ -22,13 +22,17 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // Configure layout
+    [self.flowLayout setItemSize:CGSizeMake(100, 140)];
+    [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    self.flowLayout.minimumInteritemSpacing = 0.0f;
+    [self.collectionView setCollectionViewLayout:self.flowLayout];
     
-    // Register cell classes
-    [self.collectionView registerClass:[MyBooksCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    self.collectionView.bounces = YES;
+    [self.collectionView setShowsHorizontalScrollIndicator:NO];
+    [self.collectionView setShowsVerticalScrollIndicator:YES];
     
-    // Do any additional setup after loading the view.
+    
     [BookService fetchBookEntitiesForCurrentUserWithSucceedCallback:^(NSArray *myBooksObject) {
         self.myBooks = myBooksObject;
         
@@ -36,10 +40,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation
@@ -51,44 +51,38 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 }
 */
 
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
     return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 1;
+    return self.myBooks.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    BookEntity *currentBook = self.myBooks[0];
+    BookEntity *currentBook = self.myBooks[indexPath.row];
     
     MyBooksCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.bookNameLabel.text = currentBook.bookName;
-    // Configure the cell
+    [cell refreshCellWithBookEntity:currentBook];
     
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
+
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
 }
-*/
 
-/*
-// Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-*/
+
 
 /*
 // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
