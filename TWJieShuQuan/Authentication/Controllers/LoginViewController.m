@@ -80,10 +80,9 @@
         [UserManager saveCurrentUser];
         
         UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"main" bundle:nil];
-        UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:mainSB.instantiateInitialViewController];
-        
-        rootViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:rootViewController animated:YES completion:nil];
+        UIViewController *rootVC = (UIViewController *)mainSB.instantiateInitialViewController;
+        rootVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:rootVC animated:YES completion:nil];
     } failed:^(NSString *errorMessage) {
         [[CustomAlert sharedAlert] showAlertWithMessage:errorMessage];
     }];
