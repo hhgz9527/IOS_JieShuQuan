@@ -23,8 +23,11 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [super viewDidLoad];
     
     // Configure layout
-    [self.flowLayout setItemSize:CGSizeMake(100, 140)];
+    CGFloat screenWidth = self.view.frame.size.width;
+    CGFloat cellWidth = screenWidth/3;
+    [self.flowLayout setItemSize:CGSizeMake(cellWidth, 145)];
     [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    self.flowLayout.minimumLineSpacing = 10.f;
     self.flowLayout.minimumInteritemSpacing = 0.0f;
     [self.collectionView setCollectionViewLayout:self.flowLayout];
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -213,7 +213,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="110" height="155"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-uj-vTz">
@@ -223,33 +223,43 @@
                                                 <constraint firstAttribute="height" constant="103" id="ita-f8-FCh"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmv-gR-BdY">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4D3-UU-ZBr">
                                             <rect key="frame" x="18" y="126" width="75" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmv-gR-BdY">
+                                                    <rect key="frame" x="0.0" y="5" width="75" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="L7K-4b-73W"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="10"/>
+                                                    <color key="textColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="L7K-4b-73W"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="L7K-4b-73W"/>
+                                                <constraint firstItem="Lmv-gR-BdY" firstAttribute="top" secondItem="4D3-UU-ZBr" secondAttribute="top" constant="5" id="CAE-eP-SYj"/>
+                                                <constraint firstAttribute="height" constant="21" id="OFk-je-cfT"/>
+                                                <constraint firstAttribute="centerX" secondItem="Lmv-gR-BdY" secondAttribute="centerX" id="dq3-fK-sof"/>
+                                                <constraint firstAttribute="width" secondItem="Lmv-gR-BdY" secondAttribute="width" id="iSd-LM-e2I"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="10"/>
-                                            <color key="textColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Lmv-gR-BdY" firstAttribute="width" secondItem="CIk-uj-vTz" secondAttribute="width" id="2xC-Rw-deW"/>
+                                    <constraint firstItem="4D3-UU-ZBr" firstAttribute="width" secondItem="CIk-uj-vTz" secondAttribute="width" id="CAb-g1-S2O"/>
                                     <constraint firstItem="CIk-uj-vTz" firstAttribute="top" secondItem="DbL-8s-P8Q" secondAttribute="topMargin" constant="15" id="CsH-bM-RIh"/>
-                                    <constraint firstAttribute="centerX" secondItem="Lmv-gR-BdY" secondAttribute="centerX" id="MlT-P3-yax"/>
+                                    <constraint firstItem="4D3-UU-ZBr" firstAttribute="top" secondItem="CIk-uj-vTz" secondAttribute="bottom" id="QxJ-W6-Txw"/>
                                     <constraint firstAttribute="centerX" secondItem="CIk-uj-vTz" secondAttribute="centerX" id="R04-PQ-lcF"/>
-                                    <constraint firstItem="Lmv-gR-BdY" firstAttribute="top" secondItem="CIk-uj-vTz" secondAttribute="bottom" id="Ulg-vD-beD"/>
-                                    <constraint firstItem="Lmv-gR-BdY" firstAttribute="leading" secondItem="CIk-uj-vTz" secondAttribute="leading" id="Zdf-LT-tO1"/>
+                                    <constraint firstItem="4D3-UU-ZBr" firstAttribute="leading" secondItem="CIk-uj-vTz" secondAttribute="leading" id="y5E-ea-3Eo"/>
                                 </constraints>
-                                <size key="customSize" width="110" height="155"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="MlT-P3-yax"/>
-                                    </mask>
-                                </variation>
+                                <size key="customSize" width="110" height="160"/>
                                 <connections>
                                     <outlet property="bookImageView" destination="CIk-uj-vTz" id="RiV-gx-iAg"/>
                                     <outlet property="bookNameLabel" destination="Lmv-gR-BdY" id="UOx-sZ-nEx"/>
