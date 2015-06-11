@@ -54,6 +54,10 @@ static NSInteger const kSetAvatarTag = 1001;
 }
 
 - (void)setupAvatar {
+    AVFile *file = [[[AVUser currentUser] objectForKey:@"localData"] objectForKey:@"avatar"];
+    [AVFile getFileWithObjectId:file.objectId withBlock:^(AVFile *file, NSError *error) {
+        _avatar.image = [UIImage imageWithData:file.getData];
+    }];
     _avatar.layer.cornerRadius = _avatar.frame.size.width/2;
     _avatar.layer.masksToBounds = YES;
 }
@@ -113,7 +117,6 @@ static NSInteger const kSetAvatarTag = 1001;
         } else {
             data = UIImageJPEGRepresentation(image, 0.8f);
         }
-        
         NSString * DocumentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
         
         NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -126,6 +129,8 @@ static NSInteger const kSetAvatarTag = 1001;
         [picker dismissViewControllerAnimated:YES completion:nil];
         
         self.avatar.image = image;
+
+        [self uploadAvatar:data];
     }
 }
 
@@ -134,6 +139,19 @@ static NSInteger const kSetAvatarTag = 1001;
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)uploadAvatar:(NSData *)data {
+    AVFile *imageFile = [AVFile fileWithName:@"image.png" data:data];
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded == YES) {
+            [[AVUser currentUser] setObject:imageFile forKey:@"avatar"];
+            [[AVUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
+                if (succeeded == YES) {
+                    NSLog(@"save avatar success");
+                }
+            }];
+        }
+    }];
+}
 
 #pragma mark - Table view data source
 
