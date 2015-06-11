@@ -83,6 +83,11 @@
         [[CustomAlert sharedAlert] showAlertWithMessage:@"确认密码不能为空！"];
         return;
     }
+    
+    if (self.passwordTextField.text.length < 6 || self.passwordTextField.text.length > 20) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"密码必须为6-20位！"];
+        return;
+    }
 
     if (![self.passwordTextField.text isEqualToString:self.confirmPasswordTextField.text]) {
         [[CustomAlert sharedAlert] showAlertWithMessage:@"两次输入密码不一致！"];
