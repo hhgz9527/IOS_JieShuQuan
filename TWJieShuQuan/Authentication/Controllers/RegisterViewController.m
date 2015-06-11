@@ -24,6 +24,7 @@
     
     _emailTextField.delegate = self;
     _passwordTextField.delegate = self;
+    _confirmPasswordTextField.delegate = self;
 }
 
 - (void)setUpUICommponents {

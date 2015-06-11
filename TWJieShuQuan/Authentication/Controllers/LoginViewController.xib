@@ -25,7 +25,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="**@thoughtworks.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9s4-30-HV1" userLabel="email" customClass="CustomTextField">
-                            <rect key="frame" x="50" y="150" width="314" height="30"/>
+                            <rect key="frame" x="50" y="120" width="314" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="362" id="gGv-iW-ziO"/>
                             </constraints>
@@ -39,7 +39,7 @@
                             </variation>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-m5-38P" userLabel="emailUnderline">
-                            <rect key="frame" x="50" y="183" width="314" height="1"/>
+                            <rect key="frame" x="50" y="153" width="314" height="1"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="wt2-0G-8kk"/>
@@ -49,7 +49,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWg-Du-UzB" userLabel="password" customClass="CustomTextField">
-                            <rect key="frame" x="50" y="204" width="314" height="30"/>
+                            <rect key="frame" x="50" y="174" width="314" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="362" id="oSi-tG-FIf"/>
                             </constraints>
@@ -63,7 +63,7 @@
                             </variation>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6On-gr-mYf" userLabel="passwordUnderline">
-                            <rect key="frame" x="50" y="237" width="314" height="1"/>
+                            <rect key="frame" x="50" y="207" width="314" height="1"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="FMO-uC-1s6"/>
@@ -73,7 +73,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E24-t7-k00" userLabel="登陆">
-                            <rect key="frame" x="132" y="309" width="150" height="35"/>
+                            <rect key="frame" x="132" y="258" width="150" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="6J6-B5-IdN"/>
                                 <constraint firstAttribute="width" constant="150" id="uQB-8E-nS1"/>
@@ -126,8 +126,8 @@
                         <constraint firstAttribute="trailing" secondItem="9s4-30-HV1" secondAttribute="trailing" constant="50" id="HYb-XI-W0I"/>
                         <constraint firstItem="WWg-Du-UzB" firstAttribute="top" secondItem="w8G-m5-38P" secondAttribute="bottom" constant="20" id="IE1-qM-12d"/>
                         <constraint firstItem="9s4-30-HV1" firstAttribute="top" secondItem="g92-sr-yGB" secondAttribute="top" constant="135" id="O7p-p4-a5O"/>
-                        <constraint firstItem="9s4-30-HV1" firstAttribute="top" secondItem="g92-sr-yGB" secondAttribute="top" constant="150" id="PLi-IN-uiy"/>
-                        <constraint firstItem="E24-t7-k00" firstAttribute="top" secondItem="6On-gr-mYf" secondAttribute="bottom" constant="71" id="Uw3-ej-mVg"/>
+                        <constraint firstItem="9s4-30-HV1" firstAttribute="top" secondItem="g92-sr-yGB" secondAttribute="top" constant="120" id="PLi-IN-uiy"/>
+                        <constraint firstItem="E24-t7-k00" firstAttribute="top" secondItem="6On-gr-mYf" secondAttribute="bottom" constant="50" id="Uw3-ej-mVg"/>
                         <constraint firstItem="4KA-12-Buo" firstAttribute="leading" secondItem="2JP-hY-ZUC" secondAttribute="trailing" constant="209" id="W8a-iY-jlQ"/>
                         <constraint firstItem="2JP-hY-ZUC" firstAttribute="top" secondItem="E24-t7-k00" secondAttribute="bottom" constant="63" id="WVJ-cp-Pa8"/>
                         <constraint firstItem="6On-gr-mYf" firstAttribute="top" secondItem="WWg-Du-UzB" secondAttribute="bottom" constant="3" id="Yol-G3-xBA"/>
