@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 #import "Book.h"
 #import "AddToLibraryViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static NSInteger const kSetAvatarTag = 1001;
 
@@ -55,9 +56,7 @@ static NSInteger const kSetAvatarTag = 1001;
 
 - (void)setupAvatar {
     AVFile *file = [[[AVUser currentUser] objectForKey:@"localData"] objectForKey:@"avatar"];
-    [AVFile getFileWithObjectId:file.objectId withBlock:^(AVFile *file, NSError *error) {
-        _avatar.image = [UIImage imageWithData:file.getData];
-    }];
+    [_avatar sd_setImageWithURL:[NSURL URLWithString:file.url]];
     _avatar.layer.cornerRadius = _avatar.frame.size.width/2;
     _avatar.layer.masksToBounds = YES;
 }
