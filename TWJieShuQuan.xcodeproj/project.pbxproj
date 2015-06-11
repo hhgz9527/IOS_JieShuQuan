@@ -11,6 +11,7 @@
 		7341C1961B1371A500E199DF /* Login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7341C1951B1371A500E199DF /* Login_background.png */; };
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
+		73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBEA271B29DE4C00F7373A /* FindCell.m */; };
 		941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5B1B0F7864002021DE /* NSString+Extensions.m */; };
 		941C9D601B0F7906002021DE /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5F1B0F7906002021DE /* CustomAlert.m */; };
 		941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D631B0F81ED002021DE /* RegisterViewController.m */; };
@@ -73,6 +74,8 @@
 		7341C1951B1371A500E199DF /* Login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_background.png; sourceTree = "<group>"; };
 		7361D0771B1774F8000AF2EC /* nav_scanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_scanIcon.png; sourceTree = "<group>"; };
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
+		73BBEA261B29DE4C00F7373A /* FindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCell.h; sourceTree = "<group>"; };
+		73BBEA271B29DE4C00F7373A /* FindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCell.m; sourceTree = "<group>"; };
 		941C9D5A1B0F7864002021DE /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extensions.h"; path = "Extensions/NSString+Extensions.h"; sourceTree = "<group>"; };
 		941C9D5B1B0F7864002021DE /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extensions.m"; path = "Extensions/NSString+Extensions.m"; sourceTree = "<group>"; };
 		941C9D5E1B0F7906002021DE /* CustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlert.h; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				942BBDD11B1EF92300F490CF /* My Books */,
 				A3C1E2EE1B16B90300037DB5 /* FindViewController.h */,
 				A3C1E2EF1B16B90300037DB5 /* FindViewController.m */,
+				73BBEA261B29DE4C00F7373A /* FindCell.h */,
+				73BBEA271B29DE4C00F7373A /* FindCell.m */,
 				A3C1E2F41B16C9C200037DB5 /* ProfileTableViewController.h */,
 				A3C1E2F51B16C9C200037DB5 /* ProfileTableViewController.m */,
 			);
@@ -561,6 +566,7 @@
 				A3C1E2F61B16C9C200037DB5 /* ProfileTableViewController.m in Sources */,
 				94C0698D1B1450290047BCCB /* DouBanService.m in Sources */,
 				9499975C1B0B237F00986337 /* AuthService.m in Sources */,
+				73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */,
 				94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */,
 				942BBDD01B1EF1E500F490CF /* MyBooksCollectionViewController.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
