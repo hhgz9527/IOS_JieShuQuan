@@ -25,11 +25,11 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     
     // Configure layout
     CGFloat screenWidth = self.view.frame.size.width;
-    CGFloat cellWidth = screenWidth/3;
-    [self.flowLayout setItemSize:CGSizeMake(cellWidth, 145)];
+    CGFloat cellWidth = (screenWidth-40)/3;
+    [self.flowLayout setItemSize:CGSizeMake(cellWidth, 160)];
     [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     self.flowLayout.minimumLineSpacing = 10.f;
-    self.flowLayout.minimumInteritemSpacing = 0.0f;
+    self.flowLayout.minimumInteritemSpacing = 10.0f;
     [self.collectionView setCollectionViewLayout:self.flowLayout];
     
     self.collectionView.bounces = YES;
@@ -64,6 +64,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSLog(@"number :%i", self.myBooks.count);
     return self.myBooks.count;
 }
 

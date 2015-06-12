@@ -14,6 +14,7 @@
 @dynamic bookName;
 @dynamic bookAuthor;
 @dynamic bookImageHref;
+@dynamic bookPress;
 
 + (NSString *)parseClassName {
     return @"Book";

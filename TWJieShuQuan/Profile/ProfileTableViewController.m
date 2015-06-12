@@ -121,9 +121,7 @@ static NSInteger const kSetAvatarTag = 1001;
         
         [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
         [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:@"/image.png"] contents:data attributes:nil];
-        
-//        filePath = [[NSString alloc]initWithFormat:@"%@%@",DocumentsPath,  @"/image.png"];
-        
+
         [picker dismissViewControllerAnimated:YES completion:nil];
         
         self.avatar.image = image;
