@@ -11,11 +11,7 @@
 #import "BookEntity.h"
 #import "UserManager.h"
 #import "AVQuery+Extensions.h"
-
-static const NSString *kBook_DouBanId = @"bookDoubanId";
-
-static const NSString *kBookEntity_Book = @"doubanBook";
-static const NSString *kBookEntity_User = @"bookOwner";
+#import "AppConstants.h"
 
 @implementation BookService
 

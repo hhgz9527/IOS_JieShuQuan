@@ -10,6 +10,7 @@
 #import "BookService.h"
 #import "MyBooksCollectionViewCell.h"   
 #import "BookEntity.h"
+#import "BookDetailViewController.h"
 
 @interface MyBooksCollectionViewController ()
 @property (nonatomic, strong) NSArray *myBooks;
@@ -82,8 +83,10 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 	return YES;
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:bookDetailSegue sender:[collectionView cellForItemAtIndexPath:indexPath]];
 }
 
 
@@ -101,5 +104,16 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 	
 }
 */
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:bookDetailSegue]) {
+        BookDetailViewController *destViewController = (BookDetailViewController *)segue.destinationViewController;
+        NSInteger row = [self.collectionView indexPathForCell:sender].row;
+        destViewController.bookEntity = self.myBooks[row];
+    }
+}
+
 
 @end
