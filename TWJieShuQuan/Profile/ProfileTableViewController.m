@@ -32,7 +32,7 @@ static NSInteger const kSetAvatarTag = 1001;
     [self setupAvatar];
     
     // above will be removed later
-        UITapGestureRecognizer *TGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setAvatar)];
+    UITapGestureRecognizer *TGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setAvatar)];
     [self.avatar addGestureRecognizer:TGR];
     
 
@@ -92,15 +92,14 @@ static NSInteger const kSetAvatarTag = 1001;
 }
 
 - (void)scanISBN {
-    Book *book = [[Book alloc] init];
-    book.bookDoubanId = @111112;
-    book.bookName = @"Head First 设计模式";
-    book.bookAuthor = @"Freeman";
-    book.bookImageHref = @"http://img4.douban.com/lpic/s2686916.jpg";
-    
-    AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
-    addToLibraryVC.book = book;
-    [self presentViewController:addToLibraryVC animated:YES completion:nil];
+//    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+//    reader.readerDelegate = self;
+//    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+//
+//    ZBarImageScanner *scanner = reader.scanner;
+//    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+//
+//    [self presentViewController:reader animated:YES completion:nil];
 
 }
 

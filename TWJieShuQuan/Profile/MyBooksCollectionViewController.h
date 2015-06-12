@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const bookDetailSegue = @"BookDetailSegue";
+
 @interface MyBooksCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
