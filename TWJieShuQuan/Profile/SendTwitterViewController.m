@@ -21,9 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    _textView.layer.borderWidth = 0.5;
-    
     self.title = @"发信息";
 }
 
