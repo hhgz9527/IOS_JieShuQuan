@@ -12,7 +12,30 @@
 @implementation FindCell (Config)
 
 - (void)configFindCell:(Find *)find {
+    AVQuery *query = [AVUser query];
+    [query whereKey:@"objectId" equalTo:find.user.objectId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error == nil) {
+            AVUser *user = objects.firstObject;
+            self.name.text = user.username;
+            self.content.text = [NSString stringWithFormat:@"我添加了一本新书《%@》。",find.book];
+            self.time.text = [self currentTime:find.createdAt];
+            
+            AVFile *file = [[objects.firstObject objectForKey:@"localData"] objectForKey:@"avatar"];
+            AVFile *avatarFile = [AVFile fileWithURL:file.url];
+            [avatarFile getThumbnail:YES width:30 height:30 withBlock:^(UIImage *image, NSError *error) {
+                self.avatar.image = image;
+            }];
+        } else {
+            
+        }
+    }];
+}
 
+- (NSString *)currentTime:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    return [formatter stringFromDate:date];
 }
 
 @end

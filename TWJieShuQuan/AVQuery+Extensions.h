@@ -13,5 +13,5 @@
 
 + (AVQuery *)queryForBook;
 + (AVQuery *)queryForBookEntity;
-
++ (AVQuery *)queryForFind;
 @end
