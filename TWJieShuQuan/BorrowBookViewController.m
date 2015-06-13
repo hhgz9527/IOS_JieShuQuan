@@ -43,15 +43,16 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     
     [self initCollectionView];
     
-    [BookService fetchRecoBooksWithSucceedCallback:^(NSArray *recoBooks) {
-        [self.recoBookImageView1 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[0] bookImageHref]]];
-        [self.recoBookImageView2 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[1] bookImageHref]]];
-        [self.recoBookImageView3 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[2] bookImageHref]]];
-        [self.recoBookImageView4 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[3] bookImageHref]]];
-    }];
+    // WIP
+//    [BookService fetchRecoBooksWithSucceedCallback:^(NSArray *recoBooks) {
+//        [self.recoBookImageView1 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[0] bookImageHref]]];
+//        [self.recoBookImageView2 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[1] bookImageHref]]];
+//        [self.recoBookImageView3 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[2] bookImageHref]]];
+//        [self.recoBookImageView4 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[3] bookImageHref]]];
+//    }];
     
     [BookService fetchAllBooksWithSucceedCallback:^(NSArray *myBooksObject) {
-        self.books = [myBooksObject copy];
+        self.books = [myBooksObject mutableCopy];
         
         [self.booksCollectionView reloadData];
     }];
@@ -146,6 +147,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 - (void)didAddToLibraryForBook:(Book *)book {
     [self.books insertObject:book atIndex:0];
+
     [self.booksCollectionView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
