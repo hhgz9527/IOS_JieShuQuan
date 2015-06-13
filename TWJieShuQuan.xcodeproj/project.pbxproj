@@ -18,6 +18,7 @@
 		941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D6A1B1035CC002021DE /* CustomTextField.m */; };
 		941C9D961B130C4C002021DE /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D941B130C4C002021DE /* ResetPasswordViewController.m */; };
 		941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */; };
+		9423F6751B2C3017000D8556 /* BorrowBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9423F6741B2C3017000D8556 /* BorrowBookDetailViewController.m */; };
 		942BBCBA1B17031000F490CF /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCB91B17031000F490CF /* BookService.m */; };
 		942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCBC1B17F90D00F490CF /* BookEntity.m */; };
 		942BBCC01B180FC600F490CF /* AVQuery+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCBF1B180FC600F490CF /* AVQuery+Extensions.m */; };
@@ -38,7 +39,6 @@
 		94C069771B1410140047BCCB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069761B1410140047BCCB /* QuartzCore.framework */; };
 		94C069791B14101C0047BCCB /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069781B14101C0047BCCB /* libiconv.dylib */; };
 		94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0697E1B1411620047BCCB /* BorrowBookViewController.m */; };
-		94C069811B1411620047BCCB /* BorrowBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C0697F1B1411620047BCCB /* BorrowBookViewController.xib */; };
 		94C069831B1415200047BCCB /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C069821B1415200047BCCB /* test.png */; };
 		94C069861B14175A0047BCCB /* LibzBar in Resources */ = {isa = PBXBuildFile; fileRef = 94C069851B14175A0047BCCB /* LibzBar */; };
 		94C0698A1B1418F40047BCCB /* libzbar-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C069891B1418F40047BCCB /* libzbar-universal.a */; };
@@ -92,6 +92,8 @@
 		941C9D931B130C4C002021DE /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetPasswordViewController.h; path = Authentication/Controllers/ResetPasswordViewController.h; sourceTree = "<group>"; };
 		941C9D941B130C4C002021DE /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetPasswordViewController.m; path = Authentication/Controllers/ResetPasswordViewController.m; sourceTree = "<group>"; };
 		941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResetPasswordViewController.xib; path = Authentication/Controllers/ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		9423F6731B2C3017000D8556 /* BorrowBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorrowBookDetailViewController.h; path = books/BorrowBookDetailViewController.h; sourceTree = "<group>"; };
+		9423F6741B2C3017000D8556 /* BorrowBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorrowBookDetailViewController.m; path = books/BorrowBookDetailViewController.m; sourceTree = "<group>"; };
 		942BBCB81B17031000F490CF /* BookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookService.h; sourceTree = "<group>"; };
 		942BBCB91B17031000F490CF /* BookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookService.m; sourceTree = "<group>"; };
 		942BBCBB1B17F90D00F490CF /* BookEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookEntity.h; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 		94C069781B14101C0047BCCB /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		94C0697D1B1411620047BCCB /* BorrowBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowBookViewController.h; sourceTree = "<group>"; };
 		94C0697E1B1411620047BCCB /* BorrowBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowBookViewController.m; sourceTree = "<group>"; };
-		94C0697F1B1411620047BCCB /* BorrowBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BorrowBookViewController.xib; sourceTree = "<group>"; };
 		94C069821B1415200047BCCB /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		94C069851B14175A0047BCCB /* LibzBar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LibzBar; sourceTree = "<group>"; };
 		94C069891B1418F40047BCCB /* libzbar-universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libzbar-universal.a"; path = "Libaries/LibzBar/libzbar-universal.a"; sourceTree = "<group>"; };
@@ -350,10 +351,11 @@
 			children = (
 				94C0697D1B1411620047BCCB /* BorrowBookViewController.h */,
 				94C0697E1B1411620047BCCB /* BorrowBookViewController.m */,
-				94C0697F1B1411620047BCCB /* BorrowBookViewController.xib */,
 				94C069951B146A570047BCCB /* AddToLibraryViewController.h */,
 				94C069961B146A570047BCCB /* AddToLibraryViewController.m */,
 				94C069971B146A570047BCCB /* AddToLibraryViewController.xib */,
+				9423F6731B2C3017000D8556 /* BorrowBookDetailViewController.h */,
+				9423F6741B2C3017000D8556 /* BorrowBookDetailViewController.m */,
 			);
 			name = Books;
 			sourceTree = "<group>";
@@ -517,7 +519,6 @@
 				9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */,
 				A327D9631B29719500358122 /* stats.png in Resources */,
 				941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */,
-				94C069811B1411620047BCCB /* BorrowBookViewController.xib in Resources */,
 				7361D07A1B17763E000AF2EC /* nav_background.png in Resources */,
 				A3D1C9801B1C242700923AD5 /* return_message_bg.png in Resources */,
 				941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */,
@@ -605,6 +606,7 @@
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
 				942BBCBA1B17031000F490CF /* BookService.m in Sources */,
 				942BBCC01B180FC600F490CF /* AVQuery+Extensions.m in Sources */,
+				9423F6751B2C3017000D8556 /* BorrowBookDetailViewController.m in Sources */,
 				941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */,
 				941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */,
 				A327D96B1B29762700358122 /* TWIconButton.m in Sources */,

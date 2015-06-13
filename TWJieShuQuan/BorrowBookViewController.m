@@ -15,6 +15,7 @@
 #import "BookService.h"
 #import "MyBooksCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "BorrowBookDetailViewController.h"
 
 @interface BorrowBookViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView1;
@@ -177,6 +178,19 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"borrowBookDetailSegue"]) {
+        BorrowBookDetailViewController *borrowBookDetailViewController = (BorrowBookDetailViewController *)segue.destinationViewController;
+        NSInteger row = [self.booksCollectionView indexPathForCell:sender].row;
+        borrowBookDetailViewController.book = self.books[row];
+    }
 }
 
 
