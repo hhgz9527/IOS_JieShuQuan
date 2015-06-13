@@ -14,5 +14,6 @@
 
 @property (nonatomic, copy) AVUser *user;
 @property (nonatomic, copy) NSString *book;
+@property (nonatomic, copy) NSString *twitter;
 
 @end

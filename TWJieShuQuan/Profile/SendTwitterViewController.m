@@ -7,6 +7,8 @@
 //
 
 #import "SendTwitterViewController.h"
+#import <AVObject.h>
+#import <AVUser.h>
 
 @interface SendTwitterViewController ()
 
@@ -21,7 +23,7 @@
     // Do any additional setup after loading the view.
     _textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     _textView.layer.borderWidth = 0.5;
-
+    
     self.title = @"发信息";
 }
 
@@ -30,6 +32,17 @@
 }
 
 - (IBAction)sendTwitter:(id)sender {
-    
+    if (_textView.text.length <= 140) {
+        AVObject *obj = [AVObject objectWithClassName:@"Find"];
+        [obj setObject:[AVUser currentUser] forKey:@"user"];
+        [obj setObject:_textView.text forKey:@"twitter"];
+        [obj saveEventually:^(BOOL succeeded, NSError *error) {
+            if (succeeded == YES) {
+                NSLog(@"发布成功");
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }];
+    }
 }
+
 @end

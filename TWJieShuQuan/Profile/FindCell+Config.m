@@ -20,20 +20,34 @@
     [query whereKey:@"objectId" equalTo:find.user.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error == nil) {
-            AVUser *user = objects.firstObject;
-            self.name.text = user.username;
-            self.content.text = [NSString stringWithFormat:@"我添加了一本新书《%@》。",find.book];
-            self.time.text = [self currentTime:find.createdAt];
-            
-            AVFile *file = [[objects.firstObject objectForKey:@"localData"] objectForKey:@"avatar"];
-            AVFile *avatarFile = [AVFile fileWithURL:file.url];
-            [avatarFile getThumbnail:YES width:30 height:30 withBlock:^(UIImage *image, NSError *error) {
-                self.avatar.image = image;
-            }];
+            [find.book isEqualToString:@"nil"] ? [self isTwitter:objects find:find] : [self isBookNotification:objects find:find];
         } else {
             
         }
     }];
+}
+
+- (void)isTwitter:(NSArray *)objects find:(Find *)find {
+    [self createCell:objects find:find content:find.twitter];
+}
+
+- (void)isBookNotification:(NSArray *)objects find:(Find *)find {
+    NSString *str = [NSString stringWithFormat:@"我添加了一本新书《%@》。",find.book];
+    [self createCell:objects find:find content:str];
+}
+
+- (void)createCell:(NSArray *)objects find:(Find *)find content:(NSString *)content {
+    AVUser *user = objects.firstObject;
+    self.name.text = user.username;
+    self.content.text = content;
+    self.time.text = [self currentTime:find.createdAt];
+    
+    AVFile *file = [[objects.firstObject objectForKey:@"localData"] objectForKey:@"avatar"];
+    AVFile *avatarFile = [AVFile fileWithURL:file.url];
+    [avatarFile getThumbnail:YES width:30 height:30 withBlock:^(UIImage *image, NSError *error) {
+        self.avatar.image = image;
+    }];
+
 }
 
 - (NSString *)currentTime:(NSDate *)date {
