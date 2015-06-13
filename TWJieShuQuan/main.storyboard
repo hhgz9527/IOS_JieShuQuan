@@ -811,13 +811,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-8k-itR">
+                                <rect key="frame" x="109" y="246" width="60" height="30"/>
+                                <state key="normal" title="申请借阅">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xUE-0t-qAL" kind="push" identifier="BorrowFromPersonSegue" id="Jj6-7a-T8v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oLF-dY-3dh" firstAttribute="top" secondItem="p5m-Ap-aOm" secondAttribute="bottom" constant="62" id="Bxh-V0-6Vz"/>
+                            <constraint firstItem="9c6-8k-itR" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="C3a-mr-ia4"/>
                             <constraint firstItem="UcX-63-I28" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="JMh-qj-3U9"/>
                             <constraint firstItem="UcX-63-I28" firstAttribute="top" secondItem="oLF-dY-3dh" secondAttribute="bottom" constant="38" id="WQa-rT-uyj"/>
                             <constraint firstItem="oLF-dY-3dh" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="hdl-vh-MxL"/>
+                            <constraint firstItem="9c6-8k-itR" firstAttribute="top" secondItem="UcX-63-I28" secondAttribute="bottom" constant="40" id="wgt-aS-pCQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="图书详情" id="RQ6-yE-J1S"/>
@@ -829,6 +840,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdV-M3-Wwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2404" y="-95"/>
+        </scene>
+        <!--申请借阅-->
+        <scene sceneID="NUK-m2-TJG">
+            <objects>
+                <viewController storyboardIdentifier="BorrowFromPersonViewController" id="xUE-0t-qAL" customClass="BorrowFromPersonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cmk-cm-4M5"/>
+                        <viewControllerLayoutGuide type="bottom" id="yrn-9q-5aZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OTP-HK-zYv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlC-zL-CEg">
+                                <rect key="frame" x="0.0" y="64" width="600" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击某人后，系统会自动发送您的借阅申请到该人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hh-bg-vlB">
+                                        <rect key="frame" x="168" y="5" width="264" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="6hh-bg-vlB" secondAttribute="centerX" id="0Iz-iU-KUY"/>
+                                    <constraint firstAttribute="height" constant="25" id="6UK-SG-rMP"/>
+                                    <constraint firstAttribute="centerY" secondItem="6hh-bg-vlB" secondAttribute="centerY" constant="0.5" id="a9a-BC-jHw"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Ew-4V-MZj">
+                                <rect key="frame" x="0.0" y="89" width="600" height="462"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BorrowFromPersonTableViewCell" textLabel="Fpa-Jk-pXF" style="IBUITableViewCellStyleDefault" id="8Nq-s8-1Z9" customClass="BorrowFromPersonTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Nq-s8-1Z9" id="rx0-qX-lUm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fpa-Jk-pXF">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bookNameLabel" destination="Fpa-Jk-pXF" id="vPy-HZ-jYr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yrn-9q-5aZ" firstAttribute="top" secondItem="9Ew-4V-MZj" secondAttribute="bottom" id="9c1-q6-GHR"/>
+                            <constraint firstItem="KlC-zL-CEg" firstAttribute="top" secondItem="cmk-cm-4M5" secondAttribute="bottom" id="IPC-ZT-G6u"/>
+                            <constraint firstItem="9Ew-4V-MZj" firstAttribute="top" secondItem="KlC-zL-CEg" secondAttribute="bottom" id="LaG-SR-xoC"/>
+                            <constraint firstItem="KlC-zL-CEg" firstAttribute="leading" secondItem="OTP-HK-zYv" secondAttribute="leading" id="O9O-yc-G3X"/>
+                            <constraint firstAttribute="trailing" secondItem="9Ew-4V-MZj" secondAttribute="trailing" id="PTo-Uk-bOQ"/>
+                            <constraint firstAttribute="trailing" secondItem="KlC-zL-CEg" secondAttribute="trailing" id="gKF-S3-7FS"/>
+                            <constraint firstItem="9Ew-4V-MZj" firstAttribute="leading" secondItem="OTP-HK-zYv" secondAttribute="leading" id="twd-4a-bZ4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="申请借阅" id="Y3F-Fj-0Mv"/>
+                    <connections>
+                        <outlet property="colleaguesTableView" destination="9Ew-4V-MZj" id="eEr-3k-jCA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnk-Tj-9M6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3102" y="-95"/>
         </scene>
         <!--发现-->
         <scene sceneID="qAH-xM-CVR">
