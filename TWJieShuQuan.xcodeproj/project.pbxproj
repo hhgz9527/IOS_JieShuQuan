@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733021501B2C3A5E007FE24C /* Find.m in Sources */ = {isa = PBXBuildFile; fileRef = 7330214F1B2C3A5E007FE24C /* Find.m */; };
+		733021531B2C3C07007FE24C /* FindCell+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 733021521B2C3C07007FE24C /* FindCell+Config.m */; };
 		7341C1961B1371A500E199DF /* Login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7341C1951B1371A500E199DF /* Login_background.png */; };
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
@@ -75,6 +77,10 @@
 
 /* Begin PBXFileReference section */
 		40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWJieShuQuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7330214E1B2C3A5E007FE24C /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
+		7330214F1B2C3A5E007FE24C /* Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Find.m; sourceTree = "<group>"; };
+		733021511B2C3C07007FE24C /* FindCell+Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FindCell+Config.h"; sourceTree = "<group>"; };
+		733021521B2C3C07007FE24C /* FindCell+Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FindCell+Config.m"; sourceTree = "<group>"; };
 		7341C1951B1371A500E199DF /* Login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_background.png; sourceTree = "<group>"; };
 		7361D0771B1774F8000AF2EC /* nav_scanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_scanIcon.png; sourceTree = "<group>"; };
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
@@ -374,6 +380,8 @@
 				94C0699C1B146AE30047BCCB /* Book.m */,
 				942BBCBB1B17F90D00F490CF /* BookEntity.h */,
 				942BBCBC1B17F90D00F490CF /* BookEntity.m */,
+				7330214E1B2C3A5E007FE24C /* Find.h */,
+				7330214F1B2C3A5E007FE24C /* Find.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -395,6 +403,8 @@
 				A3C1E2EF1B16B90300037DB5 /* FindViewController.m */,
 				73BBEA261B29DE4C00F7373A /* FindCell.h */,
 				73BBEA271B29DE4C00F7373A /* FindCell.m */,
+				733021511B2C3C07007FE24C /* FindCell+Config.h */,
+				733021521B2C3C07007FE24C /* FindCell+Config.m */,
 				A3C1E2F41B16C9C200037DB5 /* ProfileTableViewController.h */,
 				A3C1E2F51B16C9C200037DB5 /* ProfileTableViewController.m */,
 				A327D9661B29741B00358122 /* BookDetailViewController.h */,
@@ -595,8 +605,10 @@
 				942BBDD01B1EF1E500F490CF /* MyBooksCollectionViewController.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
+				733021531B2C3C07007FE24C /* FindCell+Config.m in Sources */,
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
+				733021501B2C3A5E007FE24C /* Find.m in Sources */,
 				942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */,
 				94C069901B145A960047BCCB /* CustomActivityIndicator.m in Sources */,
 				94C069981B146A570047BCCB /* AddToLibraryViewController.m in Sources */,
