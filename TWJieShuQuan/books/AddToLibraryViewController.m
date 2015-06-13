@@ -45,6 +45,20 @@
     [BookService addBookToLibrary:self.book availability:self.availabilityStatusSwitch.on succeeded:^{
         [[CustomAlert sharedAlert] showAlertWithMessage:@"已成功添加进您的书库！"];
         [self.delegate didAddToLibraryForBook:self.book];
+        if (self.availabilityStatusSwitch.on) {
+            [self sendMessageToFindViewWith:self.book.bookName];
+        }
+    }];
+}
+
+- (void)sendMessageToFindViewWith:(NSString *)bookName {
+    AVObject *obj = [AVObject objectWithClassName:@"Find"];
+    [obj setObject:[AVUser currentUser] forKey:@"user"];
+    [obj setObject:bookName forKey:@"book"];
+    [obj saveEventually:^(BOOL succeeded, NSError *error) {
+        if (succeeded == YES) {
+            NSLog(@"发布成功");
+        }
     }];
 }
 

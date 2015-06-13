@@ -86,12 +86,12 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
     scanButton.frame = CGRectMake(0, 0, 24, 24);
     [scanButton setBackgroundImage:[UIImage imageNamed:@"nav_scanIcon"] forState:UIControlStateNormal];
-    [scanButton addTarget:self action:@selector(scanISBN) forControlEvents:UIControlEventTouchUpInside];
+    [scanButton addTarget:self action:@selector(scanISBNWithBorrowBookViewController) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.navigationItem.rightBarButtonItem = scanISBNButton;
 }
 
-- (void)scanISBN {
+- (void)scanISBNWithBorrowBookViewController {
     ZBarReaderViewController *reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;
     reader.supportedOrientationsMask = ZBarOrientationMaskAll;
