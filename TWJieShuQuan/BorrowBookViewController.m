@@ -17,7 +17,7 @@
 
 @interface BorrowBookViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *booksCollectionView;
-@property (nonatomic, strong) NSArray *books;
+@property (nonatomic, strong) NSMutableArray *books;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
 @end
@@ -106,6 +106,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
             book.bookImageHref = [bookObject valueForKey:@"image"];
             
             AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
+            addToLibraryVC.delegate = self;
             addToLibraryVC.book = book;
             [self presentViewController:addToLibraryVC animated:YES completion:nil];
         } failed:^{
@@ -120,6 +121,13 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [reader dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark <AddToLibraryDelegate>
+
+- (void)didAddToLibraryForBook:(Book *)book {
+    [self.books insertObject:book atIndex:0];
+    [self.booksCollectionView reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark <UICollectionViewDataSource>
 
