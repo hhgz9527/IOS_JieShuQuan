@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -66,7 +65,7 @@
                                         <constraint firstAttribute="width" constant="30" id="tjX-zK-slD"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yq9-YU-h2N">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yq9-YU-h2N">
                                     <rect key="frame" x="251" y="30" width="9" height="15"/>
                                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -121,8 +120,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cAK-yb-zyt" id="fOk-KY-9wu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的书籍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VV-UY-YNm">
-                                                   <rect key="frame" x="23" y="15" width="68" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="我的书籍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VV-UY-YNm">
+                                                    <rect key="frame" x="23" y="15" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -604,9 +603,109 @@
                     <view key="view" contentMode="scaleToFill" id="OJQ-1F-6FZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQy-ve-MrY">
+                                <rect key="frame" x="0.0" y="64" width="600" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-jb-vIj">
+                                        <rect key="frame" x="266" y="54" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="5ox-4p-HD9"/>
+                                    <constraint firstAttribute="centerX" secondItem="P5f-jb-vIj" secondAttribute="centerX" id="LdH-kv-124"/>
+                                    <constraint firstAttribute="centerY" secondItem="P5f-jb-vIj" secondAttribute="centerY" id="lE1-We-hsp"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CLS-9t-6Wa">
+                                <rect key="frame" x="0.0" y="194" width="600" height="406"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rag-Tz-g2D">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MyBooksCollectionViewCell" reuseIdentifier="MyBooksCollectionViewCell" id="58U-Vn-aT3" customClass="MyBooksCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Vh-Jn-2en">
+                                                    <rect key="frame" x="18" y="23" width="75" height="103"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="103" id="Kp1-3J-SYD"/>
+                                                        <constraint firstAttribute="width" constant="75" id="P8Y-8L-8cv"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5m-sU-5wI">
+                                                    <rect key="frame" x="18" y="126" width="75" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWv-7V-Qdk">
+                                                            <rect key="frame" x="0.0" y="5" width="75" height="10"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="Qy4-bH-lBI"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="10"/>
+                                                            <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="Qy4-bH-lBI"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="IWv-7V-Qdk" firstAttribute="top" secondItem="G5m-sU-5wI" secondAttribute="top" constant="5" id="0CW-W5-l4r"/>
+                                                        <constraint firstAttribute="centerX" secondItem="IWv-7V-Qdk" secondAttribute="centerX" id="BrN-6h-MzG"/>
+                                                        <constraint firstAttribute="height" constant="21" id="vpo-6g-HLJ"/>
+                                                        <constraint firstAttribute="width" secondItem="IWv-7V-Qdk" secondAttribute="width" id="xzL-aw-tZ0"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="8Vh-Jn-2en" firstAttribute="top" secondItem="58U-Vn-aT3" secondAttribute="topMargin" constant="15" id="6zg-6g-iUs"/>
+                                            <constraint firstItem="G5m-sU-5wI" firstAttribute="width" secondItem="8Vh-Jn-2en" secondAttribute="width" id="ZRN-9B-iau"/>
+                                            <constraint firstItem="G5m-sU-5wI" firstAttribute="top" secondItem="8Vh-Jn-2en" secondAttribute="bottom" id="cZc-cK-b99"/>
+                                            <constraint firstAttribute="centerX" secondItem="8Vh-Jn-2en" secondAttribute="centerX" id="vyE-IS-Nvl"/>
+                                            <constraint firstItem="G5m-sU-5wI" firstAttribute="leading" secondItem="8Vh-Jn-2en" secondAttribute="leading" id="zDn-ph-T2f"/>
+                                        </constraints>
+                                        <size key="customSize" width="110" height="160"/>
+                                        <connections>
+                                            <outlet property="bookImageView" destination="8Vh-Jn-2en" id="BZE-Gg-3hA"/>
+                                            <outlet property="bookNameLabel" destination="IWv-7V-Qdk" id="vSI-pi-r9T"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aQy-ve-MrY" secondAttribute="trailing" id="C6c-bz-H1W"/>
+                            <constraint firstItem="aQy-ve-MrY" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="Ed8-ah-WMU"/>
+                            <constraint firstItem="CLS-9t-6Wa" firstAttribute="top" secondItem="aQy-ve-MrY" secondAttribute="bottom" id="Y6R-Au-MHR"/>
+                            <constraint firstItem="aQy-ve-MrY" firstAttribute="top" secondItem="u3e-cQ-Oxc" secondAttribute="bottom" id="bdg-Ix-J3B"/>
+                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" constant="-49" id="dVF-z1-K0q"/>
+                            <constraint firstItem="CLS-9t-6Wa" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="pOF-kh-Rnb"/>
+                            <constraint firstAttribute="trailing" secondItem="CLS-9t-6Wa" secondAttribute="trailing" id="tYB-TU-Zbc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="借书" id="r7z-Zr-rzD"/>
+                    <connections>
+                        <outlet property="booksCollectionView" destination="CLS-9t-6Wa" id="fgT-hZ-x0P"/>
+                        <outlet property="flowLayout" destination="Rag-Tz-g2D" id="xxn-at-vtK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RO-GE-mz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

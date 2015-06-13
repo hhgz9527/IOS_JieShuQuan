@@ -12,16 +12,53 @@
 #import "CustomActivityIndicator.h"
 #import "AddToLibraryViewController.h"
 #import "Book.h"
+#import "BookService.h"
+#import "MyBooksCollectionViewCell.h"
 
 @interface BorrowBookViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *booksCollectionView;
+@property (nonatomic, strong) NSArray *books;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
 @end
 
 @implementation BorrowBookViewController
 
+static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self initNavBar];
     
+    [self initCollectionView];
+    
+    [BookService fetchAllBooksWithSucceedCallback:^(NSArray *myBooksObject) {
+        self.books = myBooksObject;
+        
+        [self.booksCollectionView reloadData];
+    }];
+}
+
+- (void)initCollectionView {
+    self.booksCollectionView.delegate = self;
+    self.booksCollectionView.dataSource = self;
+
+    // Configure layout
+    CGFloat screenWidth = self.view.frame.size.width;
+    CGFloat cellWidth = screenWidth/3;
+    [self.flowLayout setItemSize:CGSizeMake(cellWidth, 145)];
+    [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    self.flowLayout.minimumLineSpacing = 10.f;
+    self.flowLayout.minimumInteritemSpacing = 0.0f;
+    [self.booksCollectionView setCollectionViewLayout:self.flowLayout];
+    
+    self.booksCollectionView.bounces = YES;
+    [self.booksCollectionView setShowsHorizontalScrollIndicator:NO];
+    [self.booksCollectionView setShowsVerticalScrollIndicator:YES];
+}
+
+- (void)initNavBar {
     self.navigationItem.title = @"借书";
 
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -82,5 +119,34 @@
 
     [reader dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.books.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    BookEntity *currentBook = self.books[indexPath.row];
+    
+    MyBooksCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    [cell refreshCellWithBookEntity:currentBook];
+    
+    return cell;
+}
+
+#pragma mark <UICollectionViewDelegate>
+
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
 
 @end

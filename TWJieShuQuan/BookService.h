@@ -15,5 +15,6 @@
 
 + (void)addBookToLibrary:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock;
 + (void )fetchBookEntitiesForCurrentUserWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
++ (void)fetchAllBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 
 @end

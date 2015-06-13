@@ -32,7 +32,7 @@
     __weak typeof(self) weakSelf = self;
     [currentBook fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
         weakSelf.bookAuthor.text = currentBook.bookAuthor;
-        weakSelf.bookPress.text = currentBook.
+        weakSelf.bookPress.text = currentBook.bookPress;
 
     }];
 

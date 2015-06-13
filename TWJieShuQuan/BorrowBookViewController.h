@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "LibzBar/Headers/ZBarSDK/ZBarSDK.h"
 
-@interface BorrowBookViewController : UIViewController <ZBarReaderDelegate>
+@interface BorrowBookViewController : UIViewController <ZBarReaderDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end
