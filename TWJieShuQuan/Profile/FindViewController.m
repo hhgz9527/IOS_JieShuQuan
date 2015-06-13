@@ -64,7 +64,6 @@
     static NSString *iden = @"cell";
     FindCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
     [cell configFindCell:find];
-    cell.time.text = @"2015-5-1";
     tableView.tableFooterView = [[UIView alloc] init];
     return cell;
 }
