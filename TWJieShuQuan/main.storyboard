@@ -755,6 +755,7 @@
                                         <connections>
                                             <outlet property="bookImageView" destination="8Vh-Jn-2en" id="BZE-Gg-3hA"/>
                                             <outlet property="bookNameLabel" destination="IWv-7V-Qdk" id="vSI-pi-r9T"/>
+                                            <segue destination="Xhd-8c-ST5" kind="push" identifier="borrowBookDetailSegue" id="TdA-Vy-rYo"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -785,6 +786,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RO-GE-mz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1669" y="-91"/>
+        </scene>
+        <!--图书详情-->
+        <scene sceneID="iDe-Cq-nQP">
+            <objects>
+                <viewController storyboardIdentifier="BorrowBookViewController" id="Xhd-8c-ST5" customClass="BorrowBookDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p5m-Ap-aOm"/>
+                        <viewControllerLayoutGuide type="bottom" id="5MD-m1-Ala"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mmO-Vf-jmR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLF-dY-3dh">
+                                <rect key="frame" x="109" y="126" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="avaliability" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcX-63-I28">
+                                <rect key="frame" x="109" y="185" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oLF-dY-3dh" firstAttribute="top" secondItem="p5m-Ap-aOm" secondAttribute="bottom" constant="62" id="Bxh-V0-6Vz"/>
+                            <constraint firstItem="UcX-63-I28" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="JMh-qj-3U9"/>
+                            <constraint firstItem="UcX-63-I28" firstAttribute="top" secondItem="oLF-dY-3dh" secondAttribute="bottom" constant="38" id="WQa-rT-uyj"/>
+                            <constraint firstItem="oLF-dY-3dh" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="hdl-vh-MxL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="图书详情" id="RQ6-yE-J1S"/>
+                    <connections>
+                        <outlet property="bookAvaliablityLabel" destination="UcX-63-I28" id="wSJ-Vr-X54"/>
+                        <outlet property="bookNameLabel" destination="oLF-dY-3dh" id="uf0-hp-4yK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdV-M3-Wwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404" y="-95"/>
         </scene>
         <!--发现-->
         <scene sceneID="qAH-xM-CVR">

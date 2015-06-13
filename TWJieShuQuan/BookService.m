@@ -83,6 +83,8 @@
 }
 
 + (void)fetchRecoBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
+    
+    // WIP
     AVQuery *q = [AVQuery queryForBook];
     [q orderByDescending:@"createdAt"];
     [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -95,6 +97,20 @@
     }];
 }
 
++ (void)fetchAvaliabilityForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock {
+    AVQuery *q = [AVQuery queryForBookEntity];
+    [q whereKey:kBookEntity_Book equalTo:book];
+    [q whereKey:@"bookAvailability" equalTo:@1];
+    
+    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"获取图书失败！"];
+            return;
+        }
+        
+        succeededBlock(objects);
+    }];
+}
 
 #pragma mark - private methods
 
