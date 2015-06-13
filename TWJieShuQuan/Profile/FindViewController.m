@@ -43,6 +43,7 @@
 
 - (void)refreshFindList {
     AVQuery *query = [AVQuery queryForFind];
+    [query addDescendingOrder:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         NSLog(@"%@",objects);
         if (!error) {
