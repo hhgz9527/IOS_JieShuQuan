@@ -82,6 +82,20 @@
     }];
 }
 
++ (void)fetchRecoBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
+    AVQuery *q = [AVQuery queryForBook];
+    [q orderByDescending:@"createdAt"];
+    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"获取图书失败！"];
+            return;
+        }
+        
+        succeededBlock(objects);
+    }];
+}
+
+
 #pragma mark - private methods
 
 + (void)createBookEntityIfNeededWithBook:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
