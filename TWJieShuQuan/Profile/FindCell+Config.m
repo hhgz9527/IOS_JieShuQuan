@@ -12,6 +12,10 @@
 @implementation FindCell (Config)
 
 - (void)configFindCell:(Find *)find {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.avatar.layer.cornerRadius = 15;
+    self.avatar.layer.masksToBounds = YES;
+    
     AVQuery *query = [AVUser query];
     [query whereKey:@"objectId" equalTo:find.user.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

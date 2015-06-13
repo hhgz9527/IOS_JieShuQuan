@@ -12,8 +12,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ( self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        _avatar.layer.cornerRadius = 15;
-        _avatar.layer.masksToBounds = YES;
+
     }
     return self;
 }
