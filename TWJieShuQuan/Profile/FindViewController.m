@@ -31,7 +31,12 @@
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(refreshFindList) forControlEvents:UIControlEventValueChanged];
     [_findList addSubview:_refreshControl];
-    [self refreshFindList];
+//    [_refreshControl beginRefreshing];
+//    [self refreshFindList];
+}
+
+- (IBAction)unwindTest:(id)sender {
+    
 }
 
 #pragma mark - Refresh List

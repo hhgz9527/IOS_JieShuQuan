@@ -587,7 +587,13 @@
                             <constraint firstItem="WHh-HU-i1v" firstAttribute="leading" secondItem="x08-j4-PqF" secondAttribute="leading" id="vQx-VJ-2Pq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="发现" id="7ro-LT-C1q"/>
+                    <navigationItem key="navigationItem" title="发现" id="7ro-LT-C1q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="W59-xk-mRk">
+                            <connections>
+                                <segue destination="ERV-9d-KVg" kind="showDetail" id="Rxr-5l-mcU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="findList" destination="WHh-HU-i1v" id="k3X-Lm-6r1"/>
                     </connections>
@@ -595,6 +601,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WG-2a-pMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1669" y="-847"/>
+        </scene>
+        <!--发信息-->
+        <scene sceneID="OMp-KD-cpT">
+            <objects>
+                <navigationController title="发信息" id="ERV-9d-KVg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pVX-UW-1B3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sgK-cg-ADq" kind="relationship" relationship="rootViewController" id="0J3-gC-dSe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y20-pS-dEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2333" y="-860"/>
+        </scene>
+        <!--Send Twitter View Controller-->
+        <scene sceneID="9ua-uc-7Gw">
+            <objects>
+                <viewController id="sgK-cg-ADq" customClass="SendTwitterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w5F-6C-s6E"/>
+                        <viewControllerLayoutGuide type="bottom" id="69o-Fd-jIf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X6T-ar-YGH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNn-Ie-3bq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KNn-Ie-3bq" firstAttribute="leading" secondItem="X6T-ar-YGH" secondAttribute="leading" id="BEr-Mc-Aaa"/>
+                            <constraint firstAttribute="trailing" secondItem="KNn-Ie-3bq" secondAttribute="trailing" id="Gx7-br-fnT"/>
+                            <constraint firstItem="KNn-Ie-3bq" firstAttribute="top" secondItem="X6T-ar-YGH" secondAttribute="top" id="YVg-YF-xek"/>
+                            <constraint firstItem="69o-Fd-jIf" firstAttribute="top" secondItem="KNn-Ie-3bq" secondAttribute="bottom" id="rJa-aI-gVa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VEX-Zg-0qP">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="qNT-Kf-ptF">
+                            <connections>
+                                <action selector="dismiss:" destination="sgK-cg-ADq" id="6bK-Qz-BFX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="OtE-WQ-fLj">
+                            <connections>
+                                <action selector="sendTwitter:" destination="sgK-cg-ADq" id="G7q-9l-zKG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="KNn-Ie-3bq" id="M3a-ca-1iB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jy-Ia-eGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3034" y="-866"/>
         </scene>
         <!--借书-->
         <scene sceneID="yKC-jM-LUm">
