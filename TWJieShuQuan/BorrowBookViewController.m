@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *booksCollectionView;
 @property (nonatomic, strong) NSMutableArray *books;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *recoBooksTopConstraint;
 
 @end
 
@@ -193,5 +194,13 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y > 10) {
+        _recoBooksTopConstraint.constant = - 130;
+    }
+    if (scrollView.contentOffset.y <= 0) {
+        _recoBooksTopConstraint.constant = 0;
+    }
+}
 
 @end

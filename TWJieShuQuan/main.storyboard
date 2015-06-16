@@ -761,7 +761,7 @@
                                 </variation>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CLS-9t-6Wa">
-                                <rect key="frame" x="0.0" y="194" width="600" height="406"/>
+                                <rect key="frame" x="0.0" y="194" width="600" height="357"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rag-Tz-g2D">
                                     <size key="itemSize" width="50" height="50"/>
@@ -836,7 +836,7 @@
                             <constraint firstItem="aQy-ve-MrY" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="Ed8-ah-WMU"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="top" secondItem="aQy-ve-MrY" secondAttribute="bottom" id="Y6R-Au-MHR"/>
                             <constraint firstItem="aQy-ve-MrY" firstAttribute="top" secondItem="u3e-cQ-Oxc" secondAttribute="bottom" id="bdg-Ix-J3B"/>
-                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" constant="-49" id="dVF-z1-K0q"/>
+                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" id="dVF-z1-K0q"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="pOF-kh-Rnb"/>
                             <constraint firstAttribute="trailing" secondItem="CLS-9t-6Wa" secondAttribute="trailing" id="tYB-TU-Zbc"/>
                         </constraints>
@@ -850,6 +850,7 @@
                         <outlet property="recoBookImageView3" destination="xxi-CZ-5AP" id="g3p-VJ-gcH"/>
                         <outlet property="recoBookImageView4" destination="cXN-Ug-gb4" id="2ub-aB-Mel"/>
                         <outlet property="recoBooksSepatatorView" destination="3qN-I7-9SO" id="unJ-ZZ-IAB"/>
+                        <outlet property="recoBooksTopConstraint" destination="bdg-Ix-J3B" id="gA1-dt-Isb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RO-GE-mz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
