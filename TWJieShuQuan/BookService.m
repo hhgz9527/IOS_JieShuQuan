@@ -97,7 +97,7 @@
     }];
 }
 
-+ (void)fetchAvaliabilityForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock {
++ (void)fetchAllAvaliableBookEntitiesForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBookEntity];
     [q whereKey:kBookEntity_Book equalTo:book];
     [q whereKey:@"bookAvailability" equalTo:@1];
@@ -109,6 +109,22 @@
         }
         
         succeededBlock(objects);
+    }];
+}
+
++ (void)fetchOwnersFromBookEntities:(NSArray *)bookEntities withSucceedCallback:(void (^)(NSArray *))succeededBlock {
+    NSMutableArray *users = [NSMutableArray array];
+    [bookEntities enumerateObjectsUsingBlock:^(id bookEntity, NSUInteger idx, BOOL *stop) {
+        AVUser *user = [bookEntity objectForKey:kBookEntity_User];
+        [user fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+            if (error) {
+                [[CustomAlert sharedAlert] showAlertWithMessage:@"获取用户失败！"];
+                return;
+            }
+            
+            [users addObject:object];
+            succeededBlock(users);
+        }];
     }];
 }
 

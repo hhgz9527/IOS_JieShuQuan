@@ -23,7 +23,7 @@
     [super viewDidLoad];
 
     // 获取所有可借的 BookEntity 数组, 将该数组传入“借阅该书”点击后的页面
-    [BookService fetchAvaliabilityForBook:self.book withSucceedCallback:^(NSArray *avaliableBooksEntities) {
+    [BookService fetchAllAvaliableBookEntitiesForBook:self.book withSucceedCallback:^(NSArray *avaliableBooksEntities) {
         self.bookNameLabel.text = self.book.bookName;
         self.avaliableBooksEntities = avaliableBooksEntities;
         
