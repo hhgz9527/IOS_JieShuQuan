@@ -8,9 +8,11 @@
 
 #import "BorrowFromPersonViewController.h"
 #import "BorrowFromPersonTableViewCell.h"
+#import "BookService.h"
 
 @interface BorrowFromPersonViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *colleaguesTableView;
+@property (nonatomic, strong) NSArray *colleagues;
 
 @end
 
@@ -21,6 +23,11 @@
     
     self.colleaguesTableView.dataSource = self;
     self.colleaguesTableView.delegate = self;
+    
+    [BookService fetchOwnersFromBookEntities:self.avaliableBookEntities withSucceedCallback:^(NSArray *owners) {
+        self.colleagues = owners;
+        [self.colleaguesTableView reloadData];
+    }];
 }
 
 
@@ -29,14 +36,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.avaliableBookEntities.count;
+    return self.colleagues.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AVUser *currentUser = self.colleagues[indexPath.row];
     
     static NSString *iden = @"BorrowFromPersonTableViewCell";
     BorrowFromPersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
-    cell.bookNameLabel.text = @"aa";
+    cell.bookNameLabel.text = currentUser.username;
     return cell;
 }
 @end
