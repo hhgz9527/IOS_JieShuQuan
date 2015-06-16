@@ -17,7 +17,7 @@
 + (void )fetchBookEntitiesForCurrentUserWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 + (void)fetchAllBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 + (void)fetchRecoBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
-+ (void)fetchAvaliabilityForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock;
++ (void)fetchAllAvaliableBookEntitiesForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock;
 + (void)fetchOwnersFromBookEntities:(NSArray *)bookEntities withSucceedCallback:(void (^)(NSArray *))succeededBlock;
 
 @end

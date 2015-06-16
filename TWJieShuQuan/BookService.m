@@ -97,7 +97,7 @@
     }];
 }
 
-+ (void)fetchAvaliabilityForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock {
++ (void)fetchAllAvaliableBookEntitiesForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBookEntity];
     [q whereKey:kBookEntity_Book equalTo:book];
     [q whereKey:@"bookAvailability" equalTo:@1];
