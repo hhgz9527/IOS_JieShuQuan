@@ -20,7 +20,7 @@
     [query whereKey:@"objectId" equalTo:find.user.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error == nil) {
-            [find.book isEqualToString:@"nil"] ? [self isTwitter:objects find:find] : [self isBookNotification:objects find:find];
+            find.twitter == nil ? [self isBookNotification:objects find:find] : [self isTwitter:objects find:find];
         } else {
             
         }
