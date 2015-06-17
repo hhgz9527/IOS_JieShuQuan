@@ -14,6 +14,7 @@
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
 		73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBEA271B29DE4C00F7373A /* FindCell.m */; };
+		941A806B1B3142DC00F15E3E /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941A806A1B3142DC00F15E3E /* NotificationManager.m */; };
 		941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5B1B0F7864002021DE /* NSString+Extensions.m */; };
 		941C9D601B0F7906002021DE /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5F1B0F7906002021DE /* CustomAlert.m */; };
 		941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D631B0F81ED002021DE /* RegisterViewController.m */; };
@@ -91,6 +92,8 @@
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
 		73BBEA261B29DE4C00F7373A /* FindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCell.h; sourceTree = "<group>"; };
 		73BBEA271B29DE4C00F7373A /* FindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCell.m; sourceTree = "<group>"; };
+		941A80691B3142DC00F15E3E /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
+		941A806A1B3142DC00F15E3E /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
 		941C9D5A1B0F7864002021DE /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extensions.h"; path = "Extensions/NSString+Extensions.h"; sourceTree = "<group>"; };
 		941C9D5B1B0F7864002021DE /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extensions.m"; path = "Extensions/NSString+Extensions.m"; sourceTree = "<group>"; };
 		941C9D5E1B0F7906002021DE /* CustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlert.h; sourceTree = "<group>"; };
@@ -406,6 +409,8 @@
 			children = (
 				94C069A31B1567500047BCCB /* UserManager.h */,
 				94C069A41B1567500047BCCB /* UserManager.m */,
+				941A80691B3142DC00F15E3E /* NotificationManager.h */,
+				941A806A1B3142DC00F15E3E /* NotificationManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
 				733021501B2C3A5E007FE24C /* Find.m in Sources */,
 				942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */,
+				941A806B1B3142DC00F15E3E /* NotificationManager.m in Sources */,
 				94C069901B145A960047BCCB /* CustomActivityIndicator.m in Sources */,
 				94C069981B146A570047BCCB /* AddToLibraryViewController.m in Sources */,
 				941C9D601B0F7906002021DE /* CustomAlert.m in Sources */,

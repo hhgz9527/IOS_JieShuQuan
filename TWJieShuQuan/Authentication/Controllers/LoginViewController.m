@@ -13,6 +13,7 @@
 #import "RegisterViewController.h"
 #import "ResetPasswordViewController.h"
 #import "UserManager.h"
+#import "NotificationManager.h"
 
 @interface LoginViewController ()
 @property (nonatomic, strong) UITextField *activeTextField;
@@ -78,6 +79,9 @@
         
         // save login user to UserDefaults
         [UserManager saveCurrentUser];
+        
+        // save login user to AVInstallation for push notification
+        [NotificationManager saveLoginUsers];
         
         UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"main" bundle:nil];
         UIViewController *rootVC = (UIViewController *)mainSB.instantiateInitialViewController;

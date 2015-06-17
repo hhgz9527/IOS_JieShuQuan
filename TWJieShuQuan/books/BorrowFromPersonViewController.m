@@ -9,6 +9,7 @@
 #import "BorrowFromPersonViewController.h"
 #import "BorrowFromPersonTableViewCell.h"
 #import "BookService.h"
+#import "NotificationManager.h"
 
 @interface BorrowFromPersonViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *colleaguesTableView;
@@ -47,4 +48,11 @@
     cell.bookNameLabel.text = currentUser.username;
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // send push notification to the selected user
+    AVUser *currentUser = self.colleagues[indexPath.row];
+    [NotificationManager sendBorrowBookNotificationToUser:currentUser];
+}
+
 @end

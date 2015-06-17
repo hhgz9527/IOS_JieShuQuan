@@ -14,6 +14,8 @@
 #define kDouBanSearchIsbnCode @"https://api.douban.com/v2/book/isbn/"
 #define kDouBanAPIKey @"0071e999e5b2c9100155bccdb1185b30"
 
+#define kPushNotificationKeyOwner @"owner"
+
 @interface Constants : NSObject
 
 @end
