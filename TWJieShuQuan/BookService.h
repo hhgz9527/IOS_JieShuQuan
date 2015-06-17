@@ -11,9 +11,12 @@
 #import "Book.h"
 #import "AVQuery+Extensions.h"
 
+@class BookEntity;
+
 @interface BookService : NSObject
 
 + (void)addBookToLibrary:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock;
-+ (void )fetchBookEntitiesForCurrentUserWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
++ (void)fetchBookEntitiesForCurrentUserWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
++ (void)updateBookAvailabilityWithBook:(Book *)book availbility:(BOOL)availability;
 
 @end

@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class BookEntity;
+@class BookCommentCell;
 
-
-@interface BookDetailViewController : UITableViewController
+@interface BookDetailViewController : UITableViewController<UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UIView *updateStatsView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (nonatomic, strong) BookEntity *bookEntity;
 @property (weak, nonatomic) IBOutlet UIView *deleteView;
 @property (weak, nonatomic) IBOutlet UILabel *bookName;
@@ -22,5 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *bookPress;
 @property (weak, nonatomic) IBOutlet UIImageView *bookImage;
 
+@property (nonatomic, strong) NSArray *data;//TODO for testing
+@property (nonatomic, strong) BookCommentCell *cellForCalcHeight;
 
 @end

@@ -69,6 +69,26 @@
     }];
 }
 
++ (void)updateBookAvailabilityWithBook:(Book *)book availbility:(BOOL)availability {
+    AVQuery *query = [AVQuery queryForBookEntity];
+    [query whereKey:kBookEntity_User equalTo:[AVUser currentUser]];
+    [query whereKey:kBookEntity_Book equalTo:book];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"修改状态失败"];
+            return;
+        }
+
+        if (objects.count) {
+            BookEntity *bookEntity = (BookEntity *)objects[0];
+            bookEntity.bookAvailability = availability;
+            [bookEntity saveInBackground];
+        }
+    }];
+
+}
+
+
 #pragma mark - private methods
 
 + (void)createBookEntityIfNeededWithBook:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
