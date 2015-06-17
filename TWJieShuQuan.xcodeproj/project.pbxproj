@@ -510,6 +510,7 @@
 				TargetAttributes = {
 					949996FF1B09D3E500986337 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = P7DQ9D7MW9;
 					};
 					949997181B09D3E500986337 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -762,6 +763,8 @@
 			baseConfigurationReference = BF2F57A18609299496A9CF80 /* Pods-TWJieShuQuan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -771,6 +774,7 @@
 					"$(PROJECT_DIR)/Libaries/LibzBar",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "45b95630-6a25-46f7-99b3-3b9d3d04880d";
 			};
 			name = Debug;
 		};
@@ -779,6 +783,8 @@
 			baseConfigurationReference = FD885F8C87A3D68AAE517265 /* Pods-TWJieShuQuan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -788,6 +794,7 @@
 					"$(PROJECT_DIR)/Libaries/LibzBar",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
