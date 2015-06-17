@@ -59,6 +59,7 @@
 		A327D9651B29719A00358122 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A327D9641B29719A00358122 /* delete.png */; };
 		A327D9681B29741B00358122 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A327D9671B29741B00358122 /* BookDetailViewController.m */; };
 		A327D96B1B29762700358122 /* TWIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A327D96A1B29762700358122 /* TWIconButton.m */; };
+		A327D9811B2AD2E200358122 /* BookCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A327D9801B2AD2E200358122 /* BookCommentCell.m */; };
 		A3C1E2EC1B16AF1100037DB5 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1E2EB1B16AF1100037DB5 /* main.storyboard */; };
 		A3C1E2F01B16B90300037DB5 /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C1E2EF1B16B90300037DB5 /* FindViewController.m */; };
 		A3C1E2F61B16C9C200037DB5 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C1E2F51B16C9C200037DB5 /* ProfileTableViewController.m */; };
@@ -167,6 +168,8 @@
 		A327D9671B29741B00358122 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		A327D9691B29762700358122 /* TWIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWIconButton.h; sourceTree = "<group>"; };
 		A327D96A1B29762700358122 /* TWIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWIconButton.m; sourceTree = "<group>"; };
+		A327D97F1B2AD2E200358122 /* BookCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCommentCell.h; sourceTree = "<group>"; };
+		A327D9801B2AD2E200358122 /* BookCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCommentCell.m; sourceTree = "<group>"; };
 		A3C1E2EB1B16AF1100037DB5 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		A3C1E2EE1B16B90300037DB5 /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
 		A3C1E2EF1B16B90300037DB5 /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
@@ -433,6 +436,8 @@
 				A327D9671B29741B00358122 /* BookDetailViewController.m */,
 				A327D9691B29762700358122 /* TWIconButton.h */,
 				A327D96A1B29762700358122 /* TWIconButton.m */,
+				A327D97F1B2AD2E200358122 /* BookCommentCell.h */,
+				A327D9801B2AD2E200358122 /* BookCommentCell.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 				73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */,
 				94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */,
 				942BBDD01B1EF1E500F490CF /* MyBooksCollectionViewController.m in Sources */,
+				A327D9811B2AD2E200358122 /* BookCommentCell.m in Sources */,
 				949997091B09D3E500986337 /* AppDelegate.m in Sources */,
 				949997061B09D3E500986337 /* main.m in Sources */,
 				733021531B2C3C07007FE24C /* FindCell+Config.m in Sources */,

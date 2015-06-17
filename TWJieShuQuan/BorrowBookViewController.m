@@ -128,6 +128,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
             book.bookName = [bookObject valueForKey:@"title"];
             book.bookAuthor = [[bookObject valueForKey:@"author"] componentsJoinedByString:@","];
             book.bookImageHref = [bookObject valueForKey:@"image"];
+            book.bookPress = bookObject[@"publisher"];
             
             AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
             addToLibraryVC.delegate = self;

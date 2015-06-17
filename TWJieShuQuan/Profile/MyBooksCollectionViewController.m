@@ -25,35 +25,26 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     
     // Configure layout
     CGFloat screenWidth = self.view.frame.size.width;
-    CGFloat cellWidth = screenWidth/3;
-    [self.flowLayout setItemSize:CGSizeMake(cellWidth, 145)];
+    CGFloat cellWidth = (screenWidth-40)/3;
+    [self.flowLayout setItemSize:CGSizeMake(cellWidth, 160)];
     [self.flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     self.flowLayout.minimumLineSpacing = 10.f;
-    self.flowLayout.minimumInteritemSpacing = 0.0f;
+    self.flowLayout.minimumInteritemSpacing = 10.0f;
     [self.collectionView setCollectionViewLayout:self.flowLayout];
     
     self.collectionView.bounces = YES;
     [self.collectionView setShowsHorizontalScrollIndicator:NO];
     [self.collectionView setShowsVerticalScrollIndicator:YES];
-    
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [BookService fetchBookEntitiesForCurrentUserWithSucceedCallback:^(NSArray *myBooksObject) {
         self.myBooks = myBooksObject;
-        
+
         [self.collectionView reloadData];
     }];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 #pragma mark <UICollectionViewDataSource>
@@ -64,6 +55,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSLog(@"number :%i", self.myBooks.count);
     return self.myBooks.count;
 }
 
