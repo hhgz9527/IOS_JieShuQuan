@@ -13,6 +13,7 @@
 #import "Book.h"
 #import "BookEntity.h"
 #import "Find.h"
+#import "BorrowNotificationTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -50,6 +51,23 @@
     if ([AVUser currentUser]) {
         UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"main" bundle:nil];
         self.window.rootViewController = mainSB.instantiateInitialViewController;
+        
+        // open app from notification
+//        UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"main" bundle:nil];
+//        NSDictionary *borrowBookNotificationData = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+       
+//        if (borrowBookNotificationData != nil) {
+//            NSString *fromUsername = [borrowBookNotificationData objectForKey:@"from"];
+//            NSString *targetBookEntityID = [borrowBookNotificationData objectForKey:@"targetBookEntityID"];
+//            NSLog(@"========");
+//            NSLog(@"========fromUsername %@", fromUsername);
+//            
+//            
+//            BorrowNotificationTableViewController *borrowNotificationTableViewController = [mainSB instantiateViewControllerWithIdentifier:@"BorrowNotificationTableViewController"];
+//            self.window.rootViewController = borrowNotificationTableViewController;
+//        } else {
+//            self.window.rootViewController = mainSB.instantiateInitialViewController;
+//        }
     } else {
         LoginViewController *rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         self.window.rootViewController = rootViewController;

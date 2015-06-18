@@ -55,7 +55,9 @@
     
     // send push notification to the selected user
     AVUser *targetUser = self.colleagues[indexPath.row];
-    [NotificationManager sendBorrowBookNotificationToUser:targetUser];
+    BookEntity *targetBookEntity = self.avaliableBookEntities[indexPath.row];
+    
+    [NotificationManager sendBorrowBookNotificationToUser:targetUser forBookEntity:targetBookEntity];
     
     [[CustomAlert sharedAlert] showAlertWithMessage:@"借书申请已发，请等待确认"];
     

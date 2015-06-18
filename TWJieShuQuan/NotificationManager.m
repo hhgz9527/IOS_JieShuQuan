@@ -17,7 +17,7 @@
     [installation saveInBackground];
 }
 
-+ (void)sendBorrowBookNotificationToUser:(AVUser *)targetUser {
++ (void)sendBorrowBookNotificationToUser:(AVUser *)targetUser forBookEntity:(BookEntity *)targetBookEntity {
     // Create our Installation query
     AVQuery *pushQuery = [AVInstallation query];
     [pushQuery whereKey:kPushNotificationKeyOwner equalTo:targetUser];
@@ -27,9 +27,12 @@
     // will remove this before go to production
     [AVPush setProductionMode:NO];
 
+    NSDictionary *borrowBookNotificationData = @{@"from": [AVUser currentUser].username, @"targetBookEntityID": targetBookEntity.objectId};
+    
     AVPush *push = [[AVPush alloc] init];
     [push setQuery:pushQuery];
-    [push setMessage:@"someone想借你的书"];
+    [push setMessage:@"你收到一条借书申请"];
+    [push setData:borrowBookNotificationData];
     [push sendPushInBackground];
 }
 

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
+#import "BookEntity.h"
 
 @interface NotificationManager : NSObject
 
 + (void)saveLoginUsers;
-+ (void)sendBorrowBookNotificationToUser:(AVUser *)targetUser;
++ (void)sendBorrowBookNotificationToUser:(AVUser *)targetUser forBookEntity:(BookEntity *)targetBookEntity;
 
 @end
