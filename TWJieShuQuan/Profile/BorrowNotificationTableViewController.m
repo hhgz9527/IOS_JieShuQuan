@@ -40,7 +40,7 @@
     BorrowNotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowNotificationTableViewCell" forIndexPath:indexPath];
     
     cell.notificationLabel.text = @"jnzheng 向你借阅《黑天鹅》";
-    
+    tableView.tableFooterView = [[UIView alloc] init];
     return cell;
 }
 
