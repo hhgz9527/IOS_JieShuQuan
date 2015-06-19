@@ -8,8 +8,8 @@
 
 @implementation AppConstants
 
-NSString * const kBook_DouBanId = @"bookDoubanId";
-NSString * const kBookEntity_Book = @"doubanBook";
-NSString * const kBookEntity_User = @"bookOwner";
-
+NSString *const kBook_DouBanId = @"bookDoubanId";
+NSString *const kBookEntity_Book = @"doubanBook";
+NSString *const kBookEntity_User = @"bookOwner";
+NSString *const kDoubanBaseURL = @"https://api.douban.com/v2/book/";
 @end

@@ -8,6 +8,7 @@
 
 #import "DouBanService.h"
 #import "Constants.h"
+#import "AppConstants.h"
 
 @implementation DouBanService
 
@@ -32,5 +33,22 @@
     });
 
 }
+
++ (void)fetchBookCommentWithBookID:(NSString *)bookID start:(NSInteger)start success:(void (^)(NSArray *comments))success failure:(void (^)(NSError *error))failure {
+    NSString *url = [NSString stringWithFormat:@"%@%@/reviews?start=%i", kDoubanBaseURL, bookID, start*20];
+    NSLog(@"==url:%@", url);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            id object = [NSJSONSerialization JSONObjectWithData:data
+                                                        options:NSJSONReadingAllowFragments
+                                                          error:nil];
+            if (object) {
+                success(object[@"reviews"]);
+            }
+        });
+    });
+}
+
 
 @end

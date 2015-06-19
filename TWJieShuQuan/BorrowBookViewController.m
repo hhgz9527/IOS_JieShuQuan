@@ -16,6 +16,7 @@
 #import "MyBooksCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BorrowBookDetailViewController.h"
+#import "BookDetailViewController.h"
 
 @interface BorrowBookViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView1;
@@ -184,14 +185,18 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"borrowBookDetailSegue" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"borrowBookDetailSegue"]) {
-        BorrowBookDetailViewController *borrowBookDetailViewController = (BorrowBookDetailViewController *)segue.destinationViewController;
+//        BorrowBookDetailViewController *borrowBookDetailViewController = (BorrowBookDetailViewController *)segue.destinationViewController;
+        BookDetailViewController *viewController = (BookDetailViewController *)segue.destinationViewController;
         NSInteger row = [self.booksCollectionView indexPathForCell:sender].row;
-        borrowBookDetailViewController.book = self.books[row];
+        viewController.bookEntity = (BookEntity *)self.books[row];
+//        borrowBookDetailViewController.book = self.books[row];
     }
 }
 
