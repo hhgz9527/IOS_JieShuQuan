@@ -14,4 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *comment;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 
+- (void)setupCellWithInfo:(NSDictionary *)info;
+- (CGFloat)calcCellHeight;
+
 @end

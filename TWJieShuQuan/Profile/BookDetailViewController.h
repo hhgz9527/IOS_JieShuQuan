@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class BookEntity;
-@class BookCommentCell;
 
 @interface BookDetailViewController : UITableViewController<UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UIView *updateStatsView;
@@ -23,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *bookPress;
 @property (weak, nonatomic) IBOutlet UIImageView *bookImage;
 
-@property (nonatomic, strong) NSArray *data;//TODO for testing
-@property (nonatomic, strong) BookCommentCell *cellForCalcHeight;
+@property (nonatomic, strong) NSMutableArray *comments;
 
 @end

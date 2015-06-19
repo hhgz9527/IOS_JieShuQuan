@@ -7,16 +7,26 @@
 //
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <AVFoundation/AVFoundation.h>
 #import "BookDetailViewController.h"
 #import "TWIconButton.h"
 #import "BookEntity.h"
 #import "AppConstants.h"
 #import "BookCommentCell.h"
 #import "BookService.h"
+#import "DouBanService.h"
 
 static const int kUpdateStatsTag = 1001;
 static NSString *const kUpdateStatsToCanBorrow = @"改为可借";
 static NSString *const kUpdateStatsToCannotBorrow = @"改为不可借";
+static NSInteger kStart = 0;
+
+@interface BookDetailViewController ()
+@property(nonatomic, strong) Book *currentBook;
+@property (nonatomic, strong) BookCommentCell *cellForCalcHeight;
+
+
+@end
 
 
 @implementation BookDetailViewController
@@ -58,77 +68,109 @@ static NSString *const kUpdateStatsToCannotBorrow = @"改为不可借";
     };
     [_deleteView addSubview:delView];
 
-    Book *currentBook = self.bookEntity[kBookEntity_Book];
 
-    [currentBook fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
-        weakSelf.bookAuthor.text = currentBook.bookAuthor;
-        weakSelf.bookPress.text = currentBook.bookPress;
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    kStart = 0;
+    self.comments = nil;
+
+    __weak typeof(self) weakSelf = self;
+
+    self.currentBook = self.bookEntity[kBookEntity_Book];
+
+    [self.currentBook fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        weakSelf.bookAuthor.text = weakSelf.currentBook.bookAuthor;
+        weakSelf.bookPress.text = weakSelf.currentBook.bookPress;
+
+
+        [DouBanService fetchBookCommentWithBookID:weakSelf.currentBook.bookDoubanId
+                                            start:kStart++
+                                          success:^(NSArray *comments) {
+                                              weakSelf.comments = [comments mutableCopy];
+                                              [weakSelf.tableView reloadData];
+                                          } failure:nil];
     }];
 
     self.bookName.text = self.bookEntity.bookName;
     self.bookStatus.text = self.bookEntity.bookAvailability ? @"可借" : @"暂不可借";
     [self.bookImage sd_setImageWithURL:[NSURL URLWithString:self.bookEntity.bookImageHref]];
 
-    self.data = @[@"fja;ksdjf;kasdjf;kladjsfk;jasd;klfjasdlkjfkasdjf;jsd;kfjasdjfsda;", @"dfasdfds", @"", @"flhdsljkfhalsjkdhfjksldahfljkdshfjklhsdljfhsdalfhskladjhfjlkasdhfjlsadhflsdahfjsdahfljkhsadljkfhasdjlfhlkajsdhfjklasdhfdsfhasdhfjlksadhlf"];
-
-
 }
 
 #pragma mark - UITableViewDatasource
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"评论列表";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.data.count;
+    return self.comments.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     if (!self.cellForCalcHeight) {
         self.cellForCalcHeight = [tableView dequeueReusableCellWithIdentifier:@"commentTableCell"];
     }
-    
+
+    [self.cellForCalcHeight setupCellWithInfo:self.comments[indexPath.row]];
+
     self.cellForCalcHeight.contentView.bounds = CGRectMake(0.f, 0.f, CGRectGetWidth(tableView.frame), tableView.rowHeight);
-    
+
     NSLayoutConstraint *tempWidthConstraint =
-    [NSLayoutConstraint constraintWithItem:self.cellForCalcHeight.contentView
-                                 attribute:NSLayoutAttributeWidth
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:nil
-                                 attribute:NSLayoutAttributeNotAnAttribute
-                                multiplier:1.0
-                                  constant:CGRectGetWidth(self.view.frame)];
+            [NSLayoutConstraint constraintWithItem:self.cellForCalcHeight.contentView
+                                         attribute:NSLayoutAttributeWidth
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                         attribute:NSLayoutAttributeNotAnAttribute
+                                        multiplier:1.0
+                                          constant:CGRectGetWidth(tableView.frame)];
     [self.cellForCalcHeight.contentView addConstraint:tempWidthConstraint];
-    
-    self.cellForCalcHeight.userName.text = @"Test";
-    self.cellForCalcHeight.date.text = @"2015-5-27 12:30";
-    self.cellForCalcHeight.comment.text = self.data[indexPath.row];
-    
+
+
+
     CGFloat height = [self.cellForCalcHeight.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1;
 
     [self.cellForCalcHeight.contentView removeConstraint:tempWidthConstraint];
+//    NSLog(@"===title:%@ height:%f", self.cellForCalcHeight.userName.text, height);
+//    NSLog(@"height:%f", [self.cellForCalcHeight calcCellHeight]);
 
     return height;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     BookCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentTableCell"];
-    cell.avatar.backgroundColor = [UIColor redColor];
-    cell.userName.text = @"Test";
-    cell.date.text = @"2015-5-27 12:30";
-    cell.comment.text = self.data[indexPath.row];
+    [cell setupCellWithInfo:self.comments[indexPath.row]];
 
     return cell;
 }
 
+- (IBAction)loadMore:(UIButton *)sender {
+    [DouBanService fetchBookCommentWithBookID:self.currentBook.bookDoubanId
+                                        start:kStart++
+                                      success:^(NSArray *comments) {
+                                          [self.comments addObjectsFromArray:comments];
+                                          [self.tableView reloadData];
+                                      } failure:nil];
+
+}
 
 #pragma mark - UIActionSheet Delegate
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex==actionSheet.cancelButtonIndex) {
+    if (buttonIndex == actionSheet.cancelButtonIndex) {
         return;
     }
 

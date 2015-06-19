@@ -8,8 +8,9 @@
 
 @interface AppConstants : NSObject
 
-extern NSString * const kBook_DouBanId;
-extern NSString * const kBookEntity_Book;
-extern NSString * const kBookEntity_User;
+extern NSString *const kBook_DouBanId;
+extern NSString *const kBookEntity_Book;
+extern NSString *const kBookEntity_User;
+extern NSString *const kDoubanBaseURL;
 
 @end
