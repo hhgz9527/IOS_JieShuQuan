@@ -16,6 +16,11 @@
 
 #define kPushNotificationKeyOwner @"owner"
 
+#define kPendingStatus @"pending"
+#define kAgreedStatus @"agreed"
+#define kRejectedStatus @"rejected"
+#define kReturnedStatus @"returned"
+
 @interface Constants : NSObject
 
 @end

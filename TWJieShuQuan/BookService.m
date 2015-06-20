@@ -12,6 +12,8 @@
 #import "UserManager.h"
 #import "AVQuery+Extensions.h"
 #import "AppConstants.h"
+#import "BorrowRecord.h"
+#import "Constants.h"
 
 @implementation BookService
 
@@ -147,6 +149,38 @@
 
 }
 
+
++ (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock {
+    BorrowRecord *borrowBookNotification = [[BorrowRecord alloc] init];
+    [borrowBookNotification setObject:kPendingStatus forKey:(NSString *)@"status"];
+    [borrowBookNotification setObject:fromUser forKey:(NSString *)@"fromUser"];
+    [borrowBookNotification setObject:toUser forKey:(NSString *)@"toUser"];
+    [borrowBookNotification setObject:bookEntity forKey:(NSString *)@"bookEntity"];
+    [borrowBookNotification saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"发送失败！"];
+            return;
+        }
+        
+        succeededBlock();
+    }];
+}
+
+//获取所有的借书通知（Borrow_Book_Pending）
++ (void)fetchAllPendingBorrowRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
+    AVQuery *q = [AVQuery queryForBorrowRecord];
+    [q whereKey:@"status" equalTo:kPendingStatus];
+    [q whereKey:@"toUser" equalTo:[AVUser currentUser]];
+    [q orderByDescending:@"createdAt"];
+    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"获取借书通知失败！"];
+            return;
+        }
+        
+        succeededBlock(objects);
+    }];
+}
 
 #pragma mark - private methods
 

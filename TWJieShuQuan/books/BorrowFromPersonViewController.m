@@ -11,6 +11,7 @@
 #import "BookService.h"
 #import "NotificationManager.h"
 #import "CustomAlert.h"
+#import "CustomActivityIndicator.h"
 
 @interface BorrowFromPersonViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *colleaguesTableView;
@@ -57,11 +58,15 @@
     AVUser *targetUser = self.colleagues[indexPath.row];
     BookEntity *targetBookEntity = self.avaliableBookEntities[indexPath.row];
     
-    [NotificationManager sendBorrowBookNotificationToUser:targetUser forBookEntity:targetBookEntity];
-    
-    [[CustomAlert sharedAlert] showAlertWithMessage:@"借书申请已发，请等待确认"];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
+    [BookService createBorrowRecordFromUser:[AVUser currentUser] toUser:targetUser forBookEntity:targetBookEntity succeeded:^{
+        [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
+        
+        [NotificationManager sendBorrowBookNotificationToUser:targetUser forBookEntity:targetBookEntity];
+        
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"借书申请已发，请等待确认"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 @end

@@ -30,6 +30,7 @@
 		942BBCC01B180FC600F490CF /* AVQuery+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCBF1B180FC600F490CF /* AVQuery+Extensions.m */; };
 		942BBDD01B1EF1E500F490CF /* MyBooksCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBDCF1B1EF1E500F490CF /* MyBooksCollectionViewController.m */; };
 		942BBDD41B1EF93E00F490CF /* MyBooksCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBDD31B1EF93E00F490CF /* MyBooksCollectionViewCell.m */; };
+		947DA0AA1B354A9900CC9101 /* BorrowRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 947DA0A91B354A9900CC9101 /* BorrowRecord.m */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
 		949997111B09D3E500986337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949997101B09D3E500986337 /* Images.xcassets */; };
@@ -125,6 +126,8 @@
 		942BBDCF1B1EF1E500F490CF /* MyBooksCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBooksCollectionViewController.m; sourceTree = "<group>"; };
 		942BBDD21B1EF93E00F490CF /* MyBooksCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBooksCollectionViewCell.h; sourceTree = "<group>"; };
 		942BBDD31B1EF93E00F490CF /* MyBooksCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBooksCollectionViewCell.m; sourceTree = "<group>"; };
+		947DA0A81B354A9900CC9101 /* BorrowRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowRecord.h; sourceTree = "<group>"; };
+		947DA0A91B354A9900CC9101 /* BorrowRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowRecord.m; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949997041B09D3E500986337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949997051B09D3E500986337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 				942BBCBC1B17F90D00F490CF /* BookEntity.m */,
 				7330214E1B2C3A5E007FE24C /* Find.h */,
 				7330214F1B2C3A5E007FE24C /* Find.m */,
+				947DA0A81B354A9900CC9101 /* BorrowRecord.h */,
+				947DA0A91B354A9900CC9101 /* BorrowRecord.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -632,6 +637,7 @@
 			files = (
 				A3C1E2F01B16B90300037DB5 /* FindViewController.m in Sources */,
 				94C069A51B1567500047BCCB /* UserManager.m in Sources */,
+				947DA0AA1B354A9900CC9101 /* BorrowRecord.m in Sources */,
 				A327D9681B29741B00358122 /* BookDetailViewController.m in Sources */,
 				94F75DF21B32AD3A00B59A17 /* BorrowNotificationTableViewCell.m in Sources */,
 				733021561B2CAD71007FE24C /* SendTwitterViewController.m in Sources */,

@@ -13,13 +13,17 @@
 #import "Book.h"
 #import "AddToLibraryViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "BookService.h"
+#import "BorrowNotificationTableViewController.h"
 
 static NSInteger const kSetAvatarTag = 1001;
 
 @interface ProfileTableViewController ()<UIGestureRecognizerDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
-@property (weak, nonatomic) IBOutlet UILabel *borrowRequestNum;
-@property (weak, nonatomic) IBOutlet UILabel *returnRequestNum;
+@property (weak, nonatomic) IBOutlet UIButton *borrowBookNotificationButton;
+
+@property (nonatomic, strong) NSArray *borrowBookNotifications;
+
 @end
 
 @implementation ProfileTableViewController
@@ -35,9 +39,15 @@ static NSInteger const kSetAvatarTag = 1001;
     UITapGestureRecognizer *TGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setAvatar)];
     [self.avatar addGestureRecognizer:TGR];
     
-
+    [BookService fetchAllPendingBorrowRecordsWithSucceedCallback:^(NSArray *borrowBookNotifications) {
+        self.borrowBookNotifications = borrowBookNotifications;
+        [self updateBorrowBookNotificationCountWithCount:borrowBookNotifications];
+    }];
 }
 
+- (void)updateBorrowBookNotificationCountWithCount:(NSArray *)borrowBookNotifications {
+    self.borrowBookNotificationButton.titleLabel.text = [[NSNumber numberWithInteger:borrowBookNotifications.count] stringValue];
+}
 
 - (void)createRightBarButtonItem {
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -173,6 +183,14 @@ static NSInteger const kSetAvatarTag = 1001;
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:loginViewController animated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"borrowBookNotificationTableviewID"]) {
+        BorrowNotificationTableViewController *borrowNotificationTableViewController = (BorrowNotificationTableViewController *)segue.destinationViewController;
+        borrowNotificationTableViewController.borrowBookNotifications = self.borrowBookNotifications;
+    }
+    return;
 }
 
 

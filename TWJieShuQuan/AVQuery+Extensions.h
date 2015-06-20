@@ -14,4 +14,6 @@
 + (AVQuery *)queryForBook;
 + (AVQuery *)queryForBookEntity;
 + (AVQuery *)queryForFind;
++ (AVQuery *)queryForBorrowRecord;
+
 @end

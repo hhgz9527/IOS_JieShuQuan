@@ -26,13 +26,10 @@
     
     // will remove this before go to production
     [AVPush setProductionMode:NO];
-
-    NSDictionary *borrowBookNotificationData = @{@"from": [AVUser currentUser].username, @"targetBookEntityID": targetBookEntity.objectId};
     
     AVPush *push = [[AVPush alloc] init];
     [push setQuery:pushQuery];
     [push setMessage:@"你收到一条借书申请"];
-    [push setData:borrowBookNotificationData];
     [push sendPushInBackground];
 }
 

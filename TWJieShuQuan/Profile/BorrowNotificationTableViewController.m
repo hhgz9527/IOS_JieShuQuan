@@ -8,6 +8,8 @@
 
 #import "BorrowNotificationTableViewController.h"
 #import "BorrowNotificationTableViewCell.h"
+#import "BorrowRecord.h"
+#import "BookEntity.h"
 
 @interface BorrowNotificationTableViewController ()
 
@@ -32,14 +34,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.borrowBookNotifications.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BorrowRecord *currentNotification = self.borrowBookNotifications[indexPath.row];
     BorrowNotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowNotificationTableViewCell" forIndexPath:indexPath];
     
-    cell.notificationLabel.text = @"jnzheng 向你借阅《黑天鹅》";
+    AVUser *fromUser = [currentNotification objectForKey:@"fromUser"];
+    [fromUser fetchIfNeededInBackgroundWithBlock:^(AVObject *user, NSError *error) {
+        
+        BookEntity *targetBookEntity = [currentNotification objectForKey:@"bookEntity"];
+        [targetBookEntity fetchIfNeededInBackgroundWithBlock:^(AVObject *bookEntity, NSError *error) {
+            cell.notificationLabel.text = [NSString stringWithFormat:@"%@ 向你借阅《%@》", [(AVUser *)user username], [(BookEntity *)bookEntity bookName]];
+        }];
+
+    }];
+    
     tableView.tableFooterView = [[UIView alloc] init];
     return cell;
 }
