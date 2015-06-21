@@ -10,21 +10,45 @@
 #import "BorrowNotificationTableViewCell.h"
 #import "BorrowRecord.h"
 #import "BookEntity.h"
+#import "CustomActivityIndicator.h"
 
 @interface BorrowNotificationTableViewController ()
-
+@property (nonatomic, strong) NSMutableArray *fromUsers;
+@property (nonatomic, strong) NSMutableArray *bookEntities;
 @end
 
 @implementation BorrowNotificationTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.fromUsers = [NSMutableArray array];
+    self.bookEntities = [NSMutableArray array];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
+    [self fetchIfNeededInBackgroundWithArray:self.borrowBookNotifications index:0];
+}
+
+- (void)fetchIfNeededInBackgroundWithArray:(NSArray *)arr index:(NSInteger)index
+{
+    BorrowRecord *currentNotification = arr[index];
+    index ++;
+    AVUser *fromUser = [currentNotification objectForKey:@"fromUser"];
+    [fromUser fetchIfNeededInBackgroundWithBlock:^(AVObject *user, NSError *error) {
+        [self.fromUsers addObject:user];
+        
+        BookEntity *targetBookEntity = [currentNotification objectForKey:@"bookEntity"];
+        [targetBookEntity fetchIfNeededInBackgroundWithBlock:^(AVObject *bookEntity, NSError *error) {
+            [self.bookEntities addObject:bookEntity];
+
+            if (index == self.borrowBookNotifications.count) {
+                [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
+                [self.tableView reloadData];
+            } else {
+                [self fetchIfNeededInBackgroundWithArray:arr index:index];
+            }
+        }];
+    }];
 }
 
 #pragma mark - Table view data source
@@ -34,26 +58,28 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.borrowBookNotifications.count;
+    if (self.fromUsers.count > 0) {
+        return self.borrowBookNotifications.count;
+    } else {
+        return 0;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BorrowRecord *currentNotification = self.borrowBookNotifications[indexPath.row];
-    BorrowNotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowNotificationTableViewCell" forIndexPath:indexPath];
-    
-    AVUser *fromUser = [currentNotification objectForKey:@"fromUser"];
-    [fromUser fetchIfNeededInBackgroundWithBlock:^(AVObject *user, NSError *error) {
+    if (self.fromUsers.count > 0) {
+        AVUser *currentFromUser = self.fromUsers[indexPath.row];
+        BookEntity *currentBookEntity = self.bookEntities[indexPath.row];
         
-        BookEntity *targetBookEntity = [currentNotification objectForKey:@"bookEntity"];
-        [targetBookEntity fetchIfNeededInBackgroundWithBlock:^(AVObject *bookEntity, NSError *error) {
-            cell.notificationLabel.text = [NSString stringWithFormat:@"%@ 向你借阅《%@》", [(AVUser *)user username], [(BookEntity *)bookEntity bookName]];
-        }];
-
-    }];
-    
-    tableView.tableFooterView = [[UIView alloc] init];
-    return cell;
+        BorrowNotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowNotificationTableViewCell" forIndexPath:indexPath];
+        
+        cell.notificationLabel.text = [NSString stringWithFormat:@"%@ 向你借阅《%@》", [currentFromUser username], [currentBookEntity bookName]];
+        
+        tableView.tableFooterView = [[UIView alloc] init];
+        return cell;
+    } else {
+        return nil;
+    }
 }
 
 

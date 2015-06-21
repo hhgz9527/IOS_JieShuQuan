@@ -41,8 +41,13 @@ static NSInteger const kSetAvatarTag = 1001;
     
     [BookService fetchAllPendingBorrowRecordsWithSucceedCallback:^(NSArray *borrowBookNotifications) {
         self.borrowBookNotifications = borrowBookNotifications;
-        [self updateBorrowBookNotificationCountWithCount:borrowBookNotifications];
+        [self updateBorrowBookNotificationCountWithCount:self.borrowBookNotifications];
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateBorrowBookNotificationCountWithCount:self.borrowBookNotifications];
 }
 
 - (void)updateBorrowBookNotificationCountWithCount:(NSArray *)borrowBookNotifications {
