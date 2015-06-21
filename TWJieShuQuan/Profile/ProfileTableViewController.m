@@ -38,6 +38,10 @@ static NSInteger const kSetAvatarTag = 1001;
     // above will be removed later
     UITapGestureRecognizer *TGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setAvatar)];
     [self.avatar addGestureRecognizer:TGR];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     [BookService fetchAllPendingBorrowRecordsWithSucceedCallback:^(NSArray *borrowBookNotifications) {
         self.borrowBookNotifications = borrowBookNotifications;
@@ -45,13 +49,8 @@ static NSInteger const kSetAvatarTag = 1001;
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self updateBorrowBookNotificationCountWithCount:self.borrowBookNotifications];
-}
-
 - (void)updateBorrowBookNotificationCountWithCount:(NSArray *)borrowBookNotifications {
-    self.borrowBookNotificationButton.titleLabel.text = [[NSNumber numberWithInteger:borrowBookNotifications.count] stringValue];
+    [self.borrowBookNotificationButton setTitle:[NSNumber numberWithInteger:borrowBookNotifications.count].stringValue forState:UIControlStateNormal];
 }
 
 - (void)createRightBarButtonItem {

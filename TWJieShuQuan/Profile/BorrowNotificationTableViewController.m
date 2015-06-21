@@ -50,6 +50,13 @@
         }];
     }];
 }
+- (IBAction)agreeToBorrow:(id)sender {
+    
+}
+
+- (IBAction)rejectToBorrow:(id)sender {
+    
+}
 
 #pragma mark - Table view data source
 
