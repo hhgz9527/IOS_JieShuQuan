@@ -10,6 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "Book.h"
 #import "AVQuery+Extensions.h"
+#import "BorrowRecord.h"
 
 @class BookEntity;
 
@@ -25,5 +26,6 @@
 
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock;
 + (void)fetchAllPendingBorrowRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
++ (void)changeBorrowRecordStatusTo:(NSString *)newStatus forBorrowRecord:(BorrowRecord *)borrowRecord succeeded:(void (^)())succeededBlock;
 
 @end

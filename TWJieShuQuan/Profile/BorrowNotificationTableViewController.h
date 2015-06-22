@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BorrowNotificationTableViewController : UITableViewController
-@property (nonatomic, strong) NSArray *borrowBookNotifications;
+@property (nonatomic, strong) NSMutableArray *borrowBookNotifications;
 @end

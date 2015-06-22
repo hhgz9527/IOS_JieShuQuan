@@ -11,6 +11,9 @@
 #import "BorrowRecord.h"
 #import "BookEntity.h"
 #import "CustomActivityIndicator.h"
+#import "BookService.h"
+#import "CustomAlert.h"
+#import "Constants.h"
 
 @interface BorrowNotificationTableViewController ()
 @property (nonatomic, strong) NSMutableArray *fromUsers;
@@ -50,12 +53,31 @@
         }];
     }];
 }
-- (IBAction)agreeToBorrow:(id)sender {
+
+- (IBAction)agreeToBorrow:(UIButton *)sender {
+    BorrowRecord *currentNotification = self.borrowBookNotifications[sender.tag];
     
+    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
+    [BookService changeBorrowRecordStatusTo:kAgreedStatus forBorrowRecord:currentNotification succeeded:^{
+        [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"您已同意此借书请求"];
+        
+        [self.borrowBookNotifications removeObjectAtIndex:sender.tag];
+        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:sender.tag inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 
-- (IBAction)rejectToBorrow:(id)sender {
+- (IBAction)rejectToBorrow:(UIButton *)sender {
+    BorrowRecord *currentNotification = self.borrowBookNotifications[sender.tag];
     
+    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
+    [BookService changeBorrowRecordStatusTo:kRejectedStatus forBorrowRecord:currentNotification succeeded:^{
+        [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"您已取消此借书请求"];
+        
+        [self.borrowBookNotifications removeObjectAtIndex:sender.tag];
+        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:sender.tag inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 
 #pragma mark - Table view data source
@@ -79,6 +101,9 @@
         BookEntity *currentBookEntity = self.bookEntities[indexPath.row];
         
         BorrowNotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowNotificationTableViewCell" forIndexPath:indexPath];
+        cell.tag = indexPath.row;
+        cell.agreeButton.tag = indexPath.row;
+        cell.notAgreeButton.tag = indexPath.row;
         
         cell.notificationLabel.text = [NSString stringWithFormat:@"%@ 向你借阅《%@》", [currentFromUser username], [currentBookEntity bookName]];
         

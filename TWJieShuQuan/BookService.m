@@ -12,7 +12,6 @@
 #import "UserManager.h"
 #import "AVQuery+Extensions.h"
 #import "AppConstants.h"
-#import "BorrowRecord.h"
 #import "Constants.h"
 
 @implementation BookService
@@ -179,6 +178,29 @@
         }
         
         succeededBlock(objects);
+    }];
+}
+
+// 改变借书申请的状态
++ (void)changeBorrowRecordStatusTo:(NSString *)newStatus forBorrowRecord:(BorrowRecord *)borrowRecord succeeded:(void (^)())succeededBlock {
+    AVQuery *q = [AVQuery queryForBorrowRecord];
+    [q whereKey:@"objectId" equalTo:borrowRecord.objectId];
+
+    [q getFirstObjectInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"更改借书状态失败！"];
+            return;
+        }
+
+        [object setObject:newStatus forKey:@"status"];
+        [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                [[CustomAlert sharedAlert] showAlertWithMessage:@"更改借书状态失败！"];
+                return;
+            }
+
+            succeededBlock();
+        }];
     }];
 }
 
