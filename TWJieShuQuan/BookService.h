@@ -27,5 +27,7 @@
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock;
 + (void)fetchAllPendingBorrowRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 + (void)changeBorrowRecordStatusTo:(NSString *)newStatus forBorrowRecord:(BorrowRecord *)borrowRecord succeeded:(void (^)())succeededBlock;
++ (void)fetchAllBorrowedInRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
++ (void)fetchAllBorrowedOutRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 
 @end

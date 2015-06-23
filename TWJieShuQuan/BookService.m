@@ -211,6 +211,40 @@
     }];
 }
 
+// 获取“我借入的书”清单
++ (void)fetchAllBorrowedInRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
+    AVQuery *q = [AVQuery queryForBorrowRecord];
+    [q whereKey:@"toUser" equalTo:[AVUser currentUser]];
+    [q whereKey:@"status" equalTo:kAgreedStatus];
+    [q orderByDescending:@"createdAt"];
+    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"获取清单失败！"];
+            return;
+        }
+        
+        succeededBlock(objects);
+    }];
+}
+
+
+// 获取“我借出的书”清单
++ (void)fetchAllBorrowedOutRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
+    AVQuery *q = [AVQuery queryForBorrowRecord];
+    [q whereKey:@"fromUser" equalTo:[AVUser currentUser]];
+    [q whereKey:@"status" equalTo:kAgreedStatus];
+    [q orderByDescending:@"createdAt"];
+    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"获取清单失败！"];
+            return;
+        }
+        
+        succeededBlock(objects);
+    }];
+}
+
+
 #pragma mark - private methods
 
 + (void)createBookEntityIfNeededWithBook:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
