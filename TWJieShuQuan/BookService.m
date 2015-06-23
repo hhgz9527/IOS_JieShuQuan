@@ -16,6 +16,7 @@
 
 @implementation BookService
 
+// 往书库增加图书
 + (void)addBookToLibrary:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
     if (![AVUser currentUser]) {
         [[CustomAlert sharedAlert] showAlertWithMessage:@"请登录"];
@@ -57,6 +58,7 @@
     }];
 }
 
+// 获取 “我的书籍” 图书
 + (void )fetchBookEntitiesForCurrentUserWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBookEntity];
     [q whereKey:(NSString *)kBookEntity_User equalTo:[AVUser currentUser]];
@@ -70,6 +72,7 @@
     }];
 }
 
+// 获取所有人的图书，“借书”主页
 + (void)fetchAllBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBook];
     [q orderByDescending:@"createdAt"];
@@ -83,6 +86,7 @@
     }];
 }
 
+// 获取图书排名
 + (void)fetchRecoBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
     
     // WIP
@@ -98,6 +102,7 @@
     }];
 }
 
+// 获取所有“可借”的 bookentity for a book
 + (void)fetchAllAvaliableBookEntitiesForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBookEntity];
     [q whereKey:kBookEntity_Book equalTo:book];
@@ -113,6 +118,7 @@
     }];
 }
 
+// 遍历数组bookentities，获取每一本书的owner，返回数组，用在点击“申请借阅”后的页面
 + (void)fetchOwnersFromBookEntities:(NSArray *)bookEntities withSucceedCallback:(void (^)(NSArray *))succeededBlock {
     NSMutableArray *users = [NSMutableArray array];
     [bookEntities enumerateObjectsUsingBlock:^(id bookEntity, NSUInteger idx, BOOL *stop) {
@@ -129,6 +135,7 @@
     }];
 }
 
+// 改变图书可借状态
 + (void)updateBookAvailabilityWithBook:(Book *)book availbility:(BOOL)availability {
     AVQuery *query = [AVQuery queryForBookEntity];
     [query whereKey:kBookEntity_User equalTo:[AVUser currentUser]];
@@ -148,7 +155,7 @@
 
 }
 
-
+// 创建借阅申请
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock {
     BorrowRecord *borrowBookNotification = [[BorrowRecord alloc] init];
     [borrowBookNotification setObject:kPendingStatus forKey:(NSString *)@"status"];
@@ -165,7 +172,7 @@
     }];
 }
 
-//获取所有的借书通知（Borrow_Book_Pending）
+//获取所有的借书通知（status = Borrow_Book_Pending）
 + (void)fetchAllPendingBorrowRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBorrowRecord];
     [q whereKey:@"status" equalTo:kPendingStatus];
