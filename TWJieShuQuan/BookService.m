@@ -158,6 +158,12 @@
 // 创建借阅申请
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock {
     BorrowRecord *borrowBookNotification = [[BorrowRecord alloc] init];
+    
+    [borrowBookNotification setObject:fromUser.username forKey:(NSString *)@"fromUsername"];
+    [borrowBookNotification setObject:toUser.username forKey:(NSString *)@"toUsername"];
+    [borrowBookNotification setObject:bookEntity.bookName forKey:(NSString *)@"bookName"];
+
+    
     [borrowBookNotification setObject:kPendingStatus forKey:(NSString *)@"status"];
     [borrowBookNotification setObject:fromUser forKey:(NSString *)@"fromUser"];
     [borrowBookNotification setObject:toUser forKey:(NSString *)@"toUser"];

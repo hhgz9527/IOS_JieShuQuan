@@ -11,6 +11,9 @@
 @implementation BorrowRecord
 
 @dynamic status;
+@dynamic fromUsername;
+@dynamic toUsername;
+@dynamic bookName;
 
 + (NSString *)parseClassName {
     return @"BorrowRecord";

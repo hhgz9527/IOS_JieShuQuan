@@ -14,6 +14,7 @@
 #import "BookEntity.h"
 #import "Find.h"
 #import "BorrowNotificationTableViewController.h"
+#import "BorrowRecord.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,7 @@
     [Book registerSubclass];
     [BookEntity registerSubclass];
     [Find registerSubclass];
+    [BorrowRecord registerSubclass];
     
     [AVOSCloud setApplicationId:LeanCloud_AppId clientKey:LeanCloud_AppKey];
 
