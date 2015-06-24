@@ -159,12 +159,12 @@
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock {
     BorrowRecord *borrowBookNotification = [[BorrowRecord alloc] init];
     
-    [borrowBookNotification setObject:fromUser.username forKey:(NSString *)@"fromUsername"];
-    [borrowBookNotification setObject:toUser.username forKey:(NSString *)@"toUsername"];
-    [borrowBookNotification setObject:bookEntity.bookName forKey:(NSString *)@"bookName"];
-
+    borrowBookNotification.fromUsername = fromUser.username;
+    borrowBookNotification.toUsername = toUser.username;
+    borrowBookNotification.bookName = bookEntity.bookName;
+    borrowBookNotification.bookImageHref = bookEntity.bookImageHref;
+    borrowBookNotification.status = kPendingStatus;
     
-    [borrowBookNotification setObject:kPendingStatus forKey:(NSString *)@"status"];
     [borrowBookNotification setObject:fromUser forKey:(NSString *)@"fromUser"];
     [borrowBookNotification setObject:toUser forKey:(NSString *)@"toUser"];
     [borrowBookNotification setObject:bookEntity forKey:(NSString *)@"bookEntity"];

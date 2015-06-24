@@ -14,6 +14,7 @@
 @dynamic fromUsername;
 @dynamic toUsername;
 @dynamic bookName;
+@dynamic bookImageHref;
 
 + (NSString *)parseClassName {
     return @"BorrowRecord";

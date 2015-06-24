@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSString *fromUsername;
 @property (nonatomic, strong) NSString *toUsername;
 @property (nonatomic, strong) NSString *bookName;
+@property (nonatomic, strong) NSString *bookImageHref;
 
 @end
