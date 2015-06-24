@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.tableFooterView = [[UIView alloc] init];
 
     [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
     [BookService fetchAllBorrowedInRecordsWithSucceedCallback:^(NSArray *recoreds) {
@@ -43,9 +45,12 @@
 
 
 - (BorrowInTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BorrowRecord *currentRecord = self.borrowedInBookRecords[indexPath.row];
+    
     BorrowInTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowInTableViewCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.borrowRecord = currentRecord;
+    [cell refreshUI];
     
     return cell;
 }

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BorrowRecord.h"
 
 @interface BorrowInTableViewCell : UITableViewCell
+@property (nonatomic, strong) BorrowRecord *borrowRecord;
 
+- (void)refreshUI;
 @end

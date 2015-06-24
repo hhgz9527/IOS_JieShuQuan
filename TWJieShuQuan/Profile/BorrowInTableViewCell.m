@@ -8,6 +8,12 @@
 
 #import "BorrowInTableViewCell.h"
 
+@interface BorrowInTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
+
+@end
+
+
 @implementation BorrowInTableViewCell
 
 - (void)awakeFromNib {
@@ -18,6 +24,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)refreshUI {
+    self.bookNameLabel.text = self.borrowRecord.bookName;
 }
 
 @end
