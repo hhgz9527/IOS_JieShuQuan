@@ -32,6 +32,7 @@
 		942BBDD41B1EF93E00F490CF /* MyBooksCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBDD31B1EF93E00F490CF /* MyBooksCollectionViewCell.m */; };
 		947BBB761B393BDC000AC785 /* MyBorrowInBooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BBB751B393BDC000AC785 /* MyBorrowInBooksTableViewController.m */; };
 		947BBB791B393CAA000AC785 /* BorrowInTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BBB781B393CAA000AC785 /* BorrowInTableViewCell.m */; };
+		947BBB881B3A8BAC000AC785 /* MyBorrowOutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BBB871B3A8BAC000AC785 /* MyBorrowOutTableViewController.m */; };
 		947DA0AA1B354A9900CC9101 /* BorrowRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 947DA0A91B354A9900CC9101 /* BorrowRecord.m */; };
 		949997061B09D3E500986337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997051B09D3E500986337 /* main.m */; };
 		949997091B09D3E500986337 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 949997081B09D3E500986337 /* AppDelegate.m */; };
@@ -132,6 +133,8 @@
 		947BBB751B393BDC000AC785 /* MyBorrowInBooksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBorrowInBooksTableViewController.m; sourceTree = "<group>"; };
 		947BBB771B393CAA000AC785 /* BorrowInTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowInTableViewCell.h; sourceTree = "<group>"; };
 		947BBB781B393CAA000AC785 /* BorrowInTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowInTableViewCell.m; sourceTree = "<group>"; };
+		947BBB861B3A8BAC000AC785 /* MyBorrowOutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBorrowOutTableViewController.h; sourceTree = "<group>"; };
+		947BBB871B3A8BAC000AC785 /* MyBorrowOutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBorrowOutTableViewController.m; sourceTree = "<group>"; };
 		947DA0A81B354A9900CC9101 /* BorrowRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowRecord.h; sourceTree = "<group>"; };
 		947DA0A91B354A9900CC9101 /* BorrowRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowRecord.m; sourceTree = "<group>"; };
 		949997001B09D3E500986337 /* TWJieShuQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWJieShuQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +271,8 @@
 				947BBB751B393BDC000AC785 /* MyBorrowInBooksTableViewController.m */,
 				947BBB771B393CAA000AC785 /* BorrowInTableViewCell.h */,
 				947BBB781B393CAA000AC785 /* BorrowInTableViewCell.m */,
+				947BBB861B3A8BAC000AC785 /* MyBorrowOutTableViewController.h */,
+				947BBB871B3A8BAC000AC785 /* MyBorrowOutTableViewController.m */,
 			);
 			name = "My Books";
 			sourceTree = "<group>";
@@ -656,6 +661,7 @@
 				94C0698D1B1450290047BCCB /* DouBanService.m in Sources */,
 				94F75DEB1B329F0100B59A17 /* BorrowNotificationTableViewController.m in Sources */,
 				9499975C1B0B237F00986337 /* AuthService.m in Sources */,
+				947BBB881B3A8BAC000AC785 /* MyBorrowOutTableViewController.m in Sources */,
 				73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */,
 				94C069801B1411620047BCCB /* BorrowBookViewController.m in Sources */,
 				942BBDD01B1EF1E500F490CF /* MyBooksCollectionViewController.m in Sources */,

@@ -156,6 +156,9 @@
                                                 <constraint firstItem="9bB-a8-U9z" firstAttribute="leading" secondItem="gY2-x9-3AH" secondAttribute="leadingMargin" constant="15" id="yKE-Jn-B92"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="K5m-cj-qLm" kind="push" id="cDH-LH-kS4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1262,6 +1265,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yf1-kD-kmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="853" y="1388"/>
+        </scene>
+        <!--我的借出-->
+        <scene sceneID="fMC-BJ-2zi">
+            <objects>
+                <tableViewController storyboardIdentifier="MyBorrowOutTableViewController" id="K5m-cj-qLm" customClass="MyBorrowOutTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" id="RFT-vd-KaT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="BorrowInTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="BorrowInTableViewCell" rowHeight="93" id="fxy-gd-VKN" customClass="BorrowInTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fxy-gd-VKN" id="JR2-gm-out">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjV-lQ-u5M">
+                                            <rect key="frame" x="279" y="35" width="84" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookNameLabel" destination="UjV-lQ-u5M" id="oMH-HU-NiY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="K5m-cj-qLm" id="jcJ-lh-gf8"/>
+                            <outlet property="delegate" destination="K5m-cj-qLm" id="sr2-vH-PK9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的借出" id="kQy-FE-9jF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJv-s0-MbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1653" y="2139"/>
         </scene>
     </scenes>
     <resources>
