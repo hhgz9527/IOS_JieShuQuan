@@ -17,6 +17,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BorrowBookDetailViewController.h"
 #import "BookDetailViewController.h"
+#import "BookDetailModel.h"
+#import "TWIconButton.h"
+#import "BorrowFromPersonViewController.h"
 
 @interface BorrowBookViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView1;
@@ -187,15 +190,49 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 //    [self performSegueWithIdentifier:@"borrowBookDetailSegue" sender:[collectionView cellForItemAtIndexPath:indexPath]];
 
+    __block NSArray *array = nil;
+    BookDetailModel *model = [[BookDetailModel alloc] init];
+    model.title = @"书籍详情";
+    [model updateInfoFromBook:self.books[indexPath.row]];
+    [model updateAvailableStatusForBook:self.books[indexPath.row]
+                                success:^(NSArray *bookEntities) {
+                                    array = bookEntities;
+                                }];
+
+    model.updateStatsView = [[TWIconButton alloc] initWithTitle:@"申请借阅"
+                                                           icon:nil
+                                                         action:^{
+                                                             //TODO add request borrow action
+                                                         }];
+
+    model.deleteView = [[TWIconButton alloc] initWithTitle:@"取消借阅"
+                                                      icon:nil
+                                                    action:^{
+                                                        //TODO add request to cancel borrow action
+                                                    }];
+
+
+    BookDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewControllerIdentifier"];
+    detailViewController.bookDetailModel = model;
+
+    __weak TWIconButton *weakView = model.updateStatsView;
+    weakView.callback = ^{
+        weakView.title = @"借阅中...";
+        BorrowFromPersonViewController *bpc = [self.storyboard instantiateViewControllerWithIdentifier:@"BorrowFromPersonViewController"];
+        bpc.avaliableBookEntities = model.availableBooks;
+        [detailViewController.navigationController pushViewController:bpc animated:YES];
+
+    };
+
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"borrowBookDetailSegue"]) {
         BorrowBookDetailViewController *borrowBookDetailViewController = (BorrowBookDetailViewController *)segue.destinationViewController;
-//        BookDetailViewController *viewController = (BookDetailViewController *)segue.destinationViewController;
         NSInteger row = [self.booksCollectionView indexPathForCell:sender].row;
-//        viewController.bookEntity = (BookEntity *)self.books[row];
         borrowBookDetailViewController.book = self.books[row];
     }
 }
