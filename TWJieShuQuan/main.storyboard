@@ -391,36 +391,52 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZCw-hi-Bf9">
-                                            <rect key="frame" x="23" y="9" width="50" height="75"/>
+                                            <rect key="frame" x="13" y="9" width="50" height="75"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="SF3-UH-b7u"/>
                                                 <constraint firstAttribute="height" constant="75" id="e8a-rD-vwe"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-CP-2w1">
-                                            <rect key="frame" x="103" y="20" width="94" height="17"/>
+                                            <rect key="frame" x="73" y="20" width="94" height="17"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借阅日期：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdC-q7-pLs">
-                                            <rect key="frame" x="103" y="45" width="60" height="12"/>
+                                            <rect key="frame" x="73" y="45" width="60" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-6-22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd5-eq-Dis">
+                                            <rect key="frame" x="141" y="45" width="55" height="12"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拥有者：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7Y-7U-ezv">
-                                            <rect key="frame" x="103" y="65" width="48" height="12"/>
+                                            <rect key="frame" x="73" y="65" width="48" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CW-sO-mHc">
+                                            <rect key="frame" x="129" y="65" width="15" height="12"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ZCw-hi-Bf9" firstAttribute="leading" secondItem="Cxo-4j-bEl" secondAttribute="leadingMargin" constant="15" id="66Q-Cy-Ee7"/>
+                                        <constraint firstItem="7CW-sO-mHc" firstAttribute="leading" secondItem="A7Y-7U-ezv" secondAttribute="trailing" constant="8" id="2jL-b6-9kU"/>
+                                        <constraint firstItem="ZCw-hi-Bf9" firstAttribute="leading" secondItem="Cxo-4j-bEl" secondAttribute="leadingMargin" constant="5" id="66Q-Cy-Ee7"/>
+                                        <constraint firstItem="Zd5-eq-Dis" firstAttribute="centerY" secondItem="kdC-q7-pLs" secondAttribute="centerY" id="6HU-7t-53r"/>
                                         <constraint firstItem="A7Y-7U-ezv" firstAttribute="leading" secondItem="dyu-CP-2w1" secondAttribute="leading" id="9rz-bC-XZe"/>
+                                        <constraint firstItem="Zd5-eq-Dis" firstAttribute="leading" secondItem="kdC-q7-pLs" secondAttribute="trailing" constant="8" id="ER9-XG-fgn"/>
+                                        <constraint firstItem="A7Y-7U-ezv" firstAttribute="centerY" secondItem="7CW-sO-mHc" secondAttribute="centerY" id="GKE-z0-SrD"/>
                                         <constraint firstItem="kdC-q7-pLs" firstAttribute="top" secondItem="dyu-CP-2w1" secondAttribute="bottom" constant="8" id="J1C-rd-CR2"/>
-                                        <constraint firstItem="dyu-CP-2w1" firstAttribute="leading" secondItem="ZCw-hi-Bf9" secondAttribute="trailing" constant="30" id="OvK-j7-phI"/>
+                                        <constraint firstItem="dyu-CP-2w1" firstAttribute="leading" secondItem="ZCw-hi-Bf9" secondAttribute="trailing" constant="10" id="OvK-j7-phI"/>
                                         <constraint firstItem="dyu-CP-2w1" firstAttribute="top" secondItem="Cxo-4j-bEl" secondAttribute="topMargin" constant="12" id="c0R-f4-rVA"/>
                                         <constraint firstItem="A7Y-7U-ezv" firstAttribute="top" secondItem="kdC-q7-pLs" secondAttribute="bottom" constant="8" id="mM6-0b-Mnu"/>
                                         <constraint firstAttribute="centerY" secondItem="ZCw-hi-Bf9" secondAttribute="centerY" id="nS7-XX-17v"/>
@@ -430,6 +446,8 @@
                                 <connections>
                                     <outlet property="bookImageView" destination="ZCw-hi-Bf9" id="BqV-JP-NOO"/>
                                     <outlet property="bookNameLabel" destination="dyu-CP-2w1" id="l3y-36-kDF"/>
+                                    <outlet property="bookOwnerLabel" destination="7CW-sO-mHc" id="XN7-Vx-1Rj"/>
+                                    <outlet property="borrowDateLabel" destination="Zd5-eq-Dis" id="PGk-Wi-KMa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
