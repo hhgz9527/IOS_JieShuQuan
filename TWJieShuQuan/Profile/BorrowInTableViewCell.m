@@ -12,6 +12,8 @@
 @interface BorrowInTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
+@property (weak, nonatomic) IBOutlet UILabel *borrowDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bookOwnerLabel;
 
 @end
 
@@ -22,15 +24,11 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 - (void)refreshUI {
     self.bookNameLabel.text = self.borrowRecord.bookName;
     [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.borrowRecord.bookImageHref]];
+    self.borrowDateLabel.text = [[[self.borrowRecord updatedAt] description] componentsSeparatedByString:@" "][0];
+    self.bookOwnerLabel.text = self.borrowRecord.fromUsername;
 }
 
 @end
