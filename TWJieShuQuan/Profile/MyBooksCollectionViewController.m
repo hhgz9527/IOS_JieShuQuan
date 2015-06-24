@@ -11,6 +11,8 @@
 #import "MyBooksCollectionViewCell.h"   
 #import "BookEntity.h"
 #import "BookDetailViewController.h"
+#import "BookDetailModel.h"
+#import "TWIconButton.h"
 
 @interface MyBooksCollectionViewController ()
 @property (nonatomic, strong) NSArray *myBooks;
@@ -103,7 +105,34 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     if ([segue.identifier isEqualToString:bookDetailSegue]) {
         BookDetailViewController *destViewController = (BookDetailViewController *)segue.destinationViewController;
         NSInteger row = [self.collectionView indexPathForCell:sender].row;
-        destViewController.bookEntity = self.myBooks[row];
+        BookDetailModel *model = [[BookDetailModel alloc] init];
+        [model updateInfoFromBookEntity:self.myBooks[row]];
+        model.title = @"@书籍详情";
+        model.updateStatsView = [[TWIconButton alloc] initWithTitle:@"更新状态"
+                                                               icon:[UIImage imageNamed:@"stats.png"]
+                                                             action:^{
+                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"更改状态"
+                                                                                                                        delegate:destViewController
+                                                                                                               cancelButtonTitle:@"取消"
+                                                                                                          destructiveButtonTitle:nil
+                                                                                                               otherButtonTitles:kUpdateStatsToCanBorrow, kUpdateStatsToCannotBorrow, nil];
+//                                                                     sheet.tag = kUpdateStatsTag;
+                                                                     [sheet showInView:destViewController.view];
+                                                                 });
+                                                             }];;
+
+        model.deleteView = [[TWIconButton alloc] initWithTitle:@"删除"
+                                                          icon:[UIImage imageNamed:@"delete.png"]
+                                                        action:^{
+                                                            [model.bookEntity deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                                                if (succeeded) {
+                                                                    [destViewController.navigationController popToRootViewControllerAnimated:YES];
+                                                                }
+                                                            }];
+                                                        }];
+
+        destViewController.bookDetailModel = model;
     }
 }
 

@@ -63,6 +63,17 @@
     [self refreshSubviews];
 }
 
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage *)icon action:(CallBack)action {
+    self = [self initWithFrame:CGRectZero];
+    if (self) {
+        _label.text = title;
+        _iconView.image = icon;
+        _callback = action;
+    }
+
+    return self;
+}
+
 
 - (void)layoutSubviews{
     CGFloat xOffset = 0.f;

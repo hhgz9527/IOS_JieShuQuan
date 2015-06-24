@@ -16,4 +16,6 @@ typedef void(^CallBack)();
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, copy) CallBack callback;
 
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage *)icon action:(CallBack)action;
+
 @end

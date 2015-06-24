@@ -24,7 +24,6 @@
 
 - (CGFloat)calcCellHeight {
     CGFloat height = CGRectGetHeight(self.userName.frame) + CGRectGetHeight(self.comment.frame) + CGRectGetHeight(self.date.frame) + 24;
-//    NSLog(@"==title:%@, height:%f-%f-%f=%f", self.userName.text, CGRectGetHeight(self.userName.frame), CGRectGetHeight(self.comment.frame), CGRectGetHeight(self.date.frame), height);
 
     return height;
 }
@@ -33,8 +32,7 @@
 - (void)setBounds:(CGRect)bounds {
     [super setBounds:bounds];
 
-//    [self.comment sizeThatFits:CGSizeMake(bounds.size.width-self.avatar.frame.size.width-8, CGFLOAT_MAX)];
-//    [self.date sizeThatFits:CGSizeMake(bounds.size.width-15, CGFLOAT_MAX)];
+    self.comment.preferredMaxLayoutWidth = bounds.size.width - 70;
 }
 
 @end
