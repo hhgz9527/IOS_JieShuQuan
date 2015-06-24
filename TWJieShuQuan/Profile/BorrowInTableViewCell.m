@@ -7,9 +7,11 @@
 //
 
 #import "BorrowInTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface BorrowInTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
 
 @end
 
@@ -28,6 +30,7 @@
 
 - (void)refreshUI {
     self.bookNameLabel.text = self.borrowRecord.bookName;
+    [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.borrowRecord.bookImageHref]];
 }
 
 @end

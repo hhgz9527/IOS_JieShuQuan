@@ -390,15 +390,45 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aUp-Qt-FNc" id="Cxo-4j-bEl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-CP-2w1">
-                                            <rect key="frame" x="279" y="35" width="84" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZCw-hi-Bf9">
+                                            <rect key="frame" x="23" y="9" width="50" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="SF3-UH-b7u"/>
+                                                <constraint firstAttribute="height" constant="75" id="e8a-rD-vwe"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-CP-2w1">
+                                            <rect key="frame" x="103" y="20" width="94" height="17"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借阅日期：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdC-q7-pLs">
+                                            <rect key="frame" x="103" y="45" width="60" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拥有者：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7Y-7U-ezv">
+                                            <rect key="frame" x="103" y="65" width="48" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZCw-hi-Bf9" firstAttribute="leading" secondItem="Cxo-4j-bEl" secondAttribute="leadingMargin" constant="15" id="66Q-Cy-Ee7"/>
+                                        <constraint firstItem="A7Y-7U-ezv" firstAttribute="leading" secondItem="dyu-CP-2w1" secondAttribute="leading" id="9rz-bC-XZe"/>
+                                        <constraint firstItem="kdC-q7-pLs" firstAttribute="top" secondItem="dyu-CP-2w1" secondAttribute="bottom" constant="8" id="J1C-rd-CR2"/>
+                                        <constraint firstItem="dyu-CP-2w1" firstAttribute="leading" secondItem="ZCw-hi-Bf9" secondAttribute="trailing" constant="30" id="OvK-j7-phI"/>
+                                        <constraint firstItem="dyu-CP-2w1" firstAttribute="top" secondItem="Cxo-4j-bEl" secondAttribute="topMargin" constant="12" id="c0R-f4-rVA"/>
+                                        <constraint firstItem="A7Y-7U-ezv" firstAttribute="top" secondItem="kdC-q7-pLs" secondAttribute="bottom" constant="8" id="mM6-0b-Mnu"/>
+                                        <constraint firstAttribute="centerY" secondItem="ZCw-hi-Bf9" secondAttribute="centerY" id="nS7-XX-17v"/>
+                                        <constraint firstItem="dyu-CP-2w1" firstAttribute="leading" secondItem="kdC-q7-pLs" secondAttribute="leading" id="uZV-rQ-pOK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bookImageView" destination="ZCw-hi-Bf9" id="BqV-JP-NOO"/>
                                     <outlet property="bookNameLabel" destination="dyu-CP-2w1" id="l3y-36-kDF"/>
                                 </connections>
                             </tableViewCell>
