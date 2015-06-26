@@ -21,6 +21,8 @@
 #define kRejectedStatus @"rejected"
 #define kReturnedStatus @"returned"
 
+static NSInteger kPageLoadCount = 12;
+
 @interface Constants : NSObject
 
 @end

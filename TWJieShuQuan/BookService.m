@@ -76,7 +76,7 @@
 + (void)fetchAllBooksWithStart:(NSInteger)start succeeded:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBook];
     [q orderByDescending:@"createdAt"];
-    [q setLimit:12];
+    [q setLimit:kPageLoadCount];
     [q setSkip:start];
     [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {

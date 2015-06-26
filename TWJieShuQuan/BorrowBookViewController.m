@@ -20,7 +20,7 @@
 #import "BookDetailModel.h"
 #import "TWIconButton.h"
 #import "BorrowFromPersonViewController.h"
-
+#import "Constants.h"
 
 static NSInteger kStart = 0;
 
@@ -129,7 +129,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 - (IBAction)loadMore:(id)sender {
     [self.activitiView startAnimating];
-    [BookService fetchAllBooksWithStart:12*(kStart++ + 1) succeeded:^(NSArray *myBooksObject) {
+    [BookService fetchAllBooksWithStart:kPageLoadCount*(kStart++ + 1) succeeded:^(NSArray *myBooksObject) {
         [myBooksObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [self.books addObject:obj];
         }];
