@@ -33,7 +33,7 @@
 @property (nonatomic, strong) NSMutableArray *books;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recoBooksTopConstraint;
-
+@property (nonatomic, retain) UIRefreshControl *refreshControl;
 @end
 
 @implementation BorrowBookViewController
@@ -49,6 +49,13 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     
     [self initCollectionView];
     
+    // pull to refresh
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
+    [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    [self.booksCollectionView addSubview:self.refreshControl];
+
+    
     // WIP
 //    [BookService fetchRecoBooksWithSucceedCallback:^(NSArray *recoBooks) {
 //        [self.recoBookImageView1 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[0] bookImageHref]]];
@@ -57,10 +64,18 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 //        [self.recoBookImageView4 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[3] bookImageHref]]];
 //    }];
     
+    [self refreshData:nil];
+}
+
+- (void)refreshData:(UIRefreshControl *)refresh {
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
+
     [BookService fetchAllBooksWithSucceedCallback:^(NSArray *myBooksObject) {
         self.books = [myBooksObject mutableCopy];
         
         [self.booksCollectionView reloadData];
+        
+        [refresh endRefreshing];
     }];
 }
 
