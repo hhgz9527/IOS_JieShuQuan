@@ -11,9 +11,11 @@
 #import "CustomActivityIndicator.h"
 #import "BorrowRecord.h"
 #import "BorrowInTableViewCell.h"
+#import "Constants.h"
+#import "CustomAlert.h"
 
 @interface MyBorrowInBooksTableViewController ()
-@property (nonatomic, strong) NSArray *borrowedInBookRecords;
+@property (nonatomic, strong) NSMutableArray *borrowedInBookRecords;
 @end
 
 @implementation MyBorrowInBooksTableViewController
@@ -27,11 +29,24 @@
     [BookService fetchAllBorrowedInRecordsWithSucceedCallback:^(NSArray *recoreds) {
         [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
 
-        self.borrowedInBookRecords = recoreds;
+        self.borrowedInBookRecords = [recoreds mutableCopy];
         [self.tableView reloadData];
     }];
 }
 
+- (IBAction)returnButtonPressed:(UIButton *)sender {
+    BorrowRecord *selectedRecord = self.borrowedInBookRecords[sender.tag];
+    
+    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
+    [BookService changeBorrowRecordStatusTo:kReturnedStatus forBorrowRecord:selectedRecord succeeded:^{
+        [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"您已归还此书"];
+        
+        [self.borrowedInBookRecords removeObjectAtIndex:sender.tag];
+        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:sender.tag inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+
+}
 
 #pragma mark - Table view data source
 
@@ -48,6 +63,9 @@
     BorrowRecord *currentRecord = self.borrowedInBookRecords[indexPath.row];
     
     BorrowInTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowInTableViewCell" forIndexPath:indexPath];
+    
+    cell.tag = indexPath.row;
+    cell.returnButton.tag = indexPath.row;
     
     cell.borrowRecord = currentRecord;
     [cell refreshUI];

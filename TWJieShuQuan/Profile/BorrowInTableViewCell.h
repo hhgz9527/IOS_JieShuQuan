@@ -11,6 +11,7 @@
 
 @interface BorrowInTableViewCell : UITableViewCell
 @property (nonatomic, strong) BorrowRecord *borrowRecord;
+@property (weak, nonatomic) IBOutlet UIButton *returnButton;
 
 - (void)refreshUI;
 @end

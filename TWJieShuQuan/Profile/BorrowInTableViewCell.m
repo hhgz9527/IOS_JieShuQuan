@@ -21,7 +21,12 @@
 @implementation BorrowInTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.returnButton.layer.borderColor = [UIColor colorWithRed:118.0/225.0 green:219.0/225.0 blue:125.0/225.0 alpha:1].CGColor;
+    self.returnButton.layer.borderWidth = 1.0f;
+    self.returnButton.layer.cornerRadius = 5.0f;
+    
+    [self.returnButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    [self.returnButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
 }
 
 - (void)refreshUI {

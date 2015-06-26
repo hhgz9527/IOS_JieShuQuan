@@ -49,6 +49,9 @@
     
     BorrowInTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowInTableViewCell" forIndexPath:indexPath];
     
+    cell.tag = indexPath.row;
+    cell.returnButton.tag = indexPath.row;
+    
     cell.borrowRecord = currentRecord;
     [cell refreshUI];
     
