@@ -10,7 +10,7 @@
 #import "BookService.h"
 #import "CustomActivityIndicator.h"
 #import "BorrowRecord.h"
-#import "BorrowInTableViewCell.h"
+#import "BorrowOutTableViewCell.h"
 
 @interface MyBorrowOutTableViewController ()
 @property (nonatomic, strong) NSArray *borrowedOutBookRecords;
@@ -32,6 +32,12 @@
     }];
 }
 
+//- (IBAction)pushToReturnButtonPressed:(UIButton *)sender {
+//    BorrowRecord *selectedRecord = self.borrowedOutBookRecords[sender.tag];
+//    
+//    
+//    
+//}
 
 #pragma mark - Table view data source
 
@@ -44,10 +50,10 @@
 }
 
 
-- (BorrowInTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (BorrowOutTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BorrowRecord *currentRecord = self.borrowedOutBookRecords[indexPath.row];
     
-    BorrowInTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowInTableViewCell" forIndexPath:indexPath];
+    BorrowOutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BorrowOutTableViewCell" forIndexPath:indexPath];
     
     cell.tag = indexPath.row;
     cell.returnButton.tag = indexPath.row;

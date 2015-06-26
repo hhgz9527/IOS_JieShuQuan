@@ -1208,7 +1208,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击某人后，系统会自动发送您的借阅申请到该人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hh-bg-vlB">
-                                        <rect key="frame" x="168" y="5" width="264" height="15"/>
+                                        <rect key="frame" x="168" y="5" width="264" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1350,21 +1350,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="BorrowInTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="BorrowInTableViewCell" rowHeight="93" id="fxy-gd-VKN" customClass="BorrowInTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="BorrowOutTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="BorrowOutTableViewCell" rowHeight="93" id="ewZ-3r-hk4" customClass="BorrowOutTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fxy-gd-VKN" id="JR2-gm-out">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ewZ-3r-hk4" id="dEF-8K-nIZ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjV-lQ-u5M">
-                                            <rect key="frame" x="279" y="35" width="84" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wZC-hE-aUe">
+                                            <rect key="frame" x="13" y="9" width="50" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="5Ib-aw-bYv"/>
+                                                <constraint firstAttribute="height" constant="75" id="9Mu-p9-xgv"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8Y-Hk-dW6">
+                                            <rect key="frame" x="73" y="20" width="94" height="17"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借阅日期：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivC-dt-8rd">
+                                            <rect key="frame" x="73" y="45" width="60" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-6-22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-Gn-UHM">
+                                            <rect key="frame" x="141" y="45" width="55" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借给了：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlO-si-5PJ">
+                                            <rect key="frame" x="73" y="65" width="48" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrt-TV-0Ju">
+                                            <rect key="frame" x="129" y="65" width="15" height="12"/>
+                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JlO-si-5PJ" firstAttribute="leading" secondItem="L8Y-Hk-dW6" secondAttribute="leading" id="2KU-vp-yQc"/>
+                                        <constraint firstItem="ivC-dt-8rd" firstAttribute="top" secondItem="L8Y-Hk-dW6" secondAttribute="bottom" constant="8" id="DJY-sp-Ehr"/>
+                                        <constraint firstItem="JlO-si-5PJ" firstAttribute="top" secondItem="ivC-dt-8rd" secondAttribute="bottom" constant="8" id="R8c-4T-aB0"/>
+                                        <constraint firstItem="L8Y-Hk-dW6" firstAttribute="leading" secondItem="wZC-hE-aUe" secondAttribute="trailing" constant="10" id="UGe-Ok-cj5"/>
+                                        <constraint firstItem="L8Y-Hk-dW6" firstAttribute="top" secondItem="dEF-8K-nIZ" secondAttribute="topMargin" constant="12" id="ZBB-iT-uNN"/>
+                                        <constraint firstItem="wZC-hE-aUe" firstAttribute="leading" secondItem="dEF-8K-nIZ" secondAttribute="leadingMargin" constant="5" id="ZJS-ET-DfV"/>
+                                        <constraint firstItem="WAA-Gn-UHM" firstAttribute="centerY" secondItem="ivC-dt-8rd" secondAttribute="centerY" id="bSq-JI-7ht"/>
+                                        <constraint firstItem="WAA-Gn-UHM" firstAttribute="leading" secondItem="ivC-dt-8rd" secondAttribute="trailing" constant="8" id="isd-V3-CBO"/>
+                                        <constraint firstItem="JlO-si-5PJ" firstAttribute="centerY" secondItem="jrt-TV-0Ju" secondAttribute="centerY" id="jIz-n6-ipR"/>
+                                        <constraint firstItem="jrt-TV-0Ju" firstAttribute="leading" secondItem="JlO-si-5PJ" secondAttribute="trailing" constant="8" id="uYX-GB-6Ri"/>
+                                        <constraint firstItem="L8Y-Hk-dW6" firstAttribute="leading" secondItem="ivC-dt-8rd" secondAttribute="leading" id="v8k-1m-bek"/>
+                                        <constraint firstAttribute="centerY" secondItem="wZC-hE-aUe" secondAttribute="centerY" id="yzd-LM-wH4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bookNameLabel" destination="UjV-lQ-u5M" id="oMH-HU-NiY"/>
+                                    <outlet property="bookImageView" destination="wZC-hE-aUe" id="SLR-z8-JIF"/>
+                                    <outlet property="bookNameLabel" destination="L8Y-Hk-dW6" id="Txy-ti-cry"/>
+                                    <outlet property="borrowDateLabel" destination="WAA-Gn-UHM" id="V0y-Yo-dTp"/>
+                                    <outlet property="lendToUserLabel" destination="jrt-TV-0Ju" id="WY9-c6-ald"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
