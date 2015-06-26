@@ -21,6 +21,9 @@
 #import "TWIconButton.h"
 #import "BorrowFromPersonViewController.h"
 
+
+static NSInteger kStart = 0;
+
 @interface BorrowBookViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView1;
 @property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView2;
@@ -33,6 +36,12 @@
 @property (nonatomic, strong) NSMutableArray *books;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recoBooksTopConstraint;
+
+@property (weak, nonatomic) IBOutlet UIView *loadMoreView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activitiView;
+@property (weak, nonatomic) IBOutlet UIButton *loadMoreButton;
+
+
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 @end
 
@@ -41,6 +50,8 @@
 static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
 - (void)viewDidLoad {
+    kStart = 0;
+
     [super viewDidLoad];
 
     [self initNavBar];
@@ -68,14 +79,18 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 }
 
 - (void)refreshData:(UIRefreshControl *)refresh {
+    [self.activitiView startAnimating];
+
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
 
-    [BookService fetchAllBooksWithSucceedCallback:^(NSArray *myBooksObject) {
+    kStart = 0;
+    [BookService fetchAllBooksWithStart:kStart succeeded:^(NSArray *myBooksObject) {
         self.books = [myBooksObject mutableCopy];
         
         [self.booksCollectionView reloadData];
         
         [refresh endRefreshing];
+        [self.activitiView stopAnimating];
     }];
 }
 
@@ -110,6 +125,19 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [scanButton addTarget:self action:@selector(scanISBNWithBorrowBookViewController) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.navigationItem.rightBarButtonItem = scanISBNButton;
+}
+
+- (IBAction)loadMore:(id)sender {
+    [self.activitiView startAnimating];
+    [BookService fetchAllBooksWithStart:12*(kStart++ + 1) succeeded:^(NSArray *myBooksObject) {
+        [myBooksObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self.books addObject:obj];
+        }];
+        
+        [self.booksCollectionView reloadData];
+        
+        [self.activitiView stopAnimating];
+    }];
 }
 
 - (void)scanISBNWithBorrowBookViewController {

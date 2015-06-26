@@ -73,9 +73,11 @@
 }
 
 // 获取所有人的图书，“借书”主页
-+ (void)fetchAllBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
++ (void)fetchAllBooksWithStart:(NSInteger)start succeeded:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBook];
     [q orderByDescending:@"createdAt"];
+    [q setLimit:12];
+    [q setSkip:start];
     [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             [[CustomAlert sharedAlert] showAlertWithMessage:@"获取图书失败！"];
