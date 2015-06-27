@@ -14,6 +14,8 @@
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
 		73A2F2511B3E8A9F004E6555 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */; };
+		73A2F2561B3ED8A2004E6555 /* OfficeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2541B3ED8A2004E6555 /* OfficeTableViewController.m */; };
+		73A2F2571B3ED8A2004E6555 /* OfficeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73A2F2551B3ED8A2004E6555 /* OfficeTableViewController.xib */; };
 		73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBEA271B29DE4C00F7373A /* FindCell.m */; };
 		941A806B1B3142DC00F15E3E /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941A806A1B3142DC00F15E3E /* NotificationManager.m */; };
 		941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5B1B0F7864002021DE /* NSString+Extensions.m */; };
@@ -102,6 +104,9 @@
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
 		73A2F24F1B3E8A9F004E6555 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		73A2F2531B3ED8A2004E6555 /* OfficeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficeTableViewController.h; sourceTree = "<group>"; };
+		73A2F2541B3ED8A2004E6555 /* OfficeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficeTableViewController.m; sourceTree = "<group>"; };
+		73A2F2551B3ED8A2004E6555 /* OfficeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfficeTableViewController.xib; sourceTree = "<group>"; };
 		73BBEA261B29DE4C00F7373A /* FindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCell.h; sourceTree = "<group>"; };
 		73BBEA271B29DE4C00F7373A /* FindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCell.m; sourceTree = "<group>"; };
 		941A80691B3142DC00F15E3E /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
@@ -252,6 +257,9 @@
 				A3C1E2EF1B16B90300037DB5 /* FindViewController.m */,
 				733021541B2CAD71007FE24C /* SendTwitterViewController.h */,
 				733021551B2CAD71007FE24C /* SendTwitterViewController.m */,
+				73A2F2531B3ED8A2004E6555 /* OfficeTableViewController.h */,
+				73A2F2541B3ED8A2004E6555 /* OfficeTableViewController.m */,
+				73A2F2551B3ED8A2004E6555 /* OfficeTableViewController.xib */,
 				73BBEA261B29DE4C00F7373A /* FindCell.h */,
 				73BBEA271B29DE4C00F7373A /* FindCell.m */,
 			);
@@ -638,6 +646,7 @@
 				A3D1C97F1B1C242700923AD5 /* borrow_message_bg.png in Resources */,
 				A327D9651B29719A00358122 /* delete.png in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
+				73A2F2571B3ED8A2004E6555 /* OfficeTableViewController.xib in Resources */,
 				7341C1961B1371A500E199DF /* Login_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,6 +739,7 @@
 				941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */,
 				941C9D651B0F81ED002021DE /* RegisterViewController.m in Sources */,
 				9423F6781B2C3959000D8556 /* BorrowFromPersonViewController.m in Sources */,
+				73A2F2561B3ED8A2004E6555 /* OfficeTableViewController.m in Sources */,
 				A327D96B1B29762700358122 /* TWIconButton.m in Sources */,
 				942BBDD41B1EF93E00F490CF /* MyBooksCollectionViewCell.m in Sources */,
 				B714934EFC12E452642DEA2E /* AppConstants.m in Sources */,
