@@ -49,7 +49,10 @@ static NSInteger const kSetAvatarTag = 1001;
 }
 
 - (void)updateBorrowBookNotificationCountWithCount:(NSArray *)borrowBookNotifications {
-    [self.borrowBookNotificationButton setTitle:[NSNumber numberWithInteger:borrowBookNotifications.count].stringValue forState:UIControlStateNormal];
+    if (borrowBookNotifications.count != 0) {
+        _borrowBookNotificationButton.hidden = NO;
+        [self.borrowBookNotificationButton setTitle:[NSNumber numberWithInteger:borrowBookNotifications.count].stringValue forState:UIControlStateNormal];
+    }
 }
 
 - (void)createRightBarButtonItem {
