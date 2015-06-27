@@ -9,6 +9,7 @@
 #import "SendTwitterViewController.h"
 #import <AVObject.h>
 #import <AVUser.h>
+#import "CustomAlert.h"
 
 @interface SendTwitterViewController ()
 
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"发信息";
+    [_textView becomeFirstResponder];
 }
 
 - (IBAction)dismiss:(id)sender {
@@ -29,7 +31,7 @@
 }
 
 - (IBAction)sendTwitter:(id)sender {
-    if (_textView.text.length <= 140) {
+    if (_textView.text.length <= 140 && ![_textView.text isEqualToString:@""]) {
         AVObject *obj = [AVObject objectWithClassName:@"Find"];
         [obj setObject:[AVUser currentUser] forKey:@"user"];
         [obj setObject:_textView.text forKey:@"twitter"];
@@ -39,6 +41,8 @@
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
         }];
+    } else {
+        [[CustomAlert alloc] showAlertWithMessage:@"字数限制"];
     }
 }
 

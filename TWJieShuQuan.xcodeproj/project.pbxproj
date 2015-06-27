@@ -245,6 +245,19 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		73A2F2521B3EA37B004E6555 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				A3C1E2EE1B16B90300037DB5 /* FindViewController.h */,
+				A3C1E2EF1B16B90300037DB5 /* FindViewController.m */,
+				733021541B2CAD71007FE24C /* SendTwitterViewController.h */,
+				733021551B2CAD71007FE24C /* SendTwitterViewController.m */,
+				73BBEA261B29DE4C00F7373A /* FindCell.h */,
+				73BBEA271B29DE4C00F7373A /* FindCell.m */,
+			);
+			name = Find;
+			sourceTree = "<group>";
+		};
 		793420AFE2155E5D258B1636 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,15 +480,10 @@
 		A3C1E2ED1B16B8D300037DB5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				73A2F2521B3EA37B004E6555 /* Find */,
 				73A2F2481B3E8A4D004E6555 /* Setting */,
 				A3C961651B3A5C36002CA409 /* Model */,
 				942BBDD11B1EF92300F490CF /* My Books */,
-				A3C1E2EE1B16B90300037DB5 /* FindViewController.h */,
-				A3C1E2EF1B16B90300037DB5 /* FindViewController.m */,
-				733021541B2CAD71007FE24C /* SendTwitterViewController.h */,
-				733021551B2CAD71007FE24C /* SendTwitterViewController.m */,
-				73BBEA261B29DE4C00F7373A /* FindCell.h */,
-				73BBEA271B29DE4C00F7373A /* FindCell.m */,
 				733021511B2C3C07007FE24C /* FindCell+Config.h */,
 				733021521B2C3C07007FE24C /* FindCell+Config.m */,
 				A3C1E2F41B16C9C200037DB5 /* ProfileTableViewController.h */,
