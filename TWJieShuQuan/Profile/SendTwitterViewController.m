@@ -10,8 +10,9 @@
 #import <AVObject.h>
 #import <AVUser.h>
 #import "CustomAlert.h"
+#import "OfficeViewController.h"
 
-@interface SendTwitterViewController ()
+@interface SendTwitterViewController ()<backNameDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *selectView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *selectViewBottom;
@@ -21,11 +22,14 @@
 
 @implementation SendTwitterViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [_textView becomeFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"发信息";
-    [_textView becomeFirstResponder];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 }
 
@@ -50,7 +54,6 @@
 }
 
 - (void)keyboardDidShow:(NSNotification *)nofi {
-
     NSDictionary *dic = [nofi userInfo];
     NSValue *value = [dic objectForKey:@"UIKeyboardFrameEndUserInfoKey"];
     CGRect rect = [value CGRectValue];
@@ -58,5 +61,12 @@
     _selectView.hidden = NO;
 }
 
+- (void)backName:(NSString *)name {
+    NSLog(@"%@",name);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"%@",segue.identifier);
+}
 
 @end

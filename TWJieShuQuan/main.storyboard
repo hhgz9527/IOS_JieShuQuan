@@ -949,7 +949,7 @@
                     <navigationItem key="navigationItem" title="发现" id="7ro-LT-C1q">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="W59-xk-mRk">
                             <connections>
-                                <segue destination="ERV-9d-KVg" kind="showDetail" id="Rxr-5l-mcU"/>
+                                <segue destination="ERV-9d-KVg" kind="showDetail" identifier="sendTwitter" id="Rxr-5l-mcU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1008,6 +1008,9 @@
                                         <state key="normal" title="@">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="dcH-ym-Y2W" kind="showDetail" identifier="selectOffice" id="pYg-QU-cti"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1051,10 +1054,26 @@
             </objects>
             <point key="canvasLocation" x="3034" y="-866"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="0aa-hD-jZD">
+            <objects>
+                <navigationController id="dcH-ym-Y2W" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ma-Kz-pbz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aYs-p6-VaD" kind="relationship" relationship="rootViewController" id="u1o-lC-s7T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xCf-lJ-jl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3734" y="-866"/>
+        </scene>
+        <!--Office View Controller-->
         <scene sceneID="YPd-pb-mdw">
             <objects>
-                <viewController id="aYs-p6-VaD" sceneMemberID="viewController">
+                <viewController id="aYs-p6-VaD" customClass="OfficeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fpn-RN-Y0C"/>
                         <viewControllerLayoutGuide type="bottom" id="lu2-IF-g7Z"/>
@@ -1062,12 +1081,38 @@
                     <view key="view" contentMode="scaleToFill" id="I1w-Yf-ELL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="si5-ab-hRs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aYs-p6-VaD" id="CUg-w2-2Oe"/>
+                                    <outlet property="delegate" destination="aYs-p6-VaD" id="lQy-nW-DoY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="si5-ab-hRs" firstAttribute="top" secondItem="I1w-Yf-ELL" secondAttribute="top" id="A8L-7b-iJs"/>
+                            <constraint firstItem="si5-ab-hRs" firstAttribute="leading" secondItem="I1w-Yf-ELL" secondAttribute="leading" id="CgR-K8-owJ"/>
+                            <constraint firstItem="lu2-IF-g7Z" firstAttribute="top" secondItem="si5-ab-hRs" secondAttribute="bottom" id="nia-KT-GNz"/>
+                            <constraint firstAttribute="trailing" secondItem="si5-ab-hRs" secondAttribute="trailing" id="tQb-cw-BYb"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oOl-mk-gdG">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="xkV-y1-CSH">
+                            <connections>
+                                <action selector="dismiss:" destination="aYs-p6-VaD" id="mgV-nZ-jXK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="officeList" destination="si5-ab-hRs" id="edU-ND-V0M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4F-9k-rPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3365" y="-694"/>
+            <point key="canvasLocation" x="4429" y="-866"/>
         </scene>
         <!--借书-->
         <scene sceneID="yKC-jM-LUm">

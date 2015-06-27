@@ -14,6 +14,7 @@
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
 		73A2F2511B3E8A9F004E6555 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */; };
+		73A2F25A1B3EDCAF004E6555 /* OfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */; };
 		73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBEA271B29DE4C00F7373A /* FindCell.m */; };
 		941A806B1B3142DC00F15E3E /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941A806A1B3142DC00F15E3E /* NotificationManager.m */; };
 		941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5B1B0F7864002021DE /* NSString+Extensions.m */; };
@@ -102,6 +103,8 @@
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
 		73A2F24F1B3E8A9F004E6555 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		73A2F2581B3EDCAF004E6555 /* OfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficeViewController.h; sourceTree = "<group>"; };
+		73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficeViewController.m; sourceTree = "<group>"; };
 		73BBEA261B29DE4C00F7373A /* FindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCell.h; sourceTree = "<group>"; };
 		73BBEA271B29DE4C00F7373A /* FindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCell.m; sourceTree = "<group>"; };
 		941A80691B3142DC00F15E3E /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				A3C1E2EF1B16B90300037DB5 /* FindViewController.m */,
 				733021541B2CAD71007FE24C /* SendTwitterViewController.h */,
 				733021551B2CAD71007FE24C /* SendTwitterViewController.m */,
+				73A2F2581B3EDCAF004E6555 /* OfficeViewController.h */,
+				73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */,
 				73BBEA261B29DE4C00F7373A /* FindCell.h */,
 				73BBEA271B29DE4C00F7373A /* FindCell.m */,
 			);
@@ -733,6 +738,7 @@
 				A327D96B1B29762700358122 /* TWIconButton.m in Sources */,
 				942BBDD41B1EF93E00F490CF /* MyBooksCollectionViewCell.m in Sources */,
 				B714934EFC12E452642DEA2E /* AppConstants.m in Sources */,
+				73A2F25A1B3EDCAF004E6555 /* OfficeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
