@@ -995,13 +995,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5e6-Wh-pGG">
+                                <rect key="frame" x="0.0" y="281" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8b-mT-aGM">
+                                        <rect key="frame" x="13" y="7" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="EBT-Mx-dEc"/>
+                                            <constraint firstAttribute="height" constant="30" id="Fmc-y6-Rkw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="@">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="b8b-mT-aGM" secondAttribute="centerY" id="bbf-U6-lK9"/>
+                                    <constraint firstAttribute="height" constant="44" id="dJ9-Ws-JH5"/>
+                                    <constraint firstItem="b8b-mT-aGM" firstAttribute="leading" secondItem="5e6-Wh-pGG" secondAttribute="leading" constant="13" id="ene-bb-CI9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KNn-Ie-3bq" firstAttribute="leading" secondItem="X6T-ar-YGH" secondAttribute="leading" id="BEr-Mc-Aaa"/>
                             <constraint firstAttribute="trailing" secondItem="KNn-Ie-3bq" secondAttribute="trailing" id="Gx7-br-fnT"/>
+                            <constraint firstAttribute="trailing" secondItem="5e6-Wh-pGG" secondAttribute="trailing" id="STI-tn-W4X"/>
+                            <constraint firstItem="69o-Fd-jIf" firstAttribute="top" secondItem="5e6-Wh-pGG" secondAttribute="bottom" constant="275" id="UVF-yp-NcM"/>
                             <constraint firstItem="KNn-Ie-3bq" firstAttribute="top" secondItem="X6T-ar-YGH" secondAttribute="top" id="YVg-YF-xek"/>
                             <constraint firstItem="69o-Fd-jIf" firstAttribute="top" secondItem="KNn-Ie-3bq" secondAttribute="bottom" id="rJa-aI-gVa"/>
+                            <constraint firstItem="5e6-Wh-pGG" firstAttribute="leading" secondItem="X6T-ar-YGH" secondAttribute="leading" id="t5B-pg-KSu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VEX-Zg-0qP">
@@ -1017,12 +1042,32 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="selectView" destination="5e6-Wh-pGG" id="So9-kL-Gqx"/>
+                        <outlet property="selectViewBottom" destination="UVF-yp-NcM" id="0Ph-rp-zLr"/>
                         <outlet property="textView" destination="KNn-Ie-3bq" id="M3a-ca-1iB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jy-Ia-eGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3034" y="-866"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YPd-pb-mdw">
+            <objects>
+                <viewController id="aYs-p6-VaD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fpn-RN-Y0C"/>
+                        <viewControllerLayoutGuide type="bottom" id="lu2-IF-g7Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I1w-Yf-ELL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4F-9k-rPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3365" y="-694"/>
         </scene>
         <!--借书-->
         <scene sceneID="yKC-jM-LUm">
