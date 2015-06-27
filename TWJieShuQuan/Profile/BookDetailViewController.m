@@ -86,6 +86,8 @@ static NSInteger kStart = 0;
     self.bookStatus.text = self.bookDetailModel.status ? @"可借" : @"暂不可借";
     [self.bookImage sd_setImageWithURL:[NSURL URLWithString:self.bookDetailModel.avatarURL]];
 
+    _bookImage.layer.shadowOpacity = 5;
+    _bookImage.layer.shadowOffset = CGSizeMake(0, 2);
 
 }
 
