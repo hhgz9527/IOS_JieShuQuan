@@ -31,6 +31,8 @@
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(refreshFindList) forControlEvents:UIControlEventValueChanged];
     [_findList addSubview:_refreshControl];
+    [_refreshControl beginRefreshing];
+    [self refreshFindList];
 }
 
 
