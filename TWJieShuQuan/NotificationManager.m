@@ -39,4 +39,11 @@
     [push setMessage:message];
     [push sendPushInBackground];
 }
+
++ (void)subscribeChannel:(NSString *)channel {
+    AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+    [currentInstallation addUniqueObject:channel forKey:@"channels"];
+    [currentInstallation saveInBackground];
+}
+
 @end

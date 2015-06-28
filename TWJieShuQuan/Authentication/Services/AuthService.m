@@ -7,6 +7,7 @@
 //
 
 #import "AuthService.h"
+#import "NotificationManager.h"
 
 @implementation AuthService
 
@@ -19,6 +20,7 @@
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            [NotificationManager subscribeChannel:office];
             signUpSucceededBlock();
         } else {
             NSString *errorMessage = [error.userInfo objectForKey:@"error"];

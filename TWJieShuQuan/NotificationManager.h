@@ -16,4 +16,6 @@
 + (void)sendBorrowBookNotificationToUser:(AVUser *)targetUser forBookEntity:(BookEntity *)targetBookEntity;
 + (void)sendTwitterNofitication:(NSString *)channel message:(NSString *)message;
 
++ (void)subscribeChannel:(NSString *)channel;
+
 @end
