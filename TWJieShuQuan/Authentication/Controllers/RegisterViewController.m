@@ -10,9 +10,14 @@
 #import "AuthService.h"
 #import "NSString+Extensions.h"
 #import "CustomAlert.h"
+#import <AVOSCloud.h>
 
-@interface RegisterViewController ()
+@interface RegisterViewController ()<UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIPickerView *officePickerView;
 @property (nonatomic, strong) UITextField *activeTextField;
+@property (nonatomic, strong) NSMutableArray *officeArray;
+
 @end
 
 @implementation RegisterViewController
@@ -25,6 +30,17 @@
     _emailTextField.delegate = self;
     _passwordTextField.delegate = self;
     _confirmPasswordTextField.delegate = self;
+    
+    AVQuery *query = [AVQuery queryWithClassName:@"Office"];
+    [query addDescendingOrder:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"%@", objects);
+        _officeArray = [NSMutableArray array];
+        for (AVObject *item in objects) {
+            [_officeArray addObject:[[item objectForKey:@"localData"] objectForKey:@"name"]];
+        }
+        [_officePickerView reloadAllComponents];
+    }];
 }
 
 - (void)setUpUICommponents {
@@ -107,11 +123,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 #pragma mark - UIAlertViewDelegate
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [AuthService logout];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 #pragma mark - private
 
@@ -119,6 +138,26 @@
     NSString *regex = @"[A-Z0-9a-z._%+-]+@thoughtworks.com";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [predicate evaluateWithObject:email];
+}
+
+
+#pragma mark - picker view delegate
+
+- (IBAction)selectOfficeBase:(id)sender {
+    [self textFieldShouldReturn:nil];
+    _officePickerView.hidden = NO;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return _officeArray.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [NSString stringWithFormat:@"%@", _officeArray[row]];
 }
 
 @end
