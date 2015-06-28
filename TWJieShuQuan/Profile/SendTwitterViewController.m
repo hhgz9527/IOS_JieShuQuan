@@ -76,11 +76,13 @@
 }
 
 - (void)keyboardDidShow:(NSNotification *)nofi {
-    NSDictionary *dic = [nofi userInfo];
-    NSValue *value = [dic objectForKey:@"UIKeyboardFrameEndUserInfoKey"];
-    CGRect rect = [value CGRectValue];
-    _selectViewBottom.constant = rect.size.height;
-    _selectView.hidden = NO;
+    if ([[[[AVUser currentUser] objectForKey:@"localData"] objectForKey:@"notification"] boolValue]) {
+        NSDictionary *dic = [nofi userInfo];
+        NSValue *value = [dic objectForKey:@"UIKeyboardFrameEndUserInfoKey"];
+        CGRect rect = [value CGRectValue];
+        _selectViewBottom.constant = rect.size.height;
+        _selectView.hidden = NO;
+    }
 }
 
 - (void)updateNotification {
