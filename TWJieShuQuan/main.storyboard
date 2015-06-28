@@ -1012,11 +1012,34 @@
                                             <segue destination="dcH-ym-Y2W" kind="showDetail" identifier="selectOffice" id="pYg-QU-cti"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmk-RE-1VR">
+                                        <rect key="frame" x="279" y="11" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-M7-JET">
+                                        <rect key="frame" x="539" y="7" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hmD-GD-dte"/>
+                                            <constraint firstAttribute="width" constant="46" id="mY3-Lf-rQ9"/>
+                                        </constraints>
+                                        <state key="normal" title="取消">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelNotification:" destination="sgK-cg-ADq" eventType="touchUpInside" id="E4t-Gy-in5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Kmk-RE-1VR" secondAttribute="centerX" id="4If-xI-KsE"/>
+                                    <constraint firstAttribute="centerY" secondItem="Kmk-RE-1VR" secondAttribute="centerY" id="IJO-Jy-8hD"/>
+                                    <constraint firstAttribute="trailing" secondItem="JLI-M7-JET" secondAttribute="trailing" constant="15" id="aV2-6E-q9r"/>
                                     <constraint firstAttribute="centerY" secondItem="b8b-mT-aGM" secondAttribute="centerY" id="bbf-U6-lK9"/>
                                     <constraint firstAttribute="height" constant="44" id="dJ9-Ws-JH5"/>
+                                    <constraint firstAttribute="centerY" secondItem="JLI-M7-JET" secondAttribute="centerY" id="eKF-zf-iJ4"/>
                                     <constraint firstItem="b8b-mT-aGM" firstAttribute="leading" secondItem="5e6-Wh-pGG" secondAttribute="leading" constant="13" id="ene-bb-CI9"/>
                                 </constraints>
                             </view>
@@ -1045,6 +1068,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="JLI-M7-JET" id="uFQ-VO-ubs"/>
+                        <outlet property="officeName" destination="Kmk-RE-1VR" id="X40-uO-smL"/>
                         <outlet property="selectView" destination="5e6-Wh-pGG" id="So9-kL-Gqx"/>
                         <outlet property="selectViewBottom" destination="UVF-yp-NcM" id="0Ph-rp-zLr"/>
                         <outlet property="textView" destination="KNn-Ie-3bq" id="M3a-ca-1iB"/>

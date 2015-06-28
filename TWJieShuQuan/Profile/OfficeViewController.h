@@ -8,14 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol backNameDelegate <NSObject>
-
-- (void)backName:(NSString *)name;
-
-@end
-
 @interface OfficeViewController : UIViewController
-
-@property (nonatomic, weak) id <backNameDelegate> delegate;
 
 @end

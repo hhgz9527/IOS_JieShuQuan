@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _array = @[@"Xi'an Office", @"Beijing Office", @"Chengdu Office", @"Wuhan Office"];
+    _array = @[@"China Office", @"Xi'an Office", @"Beijing Office", @"Chengdu Office", @"Wuhan Office"];
 }
 
 - (IBAction)dismiss:(id)sender {
@@ -51,7 +51,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [_delegate backName:[NSString stringWithFormat:@"%@", _array[indexPath.row]]];
+    [[NSUserDefaults standardUserDefaults] setObject:_array[indexPath.row] forKey:@"office"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
