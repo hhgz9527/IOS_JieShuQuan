@@ -11,6 +11,7 @@
 #import <AVUser.h>
 #import "CustomAlert.h"
 #import <AVPush.h>
+#import "NotificationManager.h"
 
 @interface SendTwitterViewController ()
 
@@ -68,10 +69,7 @@
 
 - (void)isNotification {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"office"] != nil) {
-        AVPush *push = [[AVPush alloc] init];
-        [push setChannel:[[NSUserDefaults standardUserDefaults] objectForKey:@"office"]];
-        [push setMessage:_textView.text];
-        [push sendPushInBackground];
+        [NotificationManager sendTwitterNofitication:[[NSUserDefaults standardUserDefaults] objectForKey:@"office"] message:_textView.text];
      }
 }
 

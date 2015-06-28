@@ -33,4 +33,10 @@
     [push sendPushInBackground];
 }
 
++ (void)sendTwitterNofitication:(NSString *)channel message:(NSString *)message {
+    AVPush *push = [[AVPush alloc] init];
+    [push setChannel:channel];
+    [push setMessage:message];
+    [push sendPushInBackground];
+}
 @end
