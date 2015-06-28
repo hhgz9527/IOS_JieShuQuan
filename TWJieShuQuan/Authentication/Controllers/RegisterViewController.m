@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *officePickerView;
 @property (nonatomic, strong) UITextField *activeTextField;
 @property (nonatomic, strong) NSMutableArray *officeArray;
+@property (nonatomic, copy) NSString *officeName;
 
 @end
 
@@ -110,8 +111,14 @@
         [[CustomAlert sharedAlert] showAlertWithMessage:@"两次输入密码不一致！"];
         return;
     }
+    
+    if (_officeName == nil) {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"选择Office！"];
+        return;
+    }
+    
 
-    [AuthService signUpWithEmail:self.emailTextField.text password:self.passwordTextField.text succeeded:^{
+    [AuthService signUpWithEmail:self.emailTextField.text password:self.passwordTextField.text office:_officeName succeeded:^{
         UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:nil message:@"注册成功，请登录邮箱进行验证，并重新登录" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         [successAlert show];
     } failed:^(NSString *errorMessage) {
@@ -158,6 +165,10 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [NSString stringWithFormat:@"%@", _officeArray[row]];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    _officeName = _officeArray[row];
 }
 
 @end

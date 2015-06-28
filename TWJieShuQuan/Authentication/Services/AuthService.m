@@ -10,12 +10,13 @@
 
 @implementation AuthService
 
-+ (void)signUpWithEmail:(NSString *)email password:(NSString *)password succeeded:(void (^)())signUpSucceededBlock failed:(void (^)(NSString *errorMessage))signUpFailedBlock {
++ (void)signUpWithEmail:(NSString *)email password:(NSString *)password office:(NSString *)office succeeded:(void (^)())signUpSucceededBlock failed:(void (^)(NSString *errorMessage))signUpFailedBlock {
     AVUser *user = [AVUser user];
     user.email = email;
     user.password = password;
     user.username = [self usernameFromEmail:email];
-
+    [user setObject:office forKey:@"office"];
+    
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             signUpSucceededBlock();
