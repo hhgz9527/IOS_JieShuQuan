@@ -27,6 +27,8 @@
     self.colleaguesTableView.dataSource = self;
     self.colleaguesTableView.delegate = self;
     
+    self.colleaguesTableView.tableFooterView = [[UIView alloc] init];
+    
     [BookService fetchOwnersFromBookEntities:self.avaliableBookEntities withSucceedCallback:^(NSArray *owners) {
         self.colleagues = owners;
         [self.colleaguesTableView reloadData];
