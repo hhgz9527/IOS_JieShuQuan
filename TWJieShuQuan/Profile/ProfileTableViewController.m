@@ -32,7 +32,6 @@ static NSInteger const kSetAvatarTag = 1001;
     [super viewDidLoad];
     
     [self createRightBarButtonItem];
-    [self createLeftBarButtonItem];
     [self setupAvatar];
     
     // above will be removed later
@@ -50,7 +49,10 @@ static NSInteger const kSetAvatarTag = 1001;
 }
 
 - (void)updateBorrowBookNotificationCountWithCount:(NSArray *)borrowBookNotifications {
-    [self.borrowBookNotificationButton setTitle:[NSNumber numberWithInteger:borrowBookNotifications.count].stringValue forState:UIControlStateNormal];
+    if (borrowBookNotifications.count != 0) {
+        _borrowBookNotificationButton.hidden = NO;
+        [self.borrowBookNotificationButton setTitle:[NSNumber numberWithInteger:borrowBookNotifications.count].stringValue forState:UIControlStateNormal];
+    }
 }
 
 - (void)createRightBarButtonItem {
@@ -60,12 +62,6 @@ static NSInteger const kSetAvatarTag = 1001;
     [scanButton addTarget:self action:@selector(scanISBN) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.navigationItem.rightBarButtonItem = scanISBNButton;
-}
-
-- (void)createLeftBarButtonItem {
-    // will move logout function into settings page later
-    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
-    self.navigationItem.leftBarButtonItem = logoutButton;
 }
 
 - (void)setupAvatar {
@@ -176,17 +172,6 @@ static NSInteger const kSetAvatarTag = 1001;
         default:
             break;
     }
-}
-
-- (void)logout {
-    [AuthService logout];
-    
-    // remove login user from userdefaults
-    [UserManager removeCurrentUser];
-    
-    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:loginViewController animated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -33,4 +33,17 @@
     [push sendPushInBackground];
 }
 
++ (void)sendTwitterNofitication:(NSString *)channel message:(NSString *)message {
+    AVPush *push = [[AVPush alloc] init];
+    [push setChannel:channel];
+    [push setMessage:message];
+    [push sendPushInBackground];
+}
+
++ (void)subscribeChannel:(NSString *)channel {
+    AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+    [currentInstallation addUniqueObject:channel forKey:@"channels"];
+    [currentInstallation saveInBackground];
+}
+
 @end
