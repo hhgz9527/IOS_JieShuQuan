@@ -9,7 +9,7 @@
 #import "AVQuery+Extensions.h"
 #import "BookEntity.h"
 #import "Book.h"
-#import "Find.h"
+#import "Discover.h"
 #import "BorrowRecord.h"
 
 @implementation AVQuery (Extensions)
@@ -23,7 +23,7 @@
 }
 
 + (AVQuery *)queryForFind {
-    return [AVQuery queryWithClassName:NSStringFromClass([Find class])];
+    return [AVQuery queryWithClassName:NSStringFromClass([Discover class])];
 }
 
 + (AVQuery *)queryForBorrowRecord {

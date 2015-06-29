@@ -7,10 +7,10 @@
 //
 
 #import "FindCell.h"
-@class Find;
+@class Discover;
 
 @interface FindCell (Config)
 
-- (void)configFindCell:(Find *)find;
+- (void)configFindCell:(Discover *)find;
 
 @end

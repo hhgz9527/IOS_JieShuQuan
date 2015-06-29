@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		733021501B2C3A5E007FE24C /* Find.m in Sources */ = {isa = PBXBuildFile; fileRef = 7330214F1B2C3A5E007FE24C /* Find.m */; };
+		733021501B2C3A5E007FE24C /* Discover.m in Sources */ = {isa = PBXBuildFile; fileRef = 7330214F1B2C3A5E007FE24C /* Discover.m */; };
 		733021531B2C3C07007FE24C /* FindCell+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 733021521B2C3C07007FE24C /* FindCell+Config.m */; };
 		733021561B2CAD71007FE24C /* SendTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733021551B2CAD71007FE24C /* SendTwitterViewController.m */; };
 		7341C1961B1371A500E199DF /* Login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7341C1951B1371A500E199DF /* Login_background.png */; };
@@ -92,8 +92,8 @@
 
 /* Begin PBXFileReference section */
 		40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWJieShuQuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7330214E1B2C3A5E007FE24C /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
-		7330214F1B2C3A5E007FE24C /* Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Find.m; sourceTree = "<group>"; };
+		7330214E1B2C3A5E007FE24C /* Discover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover.h; sourceTree = "<group>"; };
+		7330214F1B2C3A5E007FE24C /* Discover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Discover.m; sourceTree = "<group>"; };
 		733021511B2C3C07007FE24C /* FindCell+Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FindCell+Config.h"; sourceTree = "<group>"; };
 		733021521B2C3C07007FE24C /* FindCell+Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FindCell+Config.m"; sourceTree = "<group>"; };
 		733021541B2CAD71007FE24C /* SendTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendTwitterViewController.h; sourceTree = "<group>"; };
@@ -463,8 +463,8 @@
 				94C0699C1B146AE30047BCCB /* Book.m */,
 				942BBCBB1B17F90D00F490CF /* BookEntity.h */,
 				942BBCBC1B17F90D00F490CF /* BookEntity.m */,
-				7330214E1B2C3A5E007FE24C /* Find.h */,
-				7330214F1B2C3A5E007FE24C /* Find.m */,
+				7330214E1B2C3A5E007FE24C /* Discover.h */,
+				7330214F1B2C3A5E007FE24C /* Discover.m */,
 				947DA0A81B354A9900CC9101 /* BorrowRecord.h */,
 				947DA0A91B354A9900CC9101 /* BorrowRecord.m */,
 			);
@@ -717,7 +717,7 @@
 				733021531B2C3C07007FE24C /* FindCell+Config.m in Sources */,
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
-				733021501B2C3A5E007FE24C /* Find.m in Sources */,
+				733021501B2C3A5E007FE24C /* Discover.m in Sources */,
 				942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */,
 				941A806B1B3142DC00F15E3E /* NotificationManager.m in Sources */,
 				947BBB791B393CAA000AC785 /* BorrowInTableViewCell.m in Sources */,

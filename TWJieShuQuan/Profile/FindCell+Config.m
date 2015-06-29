@@ -7,11 +7,11 @@
 //
 
 #import "FindCell+Config.h"
-#import "Find.h"
+#import "Discover.h"
 
 @implementation FindCell (Config)
 
-- (void)configFindCell:(Find *)find {
+- (void)configFindCell:(Discover *)find {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.avatar.layer.cornerRadius = 15;
     self.avatar.layer.masksToBounds = YES;
@@ -27,16 +27,16 @@
     }];
 }
 
-- (void)isTwitter:(NSArray *)objects find:(Find *)find {
+- (void)isTwitter:(NSArray *)objects find:(Discover *)find {
     [self createCell:objects find:find content:find.twitter];
 }
 
-- (void)isBookNotification:(NSArray *)objects find:(Find *)find {
-    NSString *str = [NSString stringWithFormat:@"我添加了一本新书《%@》。",find.book];
+- (void)isBookNotification:(NSArray *)objects find:(Discover *)find {
+    NSString *str = [NSString stringWithFormat:@"我添加了一本新书《%@》。",find.bookName];
     [self createCell:objects find:find content:str];
 }
 
-- (void)createCell:(NSArray *)objects find:(Find *)find content:(NSString *)content {
+- (void)createCell:(NSArray *)objects find:(Discover *)find content:(NSString *)content {
     AVUser *user = objects.firstObject;
     self.name.text = user.username;
     self.content.text = content;

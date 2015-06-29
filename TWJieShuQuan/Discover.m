@@ -1,21 +1,21 @@
 //
-//  Find.m
+//  Discover.m
 //  TWJieShuQuan
 //
 //  Created by GaoYu on 15/6/13.
 //  Copyright (c) 2015年 Jianing. All rights reserved.
 //
 
-#import "Find.h"
+#import "Discover.h"
 
-@implementation Find
+@implementation Discover
 
 @dynamic user;
-@dynamic book;
-
+@dynamic bookName;
+@dynamic twitter;
+@dynamic type;
 + (NSString *)parseClassName {
-    return @"Find";
+    return @"Discover";
 }
-
 
 @end

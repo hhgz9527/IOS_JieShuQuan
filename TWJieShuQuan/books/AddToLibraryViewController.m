@@ -12,6 +12,7 @@
 #import "BookService.h"
 #import "CustomAlert.h"
 #import "CustomActivityIndicator.h"
+#import "Discover.h"
 
 @interface AddToLibraryViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
@@ -52,9 +53,10 @@
 }
 
 - (void)sendMessageToFindViewWith:(NSString *)bookName {
-    AVObject *obj = [AVObject objectWithClassName:@"Find"];
+    AVObject *obj = [AVObject objectWithClassName:@"Discover"];
     [obj setObject:[AVUser currentUser] forKey:@"user"];
-    [obj setObject:bookName forKey:@"book"];
+    [obj setObject:bookName forKey:@"bookName"];
+    [obj setObject:[NSNumber numberWithInt:DISCOVERTYPE_ADDBOOK] forKey:@"type"];
     [obj saveEventually:^(BOOL succeeded, NSError *error) {
         if (succeeded == YES) {
             NSLog(@"发布成功");

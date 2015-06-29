@@ -12,6 +12,7 @@
 #import "CustomAlert.h"
 #import <AVPush.h>
 #import "NotificationManager.h"
+#import "Discover.h"
 
 @interface SendTwitterViewController ()
 
@@ -46,9 +47,10 @@
 
 - (IBAction)sendTwitter:(id)sender {
     if ([self textLength]) {
-        AVObject *obj = [AVObject objectWithClassName:@"Find"];
+        AVObject *obj = [AVObject objectWithClassName:@"Discover"];
         [obj setObject:[AVUser currentUser] forKey:@"user"];
         [obj setObject:_textView.text forKey:@"twitter"];
+        [obj setObject:[NSNumber numberWithInt:DISCOVERTYPE_TWITTER] forKey:@"type"];
         [obj saveEventually:^(BOOL succeeded, NSError *error) {
             if (succeeded == YES) {
                 NSLog(@"发布成功");

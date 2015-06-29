@@ -62,7 +62,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Find *find = _dataArray[indexPath.row];
+    Discover *find = _dataArray[indexPath.row];
     static NSString *iden = @"cell";
     FindCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
     [cell configFindCell:find];

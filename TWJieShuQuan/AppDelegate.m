@@ -12,7 +12,7 @@
 #import "LoginViewController.h"
 #import "Book.h"
 #import "BookEntity.h"
-#import "Find.h"
+#import "Discover.h"
 #import "BorrowNotificationTableViewController.h"
 #import "BorrowRecord.h"
 
@@ -28,7 +28,7 @@
     // setup LeanCloud
     [Book registerSubclass];
     [BookEntity registerSubclass];
-    [Find registerSubclass];
+    [Discover registerSubclass];
     [BorrowRecord registerSubclass];
     
     [AVOSCloud setApplicationId:LeanCloud_AppId clientKey:LeanCloud_AppKey];
