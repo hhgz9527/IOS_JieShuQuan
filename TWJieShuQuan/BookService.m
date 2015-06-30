@@ -264,6 +264,17 @@
     }];
 }
 
+//搜索书籍
++ (void)searchBookWithName:(NSString *)bookName callback:(void (^)())callback{
+    AVQuery *query = [AVQuery queryWithClassName:@"Book"];
+    [query whereKey:@"bookName" equalTo:bookName];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        Book *book = objects[0];
+        callback(book);
+    }];
+}
+
+
 #pragma mark - private methods
 
 + (void)createBookEntityIfNeededWithBook:(Book *)book availability:(BOOL)availability succeeded:(void (^)())succeededBlock {
@@ -301,4 +312,5 @@
         succeededBlock();
     }];
 }
+
 @end

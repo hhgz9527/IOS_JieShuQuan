@@ -31,4 +31,7 @@
 + (void)fetchAllBorrowedOutRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 
 + (void)increaseBorrowCountForBorrowRecord:(BorrowRecord *)borrowRecord;
+
++ (void)searchBookWithName:(NSString *)bookName callback:(void (^)(Book *book))callback;
+
 @end
