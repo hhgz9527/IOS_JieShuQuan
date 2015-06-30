@@ -1288,19 +1288,42 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-Bn-afU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="OcR-KI-tzK">
-                                        <rect key="frame" x="0.0" y="66" width="600" height="44"/>
+                                    <searchBar contentMode="redraw" placeholder="暂只支持书籍名称搜索" translatesAutoresizingMaskIntoConstraints="NO" id="OcR-KI-tzK">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="KFD-BF-AVZ"/>
                                         </constraints>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="5qn-Mr-JK9" id="WpD-ve-EJz"/>
+                                        </connections>
                                     </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-jG-0Ok">
+                                        <rect key="frame" x="15" y="115" width="90" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="9gF-FA-fVj"/>
+                                            <constraint firstAttribute="width" constant="90" id="DwE-O8-HbY"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfM-9W-q4a">
+                                        <rect key="frame" x="15" y="233" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="OcR-KI-tzK" firstAttribute="leading" secondItem="gGb-Bn-afU" secondAttribute="leading" id="0iw-fM-abY"/>
+                                    <constraint firstItem="gfM-9W-q4a" firstAttribute="top" secondItem="fcH-jG-0Ok" secondAttribute="bottom" constant="8" id="Cke-1D-t3g"/>
+                                    <constraint firstItem="fcH-jG-0Ok" firstAttribute="top" secondItem="OcR-KI-tzK" secondAttribute="bottom" constant="7" id="Gdj-ps-wet"/>
                                     <constraint firstAttribute="trailing" secondItem="OcR-KI-tzK" secondAttribute="trailing" id="Tbb-Z9-cGK"/>
-                                    <constraint firstItem="OcR-KI-tzK" firstAttribute="top" secondItem="gGb-Bn-afU" secondAttribute="top" constant="66" id="ufZ-nt-W1S"/>
+                                    <constraint firstItem="fcH-jG-0Ok" firstAttribute="leading" secondItem="gfM-9W-q4a" secondAttribute="leading" id="hMa-4t-hr2"/>
+                                    <constraint firstItem="fcH-jG-0Ok" firstAttribute="leading" secondItem="gGb-Bn-afU" secondAttribute="leading" constant="15" id="nzW-yP-Dug"/>
+                                    <constraint firstItem="OcR-KI-tzK" firstAttribute="top" secondItem="gGb-Bn-afU" secondAttribute="top" constant="64" id="ufZ-nt-W1S"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1338,6 +1361,8 @@
                         <outlet property="loadMoreButton" destination="7bB-qj-lbE" id="VZC-OZ-6Na"/>
                         <outlet property="loadMoreView" destination="lbi-qI-Dye" id="Wq6-i0-wRn"/>
                         <outlet property="searchBar" destination="OcR-KI-tzK" id="uMm-JX-VDA"/>
+                        <outlet property="searchBookImage" destination="fcH-jG-0Ok" id="iB7-Wo-Y83"/>
+                        <outlet property="searchBookName" destination="gfM-9W-q4a" id="Kbc-bk-Erz"/>
                         <outlet property="searchView" destination="gGb-Bn-afU" id="Vdr-QE-1jf"/>
                     </connections>
                 </viewController>

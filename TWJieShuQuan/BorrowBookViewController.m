@@ -21,10 +21,11 @@
 #import "TWIconButton.h"
 #import "BorrowFromPersonViewController.h"
 #import "Constants.h"
+#import <SDWebImage/UIButton+WebCache.h>
 
 static NSInteger kStart = 0;
 
-@interface BorrowBookViewController ()
+@interface BorrowBookViewController () <UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *booksCollectionView;
 @property (nonatomic, strong) NSMutableArray *books;
@@ -36,6 +37,8 @@ static NSInteger kStart = 0;
 
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIButton *searchBookImage;
+@property (weak, nonatomic) IBOutlet UILabel *searchBookName;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
@@ -275,5 +278,13 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
         _leftBarButton.title = @"搜索";
     }
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [BookService searchBookWithName:searchBar.text callback:^(Book *book) {
+        [_searchBookImage sd_setBackgroundImageWithURL:[NSURL URLWithString:book.bookImageHref] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"bookplacehoder"]];
+        _searchBookName.text = book.bookName;
+    }];
+}
+
 
 @end
