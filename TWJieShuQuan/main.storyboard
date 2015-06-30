@@ -1151,13 +1151,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-3W-xnd">
-                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-3W-xnd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Hv9-Yq-Vv1"/>
+                                    <constraint firstAttribute="height" constant="120" id="Hv9-Yq-Vv1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="排行榜" backgroundImage="nav_background.png">
+                                <inset key="imageEdgeInsets" minX="30" minY="10" maxX="30" maxY="0.0"/>
+                                <state key="normal" image="Top4.png">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1166,7 +1166,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CLS-9t-6Wa">
-                                <rect key="frame" x="0.0" y="164" width="600" height="343"/>
+                                <rect key="frame" x="0.0" y="184" width="600" height="323"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rag-Tz-g2D">
                                     <size key="itemSize" width="50" height="50"/>
@@ -1681,8 +1681,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Top4.png" width="614" height="243"/>
         <image name="avatar.png" width="225" height="225"/>
         <image name="borrow_message_bg.png" width="60" height="60"/>
-        <image name="nav_background.png" width="750" height="133"/>
     </resources>
 </document>

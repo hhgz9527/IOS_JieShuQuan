@@ -13,6 +13,7 @@
 		7341C1961B1371A500E199DF /* Login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7341C1951B1371A500E199DF /* Login_background.png */; };
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
+		739043BE1B42FD240047637A /* Top4.png in Resources */ = {isa = PBXBuildFile; fileRef = 739043BD1B42FD240047637A /* Top4.png */; };
 		73A2F2511B3E8A9F004E6555 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */; };
 		73A2F25A1B3EDCAF004E6555 /* OfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */; };
 		73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBEA271B29DE4C00F7373A /* FindCell.m */; };
@@ -103,6 +104,7 @@
 		7341C1951B1371A500E199DF /* Login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_background.png; sourceTree = "<group>"; };
 		7361D0771B1774F8000AF2EC /* nav_scanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_scanIcon.png; sourceTree = "<group>"; };
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
+		739043BD1B42FD240047637A /* Top4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Top4.png; sourceTree = "<group>"; };
 		73A2F24F1B3E8A9F004E6555 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		73A2F2581B3EDCAF004E6555 /* OfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficeViewController.h; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		739043BC1B42FCF80047637A /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				739043BD1B42FD240047637A /* Top4.png */,
+			);
+			name = Temp;
+			sourceTree = "<group>";
+		};
 		73A2F2481B3E8A4D004E6555 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +378,7 @@
 		949997031B09D3E500986337 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				739043BC1B42FCF80047637A /* Temp */,
 				A3D1C97B1B1C23CC00923AD5 /* Resource */,
 				7361D0791B17763E000AF2EC /* nav_background.png */,
 				7361D0771B1774F8000AF2EC /* nav_scanIcon.png */,
@@ -644,6 +655,7 @@
 				941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */,
 				94C069861B14175A0047BCCB /* LibzBar in Resources */,
 				A3D1C9811B1C242700923AD5 /* scan.png in Resources */,
+				739043BE1B42FD240047637A /* Top4.png in Resources */,
 				94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */,
 				A3C1E2EC1B16AF1100037DB5 /* main.storyboard in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
