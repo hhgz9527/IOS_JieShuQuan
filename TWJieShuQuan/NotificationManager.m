@@ -43,7 +43,12 @@
 + (void)subscribeChannel:(NSString *)channel {
     AVInstallation *currentInstallation = [AVInstallation currentInstallation];
     [currentInstallation addUniqueObject:channel forKey:@"channels"];
-    [currentInstallation saveInBackground];
+    [currentInstallation addUniqueObject:@"China Office" forKey:@"channels"];
+    [currentInstallation saveEventually:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"订阅成功");
+        }
+    }];
 }
 
 @end
