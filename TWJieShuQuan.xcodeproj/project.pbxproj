@@ -61,6 +61,8 @@
 		94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C069971B146A570047BCCB /* AddToLibraryViewController.xib */; };
 		94C0699D1B146AE30047BCCB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C0699C1B146AE30047BCCB /* Book.m */; };
 		94C069A51B1567500047BCCB /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C069A41B1567500047BCCB /* UserManager.m */; };
+		94D9B7A31B4272A9001B0D4D /* PopularBooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D9B7A21B4272A9001B0D4D /* PopularBooksTableViewController.m */; };
+		94D9B7A61B427334001B0D4D /* PopularBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D9B7A51B427334001B0D4D /* PopularBookTableViewCell.m */; };
 		94F75DEB1B329F0100B59A17 /* BorrowNotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F75DEA1B329F0100B59A17 /* BorrowNotificationTableViewController.m */; };
 		94F75DF21B32AD3A00B59A17 /* BorrowNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F75DF11B32AD3A00B59A17 /* BorrowNotificationTableViewCell.m */; };
 		A327D9611B295E9900358122 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A327D9601B295E9900358122 /* avatar.png */; };
@@ -185,6 +187,10 @@
 		94C0699C1B146AE30047BCCB /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		94C069A31B1567500047BCCB /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		94C069A41B1567500047BCCB /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		94D9B7A11B4272A9001B0D4D /* PopularBooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularBooksTableViewController.h; sourceTree = "<group>"; };
+		94D9B7A21B4272A9001B0D4D /* PopularBooksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularBooksTableViewController.m; sourceTree = "<group>"; };
+		94D9B7A41B427334001B0D4D /* PopularBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularBookTableViewCell.h; sourceTree = "<group>"; };
+		94D9B7A51B427334001B0D4D /* PopularBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularBookTableViewCell.m; sourceTree = "<group>"; };
 		94F75DE91B329F0100B59A17 /* BorrowNotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowNotificationTableViewController.h; sourceTree = "<group>"; };
 		94F75DEA1B329F0100B59A17 /* BorrowNotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowNotificationTableViewController.m; sourceTree = "<group>"; };
 		94F75DF01B32AD3A00B59A17 /* BorrowNotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowNotificationTableViewCell.h; sourceTree = "<group>"; };
@@ -443,6 +449,10 @@
 				9423F6771B2C3959000D8556 /* BorrowFromPersonViewController.m */,
 				9423F6791B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.h */,
 				9423F67A1B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.m */,
+				94D9B7A11B4272A9001B0D4D /* PopularBooksTableViewController.h */,
+				94D9B7A21B4272A9001B0D4D /* PopularBooksTableViewController.m */,
+				94D9B7A41B427334001B0D4D /* PopularBookTableViewCell.h */,
+				94D9B7A51B427334001B0D4D /* PopularBookTableViewCell.m */,
 			);
 			name = Books;
 			sourceTree = "<group>";
@@ -716,6 +726,7 @@
 				949997061B09D3E500986337 /* main.m in Sources */,
 				733021531B2C3C07007FE24C /* FindCell+Config.m in Sources */,
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
+				94D9B7A31B4272A9001B0D4D /* PopularBooksTableViewController.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
 				733021501B2C3A5E007FE24C /* Discover.m in Sources */,
 				942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */,
@@ -729,6 +740,7 @@
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
 				942BBCBA1B17031000F490CF /* BookService.m in Sources */,
 				942BBCC01B180FC600F490CF /* AVQuery+Extensions.m in Sources */,
+				94D9B7A61B427334001B0D4D /* PopularBookTableViewCell.m in Sources */,
 				9423F6751B2C3017000D8556 /* BorrowBookDetailViewController.m in Sources */,
 				9423F67B1B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.m in Sources */,
 				947BBB761B393BDC000AC785 /* MyBorrowInBooksTableViewController.m in Sources */,

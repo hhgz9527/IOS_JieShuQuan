@@ -30,4 +30,5 @@
 + (void)fetchAllBorrowedInRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 + (void)fetchAllBorrowedOutRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
 
++ (void)increaseBorrowCountForBorrowRecord:(BorrowRecord *)borrowRecord;
 @end

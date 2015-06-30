@@ -25,17 +25,10 @@
 static NSInteger kStart = 0;
 
 @interface BorrowBookViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView1;
-@property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView2;
-@property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView3;
-@property (weak, nonatomic) IBOutlet UIImageView *recoBookImageView4;
-
-@property (weak, nonatomic) IBOutlet UIView *recoBooksSepatatorView;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *booksCollectionView;
 @property (nonatomic, strong) NSMutableArray *books;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *recoBooksTopConstraint;
 
 @property (weak, nonatomic) IBOutlet UIView *loadMoreView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activitiView;
@@ -56,8 +49,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 
     [self initNavBar];
     
-    [self initSeparatorView];
-    
     [self initCollectionView];
     
     // pull to refresh
@@ -66,15 +57,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [self.booksCollectionView addSubview:self.refreshControl];
 
-    
-    // WIP
-//    [BookService fetchRecoBooksWithSucceedCallback:^(NSArray *recoBooks) {
-//        [self.recoBookImageView1 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[0] bookImageHref]]];
-//        [self.recoBookImageView2 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[1] bookImageHref]]];
-//        [self.recoBookImageView3 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[2] bookImageHref]]];
-//        [self.recoBookImageView4 sd_setImageWithURL:[NSURL URLWithString:[(Book *)recoBooks[3] bookImageHref]]];
-//    }];
-    
     [self refreshData:nil];
 }
 
@@ -92,10 +74,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
         [refresh endRefreshing];
         [self.activitiView stopAnimating];
     }];
-}
-
-- (void)initSeparatorView {
-    self.recoBooksSepatatorView.backgroundColor = [UIColor redColor];
 }
 
 - (void)initCollectionView {
@@ -280,13 +258,5 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     }
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > 10) {
-        _recoBooksTopConstraint.constant = - 130;
-    }
-    if (scrollView.contentOffset.y <= 0) {
-        _recoBooksTopConstraint.constant = 0;
-    }
-}
 
 @end

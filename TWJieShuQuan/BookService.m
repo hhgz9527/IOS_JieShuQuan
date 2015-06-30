@@ -88,12 +88,11 @@
     }];
 }
 
-// 获取图书排名
+// 获取图书排名，借书次数必须大于0
 + (void)fetchRecoBooksWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
-    
-    // WIP
     AVQuery *q = [AVQuery queryForBook];
-    [q orderByDescending:@"createdAt"];
+    [q whereKey:@"borrowCount" greaterThan:@0];
+    [q orderByDescending:@"borrowCount"];
     [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             [[CustomAlert sharedAlert] showAlertWithMessage:@"获取图书失败！"];
@@ -252,6 +251,18 @@
     }];
 }
 
+
+// 给借书次数加1
++ (void)increaseBorrowCountForBorrowRecord:(BorrowRecord *)borrowRecord {
+    BookEntity *bookEntity = [borrowRecord objectForKey:@"bookEntity"];
+    [bookEntity fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        Book *book = [object objectForKey:kBookEntity_Book];
+        [book fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+            book.borrowCount = @(book.borrowCount.intValue + 1);
+            [book saveInBackground];
+        }];
+    }];
+}
 
 #pragma mark - private methods
 
