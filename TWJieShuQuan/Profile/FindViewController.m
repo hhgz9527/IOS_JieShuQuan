@@ -11,11 +11,14 @@
 #import "FindCell+Config.h"
 #import <AVObject+Subclass.h>
 #import "AVQuery+Extensions.h"
+#import <SVPullToRefresh.h>
+#import "Constants.h"
+
+static NSInteger kStart = 20;
 
 @interface FindViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *findList;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSArray *dataArray;
 
 @end
@@ -28,18 +31,24 @@
     _findList.rowHeight = UITableViewAutomaticDimension;
     _findList.estimatedRowHeight = 44.0;
     
-    _refreshControl = [[UIRefreshControl alloc] init];
-    [_refreshControl addTarget:self action:@selector(refreshFindList) forControlEvents:UIControlEventValueChanged];
-    [_findList addSubview:_refreshControl];
-    [_refreshControl beginRefreshing];
-    [self refreshFindList];
-}
+    [_findList addPullToRefreshWithActionHandler:^{
+        [self refreshFindList:20];
+        [_findList.pullToRefreshView stopAnimating];
+    }];
+    
+    [_findList addInfiniteScrollingWithActionHandler:^{
+        [self refreshFindList:kPageLoadCount*(kStart++ + 1)];
+        [_findList.infiniteScrollingView stopAnimating];
+    }];}
 
 
 #pragma mark - Refresh List
 
-- (void)refreshFindList {
+- (void)refreshFindList:(NSUInteger)number {
     AVQuery *query = [AVQuery queryForFind];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    query.limit = number;
+    query.maxCacheAge = 24*3600;
     [query addDescendingOrder:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -47,7 +56,6 @@
             [_findList reloadData];
         }
     }];
-    [_refreshControl endRefreshing];
 }
 
 
