@@ -1285,29 +1285,60 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-Bn-afU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="OcR-KI-tzK">
+                                        <rect key="frame" x="0.0" y="66" width="600" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="KFD-BF-AVZ"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="OcR-KI-tzK" firstAttribute="leading" secondItem="gGb-Bn-afU" secondAttribute="leading" id="0iw-fM-abY"/>
+                                    <constraint firstAttribute="trailing" secondItem="OcR-KI-tzK" secondAttribute="trailing" id="Tbb-Z9-cGK"/>
+                                    <constraint firstItem="OcR-KI-tzK" firstAttribute="top" secondItem="gGb-Bn-afU" secondAttribute="top" constant="66" id="ufZ-nt-W1S"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="gGb-Bn-afU" secondAttribute="bottom" id="8fA-eQ-Dpk"/>
                             <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="lbi-qI-Dye" secondAttribute="bottom" id="8fg-qK-282"/>
                             <constraint firstAttribute="trailing" secondItem="BD6-3W-xnd" secondAttribute="trailing" id="GSd-NS-riJ"/>
                             <constraint firstAttribute="trailing" secondItem="lbi-qI-Dye" secondAttribute="trailing" id="J3k-UP-6BR"/>
+                            <constraint firstItem="gGb-Bn-afU" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="cif-8n-Ilx"/>
                             <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" constant="44" id="dVF-z1-K0q"/>
                             <constraint firstItem="lbi-qI-Dye" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="eSd-05-CtZ"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="top" secondItem="BD6-3W-xnd" secondAttribute="bottom" id="joy-m6-R6w"/>
+                            <constraint firstAttribute="trailing" secondItem="gGb-Bn-afU" secondAttribute="trailing" id="mei-J6-3pA"/>
                             <constraint firstItem="BD6-3W-xnd" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="nNg-Mq-hAc"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="pOF-kh-Rnb"/>
                             <constraint firstAttribute="trailing" secondItem="CLS-9t-6Wa" secondAttribute="trailing" id="tYB-TU-Zbc"/>
+                            <constraint firstItem="gGb-Bn-afU" firstAttribute="top" secondItem="OJQ-1F-6FZ" secondAttribute="top" id="vka-Rf-gNf"/>
                             <constraint firstItem="BD6-3W-xnd" firstAttribute="top" secondItem="u3e-cQ-Oxc" secondAttribute="bottom" id="xRH-3R-5AG"/>
                             <constraint firstItem="lbi-qI-Dye" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" id="zxn-Nj-l9X"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="借书" id="r7z-Zr-rzD"/>
+                    <navigationItem key="navigationItem" title="借书" id="r7z-Zr-rzD">
+                        <barButtonItem key="leftBarButtonItem" title="搜索" id="Wei-31-5Bn">
+                            <connections>
+                                <action selector="searchButton:" destination="5qn-Mr-JK9" id="cSW-2X-d32"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activitiView" destination="dqa-2Z-hmH" id="pEB-0V-RCb"/>
                         <outlet property="booksCollectionView" destination="CLS-9t-6Wa" id="fgT-hZ-x0P"/>
                         <outlet property="flowLayout" destination="Rag-Tz-g2D" id="xxn-at-vtK"/>
+                        <outlet property="leftBarButton" destination="Wei-31-5Bn" id="Pgh-az-5Ln"/>
                         <outlet property="loadMoreButton" destination="7bB-qj-lbE" id="VZC-OZ-6Na"/>
                         <outlet property="loadMoreView" destination="lbi-qI-Dye" id="Wq6-i0-wRn"/>
+                        <outlet property="searchBar" destination="OcR-KI-tzK" id="uMm-JX-VDA"/>
+                        <outlet property="searchView" destination="gGb-Bn-afU" id="Vdr-QE-1jf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RO-GE-mz1" userLabel="First Responder" sceneMemberID="firstResponder"/>

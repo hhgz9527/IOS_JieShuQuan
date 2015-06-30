@@ -34,6 +34,9 @@ static NSInteger kStart = 0;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activitiView;
 @property (weak, nonatomic) IBOutlet UIButton *loadMoreButton;
 
+@property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 @end
@@ -259,5 +262,18 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     }
 }
 
+
+#pragma mark - search
+
+- (IBAction)searchButton:(id)sender {
+    if ([_leftBarButton.title isEqualToString:@"搜索"]) {
+        _searchView.hidden = NO;
+        _leftBarButton.title = @"取消";
+    } else {
+        [_searchBar resignFirstResponder];
+        _searchView.hidden = YES;
+        _leftBarButton.title = @"搜索";
+    }
+}
 
 @end
