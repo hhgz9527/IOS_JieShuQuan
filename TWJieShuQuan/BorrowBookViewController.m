@@ -42,6 +42,8 @@ static NSInteger kStart = 0;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
+
+@property (nonatomic, strong) Book *tempBook;
 @end
 
 @implementation BorrowBookViewController
@@ -64,6 +66,8 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [self.booksCollectionView addSubview:self.refreshControl];
 
     [self refreshData:nil];
+    
+    [_searchBookImage addTarget:self action:@selector(pushToDetails) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)refreshData:(UIRefreshControl *)refresh {
@@ -283,8 +287,46 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [BookService searchBookWithName:searchBar.text callback:^(Book *book) {
         [_searchBookImage sd_setBackgroundImageWithURL:[NSURL URLWithString:book.bookImageHref] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"bookplacehoder"]];
         _searchBookName.text = book.bookName;
+        _tempBook = book;
     }];
 }
 
+- (void)pushToDetails {
+    __block NSArray *array = nil;
+    BookDetailModel *model = [[BookDetailModel alloc] init];
+    model.title = @"书籍详情";
+    [model updateInfoFromBook:_tempBook];
+    [model updateAvailableStatusForBook:_tempBook
+                                success:^(NSArray *bookEntities) {
+                                    array = bookEntities;
+                                }];
+    
+    model.updateStatsView = [[TWIconButton alloc] initWithTitle:@"申请借阅"
+                                                           icon:nil
+                                                         action:^{
+                                                             //TODO add request borrow action
+                                                         }];
+    
+    model.deleteView = [[TWIconButton alloc] initWithTitle:@"取消借阅"
+                                                      icon:nil
+                                                    action:^{
+                                                        //TODO add request to cancel borrow action
+                                                    }];
+    
+    
+    BookDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewControllerIdentifier"];
+    detailViewController.bookDetailModel = model;
+    
+    __weak TWIconButton *weakView = model.updateStatsView;
+    weakView.callback = ^{
+        weakView.title = @"借阅中...";
+        BorrowFromPersonViewController *bpc = [self.storyboard instantiateViewControllerWithIdentifier:@"BorrowFromPersonViewController"];
+        bpc.avaliableBookEntities = model.availableBooks;
+        [detailViewController.navigationController pushViewController:bpc animated:YES];
+        
+    };
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
 
+}
 @end
