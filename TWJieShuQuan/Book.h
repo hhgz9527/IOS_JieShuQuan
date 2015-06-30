@@ -17,6 +17,8 @@
 @property (nonatomic, copy) NSString *bookAuthor;
 @property (nonatomic, copy) NSString *bookImageHref;
 @property (nonatomic, copy) NSString *bookPress;
+@property (nonatomic, copy) NSString *bookDescription;
+
 @property (nonatomic, copy) NSNumber *borrowCount;
 
 @end

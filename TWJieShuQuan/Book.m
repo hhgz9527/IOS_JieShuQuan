@@ -15,6 +15,7 @@
 @dynamic bookAuthor;
 @dynamic bookImageHref;
 @dynamic bookPress;
+@dynamic bookDescription;
 @dynamic borrowCount;
 
 + (NSString *)parseClassName {

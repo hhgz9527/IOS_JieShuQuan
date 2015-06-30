@@ -23,7 +23,7 @@
     [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.book.bookImageHref]];
     self.bookNameLabel.text = self.book.bookName;
     self.authorName.text = self.book.bookAuthor;
-    
+    self.descriptionLabel.text = self.book.bookDescription;
 }
 
 @end

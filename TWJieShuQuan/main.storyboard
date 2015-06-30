@@ -1314,7 +1314,7 @@
             </objects>
             <point key="canvasLocation" x="1669" y="-91"/>
         </scene>
-        <!--Popular Books Table View Controller-->
+        <!--排行榜-->
         <scene sceneID="ePM-Tg-6EN">
             <objects>
                 <tableViewController storyboardIdentifier="PopularBooksTableViewController" id="M9k-vs-5H1" customClass="PopularBooksTableViewController" sceneMemberID="viewController">
@@ -1336,19 +1336,19 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="book name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5S-GE-hs2">
-                                            <rect key="frame" x="115" y="16" width="465" height="17"/>
+                                            <rect key="frame" x="115" y="16" width="480" height="17"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bij-y0-5Cn">
-                                            <rect key="frame" x="115" y="41" width="465" height="13"/>
+                                            <rect key="frame" x="115" y="41" width="480" height="13"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW3-6b-jSn" userLabel="description">
-                                            <rect key="frame" x="115" y="62" width="456" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW3-6b-jSn" userLabel="description">
+                                            <rect key="frame" x="115" y="62" width="471" height="12"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -1361,7 +1361,7 @@
                                         <constraint firstItem="fW3-6b-jSn" firstAttribute="trailing" secondItem="bij-y0-5Cn" secondAttribute="trailing" constant="-9" id="9X9-FK-yqf"/>
                                         <constraint firstItem="A5S-GE-hs2" firstAttribute="trailing" secondItem="bij-y0-5Cn" secondAttribute="trailing" id="DGV-q2-Lc0"/>
                                         <constraint firstItem="A5S-GE-hs2" firstAttribute="leading" secondItem="tiD-IP-s4P" secondAttribute="trailing" constant="20" id="DtH-rp-Gol"/>
-                                        <constraint firstAttribute="trailing" secondItem="A5S-GE-hs2" secondAttribute="trailing" constant="20" id="LEj-w1-6Bd"/>
+                                        <constraint firstAttribute="trailing" secondItem="A5S-GE-hs2" secondAttribute="trailing" constant="5" id="LEj-w1-6Bd"/>
                                         <constraint firstItem="tiD-IP-s4P" firstAttribute="top" secondItem="A5S-GE-hs2" secondAttribute="top" id="b2I-c8-pEG"/>
                                         <constraint firstItem="tiD-IP-s4P" firstAttribute="leading" secondItem="KU3-dv-FEr" secondAttribute="leadingMargin" constant="9" id="bvT-PA-Bjm"/>
                                         <constraint firstItem="bij-y0-5Cn" firstAttribute="top" secondItem="A5S-GE-hs2" secondAttribute="bottom" constant="8" id="g9g-rX-NwL"/>
@@ -1387,7 +1387,7 @@
                             <outlet property="delegate" destination="M9k-vs-5H1" id="9nY-pt-1Z1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="93A-Hr-drI"/>
+                    <navigationItem key="navigationItem" title="排行榜" id="93A-Hr-drI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOl-Fx-9Ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
