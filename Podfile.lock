@@ -7,17 +7,20 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
+  - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudCrashReporting
   - AVOSCloudSNS
   - SDWebImage
+  - SVPullToRefresh
 
 SPEC CHECKSUMS:
   AVOSCloud: 0c0b91ffd91f83b448312027e5f8b243f261c42a
   AVOSCloudCrashReporting: 5add5ca29ec9f585010ecda3a643108c7e376e86
   AVOSCloudSNS: fa177d50fe83b630d684dd27d790358531b365cc
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.37.2

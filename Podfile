@@ -6,6 +6,7 @@ target 'TWJieShuQuan' do
    pod 'AVOSCloudCrashReporting'
    pod 'AVOSCloudSNS'
    pod 'SDWebImage'
+   pod 'SVPullToRefresh'
 end
 
 target 'TWJieShuQuanTests' do
