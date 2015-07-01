@@ -12,9 +12,9 @@
 #import <AVObject+Subclass.h>
 #import "AVQuery+Extensions.h"
 #import <SVPullToRefresh.h>
-#import "Constants.h"
 
-static NSInteger kStart = 20;
+static NSInteger kStart = 1;
+static NSInteger kPageLoadCount = 20;
 
 @interface FindViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -58,7 +58,6 @@ static NSInteger kStart = 20;
         }
     }];
 }
-
 
 #pragma mark - UITableView Delegate
 
