@@ -1314,10 +1314,18 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有找到相关结果，请输入全称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-NN-1Q6">
+                                        <rect key="frame" x="181" y="137" width="238" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="OcR-KI-tzK" firstAttribute="leading" secondItem="gGb-Bn-afU" secondAttribute="leading" id="0iw-fM-abY"/>
+                                    <constraint firstItem="Mqf-NN-1Q6" firstAttribute="top" secondItem="OcR-KI-tzK" secondAttribute="bottom" constant="29" id="7po-bw-xAU"/>
+                                    <constraint firstAttribute="centerX" secondItem="Mqf-NN-1Q6" secondAttribute="centerX" id="9YT-tZ-gtq"/>
                                     <constraint firstItem="gfM-9W-q4a" firstAttribute="top" secondItem="fcH-jG-0Ok" secondAttribute="bottom" constant="8" id="Cke-1D-t3g"/>
                                     <constraint firstItem="fcH-jG-0Ok" firstAttribute="top" secondItem="OcR-KI-tzK" secondAttribute="bottom" constant="7" id="Gdj-ps-wet"/>
                                     <constraint firstAttribute="trailing" secondItem="OcR-KI-tzK" secondAttribute="trailing" id="Tbb-Z9-cGK"/>
@@ -1363,6 +1371,7 @@
                         <outlet property="searchBar" destination="OcR-KI-tzK" id="uMm-JX-VDA"/>
                         <outlet property="searchBookImage" destination="fcH-jG-0Ok" id="iB7-Wo-Y83"/>
                         <outlet property="searchBookName" destination="gfM-9W-q4a" id="Kbc-bk-Erz"/>
+                        <outlet property="searchResultMessage" destination="Mqf-NN-1Q6" id="24Z-pG-IjU"/>
                         <outlet property="searchView" destination="gGb-Bn-afU" id="Vdr-QE-1jf"/>
                     </connections>
                 </viewController>

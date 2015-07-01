@@ -39,6 +39,7 @@ static NSInteger kStart = 0;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *searchBookImage;
 @property (weak, nonatomic) IBOutlet UILabel *searchBookName;
+@property (weak, nonatomic) IBOutlet UILabel *searchResultMessage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
@@ -247,12 +248,18 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
         _leftBarButton.title = @"搜索";
     }
 }
-
+//不敢止步
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%@", searchBar.text);
     [BookService searchBookWithName:searchBar.text callback:^(Book *book) {
-        [_searchBookImage sd_setBackgroundImageWithURL:[NSURL URLWithString:book.bookImageHref] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"bookplacehoder"]];
-        _searchBookName.text = book.bookName;
-        _tempBook = book;
+        if (book != nil) {
+            _searchResultMessage.hidden = YES;
+            [_searchBookImage sd_setBackgroundImageWithURL:[NSURL URLWithString:book.bookImageHref] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"bookplacehoder"]];
+            _searchBookName.text = book.bookName;
+            _tempBook = book;
+        } else {
+            _searchResultMessage.hidden = NO;
+        }
     }];
 }
 
