@@ -869,11 +869,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Kbc-3C-PVK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x08-j4-PqF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WHh-HU-i1v">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="68" id="tKc-xV-dvT" customClass="FindCell">
@@ -940,7 +940,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WHh-HU-i1v" firstAttribute="top" secondItem="x08-j4-PqF" secondAttribute="top" constant="64" id="4Xz-zu-eMT"/>
+                            <constraint firstItem="WHh-HU-i1v" firstAttribute="top" secondItem="x08-j4-PqF" secondAttribute="top" id="4Xz-zu-eMT"/>
                             <constraint firstAttribute="bottom" secondItem="WHh-HU-i1v" secondAttribute="bottom" id="7mj-du-Vs1"/>
                             <constraint firstAttribute="trailing" secondItem="WHh-HU-i1v" secondAttribute="trailing" id="UW9-EO-wiS"/>
                             <constraint firstItem="WHh-HU-i1v" firstAttribute="leading" secondItem="x08-j4-PqF" secondAttribute="leading" id="vQx-VJ-2Pq"/>
@@ -1579,7 +1579,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OMP-br-sGB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" id="2hm-Wb-4kr"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="115-WV-FOJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="115-WV-FOJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

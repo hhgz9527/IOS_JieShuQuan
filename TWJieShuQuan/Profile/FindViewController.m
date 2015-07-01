@@ -19,7 +19,7 @@ static NSInteger kStart = 20;
 @interface FindViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *findList;
-@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
@@ -39,7 +39,8 @@ static NSInteger kStart = 20;
     [_findList addInfiniteScrollingWithActionHandler:^{
         [self refreshFindList:kPageLoadCount*(kStart++ + 1)];
         [_findList.infiniteScrollingView stopAnimating];
-    }];}
+    }];
+}
 
 
 #pragma mark - Refresh List
@@ -52,7 +53,7 @@ static NSInteger kStart = 20;
     [query addDescendingOrder:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            _dataArray = objects;
+            _dataArray = [NSMutableArray arrayWithArray:objects];
             [_findList reloadData];
         }
     }];
