@@ -221,43 +221,8 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 //    [self performSegueWithIdentifier:@"borrowBookDetailSegue" sender:[collectionView cellForItemAtIndexPath:indexPath]];
-
-    __block NSArray *array = nil;
-    BookDetailModel *model = [[BookDetailModel alloc] init];
-    model.title = @"书籍详情";
-    [model updateInfoFromBook:self.books[indexPath.row]];
-    [model updateAvailableStatusForBook:self.books[indexPath.row]
-                                success:^(NSArray *bookEntities) {
-                                    array = bookEntities;
-                                }];
-
-    model.updateStatsView = [[TWIconButton alloc] initWithTitle:@"申请借阅"
-                                                           icon:nil
-                                                         action:^{
-                                                             //TODO add request borrow action
-                                                         }];
-
-    model.deleteView = [[TWIconButton alloc] initWithTitle:@"取消借阅"
-                                                      icon:nil
-                                                    action:^{
-                                                        //TODO add request to cancel borrow action
-                                                    }];
-
-
-    BookDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewControllerIdentifier"];
-    detailViewController.bookDetailModel = model;
-
-    __weak TWIconButton *weakView = model.updateStatsView;
-    weakView.callback = ^{
-        weakView.title = @"借阅中...";
-        BorrowFromPersonViewController *bpc = [self.storyboard instantiateViewControllerWithIdentifier:@"BorrowFromPersonViewController"];
-        bpc.avaliableBookEntities = model.availableBooks;
-        [detailViewController.navigationController pushViewController:bpc animated:YES];
-
-    };
-
-    [self.navigationController pushViewController:detailViewController animated:YES];
-
+    _tempBook = self.books[indexPath.row];
+    [self pushToDetails];
 }
 
 
@@ -292,6 +257,9 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 }
 
 - (void)pushToDetails {
+    if (_tempBook == nil) {
+        return;
+    }
     __block NSArray *array = nil;
     BookDetailModel *model = [[BookDetailModel alloc] init];
     model.title = @"书籍详情";
@@ -329,4 +297,5 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [self.navigationController pushViewController:detailViewController animated:YES];
 
 }
+
 @end
