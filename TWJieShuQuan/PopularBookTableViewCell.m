@@ -21,6 +21,11 @@
 
 - (void)updateUI {
     [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.book.bookImageHref]];
+    self.bookImageView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.bookImageView.layer.shadowOffset = CGSizeMake(0, 2);
+    self.bookImageView.layer.shadowOpacity = 0.5;
+    self.bookImageView.clipsToBounds = NO;
+    
     self.bookNameLabel.text = self.book.bookName;
     self.authorName.text = self.book.bookAuthor;
     self.descriptionLabel.text = self.book.bookDescription;

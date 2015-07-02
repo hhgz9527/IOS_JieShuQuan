@@ -249,6 +249,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		623968F31B456BD700A7FE6E /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				94D9B7A11B4272A9001B0D4D /* PopularBooksTableViewController.h */,
+				94D9B7A21B4272A9001B0D4D /* PopularBooksTableViewController.m */,
+				94D9B7A41B427334001B0D4D /* PopularBookTableViewCell.h */,
+				94D9B7A51B427334001B0D4D /* PopularBookTableViewCell.m */,
+			);
+			name = Popular;
+			sourceTree = "<group>";
+		};
 		739043BC1B42FCF80047637A /* Temp */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,10 +473,7 @@
 				9423F6771B2C3959000D8556 /* BorrowFromPersonViewController.m */,
 				9423F6791B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.h */,
 				9423F67A1B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.m */,
-				94D9B7A11B4272A9001B0D4D /* PopularBooksTableViewController.h */,
-				94D9B7A21B4272A9001B0D4D /* PopularBooksTableViewController.m */,
-				94D9B7A41B427334001B0D4D /* PopularBookTableViewCell.h */,
-				94D9B7A51B427334001B0D4D /* PopularBookTableViewCell.m */,
+				623968F31B456BD700A7FE6E /* Popular */,
 			);
 			name = Books;
 			sourceTree = "<group>";
