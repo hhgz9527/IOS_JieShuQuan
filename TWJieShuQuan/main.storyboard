@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1286,71 +1286,18 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-Bn-afU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                <subviews>
-                                    <searchBar contentMode="redraw" placeholder="暂只支持书籍名称搜索" translatesAutoresizingMaskIntoConstraints="NO" id="OcR-KI-tzK">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="KFD-BF-AVZ"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="5qn-Mr-JK9" id="WpD-ve-EJz"/>
-                                        </connections>
-                                    </searchBar>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-jG-0Ok">
-                                        <rect key="frame" x="15" y="115" width="90" height="110"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="110" id="9gF-FA-fVj"/>
-                                            <constraint firstAttribute="width" constant="90" id="DwE-O8-HbY"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfM-9W-q4a">
-                                        <rect key="frame" x="15" y="233" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有找到相关结果，请输入全称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-NN-1Q6">
-                                        <rect key="frame" x="181" y="137" width="238" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="OcR-KI-tzK" firstAttribute="leading" secondItem="gGb-Bn-afU" secondAttribute="leading" id="0iw-fM-abY"/>
-                                    <constraint firstItem="Mqf-NN-1Q6" firstAttribute="top" secondItem="OcR-KI-tzK" secondAttribute="bottom" constant="29" id="7po-bw-xAU"/>
-                                    <constraint firstAttribute="centerX" secondItem="Mqf-NN-1Q6" secondAttribute="centerX" id="9YT-tZ-gtq"/>
-                                    <constraint firstItem="gfM-9W-q4a" firstAttribute="top" secondItem="fcH-jG-0Ok" secondAttribute="bottom" constant="8" id="Cke-1D-t3g"/>
-                                    <constraint firstItem="fcH-jG-0Ok" firstAttribute="top" secondItem="OcR-KI-tzK" secondAttribute="bottom" constant="7" id="Gdj-ps-wet"/>
-                                    <constraint firstAttribute="trailing" secondItem="OcR-KI-tzK" secondAttribute="trailing" id="Tbb-Z9-cGK"/>
-                                    <constraint firstItem="fcH-jG-0Ok" firstAttribute="leading" secondItem="gfM-9W-q4a" secondAttribute="leading" id="hMa-4t-hr2"/>
-                                    <constraint firstItem="fcH-jG-0Ok" firstAttribute="leading" secondItem="gGb-Bn-afU" secondAttribute="leading" constant="15" id="nzW-yP-Dug"/>
-                                    <constraint firstItem="OcR-KI-tzK" firstAttribute="top" secondItem="gGb-Bn-afU" secondAttribute="top" constant="64" id="ufZ-nt-W1S"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="gGb-Bn-afU" secondAttribute="bottom" id="8fA-eQ-Dpk"/>
                             <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="lbi-qI-Dye" secondAttribute="bottom" id="8fg-qK-282"/>
                             <constraint firstAttribute="trailing" secondItem="BD6-3W-xnd" secondAttribute="trailing" id="GSd-NS-riJ"/>
                             <constraint firstAttribute="trailing" secondItem="lbi-qI-Dye" secondAttribute="trailing" id="J3k-UP-6BR"/>
-                            <constraint firstItem="gGb-Bn-afU" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="cif-8n-Ilx"/>
                             <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" constant="44" id="dVF-z1-K0q"/>
                             <constraint firstItem="lbi-qI-Dye" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="eSd-05-CtZ"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="top" secondItem="BD6-3W-xnd" secondAttribute="bottom" id="joy-m6-R6w"/>
-                            <constraint firstAttribute="trailing" secondItem="gGb-Bn-afU" secondAttribute="trailing" id="mei-J6-3pA"/>
                             <constraint firstItem="BD6-3W-xnd" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="nNg-Mq-hAc"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="pOF-kh-Rnb"/>
                             <constraint firstAttribute="trailing" secondItem="CLS-9t-6Wa" secondAttribute="trailing" id="tYB-TU-Zbc"/>
-                            <constraint firstItem="gGb-Bn-afU" firstAttribute="top" secondItem="OJQ-1F-6FZ" secondAttribute="top" id="vka-Rf-gNf"/>
                             <constraint firstItem="BD6-3W-xnd" firstAttribute="top" secondItem="u3e-cQ-Oxc" secondAttribute="bottom" id="xRH-3R-5AG"/>
                             <constraint firstItem="lbi-qI-Dye" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" id="zxn-Nj-l9X"/>
                         </constraints>
@@ -1369,11 +1316,6 @@
                         <outlet property="leftBarButton" destination="Wei-31-5Bn" id="Pgh-az-5Ln"/>
                         <outlet property="loadMoreButton" destination="7bB-qj-lbE" id="VZC-OZ-6Na"/>
                         <outlet property="loadMoreView" destination="lbi-qI-Dye" id="Wq6-i0-wRn"/>
-                        <outlet property="searchBar" destination="OcR-KI-tzK" id="uMm-JX-VDA"/>
-                        <outlet property="searchBookImage" destination="fcH-jG-0Ok" id="iB7-Wo-Y83"/>
-                        <outlet property="searchBookName" destination="gfM-9W-q4a" id="Kbc-bk-Erz"/>
-                        <outlet property="searchResultMessage" destination="Mqf-NN-1Q6" id="24Z-pG-IjU"/>
-                        <outlet property="searchView" destination="gGb-Bn-afU" id="Vdr-QE-1jf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RO-GE-mz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1384,7 +1326,7 @@
         <scene sceneID="ePM-Tg-6EN">
             <objects>
                 <tableViewController storyboardIdentifier="PopularBooksTableViewController" id="M9k-vs-5H1" customClass="PopularBooksTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="22" sectionFooterHeight="22" id="iye-Yt-Dk1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="22" sectionFooterHeight="22" id="iye-Yt-Dk1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

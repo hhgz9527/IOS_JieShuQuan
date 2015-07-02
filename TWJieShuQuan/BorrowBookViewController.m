@@ -22,6 +22,7 @@
 #import "BorrowFromPersonViewController.h"
 #import "Constants.h"
 #import <SDWebImage/UIButton+WebCache.h>
+#import "SearchView.h"
 
 static NSInteger kStart = 0;
 
@@ -35,11 +36,6 @@ static NSInteger kStart = 0;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activitiView;
 @property (weak, nonatomic) IBOutlet UIButton *loadMoreButton;
 
-@property (weak, nonatomic) IBOutlet UIView *searchView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIButton *searchBookImage;
-@property (weak, nonatomic) IBOutlet UILabel *searchBookName;
-@property (weak, nonatomic) IBOutlet UILabel *searchResultMessage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
@@ -67,8 +63,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [self.booksCollectionView addSubview:self.refreshControl];
 
     [self refreshData:nil];
-    
-    [_searchBookImage addTarget:self action:@selector(pushToDetails) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)refreshData:(UIRefreshControl *)refresh {
@@ -239,70 +233,13 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 #pragma mark - search
 
 - (IBAction)searchButton:(id)sender {
+    SearchView *searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    searchView.viewController = self;
+    [self.view addSubview:searchView];
     if ([_leftBarButton.title isEqualToString:@"搜索"]) {
-        _searchView.hidden = NO;
         _leftBarButton.title = @"取消";
     } else {
-        [_searchBar resignFirstResponder];
-        _searchView.hidden = YES;
-        _leftBarButton.title = @"搜索";
+        [searchView resignFirstResponder];
     }
 }
-//不敢止步
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"%@", searchBar.text);
-    [BookService searchBookWithName:searchBar.text callback:^(Book *book) {
-        if (book != nil) {
-            _searchResultMessage.hidden = YES;
-            [_searchBookImage sd_setBackgroundImageWithURL:[NSURL URLWithString:book.bookImageHref] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"bookplacehoder"]];
-            _searchBookName.text = book.bookName;
-            _tempBook = book;
-        } else {
-            _searchResultMessage.hidden = NO;
-        }
-    }];
-}
-
-- (void)pushToDetails {
-    if (_tempBook == nil) {
-        return;
-    }
-    __block NSArray *array = nil;
-    BookDetailModel *model = [[BookDetailModel alloc] init];
-    model.title = @"书籍详情";
-    [model updateInfoFromBook:_tempBook];
-    [model updateAvailableStatusForBook:_tempBook
-                                success:^(NSArray *bookEntities) {
-                                    array = bookEntities;
-                                }];
-    
-    model.updateStatsView = [[TWIconButton alloc] initWithTitle:@"申请借阅"
-                                                           icon:nil
-                                                         action:^{
-                                                             //TODO add request borrow action
-                                                         }];
-    
-    model.deleteView = [[TWIconButton alloc] initWithTitle:@"取消借阅"
-                                                      icon:nil
-                                                    action:^{
-                                                        //TODO add request to cancel borrow action
-                                                    }];
-    
-    
-    BookDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewControllerIdentifier"];
-    detailViewController.bookDetailModel = model;
-    
-    __weak TWIconButton *weakView = model.updateStatsView;
-    weakView.callback = ^{
-        weakView.title = @"借阅中...";
-        BorrowFromPersonViewController *bpc = [self.storyboard instantiateViewControllerWithIdentifier:@"BorrowFromPersonViewController"];
-        bpc.avaliableBookEntities = model.availableBooks;
-        [detailViewController.navigationController pushViewController:bpc animated:YES];
-        
-    };
-    
-    [self.navigationController pushViewController:detailViewController animated:YES];
-
-}
-
 @end

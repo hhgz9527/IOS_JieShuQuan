@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		623968F71B4573B500A7FE6E /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 623968F61B4573B500A7FE6E /* SearchView.m */; };
 		733021501B2C3A5E007FE24C /* Discover.m in Sources */ = {isa = PBXBuildFile; fileRef = 7330214F1B2C3A5E007FE24C /* Discover.m */; };
 		733021531B2C3C07007FE24C /* FindCell+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 733021521B2C3C07007FE24C /* FindCell+Config.m */; };
 		733021561B2CAD71007FE24C /* SendTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733021551B2CAD71007FE24C /* SendTwitterViewController.m */; };
@@ -96,6 +97,8 @@
 
 /* Begin PBXFileReference section */
 		40039659AA37C1DFCEA6322D /* libPods-TWJieShuQuan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWJieShuQuan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		623968F51B4573B500A7FE6E /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		623968F61B4573B500A7FE6E /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
 		7330214E1B2C3A5E007FE24C /* Discover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover.h; sourceTree = "<group>"; };
 		7330214F1B2C3A5E007FE24C /* Discover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Discover.m; sourceTree = "<group>"; };
 		733021511B2C3C07007FE24C /* FindCell+Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FindCell+Config.h"; sourceTree = "<group>"; };
@@ -258,6 +261,15 @@
 				94D9B7A51B427334001B0D4D /* PopularBookTableViewCell.m */,
 			);
 			name = Popular;
+			sourceTree = "<group>";
+		};
+		623968F41B45739900A7FE6E /* searchView */ = {
+			isa = PBXGroup;
+			children = (
+				623968F51B4573B500A7FE6E /* SearchView.h */,
+				623968F61B4573B500A7FE6E /* SearchView.m */,
+			);
+			name = searchView;
 			sourceTree = "<group>";
 		};
 		739043BC1B42FCF80047637A /* Temp */ = {
@@ -464,6 +476,7 @@
 			children = (
 				94C0697D1B1411620047BCCB /* BorrowBookViewController.h */,
 				94C0697E1B1411620047BCCB /* BorrowBookViewController.m */,
+				623968F41B45739900A7FE6E /* searchView */,
 				94C069951B146A570047BCCB /* AddToLibraryViewController.h */,
 				94C069961B146A570047BCCB /* AddToLibraryViewController.m */,
 				94C069971B146A570047BCCB /* AddToLibraryViewController.xib */,
@@ -752,6 +765,7 @@
 				941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */,
 				94D9B7A31B4272A9001B0D4D /* PopularBooksTableViewController.m in Sources */,
 				9499972E1B0AD08F00986337 /* Constants.m in Sources */,
+				623968F71B4573B500A7FE6E /* SearchView.m in Sources */,
 				733021501B2C3A5E007FE24C /* Discover.m in Sources */,
 				942BBCBD1B17F90D00F490CF /* BookEntity.m in Sources */,
 				941A806B1B3142DC00F15E3E /* NotificationManager.m in Sources */,
