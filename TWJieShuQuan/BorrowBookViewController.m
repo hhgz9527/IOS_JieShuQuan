@@ -39,6 +39,7 @@ static NSInteger kStart = 0;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) SearchView *searchView;
 
 @end
 
@@ -226,6 +227,22 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
         borrowBookDetailViewController.book = self.books[row];
     }
 }
+
+#pragma mark - search
+
+- (IBAction)searchButton:(id)sender {
+    if ([_leftBarButton.title isEqualToString:@"搜索"]) {
+        _searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        _searchView.viewController = self;
+        [self.view addSubview:_searchView];
+        _leftBarButton.title = @"取消";
+    } else {
+        _leftBarButton.title = @"搜索";
+        [_searchView removeFromSuperview];
+
+    }
+}
+
 
 - (void)pushToDetails:(Book *)book {
     __block NSArray *array = nil;

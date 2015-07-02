@@ -39,6 +39,7 @@
 
 - (void)createSearchBar {
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 44)];
+    searchBar.placeholder = @"暂只支持书籍全称搜索...";
     searchBar.delegate = self;
     [self addSubview:searchBar];
 }
