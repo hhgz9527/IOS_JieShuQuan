@@ -40,7 +40,6 @@ static NSInteger kStart = 0;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 
-@property (nonatomic, strong) Book *tempBook;
 @end
 
 @implementation BorrowBookViewController
@@ -216,8 +215,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 //    [self performSegueWithIdentifier:@"borrowBookDetailSegue" sender:[collectionView cellForItemAtIndexPath:indexPath]];
-    _tempBook = self.books[indexPath.row];
-    [self pushToDetails];
+    [self pushToDetails:self.books[indexPath.row]];
 }
 
 
@@ -229,17 +227,43 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     }
 }
 
+- (void)pushToDetails:(Book *)book {
+    __block NSArray *array = nil;
+    BookDetailModel *model = [[BookDetailModel alloc] init];
+    model.title = @"书籍详情";
+    [model updateInfoFromBook:book];
+    [model updateAvailableStatusForBook:book
+                                success:^(NSArray *bookEntities) {
+                                    array = bookEntities;
+                                }];
+    
+    model.updateStatsView = [[TWIconButton alloc] initWithTitle:@"申请借阅"
+                                                           icon:nil
+                                                         action:^{
+                                                             //TODO add request borrow action
+                                                         }];
+    
+    model.deleteView = [[TWIconButton alloc] initWithTitle:@"取消借阅"
+                                                      icon:nil
+                                                    action:^{
+                                                        //TODO add request to cancel borrow action
+                                                    }];
+    
+    
+    BookDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewControllerIdentifier"];
+    detailViewController.bookDetailModel = model;
+    
+    __weak TWIconButton *weakView = model.updateStatsView;
+    weakView.callback = ^{
+        weakView.title = @"借阅中...";
+        BorrowFromPersonViewController *bpc = [self.storyboard instantiateViewControllerWithIdentifier:@"BorrowFromPersonViewController"];
+        bpc.avaliableBookEntities = model.availableBooks;
+        [detailViewController.navigationController pushViewController:bpc animated:YES];
+        
+    };
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
 
-#pragma mark - search
-
-- (IBAction)searchButton:(id)sender {
-    SearchView *searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    searchView.viewController = self;
-    [self.view addSubview:searchView];
-    if ([_leftBarButton.title isEqualToString:@"搜索"]) {
-        _leftBarButton.title = @"取消";
-    } else {
-        [searchView resignFirstResponder];
-    }
 }
+
 @end
