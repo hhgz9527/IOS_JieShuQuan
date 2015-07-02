@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -401,7 +401,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-CP-2w1">
-                                            <rect key="frame" x="73" y="20" width="94" height="17"/>
+                                            <rect key="frame" x="73" y="20" width="437" height="17"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -456,6 +456,7 @@
                                         <constraint firstItem="kdC-q7-pLs" firstAttribute="top" secondItem="dyu-CP-2w1" secondAttribute="bottom" constant="8" id="J1C-rd-CR2"/>
                                         <constraint firstItem="dyu-CP-2w1" firstAttribute="leading" secondItem="ZCw-hi-Bf9" secondAttribute="trailing" constant="10" id="OvK-j7-phI"/>
                                         <constraint firstItem="dyu-CP-2w1" firstAttribute="top" secondItem="Cxo-4j-bEl" secondAttribute="topMargin" constant="12" id="c0R-f4-rVA"/>
+                                        <constraint firstItem="ajP-yC-bjN" firstAttribute="leading" secondItem="dyu-CP-2w1" secondAttribute="trailing" id="c7G-go-T2E"/>
                                         <constraint firstAttribute="trailing" secondItem="ajP-yC-bjN" secondAttribute="trailing" constant="10" id="l6b-Rw-z8a"/>
                                         <constraint firstItem="A7Y-7U-ezv" firstAttribute="top" secondItem="kdC-q7-pLs" secondAttribute="bottom" constant="8" id="mM6-0b-Mnu"/>
                                         <constraint firstAttribute="centerY" secondItem="ZCw-hi-Bf9" secondAttribute="centerY" id="nS7-XX-17v"/>
@@ -1308,7 +1309,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfM-9W-q4a">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfM-9W-q4a">
                                         <rect key="frame" x="15" y="233" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1680,7 +1681,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8Y-Hk-dW6">
-                                            <rect key="frame" x="73" y="20" width="94" height="17"/>
+                                            <rect key="frame" x="73" y="20" width="527" height="17"/>
                                             <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1713,6 +1714,7 @@
                                     <constraints>
                                         <constraint firstItem="JlO-si-5PJ" firstAttribute="leading" secondItem="L8Y-Hk-dW6" secondAttribute="leading" id="2KU-vp-yQc"/>
                                         <constraint firstItem="ivC-dt-8rd" firstAttribute="top" secondItem="L8Y-Hk-dW6" secondAttribute="bottom" constant="8" id="DJY-sp-Ehr"/>
+                                        <constraint firstAttribute="trailing" secondItem="L8Y-Hk-dW6" secondAttribute="trailing" id="LrN-TL-9VJ"/>
                                         <constraint firstItem="JlO-si-5PJ" firstAttribute="top" secondItem="ivC-dt-8rd" secondAttribute="bottom" constant="8" id="R8c-4T-aB0"/>
                                         <constraint firstItem="L8Y-Hk-dW6" firstAttribute="leading" secondItem="wZC-hE-aUe" secondAttribute="trailing" constant="10" id="UGe-Ok-cj5"/>
                                         <constraint firstItem="L8Y-Hk-dW6" firstAttribute="top" secondItem="dEF-8K-nIZ" secondAttribute="topMargin" constant="12" id="ZBB-iT-uNN"/>

@@ -15,10 +15,13 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BookService.h"
 #import "BorrowNotificationTableViewController.h"
+#import "CustomAlert.h"
+#import "DouBanService.h"
+#import "CustomActivityIndicator.h"
 
 static NSInteger const kSetAvatarTag = 1001;
 
-@interface ProfileTableViewController ()<UIGestureRecognizerDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ProfileTableViewController ()<UIGestureRecognizerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
 @property (weak, nonatomic) IBOutlet UIButton *borrowBookNotificationButton;
 
@@ -102,42 +105,65 @@ static NSInteger const kSetAvatarTag = 1001;
 }
 
 - (void)scanISBN {
-//    ZBarReaderViewController *reader = [ZBarReaderViewController new];
-//    reader.readerDelegate = self;
-//    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
-//
-//    ZBarImageScanner *scanner = reader.scanner;
-//    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
-//
-//    [self presentViewController:reader animated:YES completion:nil];
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+
+    ZBarImageScanner *scanner = reader.scanner;
+    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+
+    [self presentViewController:reader animated:YES completion:nil];
 
 }
 
-#pragma mark - UIImagePickerController Delegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    NSString *type = info[UIImagePickerControllerMediaType];
-    if ([type isEqualToString:@"public.image"]) {
-        UIImage *image = info[UIImagePickerControllerEditedImage];
-        
-        NSData *data = nil;
-        if (UIImagePNGRepresentation(image)) {
-            data = UIImagePNGRepresentation(image);
-        } else {
-            data = UIImageJPEGRepresentation(image, 0.8f);
-        }
-        NSString * DocumentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-        
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        
-        [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
-        [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:@"/image.png"] contents:data attributes:nil];
 
-        [picker dismissViewControllerAnimated:YES completion:nil];
-        
-        self.avatar.image = image;
-
-        [self uploadAvatar:data];
+- (void) imagePickerController: (UIImagePickerController*) reader didFinishPickingMediaWithInfo: (NSDictionary*) info
+{
+    id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
+    ZBarSymbol *symbol = nil;
+    for(symbol in results) {
+        // EXAMPLE: just grab the first barcode
+        break;
     }
+    
+    NSString *barCode = symbol.data;
+    NSLog(@"---------- barcode:%@", barCode);
+    
+    if (barCode) {
+        [[CustomActivityIndicator sharedActivityIndicator] startAsynchAnimating];
+        [DouBanService fetchingBookDetailWithISBN:barCode succeeded:^(NSDictionary *bookObject){
+            [[CustomActivityIndicator sharedActivityIndicator] stopAsynchAnimating];
+            
+            NSLog(@"isbn succeed......%@", bookObject);
+            
+            Book *book = [[Book alloc] init];
+            book.bookDoubanId = [bookObject valueForKey:@"id"];
+            book.bookName = [bookObject valueForKey:@"title"];
+            book.bookAuthor = [[bookObject valueForKey:@"author"] componentsJoinedByString:@","];
+            book.bookImageHref = [bookObject valueForKey:@"image"];
+            book.bookPress = bookObject[@"publisher"];
+            book.bookDescription = bookObject[@"summary"];
+            
+            AddToLibraryViewController *addToLibraryVC = [[AddToLibraryViewController alloc] initWithNibName:@"AddToLibraryViewController" bundle:nil];
+            addToLibraryVC.delegate = self;
+            addToLibraryVC.book = book;
+            [self presentViewController:addToLibraryVC animated:YES completion:nil];
+        } failed:^{
+            [[CustomActivityIndicator sharedActivityIndicator] stopAsynchAnimating];
+            
+            NSLog(@"isbn fail......");
+        }];
+    } else {
+        [[CustomAlert sharedAlert] showAlertWithMessage:@"获取图书信息失败"];
+    }
+    
+    [reader dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark <AddToLibraryDelegate>
+
+- (void)didAddToLibraryForBook:(Book *)book {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
