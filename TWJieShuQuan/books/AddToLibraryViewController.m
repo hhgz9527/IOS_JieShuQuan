@@ -60,6 +60,8 @@
     [obj saveEventually:^(BOOL succeeded, NSError *error) {
         if (succeeded == YES) {
             NSLog(@"发布成功");
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"DidAddToLibraryForBook" object:self];
         }
     }];
 }

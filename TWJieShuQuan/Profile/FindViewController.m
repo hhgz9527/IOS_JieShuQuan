@@ -40,8 +40,14 @@ static NSInteger kPageLoadCount = 20;
         [self refreshFindList:kPageLoadCount*(kStart++ + 1)];
         [_findList.infiniteScrollingView stopAnimating];
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"DidAddToLibraryForBook" object:nil];
+
 }
 
+- (void)refreshData {
+    [self refreshFindList:20];
+}
 
 #pragma mark - Refresh List
 
