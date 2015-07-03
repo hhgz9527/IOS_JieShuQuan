@@ -221,7 +221,7 @@
 // 获取“我借入的书”清单
 + (void)fetchAllBorrowedInRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBorrowRecord];
-    [q whereKey:@"toUser" equalTo:[AVUser currentUser]];
+    [q whereKey:@"fromUser" equalTo:[AVUser currentUser]];
     [q whereKey:@"status" equalTo:kAgreedStatus];
     [q orderByDescending:@"createdAt"];
     [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -238,7 +238,7 @@
 // 获取“我借出的书”清单
 + (void)fetchAllBorrowedOutRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock {
     AVQuery *q = [AVQuery queryForBorrowRecord];
-    [q whereKey:@"fromUser" equalTo:[AVUser currentUser]];
+    [q whereKey:@"toUser" equalTo:[AVUser currentUser]];
     [q whereKey:@"status" equalTo:kAgreedStatus];
     [q orderByDescending:@"createdAt"];
     [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
