@@ -8,7 +8,6 @@
 
 #import "MyBorrowInBooksTableViewController.h"
 #import "BookService.h"
-#import "CustomActivityIndicator.h"
 #import "BorrowRecord.h"
 #import "BorrowInTableViewCell.h"
 #import "Constants.h"
@@ -25,9 +24,7 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
 
-    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
     [BookService fetchAllBorrowedInRecordsWithSucceedCallback:^(NSArray *recoreds) {
-        [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
 
         self.borrowedInBookRecords = [recoreds mutableCopy];
         [self.tableView reloadData];
@@ -37,9 +34,7 @@
 - (IBAction)returnButtonPressed:(UIButton *)sender {
     BorrowRecord *selectedRecord = self.borrowedInBookRecords[sender.tag];
     
-    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
     [BookService changeBorrowRecordStatusTo:kReturnedStatus forBorrowRecord:selectedRecord succeeded:^{
-        [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
         [[CustomAlert sharedAlert] showAlertWithMessage:@"您已归还此书"];
         
         [self.borrowedInBookRecords removeObjectAtIndex:sender.tag];

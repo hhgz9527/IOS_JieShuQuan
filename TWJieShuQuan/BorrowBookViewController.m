@@ -61,7 +61,10 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
     [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [self.booksCollectionView addSubview:self.refreshControl];
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self refreshData:nil];
 }
 

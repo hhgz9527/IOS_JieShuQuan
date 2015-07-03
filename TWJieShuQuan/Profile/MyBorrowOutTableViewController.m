@@ -8,7 +8,6 @@
 
 #import "MyBorrowOutTableViewController.h"
 #import "BookService.h"
-#import "CustomActivityIndicator.h"
 #import "BorrowRecord.h"
 #import "BorrowOutTableViewCell.h"
 
@@ -23,10 +22,7 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    [[CustomActivityIndicator sharedActivityIndicator] startSynchAnimating];
-    [BookService fetchAllBorrowedOutRecordsWithSucceedCallback:^(NSArray *recoreds) {
-        [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
-        
+    [BookService fetchAllBorrowedOutRecordsWithSucceedCallback:^(NSArray *recoreds) {        
         self.borrowedOutBookRecords = recoreds;
         [self.tableView reloadData];
     }];
