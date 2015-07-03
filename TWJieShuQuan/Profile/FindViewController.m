@@ -45,6 +45,10 @@ static NSInteger kPageLoadCount = 20;
 
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self refreshData];
+}
+
 - (void)refreshData {
     [self refreshFindList:20];
 }
