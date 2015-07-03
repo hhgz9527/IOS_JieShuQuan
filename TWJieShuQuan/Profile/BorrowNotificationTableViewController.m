@@ -32,6 +32,8 @@
         [[CustomActivityIndicator sharedActivityIndicator] stopSynchAnimating];
         [[CustomAlert sharedAlert] showAlertWithMessage:@"您已同意此借书请求"];
         
+        [BookService updateBookAvailabilityWithBorrowRecord:currentNotification availbility:NO];
+        
         [BookService increaseBorrowCountForBorrowRecord:currentNotification];
         
         [self.borrowBookNotifications removeObjectAtIndex:sender.tag];

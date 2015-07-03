@@ -156,6 +156,20 @@
 
 }
 
++ (void)updateBookAvailabilityWithBorrowRecord:(BorrowRecord *)borrowRecord availbility:(BOOL)availability {
+    BookEntity *bookEntity = [borrowRecord objectForKey:@"bookEntity"];
+    
+    [bookEntity fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        if (error) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"修改状态失败"];
+            return;
+        }
+        
+        bookEntity.bookAvailability = availability;
+        [bookEntity saveInBackground];
+    }];
+}
+
 // 创建借阅申请
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock {
     BorrowRecord *borrowBookNotification = [[BorrowRecord alloc] init];

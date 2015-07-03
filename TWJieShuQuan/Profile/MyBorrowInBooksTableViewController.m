@@ -37,6 +37,8 @@
     [BookService changeBorrowRecordStatusTo:kReturnedStatus forBorrowRecord:selectedRecord succeeded:^{
         [[CustomAlert sharedAlert] showAlertWithMessage:@"您已归还此书"];
         
+        [BookService updateBookAvailabilityWithBorrowRecord:selectedRecord availbility:YES];
+
         [self.borrowedInBookRecords removeObjectAtIndex:sender.tag];
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:sender.tag inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];

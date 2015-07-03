@@ -23,6 +23,7 @@
 + (void)fetchAllAvaliableBookEntitiesForBook:(Book *)book withSucceedCallback:(void (^)(NSArray *))succeededBlock;
 + (void)fetchOwnersFromBookEntities:(NSArray *)bookEntities withSucceedCallback:(void (^)(NSArray *))succeededBlock;
 + (void)updateBookAvailabilityWithBook:(Book *)book availbility:(BOOL)availability;
++ (void)updateBookAvailabilityWithBorrowRecord:(BorrowRecord *)borrowRecord availbility:(BOOL)availability;
 
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock;
 + (void)fetchAllPendingBorrowRecordsWithSucceedCallback:(void (^)(NSArray *))succeededBlock;
