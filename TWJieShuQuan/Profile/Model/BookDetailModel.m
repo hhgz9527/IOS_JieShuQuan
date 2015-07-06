@@ -39,10 +39,10 @@
     [BookService fetchAllAvaliableBookEntitiesForBook:book withSucceedCallback:^(NSArray *avaliableBooksEntities) {
 
         self.status = avaliableBooksEntities.count > 0;
-        if (avaliableBooksEntities.count) {
+//        if (avaliableBooksEntities.count) {
             _availableBooks = avaliableBooksEntities;
             success(avaliableBooksEntities);
-        }
+//        }
     }];
 
 }

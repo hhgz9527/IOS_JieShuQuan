@@ -97,10 +97,7 @@
     BookDetailModel *model = [[BookDetailModel alloc] init];
     model.title = @"书籍详情";
     [model updateInfoFromBook:_tempBook];
-    [model updateAvailableStatusForBook:_tempBook
-                                success:^(NSArray *bookEntities) {
-                                    array = bookEntities;
-                                }];
+
     
     model.updateStatsView = [[TWIconButton alloc] initWithTitle:@"申请借阅"
                                                            icon:nil
@@ -113,23 +110,30 @@
                                                     action:^{
                                                         //TODO add request to cancel borrow action
                                                     }];
-    
-    
-    BookDetailViewController *detailViewController = [_viewController.storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewControllerIdentifier"];
-    detailViewController.bookDetailModel = model;
-    
-    __weak TWIconButton *weakView = model.updateStatsView;
-    weakView.callback = ^{
-        weakView.title = @"借阅中...";
-        BorrowFromPersonViewController *bpc = [_viewController.storyboard instantiateViewControllerWithIdentifier:@"BorrowFromPersonViewController"];
-        bpc.avaliableBookEntities = model.availableBooks;
-        [detailViewController.navigationController pushViewController:bpc animated:YES];
-        
-    };
-    
-    [_viewController.navigationController pushViewController:detailViewController animated:YES];
 
-    
+
+    __weak typeof(model) weakModel = model;
+    [model updateAvailableStatusForBook:_tempBook
+                                success:^(NSArray *bookEntities) {
+                                    array = bookEntities;
+
+                                    BookDetailViewController *detailViewController = [_viewController.storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewControllerIdentifier"];
+                                    detailViewController.bookDetailModel = weakModel;
+
+                                    __weak TWIconButton *weakView = weakModel.updateStatsView;
+
+                                    if (weakModel.status) {
+                                        weakView.callback = ^{
+                                            BorrowFromPersonViewController *bpc = [_viewController.storyboard instantiateViewControllerWithIdentifier:@"BorrowFromPersonViewController"];
+                                            bpc.avaliableBookEntities = model.availableBooks;
+                                            [detailViewController.navigationController pushViewController:bpc animated:YES];
+
+                                        };
+                                    }
+
+                                    [_viewController.navigationController pushViewController:detailViewController animated:YES];
+
+                                }];
 }
 
 @end
