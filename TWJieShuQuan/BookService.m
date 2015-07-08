@@ -131,9 +131,9 @@
             }
             
             [users addObject:object];
+            succeededBlock(users);
         }];
     }];
-    succeededBlock(users);
 }
 
 // 改变图书可借状态
