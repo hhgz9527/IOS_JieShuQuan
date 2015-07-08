@@ -15,8 +15,8 @@
 // pending, agreed, rejected, returned
 @property (nonatomic, strong) NSString *status;
 
-@property (nonatomic, strong) NSString *fromUsername;
-@property (nonatomic, strong) NSString *toUsername;
+@property (nonatomic, strong) NSString *fromUserName;
+@property (nonatomic, strong) NSString *toUserName;
 @property (nonatomic, strong) NSString *bookName;
 @property (nonatomic, strong) NSString *bookImageHref;
 

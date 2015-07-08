@@ -33,7 +33,7 @@
     self.bookNameLabel.text = self.borrowRecord.bookName;
     [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:self.borrowRecord.bookImageHref]];
     self.borrowDateLabel.text = [[[self.borrowRecord updatedAt] description] componentsSeparatedByString:@" "][0];
-    self.bookOwnerLabel.text = self.borrowRecord.toUsername;
+    self.bookOwnerLabel.text = self.borrowRecord.toUserName;
 }
 
 @end

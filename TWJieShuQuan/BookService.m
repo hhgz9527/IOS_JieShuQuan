@@ -131,9 +131,9 @@
             }
             
             [users addObject:object];
-            succeededBlock(users);
         }];
     }];
+    succeededBlock(users);
 }
 
 // 改变图书可借状态
@@ -174,8 +174,8 @@
 + (void)createBorrowRecordFromUser:(AVUser *)fromUser toUser:(AVUser *)toUser forBookEntity:(BookEntity *)bookEntity succeeded:(void (^)())succeededBlock {
     BorrowRecord *borrowBookNotification = [[BorrowRecord alloc] init];
     
-    borrowBookNotification.fromUsername = fromUser.username;
-    borrowBookNotification.toUsername = toUser.username;
+    borrowBookNotification.fromUserName = fromUser.username;
+    borrowBookNotification.toUserName = toUser.username;
     borrowBookNotification.bookName = bookEntity.bookName;
     borrowBookNotification.bookImageHref = bookEntity.bookImageHref;
     borrowBookNotification.status = kPendingStatus;

@@ -11,8 +11,8 @@
 @implementation BorrowRecord
 
 @dynamic status;
-@dynamic fromUsername;
-@dynamic toUsername;
+@dynamic fromUserName;
+@dynamic toUserName;
 @dynamic bookName;
 @dynamic bookImageHref;
 

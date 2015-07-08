@@ -73,7 +73,7 @@
     cell.agreeButton.tag = indexPath.row;
     cell.notAgreeButton.tag = indexPath.row;
     
-    cell.notificationLabel.text = [NSString stringWithFormat:@"%@ 向你借阅《%@》", borrowRecord.fromUsername, borrowRecord.bookName];
+    cell.notificationLabel.text = [NSString stringWithFormat:@"%@ 向你借阅《%@》", borrowRecord.fromUserName, borrowRecord.bookName];
     
     tableView.tableFooterView = [[UIView alloc] init];
     return cell;
