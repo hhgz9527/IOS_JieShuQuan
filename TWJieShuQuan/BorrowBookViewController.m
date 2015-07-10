@@ -59,9 +59,10 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
     [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [self.booksCollectionView addSubview:self.refreshControl];
-        
+    
     [self.booksCollectionView addInfiniteScrollingWithActionHandler:^{
-        [self refreshData:nil];
+        kStart = kStart + 1;
+        [self loadMore:kPageLoadCount*kStart];
         [self.booksCollectionView.infiniteScrollingView stopAnimating];
     }];
 
@@ -72,10 +73,21 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [self refreshData:nil];
 }
 
+- (void)loadMore:(NSUInteger)number {
+    [BookService fetchAllBooksWithStart:number succeeded:^(NSArray *myBooksObject) {
+        [myBooksObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self.books addObject:obj];
+        }];
+//        self.books = [myBooksObject mutableCopy];
+        
+        [self.booksCollectionView reloadData];
+    }];
+}
+
 - (void)refreshData:(UIRefreshControl *)refresh {
+    kStart = 0;
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
 
-    kStart = 0;
     [BookService fetchAllBooksWithStart:kStart succeeded:^(NSArray *myBooksObject) {
         self.books = [myBooksObject mutableCopy];
         
