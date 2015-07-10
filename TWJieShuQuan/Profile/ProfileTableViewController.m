@@ -55,6 +55,9 @@ static NSInteger const kSetAvatarTag = 1001;
     if (borrowBookNotifications.count != 0) {
         _borrowBookNotificationButton.hidden = NO;
         [self.borrowBookNotificationButton setTitle:[NSNumber numberWithInteger:borrowBookNotifications.count].stringValue forState:UIControlStateNormal];
+    } else {
+        [self.borrowBookNotificationButton setTitle:@"0" forState:UIControlStateNormal];
+        _borrowBookNotificationButton.hidden = YES;
     }
 }
 
