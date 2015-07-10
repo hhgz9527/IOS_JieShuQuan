@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="McA-zT-FMQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -1217,7 +1217,7 @@ Other:
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CLS-9t-6Wa">
-                                <rect key="frame" x="0.0" y="184" width="600" height="323"/>
+                                <rect key="frame" x="0.0" y="184" width="600" height="367"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rag-Tz-g2D">
                                     <size key="itemSize" width="50" height="50"/>
@@ -1284,72 +1284,16 @@ Other:
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbi-qI-Dye" userLabel="Load more View">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dqa-2Z-hmH">
-                                        <rect key="frame" x="239" y="12" width="20" height="20"/>
-                                        <color key="color" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </activityIndicatorView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bB-qj-lbE">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="kXL-VF-r4T"/>
-                                        </constraints>
-                                        <state key="normal" title="查看更多">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="kXL-VF-r4T"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="loadMore:" destination="5qn-Mr-JK9" eventType="touchUpInside" id="JgR-Ke-al7"/>
-                                            <action selector="loadMore:" destination="hjg-aT-yWZ" eventType="touchUpInside" id="gJ7-2e-zzv"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="dqa-2Z-hmH" secondAttribute="centerX" id="10V-W5-HG9"/>
-                                    <constraint firstItem="7bB-qj-lbE" firstAttribute="leading" secondItem="lbi-qI-Dye" secondAttribute="leading" id="1vq-u6-9FH"/>
-                                    <constraint firstAttribute="centerY" secondItem="7bB-qj-lbE" secondAttribute="centerY" id="Cww-dl-3Ib"/>
-                                    <constraint firstItem="7bB-qj-lbE" firstAttribute="leading" secondItem="dqa-2Z-hmH" secondAttribute="trailing" constant="-259" id="H0p-Jp-HVl"/>
-                                    <constraint firstAttribute="bottom" secondItem="7bB-qj-lbE" secondAttribute="bottom" id="HtB-fx-tGm"/>
-                                    <constraint firstItem="7bB-qj-lbE" firstAttribute="top" secondItem="lbi-qI-Dye" secondAttribute="top" id="IDa-ac-1mG"/>
-                                    <constraint firstItem="dqa-2Z-hmH" firstAttribute="leading" secondItem="7bB-qj-lbE" secondAttribute="leading" constant="239" id="Q4k-Gb-cdd"/>
-                                    <constraint firstAttribute="centerX" secondItem="dqa-2Z-hmH" secondAttribute="centerX" constant="51" id="Qs8-yj-n3x"/>
-                                    <constraint firstAttribute="centerY" secondItem="dqa-2Z-hmH" secondAttribute="centerY" id="nT2-su-4si"/>
-                                    <constraint firstItem="7bB-qj-lbE" firstAttribute="leading" secondItem="dqa-2Z-hmH" secondAttribute="trailing" constant="-124" id="sJe-JG-df4"/>
-                                    <constraint firstItem="7bB-qj-lbE" firstAttribute="leading" secondItem="dqa-2Z-hmH" secondAttribute="trailing" constant="-124" id="tWU-TK-d4l"/>
-                                    <constraint firstAttribute="centerX" secondItem="7bB-qj-lbE" secondAttribute="centerX" id="x7v-hp-m3n"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="H0p-Jp-HVl"/>
-                                        <exclude reference="sJe-JG-df4"/>
-                                        <exclude reference="tWU-TK-d4l"/>
-                                        <exclude reference="10V-W5-HG9"/>
-                                        <exclude reference="Q4k-Gb-cdd"/>
-                                    </mask>
-                                </variation>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="lbi-qI-Dye" secondAttribute="bottom" id="8fg-qK-282"/>
                             <constraint firstAttribute="trailing" secondItem="BD6-3W-xnd" secondAttribute="trailing" id="GSd-NS-riJ"/>
-                            <constraint firstAttribute="trailing" secondItem="lbi-qI-Dye" secondAttribute="trailing" id="J3k-UP-6BR"/>
-                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" constant="44" id="dVF-z1-K0q"/>
-                            <constraint firstItem="lbi-qI-Dye" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="eSd-05-CtZ"/>
+                            <constraint firstItem="8WO-dv-CN9" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" id="dVF-z1-K0q"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="top" secondItem="BD6-3W-xnd" secondAttribute="bottom" id="joy-m6-R6w"/>
                             <constraint firstItem="BD6-3W-xnd" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="nNg-Mq-hAc"/>
                             <constraint firstItem="CLS-9t-6Wa" firstAttribute="leading" secondItem="OJQ-1F-6FZ" secondAttribute="leading" id="pOF-kh-Rnb"/>
                             <constraint firstAttribute="trailing" secondItem="CLS-9t-6Wa" secondAttribute="trailing" id="tYB-TU-Zbc"/>
                             <constraint firstItem="BD6-3W-xnd" firstAttribute="top" secondItem="u3e-cQ-Oxc" secondAttribute="bottom" id="xRH-3R-5AG"/>
-                            <constraint firstItem="lbi-qI-Dye" firstAttribute="top" secondItem="CLS-9t-6Wa" secondAttribute="bottom" id="zxn-Nj-l9X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="借书" id="r7z-Zr-rzD">
@@ -1360,12 +1304,9 @@ Other:
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activitiView" destination="dqa-2Z-hmH" id="pEB-0V-RCb"/>
                         <outlet property="booksCollectionView" destination="CLS-9t-6Wa" id="fgT-hZ-x0P"/>
                         <outlet property="flowLayout" destination="Rag-Tz-g2D" id="xxn-at-vtK"/>
                         <outlet property="leftBarButton" destination="Wei-31-5Bn" id="Pgh-az-5Ln"/>
-                        <outlet property="loadMoreButton" destination="7bB-qj-lbE" id="VZC-OZ-6Na"/>
-                        <outlet property="loadMoreView" destination="lbi-qI-Dye" id="Wq6-i0-wRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RO-GE-mz1" userLabel="First Responder" sceneMemberID="firstResponder"/>

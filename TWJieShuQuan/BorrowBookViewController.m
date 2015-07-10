@@ -23,6 +23,8 @@
 #import "Constants.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import "SearchView.h"
+#import <SVPullToRefresh.h>
+#import "UIScrollView+SVPullToRefresh.h"
 
 static NSInteger kStart = 0;
 
@@ -31,10 +33,6 @@ static NSInteger kStart = 0;
 @property (weak, nonatomic) IBOutlet UICollectionView *booksCollectionView;
 @property (nonatomic, strong) NSMutableArray *books;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
-
-@property (weak, nonatomic) IBOutlet UIView *loadMoreView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activitiView;
-@property (weak, nonatomic) IBOutlet UIButton *loadMoreButton;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 
@@ -61,6 +59,12 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
     [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [self.booksCollectionView addSubview:self.refreshControl];
+        
+    [self.booksCollectionView addInfiniteScrollingWithActionHandler:^{
+        [self refreshData:nil];
+        [self.booksCollectionView.infiniteScrollingView stopAnimating];
+    }];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,8 +73,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
 }
 
 - (void)refreshData:(UIRefreshControl *)refresh {
-    [self.activitiView startAnimating];
-
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
 
     kStart = 0;
@@ -80,7 +82,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
         [self.booksCollectionView reloadData];
         
         [refresh endRefreshing];
-        [self.activitiView stopAnimating];
     }];
 }
 
@@ -111,19 +112,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [scanButton addTarget:self action:@selector(scanISBNWithBorrowBookViewController) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.navigationItem.rightBarButtonItem = scanISBNButton;
-}
-
-- (IBAction)loadMore:(id)sender {
-    [self.activitiView startAnimating];
-    [BookService fetchAllBooksWithStart:kPageLoadCount*(kStart++ + 1) succeeded:^(NSArray *myBooksObject) {
-        [myBooksObject enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self.books addObject:obj];
-        }];
-        
-        [self.booksCollectionView reloadData];
-        
-        [self.activitiView stopAnimating];
-    }];
 }
 
 - (void)scanISBNWithBorrowBookViewController {
