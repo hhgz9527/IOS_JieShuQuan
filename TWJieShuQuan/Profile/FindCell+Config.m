@@ -45,7 +45,11 @@
     AVFile *file = [[objects.firstObject objectForKey:@"localData"] objectForKey:@"avatar"];
     AVFile *avatarFile = [AVFile fileWithURL:file.url];
     [avatarFile getThumbnail:YES width:30 height:30 withBlock:^(UIImage *image, NSError *error) {
-        self.avatar.image = image;
+        if (image) {
+            self.avatar.image = image;
+        } else {
+            self.avatar.image = [UIImage imageNamed:@"avatar"];
+        }
     }];
 
 }

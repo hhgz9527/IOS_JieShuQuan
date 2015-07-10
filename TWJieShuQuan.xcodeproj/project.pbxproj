@@ -27,7 +27,6 @@
 		941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D6A1B1035CC002021DE /* CustomTextField.m */; };
 		941C9D961B130C4C002021DE /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D941B130C4C002021DE /* ResetPasswordViewController.m */; };
 		941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */; };
-		9423F6751B2C3017000D8556 /* BorrowBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9423F6741B2C3017000D8556 /* BorrowBookDetailViewController.m */; };
 		9423F6781B2C3959000D8556 /* BorrowFromPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9423F6771B2C3959000D8556 /* BorrowFromPersonViewController.m */; };
 		9423F67B1B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9423F67A1B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.m */; };
 		942BBCBA1B17031000F490CF /* BookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 942BBCB91B17031000F490CF /* BookService.m */; };
@@ -130,8 +129,6 @@
 		941C9D931B130C4C002021DE /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetPasswordViewController.h; path = Authentication/Controllers/ResetPasswordViewController.h; sourceTree = "<group>"; };
 		941C9D941B130C4C002021DE /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetPasswordViewController.m; path = Authentication/Controllers/ResetPasswordViewController.m; sourceTree = "<group>"; };
 		941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResetPasswordViewController.xib; path = Authentication/Controllers/ResetPasswordViewController.xib; sourceTree = "<group>"; };
-		9423F6731B2C3017000D8556 /* BorrowBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorrowBookDetailViewController.h; path = books/BorrowBookDetailViewController.h; sourceTree = "<group>"; };
-		9423F6741B2C3017000D8556 /* BorrowBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorrowBookDetailViewController.m; path = books/BorrowBookDetailViewController.m; sourceTree = "<group>"; };
 		9423F6761B2C3959000D8556 /* BorrowFromPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorrowFromPersonViewController.h; path = books/BorrowFromPersonViewController.h; sourceTree = "<group>"; };
 		9423F6771B2C3959000D8556 /* BorrowFromPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorrowFromPersonViewController.m; path = books/BorrowFromPersonViewController.m; sourceTree = "<group>"; };
 		9423F6791B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorrowFromPersonTableViewCell.h; path = books/BorrowFromPersonTableViewCell.h; sourceTree = "<group>"; };
@@ -480,8 +477,6 @@
 				94C069951B146A570047BCCB /* AddToLibraryViewController.h */,
 				94C069961B146A570047BCCB /* AddToLibraryViewController.m */,
 				94C069971B146A570047BCCB /* AddToLibraryViewController.xib */,
-				9423F6731B2C3017000D8556 /* BorrowBookDetailViewController.h */,
-				9423F6741B2C3017000D8556 /* BorrowBookDetailViewController.m */,
 				9423F6761B2C3959000D8556 /* BorrowFromPersonViewController.h */,
 				9423F6771B2C3959000D8556 /* BorrowFromPersonViewController.m */,
 				9423F6791B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.h */,
@@ -779,7 +774,6 @@
 				942BBCBA1B17031000F490CF /* BookService.m in Sources */,
 				942BBCC01B180FC600F490CF /* AVQuery+Extensions.m in Sources */,
 				94D9B7A61B427334001B0D4D /* PopularBookTableViewCell.m in Sources */,
-				9423F6751B2C3017000D8556 /* BorrowBookDetailViewController.m in Sources */,
 				9423F67B1B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.m in Sources */,
 				947BBB761B393BDC000AC785 /* MyBorrowInBooksTableViewController.m in Sources */,
 				941C9D6B1B1035CC002021DE /* CustomTextField.m in Sources */,

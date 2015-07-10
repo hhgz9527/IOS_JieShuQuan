@@ -15,7 +15,6 @@
 #import "BookService.h"
 #import "MyBooksCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "BorrowBookDetailViewController.h"
 #import "BookDetailViewController.h"
 #import "BookDetailModel.h"
 #import "TWIconButton.h"
@@ -220,15 +219,6 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 //    [self performSegueWithIdentifier:@"borrowBookDetailSegue" sender:[collectionView cellForItemAtIndexPath:indexPath]];
     [self pushToDetails:self.books[indexPath.row]];
-}
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"borrowBookDetailSegue"]) {
-        BorrowBookDetailViewController *borrowBookDetailViewController = (BorrowBookDetailViewController *)segue.destinationViewController;
-        NSInteger row = [self.booksCollectionView indexPathForCell:sender].row;
-        borrowBookDetailViewController.book = self.books[row];
-    }
 }
 
 #pragma mark - search

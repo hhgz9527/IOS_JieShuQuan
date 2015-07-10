@@ -1392,57 +1392,6 @@ Other:
             </objects>
             <point key="canvasLocation" x="2365" y="-91"/>
         </scene>
-        <!--图书详情-->
-        <scene sceneID="iDe-Cq-nQP">
-            <objects>
-                <viewController storyboardIdentifier="BorrowBookViewController" id="Xhd-8c-ST5" customClass="BorrowBookDetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="p5m-Ap-aOm"/>
-                        <viewControllerLayoutGuide type="bottom" id="5MD-m1-Ala"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mmO-Vf-jmR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="book name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLF-dY-3dh">
-                                <rect key="frame" x="109" y="126" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="avaliability" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcX-63-I28">
-                                <rect key="frame" x="109" y="185" width="80" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-8k-itR">
-                                <rect key="frame" x="109" y="246" width="60" height="30"/>
-                                <state key="normal" title="申请借阅">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oLF-dY-3dh" firstAttribute="top" secondItem="p5m-Ap-aOm" secondAttribute="bottom" constant="62" id="Bxh-V0-6Vz"/>
-                            <constraint firstItem="9c6-8k-itR" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="C3a-mr-ia4"/>
-                            <constraint firstItem="UcX-63-I28" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="JMh-qj-3U9"/>
-                            <constraint firstItem="UcX-63-I28" firstAttribute="top" secondItem="oLF-dY-3dh" secondAttribute="bottom" constant="38" id="WQa-rT-uyj"/>
-                            <constraint firstItem="oLF-dY-3dh" firstAttribute="leading" secondItem="mmO-Vf-jmR" secondAttribute="leadingMargin" constant="93" id="hdl-vh-MxL"/>
-                            <constraint firstItem="9c6-8k-itR" firstAttribute="top" secondItem="UcX-63-I28" secondAttribute="bottom" constant="40" id="wgt-aS-pCQ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="图书详情" id="RQ6-yE-J1S"/>
-                    <connections>
-                        <outlet property="bookAvaliablityLabel" destination="UcX-63-I28" id="wSJ-Vr-X54"/>
-                        <outlet property="bookNameLabel" destination="oLF-dY-3dh" id="uf0-hp-4yK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pdV-M3-Wwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3412" y="565"/>
-        </scene>
         <!--申请借阅-->
         <scene sceneID="NUK-m2-TJG">
             <objects>
