@@ -20,6 +20,7 @@ static NSInteger kPageLoadCount = 20;
 
 @property (weak, nonatomic) IBOutlet UITableView *findList;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, retain) UIRefreshControl *refreshControl;
 
 @end
 
@@ -31,25 +32,29 @@ static NSInteger kPageLoadCount = 20;
     _findList.rowHeight = UITableViewAutomaticDimension;
     _findList.estimatedRowHeight = 44.0;
     
-    [_findList addPullToRefreshWithActionHandler:^{
-        [self refreshFindList:20];
-        [_findList.pullToRefreshView stopAnimating];
-    }];
+    // pull to refresh
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
+    [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    [_findList addSubview:self.refreshControl];
     
     [_findList addInfiniteScrollingWithActionHandler:^{
         [self refreshFindList:kPageLoadCount*(kStart++ + 1)];
         [_findList.infiniteScrollingView stopAnimating];
     }];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"DidAddToLibraryForBook" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData:) name:@"DidAddToLibraryForBook" object:nil];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self refreshData];
+    [self refreshFindList:20];
 }
 
-- (void)refreshData {
+- (void)refreshData:(UIRefreshControl *)refresh {
+    kStart = 0;
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
+    
     [self refreshFindList:20];
 }
 
@@ -63,6 +68,7 @@ static NSInteger kPageLoadCount = 20;
     [query addDescendingOrder:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            [_refreshControl endRefreshing];
             _dataArray = [NSMutableArray arrayWithArray:objects];
             [_findList reloadData];
         }
