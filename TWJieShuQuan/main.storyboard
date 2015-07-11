@@ -868,7 +868,6 @@ Other:
                     <connections>
                         <segue destination="OMP-br-sGB" kind="relationship" relationship="viewControllers" id="zcG-C6-uny"/>
                         <segue destination="az3-hA-ZCb" kind="relationship" relationship="viewControllers" id="enE-CU-u8w"/>
-                        <segue destination="ls2-ru-YiA" kind="relationship" relationship="viewControllers" id="5aR-Po-tO5"/>
                         <segue destination="MGF-JR-xLn" kind="relationship" relationship="viewControllers" id="qK2-OW-scZ"/>
                     </connections>
                 </tabBarController>
@@ -1427,7 +1426,7 @@ Other:
         <scene sceneID="qAH-xM-CVR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OMP-br-sGB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发现" id="2hm-Wb-4kr"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="FindIcon" id="2hm-Wb-4kr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="115-WV-FOJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1446,7 +1445,7 @@ Other:
         <scene sceneID="P6A-ph-Nih">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="az3-hA-ZCb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="借书" id="MJs-Rn-zwT"/>
+                    <tabBarItem key="tabBarItem" title="借书" image="BookIcon" id="MJs-Rn-zwT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3XA-UR-Fz6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1484,7 +1483,7 @@ Other:
         <scene sceneID="7de-yQ-ZD3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MGF-JR-xLn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="Wdg-FK-X2s"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="MeIcon" id="Wdg-FK-X2s"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ngl-wc-2RC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1587,6 +1586,9 @@ Other:
         </scene>
     </scenes>
     <resources>
+        <image name="BookIcon" width="20" height="24"/>
+        <image name="FindIcon" width="25" height="23"/>
+        <image name="MeIcon" width="15" height="26"/>
         <image name="Top4.png" width="614" height="243"/>
         <image name="avatar.png" width="225" height="225"/>
         <image name="borrow_message_bg.png" width="60" height="60"/>
