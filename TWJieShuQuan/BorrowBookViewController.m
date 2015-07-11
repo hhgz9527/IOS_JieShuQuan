@@ -118,7 +118,7 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
     self.navigationItem.title = @"借书";
 
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    scanButton.frame = CGRectMake(0, 0, 24, 24);
+    scanButton.frame = CGRectMake(0, 0, 22, 20);
     [scanButton setBackgroundImage:[UIImage imageNamed:@"nav_scanIcon"] forState:UIControlStateNormal];
     [scanButton addTarget:self action:@selector(scanISBNWithBorrowBookViewController) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *scanISBNButton = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
