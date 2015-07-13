@@ -583,6 +583,27 @@ Other:
                                             <segue destination="fe9-Ax-CjM" kind="show" id="euR-HX-aMM"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="iNw-VJ-ckp">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iNw-VJ-ckp" id="gy6-fK-FDf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAp-Pg-Krv">
+                                                    <rect key="frame" x="15" y="11" width="68" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yAp-Pg-Krv" firstAttribute="leading" secondItem="gy6-fK-FDf" secondAttribute="leading" constant="15" id="G3L-SN-wfG"/>
+                                                <constraint firstAttribute="centerY" secondItem="yAp-Pg-Krv" secondAttribute="centerY" id="JQV-cT-pVv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="LUU-ef-AxP" kind="show" id="lF1-qw-uNe"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="a79-yi-vF8">
@@ -623,10 +644,29 @@ Other:
             </objects>
             <point key="canvasLocation" x="2935" y="2210"/>
         </scene>
+        <!--修改密码-->
+        <scene sceneID="qDt-Uy-iD0">
+            <objects>
+                <viewController id="LUU-ef-AxP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Onc-2k-f3C"/>
+                        <viewControllerLayoutGuide type="bottom" id="NVy-hH-JQm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tcy-KK-rUL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="修改密码" id="eQI-3Z-BsK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YjD-DM-tI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2935" y="2915"/>
+        </scene>
         <!--修改昵称-->
         <scene sceneID="gxB-3Z-zMB">
             <objects>
-                <viewController id="fe9-Ax-CjM" customClass="ChangeNickNameViewController" sceneMemberID="viewController">
+                <viewController id="fe9-Ax-CjM" customClass="ChangeUsernameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y2p-n2-Gf4"/>
                         <viewControllerLayoutGuide type="bottom" id="CbB-Wz-wZj"/>
