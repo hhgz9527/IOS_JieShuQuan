@@ -583,7 +583,7 @@ Other:
                                             <segue destination="fe9-Ax-CjM" kind="show" id="euR-HX-aMM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="iNw-VJ-ckp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="iNw-VJ-ckp">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iNw-VJ-ckp" id="gy6-fK-FDf">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -647,7 +647,7 @@ Other:
         <!--修改密码-->
         <scene sceneID="qDt-Uy-iD0">
             <objects>
-                <viewController id="LUU-ef-AxP" sceneMemberID="viewController">
+                <viewController id="LUU-ef-AxP" customClass="ChangePasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Onc-2k-f3C"/>
                         <viewControllerLayoutGuide type="bottom" id="NVy-hH-JQm"/>
@@ -655,9 +655,90 @@ Other:
                     <view key="view" contentMode="scaleToFill" id="Tcy-KK-rUL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Slh-YK-Jtz">
+                                <rect key="frame" x="0.0" y="94" width="600" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="原始密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2KK-4G-ClF">
+                                        <rect key="frame" x="0.0" y="1" width="600" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2KK-4G-ClF" firstAttribute="top" secondItem="Slh-YK-Jtz" secondAttribute="top" constant="1" id="1bm-g0-Hdd"/>
+                                    <constraint firstAttribute="height" constant="44" id="TNx-aB-Hsq"/>
+                                    <constraint firstItem="2KK-4G-ClF" firstAttribute="leading" secondItem="Slh-YK-Jtz" secondAttribute="leading" id="Xgi-LZ-xuY"/>
+                                    <constraint firstAttribute="bottom" secondItem="2KK-4G-ClF" secondAttribute="bottom" constant="1" id="n90-7J-7sC"/>
+                                    <constraint firstAttribute="trailing" secondItem="2KK-4G-ClF" secondAttribute="trailing" id="sIZ-5v-ZhM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-Dy-EIw">
+                                <rect key="frame" x="0.0" y="168" width="600" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="新密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHv-Vh-yHz">
+                                        <rect key="frame" x="0.0" y="1" width="600" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="R4K-nG-lsg"/>
+                                    <constraint firstItem="sHv-Vh-yHz" firstAttribute="leading" secondItem="kWy-Dy-EIw" secondAttribute="leading" id="dDg-Ey-iXV"/>
+                                    <constraint firstAttribute="bottom" secondItem="sHv-Vh-yHz" secondAttribute="bottom" constant="1" id="jwb-0J-duy"/>
+                                    <constraint firstAttribute="trailing" secondItem="sHv-Vh-yHz" secondAttribute="trailing" id="vL9-0w-mjy"/>
+                                    <constraint firstItem="sHv-Vh-yHz" firstAttribute="top" secondItem="kWy-Dy-EIw" secondAttribute="top" constant="1" id="y0x-IP-aEq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MT-5z-VVH">
+                                <rect key="frame" x="0.0" y="242" width="600" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="再次输入" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPo-ZK-9Ss">
+                                        <rect key="frame" x="0.0" y="1" width="600" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="LPo-ZK-9Ss" firstAttribute="top" secondItem="7MT-5z-VVH" secondAttribute="top" constant="1" id="2R0-LS-mk6"/>
+                                    <constraint firstAttribute="height" constant="44" id="Kws-gm-axu"/>
+                                    <constraint firstAttribute="bottom" secondItem="LPo-ZK-9Ss" secondAttribute="bottom" constant="1" id="Rc3-GM-Xb3"/>
+                                    <constraint firstAttribute="trailing" secondItem="LPo-ZK-9Ss" secondAttribute="trailing" id="aUI-WU-ELa"/>
+                                    <constraint firstItem="LPo-ZK-9Ss" firstAttribute="leading" secondItem="7MT-5z-VVH" secondAttribute="leading" id="isi-D0-i3m"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kWy-Dy-EIw" firstAttribute="leading" secondItem="Tcy-KK-rUL" secondAttribute="leading" id="EHe-jQ-IGa"/>
+                            <constraint firstItem="kWy-Dy-EIw" firstAttribute="top" secondItem="Slh-YK-Jtz" secondAttribute="bottom" constant="30" id="GzH-Dz-3pK"/>
+                            <constraint firstAttribute="trailing" secondItem="7MT-5z-VVH" secondAttribute="trailing" id="ONe-45-EUS"/>
+                            <constraint firstAttribute="trailing" secondItem="Slh-YK-Jtz" secondAttribute="trailing" id="RSe-fE-HkC"/>
+                            <constraint firstItem="7MT-5z-VVH" firstAttribute="leading" secondItem="Tcy-KK-rUL" secondAttribute="leading" id="Yvb-0i-fC8"/>
+                            <constraint firstItem="Slh-YK-Jtz" firstAttribute="top" secondItem="Onc-2k-f3C" secondAttribute="bottom" constant="30" id="i0Z-UV-mGe"/>
+                            <constraint firstItem="Slh-YK-Jtz" firstAttribute="leading" secondItem="Tcy-KK-rUL" secondAttribute="leading" id="jMb-eG-hxP"/>
+                            <constraint firstItem="7MT-5z-VVH" firstAttribute="top" secondItem="kWy-Dy-EIw" secondAttribute="bottom" constant="30" id="rA4-J5-UFV"/>
+                            <constraint firstAttribute="trailing" secondItem="kWy-Dy-EIw" secondAttribute="trailing" id="uyr-s3-hsA"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="修改密码" id="eQI-3Z-BsK"/>
+                    <navigationItem key="navigationItem" title="修改密码" id="eQI-3Z-BsK">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="3PP-AX-PzR">
+                            <connections>
+                                <action selector="changePasswordDoneAction:" destination="LUU-ef-AxP" id="Daz-X9-WSE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="comfirPassword" destination="LPo-ZK-9Ss" id="dli-PZ-eRq"/>
+                        <outlet property="oldPassword" destination="2KK-4G-ClF" id="WSA-4O-ulG"/>
+                        <outlet property="resetPassword" destination="sHv-Vh-yHz" id="Oqw-kf-7VO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjD-DM-tI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
