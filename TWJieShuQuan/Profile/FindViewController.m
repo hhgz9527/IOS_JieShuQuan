@@ -12,15 +12,20 @@
 #import <AVObject+Subclass.h>
 #import "AVQuery+Extensions.h"
 #import <SVPullToRefresh.h>
+#import "Discover.h"
 
-static NSInteger kStart = 1;
-static NSInteger kPageLoadCount = 20;
+//static NSInteger kStart = 1;
+static NSInteger kPageLoadCount = 10;
 
 @interface FindViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    NSInteger pageNum;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *findList;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (nonatomic, assign) BOOL loadedAllData;
 
 @end
 
@@ -28,10 +33,14 @@ static NSInteger kPageLoadCount = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    pageNum = 1;
     // Do any additional setup after loading the view.
     _findList.rowHeight = UITableViewAutomaticDimension;
-    _findList.estimatedRowHeight = 44.0;
-    
+    _findList.estimatedRowHeight = 68.0;
+
+//    _findList.estimatedRowHeight = 44.0;
+    _findList.tableFooterView = [[UIView alloc] init];
+
     // pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
@@ -39,7 +48,7 @@ static NSInteger kPageLoadCount = 20;
     [_findList addSubview:self.refreshControl];
     
     [_findList addInfiniteScrollingWithActionHandler:^{
-        [self refreshFindList:kPageLoadCount*(kStart++ + 1)];
+        [self refreshFindList];
         [_findList.infiniteScrollingView stopAnimating];
     }];
     
@@ -48,22 +57,26 @@ static NSInteger kPageLoadCount = 20;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self refreshFindList:20];
+    [self refreshFindList];
 }
 
 - (void)refreshData:(UIRefreshControl *)refresh {
-    kStart = 0;
+    pageNum = 1;
+    _loadedAllData = NO;
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
     
-    [self refreshFindList:20];
+    [self refreshFindList];
 }
 
 #pragma mark - Refresh List
 
-- (void)refreshFindList:(NSUInteger)number {
+- (void)refreshFindList{
+    if (_loadedAllData) {
+        return;
+    }
     AVQuery *query = [AVQuery queryForFind];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
-    query.limit = number;
+    query.limit = pageNum*kPageLoadCount;//这里有个疑惑，leanCloud没有pagenum这种记录第几页的属性吗，如果数据很多，第一次numer = 20, 第二次=40,,,每次请求都重复请求了之前的数据。
     query.maxCacheAge = 24*3600;
     [query addDescendingOrder:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -71,6 +84,10 @@ static NSInteger kPageLoadCount = 20;
             [_refreshControl endRefreshing];
             _dataArray = [NSMutableArray arrayWithArray:objects];
             [_findList reloadData];
+            if (objects.count < pageNum*kPageLoadCount) {
+                _loadedAllData = YES;
+            }
+            pageNum++;
         }
     }];
 }
@@ -88,9 +105,8 @@ static NSInteger kPageLoadCount = 20;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Discover *find = _dataArray[indexPath.row];
     static NSString *iden = @"cell";
-    FindCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
+    FindCell *cell = [tableView dequeueReusableCellWithIdentifier:iden forIndexPath:indexPath];
     [cell configFindCell:find];
-    tableView.tableFooterView = [[UIView alloc] init];
     return cell;
 }
 

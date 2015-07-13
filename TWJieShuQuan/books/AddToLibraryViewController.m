@@ -55,6 +55,8 @@
 - (void)sendMessageToFindViewWith:(NSString *)bookName {
     AVObject *obj = [AVObject objectWithClassName:@"Discover"];
     [obj setObject:[AVUser currentUser] forKey:@"user"];
+    [obj setObject:[AVUser currentUser].username forKey:@"userName"];
+    [obj setObject:[[AVUser currentUser] objectForKey:@"localData"] forKey:@"file"];
     [obj setObject:bookName forKey:@"bookName"];
     [obj setObject:[NSNumber numberWithInt:DISCOVERTYPE_ADDBOOK] forKey:@"type"];
     [obj saveEventually:^(BOOL succeeded, NSError *error) {

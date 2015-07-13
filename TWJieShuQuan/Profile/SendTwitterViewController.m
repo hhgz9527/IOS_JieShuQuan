@@ -49,6 +49,8 @@
     if ([self textLength]) {
         AVObject *obj = [AVObject objectWithClassName:@"Discover"];
         [obj setObject:[AVUser currentUser] forKey:@"user"];
+        [obj setObject:[AVUser currentUser].username forKey:@"userName"];
+        [obj setObject:[[AVUser currentUser] objectForKey:@"localData"] forKey:@"file"];
         [obj setObject:_textView.text forKey:@"twitter"];
         [obj setObject:[NSNumber numberWithInt:DISCOVERTYPE_TWITTER] forKey:@"type"];
         [obj saveEventually:^(BOOL succeeded, NSError *error) {
