@@ -14,7 +14,7 @@
 #import <SVPullToRefresh.h>
 #import "Discover.h"
 
-static NSInteger kPageLoadCount = 10
+static NSInteger kPageLoadCount = 10;
 
 @interface FindViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
