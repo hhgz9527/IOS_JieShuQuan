@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UITextField *activeTextField;
 @property (nonatomic, strong) NSMutableArray *officeArray;
 @property (nonatomic, copy) NSString *officeName;
+@property (weak, nonatomic) IBOutlet UIButton *selectOfficeButton;
 
 @end
 
@@ -169,6 +170,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     _officeName = _officeArray[row];
+    [_selectOfficeButton setTitle:_officeArray[row] forState:UIControlStateNormal];
 }
 
 @end
