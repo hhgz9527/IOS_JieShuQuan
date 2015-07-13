@@ -14,8 +14,7 @@
 #import <SVPullToRefresh.h>
 #import "Discover.h"
 
-//static NSInteger kStart = 1;
-static NSInteger kPageLoadCount = 10;
+static NSInteger kPageLoadCount = 10
 
 @interface FindViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -34,6 +33,8 @@ static NSInteger kPageLoadCount = 10;
 - (void)viewDidLoad {
     [super viewDidLoad];
     pageNum = 1;
+    
+    _dataArray = [NSMutableArray array];
     // Do any additional setup after loading the view.
     _findList.rowHeight = UITableViewAutomaticDimension;
     _findList.estimatedRowHeight = 68.0;
@@ -62,6 +63,7 @@ static NSInteger kPageLoadCount = 10;
 
 - (void)refreshData:(UIRefreshControl *)refresh {
     pageNum = 1;
+    _dataArray = [NSMutableArray array];
     _loadedAllData = NO;
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
     
@@ -76,16 +78,18 @@ static NSInteger kPageLoadCount = 10;
     }
     AVQuery *query = [AVQuery queryForFind];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
-    
-    query.limit = pageNum*kPageLoadCount;//这里有个疑惑，leanCloud没有pagenum这种记录第几页的属性吗，如果数据很多，第一次numer = 20, 第二次=40,,,每次请求都重复请求了之前的数据。
+    query.skip = (pageNum-1)*kPageLoadCount;
+    query.limit = kPageLoadCount;
     query.maxCacheAge = 24*3600;
     [query addDescendingOrder:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             [_refreshControl endRefreshing];
-            _dataArray = [NSMutableArray arrayWithArray:objects];
+            [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [_dataArray addObject:obj];
+            }];
             [_findList reloadData];
-            if (objects.count < pageNum*kPageLoadCount) {
+            if (objects.count < kPageLoadCount) {
                 _loadedAllData = YES;
             }
             pageNum++;
