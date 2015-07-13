@@ -76,6 +76,7 @@ static NSInteger kPageLoadCount = 10;
     }
     AVQuery *query = [AVQuery queryForFind];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    
     query.limit = pageNum*kPageLoadCount;//这里有个疑惑，leanCloud没有pagenum这种记录第几页的属性吗，如果数据很多，第一次numer = 20, 第二次=40,,,每次请求都重复请求了之前的数据。
     query.maxCacheAge = 24*3600;
     [query addDescendingOrder:@"createdAt"];

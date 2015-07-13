@@ -634,7 +634,7 @@
 				TargetAttributes = {
 					949996FF1B09D3E500986337 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = P7DQ9D7MW9;
+						DevelopmentTeam = 25EZUPR5QA;
 					};
 					949997181B09D3E500986337 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -907,6 +907,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -928,6 +929,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TWJieShuQuan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
