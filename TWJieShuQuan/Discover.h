@@ -22,5 +22,6 @@ typedef NS_ENUM(NSInteger, DiscoverType) {
 @property(nonatomic, assign) DiscoverType type;
 @property(nonatomic, copy) NSString *userName;
 @property(nonatomic, strong) AVFile *file;
+@property(nonatomic, copy) NSString *avatar;
 
 @end
