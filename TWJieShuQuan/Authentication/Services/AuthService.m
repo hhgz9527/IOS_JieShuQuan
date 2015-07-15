@@ -16,6 +16,7 @@
     user.email = email;
     user.password = password;
     user.username = [self usernameFromEmail:email];
+    [user setObject:[self usernameFromEmail:email] forKey:@"nickname"];
     [user setObject:office forKey:@"office"];
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
