@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangeUsernameViewController : UIViewController
+@interface ChangeNicknameViewController : UIViewController
 
 @end

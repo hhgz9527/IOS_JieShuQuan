@@ -6,17 +6,17 @@
 //  Copyright (c) 2015年 Jianing. All rights reserved.
 //
 
-#import "ChangeUsernameViewController.h"
+#import "ChangeNicknameViewController.h"
 #import <AVOSCloud.h>
 #import "CustomAlert.h"
 
-@interface ChangeUsernameViewController ()
+@interface ChangeNicknameViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 
 @end
 
-@implementation ChangeUsernameViewController
+@implementation ChangeNicknameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +24,7 @@
 
 - (IBAction)doneAction:(id)sender {
     [_usernameTextField resignFirstResponder];
-    [[AVUser currentUser] setObject:_usernameTextField.text forKey:@"username"];
+    [[AVUser currentUser] setObject:_usernameTextField.text forKey:@"nickname"];
     [[AVUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [self.navigationController popViewControllerAnimated:YES];

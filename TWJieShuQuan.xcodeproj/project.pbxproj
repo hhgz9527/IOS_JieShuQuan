@@ -14,7 +14,7 @@
 		7341C1961B1371A500E199DF /* Login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7341C1951B1371A500E199DF /* Login_background.png */; };
 		7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0771B1774F8000AF2EC /* nav_scanIcon.png */; };
 		7361D07A1B17763E000AF2EC /* nav_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7361D0791B17763E000AF2EC /* nav_background.png */; };
-		7378AAD61B53F8F7000F7102 /* ChangeUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7378AAD51B53F8F7000F7102 /* ChangeUsernameViewController.m */; };
+		7378AAD61B53F8F7000F7102 /* ChangeNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7378AAD51B53F8F7000F7102 /* ChangeNicknameViewController.m */; };
 		7378AADA1B53FE52000F7102 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7378AAD91B53FE52000F7102 /* ChangePasswordViewController.m */; };
 		739043BE1B42FD240047637A /* Top4.png in Resources */ = {isa = PBXBuildFile; fileRef = 739043BD1B42FD240047637A /* Top4.png */; };
 		739043C01B430A2C0047637A /* bookplacehoder.png in Resources */ = {isa = PBXBuildFile; fileRef = 739043BF1B430A2C0047637A /* bookplacehoder.png */; };
@@ -109,8 +109,8 @@
 		7341C1951B1371A500E199DF /* Login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_background.png; sourceTree = "<group>"; };
 		7361D0771B1774F8000AF2EC /* nav_scanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_scanIcon.png; sourceTree = "<group>"; };
 		7361D0791B17763E000AF2EC /* nav_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_background.png; sourceTree = "<group>"; };
-		7378AAD41B53F8F7000F7102 /* ChangeUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUsernameViewController.h; sourceTree = "<group>"; };
-		7378AAD51B53F8F7000F7102 /* ChangeUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUsernameViewController.m; sourceTree = "<group>"; };
+		7378AAD41B53F8F7000F7102 /* ChangeNicknameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNicknameViewController.h; sourceTree = "<group>"; };
+		7378AAD51B53F8F7000F7102 /* ChangeNicknameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNicknameViewController.m; sourceTree = "<group>"; };
 		7378AAD81B53FE52000F7102 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		7378AAD91B53FE52000F7102 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		739043BD1B42FD240047637A /* Top4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Top4.png; sourceTree = "<group>"; };
@@ -275,13 +275,13 @@
 			name = searchView;
 			sourceTree = "<group>";
 		};
-		7378AAD31B53F8DF000F7102 /* ChangeUsername */ = {
+		7378AAD31B53F8DF000F7102 /* ChangeNickname */ = {
 			isa = PBXGroup;
 			children = (
-				7378AAD41B53F8F7000F7102 /* ChangeUsernameViewController.h */,
-				7378AAD51B53F8F7000F7102 /* ChangeUsernameViewController.m */,
+				7378AAD41B53F8F7000F7102 /* ChangeNicknameViewController.h */,
+				7378AAD51B53F8F7000F7102 /* ChangeNicknameViewController.m */,
 			);
-			name = ChangeUsername;
+			name = ChangeNickname;
 			sourceTree = "<group>";
 		};
 		7378AAD71B53FD8F000F7102 /* ChangePassword */ = {
@@ -305,7 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				7378AAD71B53FD8F000F7102 /* ChangePassword */,
-				7378AAD31B53F8DF000F7102 /* ChangeUsername */,
+				7378AAD31B53F8DF000F7102 /* ChangeNickname */,
 				73A2F24F1B3E8A9F004E6555 /* SettingTableViewController.h */,
 				73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */,
 			);
@@ -799,7 +799,7 @@
 				94C0699D1B146AE30047BCCB /* Book.m in Sources */,
 				949997391B0AD83700986337 /* LoginViewController.m in Sources */,
 				942BBCBA1B17031000F490CF /* BookService.m in Sources */,
-				7378AAD61B53F8F7000F7102 /* ChangeUsernameViewController.m in Sources */,
+				7378AAD61B53F8F7000F7102 /* ChangeNicknameViewController.m in Sources */,
 				942BBCC01B180FC600F490CF /* AVQuery+Extensions.m in Sources */,
 				94D9B7A61B427334001B0D4D /* PopularBookTableViewCell.m in Sources */,
 				9423F67B1B2C6AAD000D8556 /* BorrowFromPersonTableViewCell.m in Sources */,
