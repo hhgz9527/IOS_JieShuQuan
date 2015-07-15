@@ -75,6 +75,8 @@ static NSInteger const kSetAvatarTag = 1001;
     [_avatar sd_setImageWithURL:[NSURL URLWithString:file.url]];
     _avatar.layer.cornerRadius = _avatar.frame.size.width/2;
     _avatar.layer.masksToBounds = YES;
+    _avatar.layer.borderWidth = 1;
+    _avatar.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (void)setAvatar {
