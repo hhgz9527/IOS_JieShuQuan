@@ -49,9 +49,8 @@
     if ([self textLength]) {
         AVObject *obj = [AVObject objectWithClassName:@"Discover"];
         AVFile *file = [[AVUser currentUser] objectForKey:@"avatar"];
-        NSLog(@"%@",file.url);
         [obj setObject:[AVUser currentUser] forKey:@"user"];
-        [obj setObject:[AVUser currentUser].username forKey:@"userName"];
+        [obj setObject:[[[AVUser currentUser] objectForKey:@"localData"] objectForKey:@"nickname"] forKey:@"nickname"];
         [obj setObject:file.url forKey:@"avatar"];
         [obj setObject:_textView.text forKey:@"twitter"];
         [obj setObject:[NSNumber numberWithInt:DISCOVERTYPE_TWITTER] forKey:@"type"];
