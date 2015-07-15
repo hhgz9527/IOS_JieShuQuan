@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
@@ -12,6 +12,7 @@
                 <outlet property="officePickerView" destination="gdm-tN-yyl" id="y2d-Ve-THO"/>
                 <outlet property="passwordTextField" destination="kLl-im-SwK" id="S0L-2i-eCd"/>
                 <outlet property="registerButton" destination="59h-zO-ezN" id="ZKL-er-Q7b"/>
+                <outlet property="selectOfficeButton" destination="QXW-1C-PYf" id="vCa-o5-DVg"/>
                 <outlet property="view" destination="yzz-6E-Bmo" id="5gq-Uc-Fi7"/>
             </connections>
         </placeholder>
