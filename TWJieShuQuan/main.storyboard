@@ -114,16 +114,25 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cAK-yb-zyt" id="fOk-KY-9wu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-9M-QCd">
+                                                    <rect key="frame" x="15" y="11" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="jvy-ls-PQv"/>
+                                                        <constraint firstAttribute="width" constant="20" id="yH0-cR-Sd0"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的书籍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VV-UY-YNm">
-                                                    <rect key="frame" x="23" y="11" width="68" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="45" y="11" width="68" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2VV-UY-YNm" firstAttribute="leading" secondItem="gmQ-9M-QCd" secondAttribute="trailing" constant="10" id="4fl-P0-Ggh"/>
+                                                <constraint firstAttribute="centerY" secondItem="gmQ-9M-QCd" secondAttribute="centerY" id="9c3-x9-SHa"/>
                                                 <constraint firstAttribute="centerY" secondItem="2VV-UY-YNm" secondAttribute="centerY" id="AWR-F9-nVF"/>
-                                                <constraint firstItem="2VV-UY-YNm" firstAttribute="leading" secondItem="fOk-KY-9wu" secondAttribute="leadingMargin" constant="15" id="RfY-rf-be5"/>
+                                                <constraint firstItem="gmQ-9M-QCd" firstAttribute="leading" secondItem="fOk-KY-9wu" secondAttribute="leading" constant="15" id="uSq-qZ-Bvr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -136,14 +145,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借入" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGB-qz-hnC">
-                                                    <rect key="frame" x="23" y="11" width="34" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="45" y="11" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jieru.png" translatesAutoresizingMaskIntoConstraints="NO" id="R7j-Ix-nEX">
+                                                    <rect key="frame" x="15" y="11" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="AKo-VF-Se4"/>
+                                                        <constraint firstAttribute="height" constant="20" id="RDl-Xh-eqJ"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OGB-qz-hnC" firstAttribute="leading" secondItem="l2i-F0-Jpu" secondAttribute="leadingMargin" constant="15" id="N9T-cK-OvV"/>
+                                                <constraint firstItem="OGB-qz-hnC" firstAttribute="leading" secondItem="R7j-Ix-nEX" secondAttribute="trailing" constant="10" id="1iG-jL-MeJ"/>
+                                                <constraint firstAttribute="centerY" secondItem="R7j-Ix-nEX" secondAttribute="centerY" id="6ZW-3f-H0W"/>
+                                                <constraint firstItem="R7j-Ix-nEX" firstAttribute="leading" secondItem="l2i-F0-Jpu" secondAttribute="leading" constant="15" id="RTm-BL-y2X"/>
                                                 <constraint firstAttribute="centerY" secondItem="OGB-qz-hnC" secondAttribute="centerY" id="ond-wd-dGE"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -157,15 +175,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借出" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-a8-U9z">
-                                                    <rect key="frame" x="23" y="11" width="34" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="45" y="11" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jiechu.png" translatesAutoresizingMaskIntoConstraints="NO" id="Adr-x9-uaE">
+                                                    <rect key="frame" x="15" y="12" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="3aw-SB-0Ci"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Z2f-u7-fUE"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Adr-x9-uaE" firstAttribute="leading" secondItem="gY2-x9-3AH" secondAttribute="leading" constant="15" id="2Rj-Xk-gTM"/>
+                                                <constraint firstItem="9bB-a8-U9z" firstAttribute="leading" secondItem="Adr-x9-uaE" secondAttribute="trailing" constant="10" id="9S0-zJ-IMO"/>
+                                                <constraint firstAttribute="centerY" secondItem="Adr-x9-uaE" secondAttribute="centerY" id="hMi-z5-R4u"/>
                                                 <constraint firstAttribute="centerY" secondItem="9bB-a8-U9z" secondAttribute="centerY" id="wkr-Bi-ury"/>
-                                                <constraint firstItem="9bB-a8-U9z" firstAttribute="leading" secondItem="gY2-x9-3AH" secondAttribute="leadingMargin" constant="15" id="yKE-Jn-B92"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -181,16 +208,25 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fOC-ps-DO1" id="bZu-Ne-fT1">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yzj-8n-iIT">
+                                                    <rect key="frame" x="15" y="11" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="8eT-9W-5hz"/>
+                                                        <constraint firstAttribute="height" constant="20" id="RrE-F3-sob"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjW-Ht-PxI">
-                                                    <rect key="frame" x="23" y="11" width="34" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="45" y="11" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="WjW-Ht-PxI" secondAttribute="centerY" id="2bo-y4-rhQ"/>
-                                                <constraint firstItem="WjW-Ht-PxI" firstAttribute="leading" secondItem="bZu-Ne-fT1" secondAttribute="leadingMargin" constant="15" id="vvS-SR-Apg"/>
+                                                <constraint firstItem="Yzj-8n-iIT" firstAttribute="leading" secondItem="bZu-Ne-fT1" secondAttribute="leading" constant="15" id="6BO-nv-yD9"/>
+                                                <constraint firstAttribute="centerY" secondItem="Yzj-8n-iIT" secondAttribute="centerY" id="gPM-ie-2NJ"/>
+                                                <constraint firstItem="WjW-Ht-PxI" firstAttribute="leading" secondItem="Yzj-8n-iIT" secondAttribute="trailing" constant="10" id="kR9-bc-Ted"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1102,7 +1138,7 @@ Other:
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzY-cY-0Ti">
                                                     <rect key="frame" x="46" y="30" width="546" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1797,6 +1833,10 @@ Other:
         <image name="MeIcon" width="15" height="26"/>
         <image name="Top4.png" width="614" height="243"/>
         <image name="avatar.png" width="225" height="225"/>
+        <image name="book" width="225" height="225"/>
         <image name="borrow_message_bg.png" width="60" height="60"/>
+        <image name="jiechu.png" width="35" height="32"/>
+        <image name="jieru.png" width="35" height="32"/>
+        <image name="setting.png" width="29" height="28"/>
     </resources>
 </document>
