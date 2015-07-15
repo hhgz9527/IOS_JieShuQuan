@@ -36,7 +36,7 @@
 
 
 - (void)createCellWithFind:(Discover *)find content:(NSString *)content {
-    self.name.text = find.userName;
+    self.name.text = find.nickname;
     self.content.text = content;
     self.time.text = [self currentTime:find.createdAt];
     [self.avatar sd_setImageWithURL:[NSURL URLWithString:find.avatar] placeholderImage:[UIImage imageNamed:@"avatar"]];
