@@ -23,26 +23,27 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self submitFeedback:indexPath];
-    [self logout:indexPath];
-}
-
-- (void)submitFeedback:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        AVUserFeedbackAgent *agent = [AVUserFeedbackAgent sharedInstance];
-        [agent showConversations:self title:@"feedback" contact:[AVUser currentUser].username];
-    }
-}
-
-- (void)logout:(NSIndexPath *)indexPath {
     if (indexPath.section == 1 && indexPath.row == 0) {
-        [AuthService logout];
-        [UserManager removeCurrentUser];
-        
-        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:loginViewController animated:YES completion:nil];
+        [self submitFeedback];
     }
+    
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        [self logout];
+    }
+}
+
+- (void)submitFeedback {
+    AVUserFeedbackAgent *agent = [AVUserFeedbackAgent sharedInstance];
+    [agent showConversations:self title:@"feedback" contact:[AVUser currentUser].username];
+}
+
+- (void)logout {
+    [AuthService logout];
+    [UserManager removeCurrentUser];
+    
+    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:loginViewController animated:YES completion:nil];
 }
 
 
