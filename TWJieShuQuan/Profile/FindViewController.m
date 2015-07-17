@@ -45,7 +45,7 @@ static NSInteger kPageLoadCount = 10;
     // pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
-    [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(refreshDataWithControl:) forControlEvents:UIControlEventValueChanged];
     [_findList addSubview:self.refreshControl];
     
     [_findList addInfiniteScrollingWithActionHandler:^{
@@ -53,7 +53,9 @@ static NSInteger kPageLoadCount = 10;
         [_findList.infiniteScrollingView stopAnimating];
     }];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData:) name:@"DidAddToLibraryForBook" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"DidAddToLibraryForBook" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"DidSendTwitter" object:nil];
 
 }
 
@@ -61,11 +63,21 @@ static NSInteger kPageLoadCount = 10;
     [self refreshFindList];
 }
 
-- (void)refreshData:(UIRefreshControl *)refresh {
+- (void)refreshDataWithControl:(UIRefreshControl *)refresh {
     pageNum = 1;
     _dataArray = [NSMutableArray array];
     _loadedAllData = NO;
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
+    if (refresh) {
+        refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
+    }
+    
+    [self refreshFindList];
+}
+
+- (void)refreshData {
+    pageNum = 1;
+    _dataArray = [NSMutableArray array];
+    _loadedAllData = NO;
     
     [self refreshFindList];
 }

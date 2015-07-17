@@ -57,6 +57,8 @@
         [obj saveEventually:^(BOOL succeeded, NSError *error) {
             if (succeeded == YES) {
                 NSLog(@"发布成功");
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"DidSendTwitter" object:self];
+                
                 [self isNotification];
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
