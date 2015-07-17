@@ -27,6 +27,7 @@
     [[AVUser currentUser] setObject:_usernameTextField.text forKey:@"nickname"];
     [[AVUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            [[CustomAlert sharedAlert] showAlertWithMessage:@"修改成功"];
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             [[CustomAlert sharedAlert] showAlertWithMessage:@"网络错误"];
