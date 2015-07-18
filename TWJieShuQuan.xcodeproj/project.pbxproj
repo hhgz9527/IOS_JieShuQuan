@@ -21,6 +21,10 @@
 		73A2F2511B3E8A9F004E6555 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */; };
 		73A2F25A1B3EDCAF004E6555 /* OfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */; };
 		73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBEA271B29DE4C00F7373A /* FindCell.m */; };
+		73FBF7D11B56A79F00AA67D3 /* jieru.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FBF7CF1B56A79F00AA67D3 /* jieru.png */; };
+		73FBF7D21B56A79F00AA67D3 /* jiechu.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FBF7D01B56A79F00AA67D3 /* jiechu.png */; };
+		73FBF7D41B56A8EC00AA67D3 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FBF7D31B56A8EC00AA67D3 /* setting.png */; };
+		73FBF7D81B56AA3000AA67D3 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FBF7D71B56AA3000AA67D3 /* book.png */; };
 		941A806B1B3142DC00F15E3E /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941A806A1B3142DC00F15E3E /* NotificationManager.m */; };
 		941C9D5C1B0F7864002021DE /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5B1B0F7864002021DE /* NSString+Extensions.m */; };
 		941C9D601B0F7906002021DE /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C9D5F1B0F7906002021DE /* CustomAlert.m */; };
@@ -121,6 +125,10 @@
 		73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficeViewController.m; sourceTree = "<group>"; };
 		73BBEA261B29DE4C00F7373A /* FindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCell.h; sourceTree = "<group>"; };
 		73BBEA271B29DE4C00F7373A /* FindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCell.m; sourceTree = "<group>"; };
+		73FBF7CF1B56A79F00AA67D3 /* jieru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jieru.png; sourceTree = "<group>"; };
+		73FBF7D01B56A79F00AA67D3 /* jiechu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiechu.png; sourceTree = "<group>"; };
+		73FBF7D31B56A8EC00AA67D3 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		73FBF7D71B56AA3000AA67D3 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
 		941A80691B3142DC00F15E3E /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
 		941A806A1B3142DC00F15E3E /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
 		941C9D5A1B0F7864002021DE /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extensions.h"; path = "Extensions/NSString+Extensions.h"; sourceTree = "<group>"; };
@@ -584,6 +592,10 @@
 		A3D1C97B1B1C23CC00923AD5 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				73FBF7D71B56AA3000AA67D3 /* book.png */,
+				73FBF7D31B56A8EC00AA67D3 /* setting.png */,
+				73FBF7CF1B56A79F00AA67D3 /* jieru.png */,
+				73FBF7D01B56A79F00AA67D3 /* jiechu.png */,
 				739043BF1B430A2C0047637A /* bookplacehoder.png */,
 				A327D9601B295E9900358122 /* avatar.png */,
 				A327D9641B29719A00358122 /* delete.png */,
@@ -664,6 +676,7 @@
 					};
 					949997181B09D3E500986337 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = VLWZHEN8M7;
 						TestTargetID = 949996FF1B09D3E500986337;
 					};
 				};
@@ -695,6 +708,7 @@
 				9499973A1B0AD83700986337 /* LoginViewController.xib in Resources */,
 				A327D9631B29719500358122 /* stats.png in Resources */,
 				941C9D661B0F81ED002021DE /* RegisterViewController.xib in Resources */,
+				73FBF7D11B56A79F00AA67D3 /* jieru.png in Resources */,
 				7361D07A1B17763E000AF2EC /* nav_background.png in Resources */,
 				A3D1C9801B1C242700923AD5 /* return_message_bg.png in Resources */,
 				941C9D971B130C4C002021DE /* ResetPasswordViewController.xib in Resources */,
@@ -702,10 +716,13 @@
 				A3D1C9811B1C242700923AD5 /* scan.png in Resources */,
 				739043BE1B42FD240047637A /* Top4.png in Resources */,
 				94C069991B146A570047BCCB /* AddToLibraryViewController.xib in Resources */,
+				73FBF7D41B56A8EC00AA67D3 /* setting.png in Resources */,
 				A3C1E2EC1B16AF1100037DB5 /* main.storyboard in Resources */,
 				739043C01B430A2C0047637A /* bookplacehoder.png in Resources */,
+				73FBF7D81B56AA3000AA67D3 /* book.png in Resources */,
 				949997141B09D3E500986337 /* LaunchScreen.xib in Resources */,
 				7361D0781B1774F8000AF2EC /* nav_scanIcon.png in Resources */,
+				73FBF7D21B56A79F00AA67D3 /* jiechu.png in Resources */,
 				94C069831B1415200047BCCB /* test.png in Resources */,
 				A327D9611B295E9900358122 /* avatar.png in Resources */,
 				A3D1C97F1B1C242700923AD5 /* borrow_message_bg.png in Resources */,
