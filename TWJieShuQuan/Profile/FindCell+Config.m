@@ -28,19 +28,31 @@
     [self createCellWithFind:find content:str];
 }
 
-- (NSString *)currentTime:(NSDate *)date {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd";
-    return [formatter stringFromDate:date];
-}
-
-
 - (void)createCellWithFind:(Discover *)find content:(NSString *)content {
     self.name.text = find.nickname;
     self.content.text = content;
-    self.time.text = [self currentTime:find.createdAt];
+    self.time.text = [self convertDateToDetailText:find.createdAt];
     [self.avatar sd_setImageWithURL:[NSURL URLWithString:find.avatar] placeholderImage:[UIImage imageNamed:@"avatar"]];
 }
 
+- (NSString *)convertDateToDetailText:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyMMdd";
+    NSInteger day = [formatter stringFromDate:date].integerValue - [formatter stringFromDate:[NSDate date]].integerValue;
+    
+    formatter.dateFormat = @"HH:mm";
+    if (day == -2) {
+        return [NSString stringWithFormat:@"前天 %@", [formatter stringFromDate:date]];
+    }
+    if (day == -1) {
+        return [NSString stringWithFormat:@"昨天 %@", [formatter stringFromDate:date]];
+    }
+    if (day == 0) {
+        return [NSString stringWithFormat:@"今天 %@", [formatter stringFromDate:date]];
+    }
+    
+    formatter.dateFormat = @"yy-MM-dd HH:mm";
+    return [formatter stringFromDate:date];
+}
 
 @end
