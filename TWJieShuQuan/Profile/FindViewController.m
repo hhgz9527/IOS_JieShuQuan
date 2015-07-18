@@ -49,7 +49,7 @@ static NSInteger kPageLoadCount = 10;
     [_findList addSubview:self.refreshControl];
     
     [_findList addInfiniteScrollingWithActionHandler:^{
-        [self refreshFindList];
+        [self pullRefresh];
         [_findList.infiniteScrollingView stopAnimating];
     }];
     
@@ -88,6 +88,24 @@ static NSInteger kPageLoadCount = 10;
     if (_loadedAllData) {
         return;
     }
+    AVQuery *query = [AVQuery queryForFind];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    query.limit = kPageLoadCount;
+    query.maxCacheAge = 24*3600;
+    [query addDescendingOrder:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            [_refreshControl endRefreshing];
+            [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [_dataArray addObject:obj];
+            }];
+            [_findList reloadData];
+            _loadedAllData = YES;
+        }
+    }];
+}
+
+- (void)pullRefresh {
     AVQuery *query = [AVQuery queryForFind];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
     query.skip = (pageNum-1)*kPageLoadCount;
