@@ -32,7 +32,7 @@ static NSInteger kPageLoadCount = 10;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    pageNum = 1;
+    pageNum = 2;
     
     _dataArray = [NSMutableArray array];
     // Do any additional setup after loading the view.
@@ -65,12 +65,10 @@ static NSInteger kPageLoadCount = 10;
 
 - (void)refreshDataWithControl:(UIRefreshControl *)refresh {
     pageNum = 1;
-    _dataArray = [NSMutableArray array];
     _loadedAllData = NO;
     if (refresh) {
         refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"更新数据中..."];
     }
-    
     [self refreshFindList];
 }
 
@@ -85,6 +83,7 @@ static NSInteger kPageLoadCount = 10;
 #pragma mark - Refresh List
 
 - (void)refreshFindList{
+    pageNum = 2;
     if (_loadedAllData) {
         return;
     }
@@ -95,6 +94,7 @@ static NSInteger kPageLoadCount = 10;
     [query addDescendingOrder:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            _dataArray = [NSMutableArray array];
             [_refreshControl endRefreshing];
             [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 [_dataArray addObject:obj];
@@ -138,14 +138,13 @@ static NSInteger kPageLoadCount = 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([tableView respondsToSelector:@selector(setSeparatorInset:)])
-    {
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [tableView setSeparatorInset:UIEdgeInsetsZero];
     }
-    if ([tableView respondsToSelector:@selector(setLayoutMargins:)])
-    {
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [tableView setLayoutMargins:UIEdgeInsetsZero];
     }
+    
     Discover *find = _dataArray[indexPath.row];
     static NSString *iden = @"cell";
     FindCell *cell = [tableView dequeueReusableCellWithIdentifier:iden forIndexPath:indexPath];
