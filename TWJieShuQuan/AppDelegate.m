@@ -46,7 +46,10 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_background"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
 
+    
+    
     // setup root viewcontroller
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
