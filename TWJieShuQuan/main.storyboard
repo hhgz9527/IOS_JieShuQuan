@@ -1124,7 +1124,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Kbc-3C-PVK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x08-j4-PqF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WHh-HU-i1v">
@@ -1147,7 +1147,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qi9-yE-E2c">
                                                     <rect key="frame" x="50" y="26" width="23" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="textColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwP-Ue-YvG">
@@ -1671,14 +1671,21 @@
         <!--发现-->
         <scene sceneID="qAH-xM-CVR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OMP-br-sGB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发现" image="FindIcon" id="2hm-Wb-4kr"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="OMP-br-sGB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="FindIcon" id="2hm-Wb-4kr">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="FindIcon_Select"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="115-WV-FOJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="b4b-q3-46o">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Og8-Xq-qPb" kind="relationship" relationship="rootViewController" id="dFS-66-QiZ"/>
                     </connections>
@@ -1691,7 +1698,11 @@
         <scene sceneID="P6A-ph-Nih">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="az3-hA-ZCb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="借书" image="BookIcon" id="MJs-Rn-zwT"/>
+                    <tabBarItem key="tabBarItem" title="借书" image="BookIcon" id="MJs-Rn-zwT">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="BookIcon_Select"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3XA-UR-Fz6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1729,7 +1740,11 @@
         <scene sceneID="7de-yQ-ZD3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MGF-JR-xLn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="MeIcon" id="Wdg-FK-X2s"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="MeIcon" id="Wdg-FK-X2s">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="MeIcon_Select"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ngl-wc-2RC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1833,8 +1848,11 @@
     </scenes>
     <resources>
         <image name="BookIcon" width="20" height="24"/>
+        <image name="BookIcon_Select" width="20" height="24"/>
         <image name="FindIcon" width="25" height="23"/>
+        <image name="FindIcon_Select" width="25" height="23"/>
         <image name="MeIcon" width="15" height="26"/>
+        <image name="MeIcon_Select" width="15" height="26"/>
         <image name="Top4.png" width="614" height="243"/>
         <image name="avatar.png" width="225" height="225"/>
         <image name="book" width="225" height="225"/>
