@@ -125,11 +125,13 @@ static NSString * const reuseIdentifier = @"MyBooksCollectionViewCell";
         model.deleteView = [[TWIconButton alloc] initWithTitle:@"删除"
                                                           icon:[UIImage imageNamed:@"delete.png"]
                                                         action:^{
-                                                            [model.bookEntity deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                                                                if (succeeded) {
-                                                                    [destViewController.navigationController popToRootViewControllerAnimated:YES];
-                                                                }
-                                                            }];
+                                                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"删除书籍"
+                                                                                                                message:@"确认删除?"
+                                                                                                               delegate:destViewController
+                                                                                                      cancelButtonTitle:@"取消"
+                                                                                                      otherButtonTitles:@"确认", nil];
+                                                            [alertView show];
+
                                                         }];
 
         destViewController.bookDetailModel = model;

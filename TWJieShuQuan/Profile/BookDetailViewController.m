@@ -19,7 +19,7 @@
 
 static NSInteger kStart = 0;
 
-@interface BookDetailViewController ()
+@interface BookDetailViewController ()<UIAlertViewDelegate>
 @property(nonatomic, strong) Book *currentBook;
 @property (nonatomic, strong) BookCommentCell *cellForCalcHeight;
 @property (nonatomic, strong) NSMutableArray *comments;
@@ -184,5 +184,18 @@ static NSInteger kStart = 0;
     [BookService updateBookAvailabilityWithBook:self.bookDetailModel.book
                                     availbility:isAvailable];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex==alertView.cancelButtonIndex) {
+        return;
+    } else {
+        [self.bookDetailModel.bookEntity deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+        }];
+    }
+}
+
 
 @end
