@@ -279,69 +279,65 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbz-Yo-zG5">
-                                            <rect key="frame" x="0.0" y="66" width="299.5" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="4B8-Du-js2"/>
-                                            </constraints>
-                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="6"/>
-                                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-9" maxY="0.0"/>
-                                            <inset key="imageEdgeInsets" minX="-14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="同意" image="Agreed">
-                                                <color key="titleColor" red="0.46274509803921571" green="0.85882352941176465" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="agreeToBorrow:" destination="ZN0-4H-XbT" eventType="touchUpInside" id="4e9-nA-VR0"/>
-                                            </connections>
-                                        </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpu-3l-5LO" userLabel="Divder">
-                                            <rect key="frame" x="0.0" y="57" width="600" height="0.5"/>
+                                            <rect key="frame" x="0.0" y="59" width="600" height="0.5"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="0.5" id="WMh-ry-nRy"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQj-dx-xhI">
-                                            <rect key="frame" x="300" y="63.5" width="0.5" height="30"/>
+                                            <rect key="frame" x="300" y="63" width="0.5" height="30"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="0.5" id="3DP-7g-tjL"/>
                                                 <constraint firstAttribute="height" constant="30" id="Gox-RB-1Mv"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftV-Y5-f2d">
-                                            <rect key="frame" x="300" y="66" width="299.5" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="SrF-dd-Mx1"/>
-                                            </constraints>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnW-a3-HA0">
+                                            <rect key="frame" x="0.0" y="68" width="300" height="28"/>
                                             <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="6"/>
-                                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-9" maxY="0.0"/>
-                                            <inset key="imageEdgeInsets" minX="-14" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="暂不方便" image="Cancel">
-                                                <color key="titleColor" red="0.98039215690000003" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="同意" image="Agreed">
+                                                <color key="titleColor" red="0.46274509800000002" green="0.85882352939999995" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="rejectToBorrow:" destination="ZN0-4H-XbT" eventType="touchUpInside" id="CPc-LD-EAr"/>
+                                                <action selector="agreeToBorrow:" destination="ZN0-4H-XbT" eventType="touchUpInside" id="cnG-Fg-c0z"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogN-nP-fUn">
+                                            <rect key="frame" x="300" y="68" width="300" height="28"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="6"/>
+                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="暂不方便" image="Cancel">
+                                                <color key="titleColor" red="0.85882352939999995" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="rejectToBorrow:" destination="ZN0-4H-XbT" eventType="touchUpInside" id="0sY-WF-Jti"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ogN-nP-fUn" secondAttribute="bottom" constant="0.5" id="1R8-SL-hTu"/>
                                         <constraint firstAttribute="trailing" secondItem="Wpu-3l-5LO" secondAttribute="trailing" id="1WO-la-Pjp"/>
                                         <constraint firstItem="Wpu-3l-5LO" firstAttribute="leading" secondItem="YCz-hS-iB2" secondAttribute="leading" id="4U7-ID-nY5"/>
-                                        <constraint firstItem="Xbz-Yo-zG5" firstAttribute="leading" secondItem="YCz-hS-iB2" secondAttribute="leading" id="Dic-uT-8GQ"/>
+                                        <constraint firstItem="ogN-nP-fUn" firstAttribute="leading" secondItem="BnW-a3-HA0" secondAttribute="trailing" id="941-Uj-s5A"/>
+                                        <constraint firstItem="BnW-a3-HA0" firstAttribute="height" secondItem="ogN-nP-fUn" secondAttribute="height" id="9AB-SF-aQR"/>
                                         <constraint firstAttribute="bottom" secondItem="DQj-dx-xhI" secondAttribute="bottom" constant="3" id="HFA-Dq-LFu"/>
+                                        <constraint firstItem="BnW-a3-HA0" firstAttribute="width" secondItem="ogN-nP-fUn" secondAttribute="width" id="IbI-IT-tpI"/>
                                         <constraint firstAttribute="centerX" secondItem="QLO-9r-oAv" secondAttribute="centerX" id="QhN-ej-nPS"/>
                                         <constraint firstAttribute="trailing" secondItem="QLO-9r-oAv" secondAttribute="trailing" constant="10" id="QlA-uj-6j2"/>
-                                        <constraint firstAttribute="bottom" secondItem="ftV-Y5-f2d" secondAttribute="bottom" id="Xae-k9-tiC"/>
-                                        <constraint firstAttribute="bottom" secondItem="Xbz-Yo-zG5" secondAttribute="bottom" id="Zly-Ue-jZ6"/>
+                                        <constraint firstItem="BnW-a3-HA0" firstAttribute="top" secondItem="Wpu-3l-5LO" secondAttribute="bottom" constant="8.5" id="RhY-G4-wN9"/>
+                                        <constraint firstAttribute="bottom" secondItem="BnW-a3-HA0" secondAttribute="bottom" id="VFg-WN-5kl"/>
                                         <constraint firstAttribute="centerX" secondItem="DQj-dx-xhI" secondAttribute="centerX" id="avY-iT-Aos"/>
-                                        <constraint firstItem="ftV-Y5-f2d" firstAttribute="leading" secondItem="Xbz-Yo-zG5" secondAttribute="trailing" constant="1" id="b1f-4W-irU"/>
-                                        <constraint firstItem="Xbz-Yo-zG5" firstAttribute="top" secondItem="Wpu-3l-5LO" secondAttribute="bottom" constant="8" id="cdM-Ph-Um9"/>
-                                        <constraint firstItem="Xbz-Yo-zG5" firstAttribute="width" secondItem="ftV-Y5-f2d" secondAttribute="width" id="dvd-3P-RXa"/>
+                                        <constraint firstAttribute="trailing" secondItem="ogN-nP-fUn" secondAttribute="trailing" id="bMV-ID-r6R"/>
                                         <constraint firstItem="QLO-9r-oAv" firstAttribute="leading" secondItem="YCz-hS-iB2" secondAttribute="leading" constant="10" id="hnL-e8-fqB"/>
                                         <constraint firstItem="QLO-9r-oAv" firstAttribute="top" secondItem="YCz-hS-iB2" secondAttribute="topMargin" constant="8" id="ljg-2j-cUr"/>
-                                        <constraint firstAttribute="trailing" secondItem="ftV-Y5-f2d" secondAttribute="trailing" id="zL4-zb-PgK"/>
+                                        <constraint firstItem="BnW-a3-HA0" firstAttribute="leading" secondItem="YCz-hS-iB2" secondAttribute="leading" id="qO3-k4-rOv"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -350,8 +346,6 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="agreeButton" destination="Xbz-Yo-zG5" id="ZBN-uI-7F8"/>
-                                    <outlet property="notAgreeButton" destination="ftV-Y5-f2d" id="iN8-LN-TWP"/>
                                     <outlet property="notificationLabel" destination="QLO-9r-oAv" id="fy8-7z-Xkn"/>
                                 </connections>
                             </tableViewCell>
