@@ -32,6 +32,7 @@
     _emailTextField.delegate = self;
     _passwordTextField.delegate = self;
     _confirmPasswordTextField.delegate = self;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(registerCancel)];
     
     AVQuery *query = [AVQuery queryWithClassName:@"Office"];
     [query addDescendingOrder:@"createdAt"];
@@ -49,6 +50,10 @@
     _registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
     _registerButton.layer.borderWidth = 0.5f;
     _registerButton.layer.cornerRadius = 8;
+}
+
+- (void)registerCancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITextFieldDelegate

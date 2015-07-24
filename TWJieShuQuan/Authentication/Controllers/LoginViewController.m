@@ -26,14 +26,16 @@
     self.navigationController.navigationBarHidden = NO;
 
     [self setUpUICommponents];
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(loginCancel)];
     _emailTextField.delegate = self;
     _passwordTextField.delegate = self;
 }
 
+- (void)loginCancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)setUpUICommponents {
-    _loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    _loginButton.layer.borderWidth = 0.5f;
     _loginButton.layer.cornerRadius = 8;
 }
 
