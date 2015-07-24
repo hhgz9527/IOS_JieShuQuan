@@ -24,6 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _loginButton.layer.borderWidth = 1;
+    _loginButton.layer.borderColor = [UIColor colorWithRed:70.f/255.f green:157.f/255.f blue:231.f/255.f alpha:1].CGColor;
+    _loginButton.layer.cornerRadius = 8;
+    
+    _registerButton.layer.borderWidth = 1;
+    _registerButton.layer.borderColor = [UIColor colorWithRed:70.f/255.f green:157.f/255.f blue:231.f/255.f alpha:1].CGColor;
+    _registerButton.layer.cornerRadius = 8;
     
 }
 
