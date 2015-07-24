@@ -21,6 +21,8 @@
 		73A2F2511B3E8A9F004E6555 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2501B3E8A9F004E6555 /* SettingTableViewController.m */; };
 		73A2F25A1B3EDCAF004E6555 /* OfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */; };
 		73BBEA281B29DE4C00F7373A /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBEA271B29DE4C00F7373A /* FindCell.m */; };
+		73D746971B62AA0E00722215 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D746951B62AA0E00722215 /* LaunchViewController.m */; };
+		73D746981B62AA0E00722215 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D746961B62AA0E00722215 /* LaunchViewController.xib */; };
 		73FBF7D11B56A79F00AA67D3 /* jieru.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FBF7CF1B56A79F00AA67D3 /* jieru.png */; };
 		73FBF7D21B56A79F00AA67D3 /* jiechu.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FBF7D01B56A79F00AA67D3 /* jiechu.png */; };
 		73FBF7D41B56A8EC00AA67D3 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 73FBF7D31B56A8EC00AA67D3 /* setting.png */; };
@@ -125,6 +127,9 @@
 		73A2F2591B3EDCAF004E6555 /* OfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficeViewController.m; sourceTree = "<group>"; };
 		73BBEA261B29DE4C00F7373A /* FindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCell.h; sourceTree = "<group>"; };
 		73BBEA271B29DE4C00F7373A /* FindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCell.m; sourceTree = "<group>"; };
+		73D746941B62AA0E00722215 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		73D746951B62AA0E00722215 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		73D746961B62AA0E00722215 /* LaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		73FBF7CF1B56A79F00AA67D3 /* jieru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jieru.png; sourceTree = "<group>"; };
 		73FBF7D01B56A79F00AA67D3 /* jiechu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiechu.png; sourceTree = "<group>"; };
 		73FBF7D31B56A8EC00AA67D3 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
@@ -498,6 +503,9 @@
 				941C9D931B130C4C002021DE /* ResetPasswordViewController.h */,
 				941C9D941B130C4C002021DE /* ResetPasswordViewController.m */,
 				941C9D951B130C4C002021DE /* ResetPasswordViewController.xib */,
+				73D746941B62AA0E00722215 /* LaunchViewController.h */,
+				73D746951B62AA0E00722215 /* LaunchViewController.m */,
+				73D746961B62AA0E00722215 /* LaunchViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -727,6 +735,7 @@
 				A327D9611B295E9900358122 /* avatar.png in Resources */,
 				A3D1C97F1B1C242700923AD5 /* borrow_message_bg.png in Resources */,
 				A327D9651B29719A00358122 /* delete.png in Resources */,
+				73D746981B62AA0E00722215 /* LaunchViewController.xib in Resources */,
 				949997111B09D3E500986337 /* Images.xcassets in Resources */,
 				7341C1961B1371A500E199DF /* Login_background.png in Resources */,
 			);
@@ -782,6 +791,7 @@
 				A3C1E2F01B16B90300037DB5 /* FindViewController.m in Sources */,
 				94C069A51B1567500047BCCB /* UserManager.m in Sources */,
 				947DA0AA1B354A9900CC9101 /* BorrowRecord.m in Sources */,
+				73D746971B62AA0E00722215 /* LaunchViewController.m in Sources */,
 				A327D9681B29741B00358122 /* BookDetailViewController.m in Sources */,
 				945E14CE1B3D915300E2F866 /* BorrowOutTableViewCell.m in Sources */,
 				94F75DF21B32AD3A00B59A17 /* BorrowNotificationTableViewCell.m in Sources */,

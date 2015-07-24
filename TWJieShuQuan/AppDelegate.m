@@ -15,6 +15,7 @@
 #import "Discover.h"
 #import "BorrowNotificationTableViewController.h"
 #import "BorrowRecord.h"
+#import "LaunchViewController.h"
 
 @interface AppDelegate ()
 
@@ -57,8 +58,10 @@
         UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"main" bundle:nil];
         self.window.rootViewController = mainSB.instantiateInitialViewController;
     } else {
-        LoginViewController *rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        self.window.rootViewController = rootViewController;
+        LaunchViewController *launch = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:launch];
+        //LoginViewController *rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        self.window.rootViewController = nav;
     }
     [self.window makeKeyAndVisible];
     

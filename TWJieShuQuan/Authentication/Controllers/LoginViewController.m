@@ -23,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBarHidden = NO;
+
     [self setUpUICommponents];
     
     _emailTextField.delegate = self;
