@@ -60,7 +60,6 @@
     } else {
         LaunchViewController *launch = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:nil];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:launch];
-        //LoginViewController *rootViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         self.window.rootViewController = nav;
     }
     [self.window makeKeyAndVisible];

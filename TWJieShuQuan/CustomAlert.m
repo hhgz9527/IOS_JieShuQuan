@@ -1,6 +1,6 @@
 #import "CustomAlert.h"
 
-static const float fontSize = 17;
+static const float fontSize = 15;
 static const float fixedLabelHeight = 50;
 static const float horizontalMargin = 15;
 
@@ -12,8 +12,7 @@ static const float horizontalMargin = 15;
 
 @implementation CustomAlert
 
-+ (CustomAlert *)sharedAlert
-{
++ (CustomAlert *)sharedAlert {
     static CustomAlert *sharedAlert = nil;
     if (!sharedAlert) {
         sharedAlert = [[super allocWithZone:nil] init];
@@ -21,23 +20,19 @@ static const float horizontalMargin = 15;
     return sharedAlert;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)zone
-{
++ (id)allocWithZone:(struct _NSZone *)zone {
     return [self sharedAlert];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     return [self init];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     return [self init];
 }
 
-- (id)init
-{
+- (id)init {
     self = [super initWithFrame:CGRectZero];
     if (self) {
         self.windowLevel = UIWindowLevelAlert;
@@ -47,25 +42,21 @@ static const float horizontalMargin = 15;
     return self;
 }
 
-- (UILabel *)textLabel
-{
+- (UILabel *)textLabel {
     if (_textLabel != nil) {
         return _textLabel;
     }
     _textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    _textLabel.layer.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6].CGColor;
-    _textLabel.layer.cornerRadius = 10.0;
     _textLabel.textColor = [UIColor colorWithWhite:1 alpha:1];
     _textLabel.font = [UIFont boldSystemFontOfSize:fontSize];
     return _textLabel;
 }
 
 
-- (void)showAlertWithMessage:(NSString *)message
-{
+- (void)showAlertWithMessage:(NSString *)message {
     self.hidden = NO;
     [self setAlertWithText:message];
-    [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(dismissAlert) withObject:nil afterDelay:2.0];
 }
 
 #pragma mark - private methods
@@ -73,23 +64,15 @@ static const float horizontalMargin = 15;
 - (void)setAlertWithText:(NSString*)text {
     _textLabel.text = text;
     _textLabel.numberOfLines = 0;
-    _textLabel.textAlignment = NSTextAlignmentCenter;
-    
-    CGSize constrainedSize = CGSizeMake(MAXFLOAT, fixedLabelHeight);
-    
-    CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:constrainedSize];
-    
-    self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-textSize.width-2*horizontalMargin)/2, ([UIScreen mainScreen].bounds.size.height)*2/3, textSize.width+2*horizontalMargin, fixedLabelHeight);
-    _textLabel.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60);
+    self.backgroundColor = [UIColor colorWithRed:29.f/255.f green:162.f/255.f blue:238.f/255.f alpha:1];
+    self.layer.shadowOffset = CGSizeMake(0, 2);
+    self.layer.shadowOpacity = 5;
+    _textLabel.frame = CGRectMake(10, 15, self.frame.size.width, 15);
 }
 
-- (void)dismissAlert
-{
+- (void)dismissAlert {
     self.hidden = YES;
 }
-
-
-
-
 
 @end
