@@ -10,7 +10,7 @@
 #import <AVOSCloud.h>
 #import "AuthService.h"
 #import "UserManager.h"
-#import "LoginViewController.h"
+#import "LaunchViewController.h"
 
 @interface SettingTableViewController ()
 
@@ -41,9 +41,9 @@
     [AuthService logout];
     [UserManager removeCurrentUser];
     
-    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:loginViewController animated:YES completion:nil];
+    LaunchViewController *launch = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:nil];
+    launch.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:launch animated:YES completion:nil];
 }
 
 

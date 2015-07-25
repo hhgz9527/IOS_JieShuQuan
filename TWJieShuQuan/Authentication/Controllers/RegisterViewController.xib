@@ -73,6 +73,10 @@
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_Username" translatesAutoresizingMaskIntoConstraints="NO" id="wFI-jO-cKq">
                                     <rect key="frame" x="10" y="8" width="16" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="QAW-jI-BQv"/>
+                                        <constraint firstAttribute="width" constant="16" id="pC2-9w-21a"/>
+                                    </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_Password" translatesAutoresizingMaskIntoConstraints="NO" id="sme-vq-Lxm">
                                     <rect key="frame" x="10" y="49" width="16" height="19"/>

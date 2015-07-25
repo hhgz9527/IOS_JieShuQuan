@@ -66,8 +66,8 @@ static const float horizontalMargin = 15;
     _textLabel.numberOfLines = 0;
     self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60);
     self.backgroundColor = [UIColor colorWithRed:29.f/255.f green:162.f/255.f blue:238.f/255.f alpha:1];
-    self.layer.shadowOffset = CGSizeMake(0, 2);
-    self.layer.shadowOpacity = 5;
+    self.layer.shadowOffset = CGSizeMake(0, 1);
+    self.layer.shadowOpacity = 0.5;
     _textLabel.frame = CGRectMake(10, 15, self.frame.size.width, 15);
 }
 
